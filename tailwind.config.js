@@ -3,7 +3,17 @@ module.exports = {
     // https://tailwindcss.com/docs/just-in-time-mode
     // mode: "jit",
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                "dark-bg": "#1D1E1E",
+                primary: "#F3A446",
+            },
+        },
+        fontFamily: {
+            brand: "MuseoModerno",
+            title: "Niconne",
+            body: "Mulish",
+        },
     },
     variants: {},
     plugins: [],
@@ -15,6 +25,11 @@ module.exports = {
             "./src/**/*.jsx",
             "./src/**/*.ts",
             "./src/**/*.tsx",
+            "./dist/**/*.html",
+            "./dist/**/*.js",
+            "./dist/**/*.jsx",
+            "./dist/**/*.ts",
+            "./dist/**/*.tsx",
             "./public/index.html",
         ],
         // Options passed to PurgeCSS

@@ -1,15 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import Navbar from "./components/Navbar";
+import Carousel from "./components/Carousel";
+
+import banner from "./assets/banner-1.png";
+
 // config tailwindcss
-import './tailwind.css';
+import "./main.css";
 
 function App() {
-  return (
-    <div className="h-screen w-full bg-red-500">
-      123...
-    </div>
-  );
+    return (
+        <div className="font-body text-center mx-auto bg-dark-bg text-white">
+            <div className="w-screen h-screen bg-no-repeat bg-cover">
+                <Navbar />
+                {/* <Carousel /> */}
+            </div>
+        </div>
+    );
 }
 
 export default App;
