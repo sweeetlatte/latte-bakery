@@ -13,12 +13,12 @@ export default function Navbar() {
                 BAKERY
             </div>
             <div className="flex basis-4/12 space-x-6 justify-end text-sm">
-                <div className="border border-primary text-primary px-5 py-2.5 rounded-md">
+                <button className="border border-primary text-primary px-5 py-2.5 rounded-md">
                     Sign in
-                </div>
-                <div className="border border-primary bg-primary px-5 py-2.5 rounded-md">
+                </button>
+                <button className="border border-primary bg-primary px-5 py-2.5 rounded-md">
                     Register
-                </div>
+                </button>
             </div>
         </div>
     );
