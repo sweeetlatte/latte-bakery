@@ -5,8 +5,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                "white-rgba": "rgba(255,255,255,0.1)",
                 "dark-bg": "#1D1E1E",
-                primary: "#F3A446",
+                "primary": "#F3A446",
             },
         },
         fontFamily: {

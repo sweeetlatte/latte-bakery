@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
     return (
-        <div className="px-6 flex items-center py-5">
+        <div className="px-6 flex items-center py-5 ">
             <div className="flex basis-4/12 justify-between text-sm">
                 <div>Products</div>
                 <div>About us</div>

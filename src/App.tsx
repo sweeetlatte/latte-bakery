@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Carousel from "./components/Carousel";
 
 import roller from "./assets/roller.png";
+import about1 from "./assets/images/about-1.png";
 
 // config tailwindcss
 import "./main.css";
@@ -27,8 +28,17 @@ function App() {
                         Shop now
                     </button>
                 </div>
-                <div className="pt-60">
+                <div className="pt-[18.5rem]">
                     <img className="mx-auto" src={roller} alt="dough roller" />
+                </div>
+                <div className="relative">
+                    <div className="font-title text-7xl text-left pl-36 pt-28">
+                        About us
+                    </div>
+                    <div className="font-title text-[200px] text-white-rgba text-left pl-28 absolute top-0">
+                        About us
+                    </div>
+                    {/* <img className="pt-16" src={about1} alt="image" /> */}
                 </div>
             </div>
         </div>
