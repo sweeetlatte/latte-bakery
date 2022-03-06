@@ -41,7 +41,11 @@ function App() {
                         About us
                     </div>
                     <div>
-                        <img className="absolute right-64 top-40" src={bread1} alt="bread-1" />
+                        <img
+                            className="absolute right-64 top-40"
+                            src={bread1}
+                            alt="bread-1"
+                        />
                     </div>
                     <div className="w-[66.25rem] mx-auto pt-36">
                         <img src={about1} alt="about-1" />
