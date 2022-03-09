@@ -21,7 +21,7 @@ export default function HeroSection() {
                     Shop now
                 </button>
             </div>
-            <div className="pt-[18.5rem]">
+            <div className="pt-[9.7rem]">
                 <img className="mx-auto" src={roller} alt="dough roller" />
             </div>
         </div>

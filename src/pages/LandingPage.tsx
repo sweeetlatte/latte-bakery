@@ -14,9 +14,7 @@ export default function LandingPage() {
             <div className="relative pt-20 pr-[9.875rem]">
                 <Products />
             </div>
-            <div className="relative pt-20 pr-[9.875rem]">
-                <Blog />
-            </div>
+            <Blog />
         </div>
     );
 }
