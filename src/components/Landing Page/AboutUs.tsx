@@ -6,16 +6,16 @@ import about2 from "../../assets/images/about-2.png";
 
 export default function AboutUs() {
     return (
-        <div className="relative">
+        <div className="relative mt-36">
             <div className="font-title text-7xl text-left pl-36 pt-28">
                 About us
             </div>
-            <div className="font-title text-[200px] text-white-rgba text-left pl-28 absolute top-0">
+            <div className="font-title text-[200px] text-white-rgba text-left pl-28 absolute top-[-1.25rem]">
                 About us
             </div>
             <div>
                 <img
-                    className="absolute right-64 top-40"
+                    className="absolute right-4 top-40"
                     src={bread1}
                     alt="bread-1"
                 />
