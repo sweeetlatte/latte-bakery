@@ -1,6 +1,6 @@
 import React from "react";
 
-import cake from "../../assets/images/cake-1.png";
+import cake from "../../assets/images/products/cake-1.png";
 import cartIcon from "../../assets/icons/cart.svg";
 
 export default function Products() {
