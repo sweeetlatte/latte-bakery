@@ -5,6 +5,7 @@ import HeroSection from "../components/Landing Page/HeroSection";
 import AboutUs from "../components/Landing Page/AboutUs";
 import Products from "../components/Landing Page/Products";
 import Blog from "../components/Landing Page/Blog";
+import GetInTouch from "../components/Landing Page/GetInTouch";
 
 export default function LandingPage() {
     return (
@@ -15,6 +16,7 @@ export default function LandingPage() {
                 <Products />
             </div>
             <Blog />
+            <GetInTouch />
         </div>
     );
 }

@@ -7,6 +7,7 @@ module.exports = {
             colors: {
                 "white-rgba": "rgba(255,255,255,0.1)",
                 "dark-bg": "#1D1E1E",
+                "light": "#323232",
                 "primary": "#F3A446",
             },
         },
