@@ -8,7 +8,7 @@ export default function BlogPage() {
     return (
         <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
-            <div className="pt-10 pl-28 pr-5 text-left">
+            <div className="pt-10 pl-28 pr-20 text-left">
                 <div className="text-lg">Home / Blog</div>
                 <div className="pt-11 text-5xl">Blog</div>
                 <div className="flex pt-14 pb-12">
@@ -57,9 +57,22 @@ export default function BlogPage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-between">
-                    <div>left</div>
-                    <div>right</div>
+                <div className="flex space-x-9">
+                    <div
+                        className="pr-16 basis-9/12"
+                        style={{ borderRight: "1px solid white" }}
+                    >
+                        <div className="flex justify-between  text-lg tab-bar py-7 px-3">
+                            <div>Breads and rolls</div>
+                            <div>Cheesecake</div>
+                            <div>Caramel</div>
+                            <div>Dairy free</div>
+                            <div>Peanut butter</div>
+                            <div>Cookies</div>
+                        </div>
+                        <div>Blogs</div>
+                    </div>
+                    <div className="flex basis-3/12">right</div>
                 </div>
             </div>
         </div>
