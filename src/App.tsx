@@ -9,12 +9,14 @@ import "./main.css";
 
 function App() {
     return (
-        // <div className="font-body text-center mx-auto bg-dark-bg text-white">
-        //     <LandingPage />
-        // </div>
-        <div className="font-body text-center mx-auto bg-light text-white">
-            <BlogPage />
-        </div>
+        <>
+            {/* <div className="font-body text-center mx-auto bg-dark-bg text-white">
+                <LandingPage />
+            </div> */}
+            <div className="font-body text-center mx-auto bg-light text-white">
+                <BlogPage />
+            </div>
+        </>
     );
 }
 
