@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
@@ -6,12 +7,12 @@ export default function Navbar() {
             <div className="flex basis-4/12 justify-between text-sm">
                 <div>Products</div>
                 <div>About us</div>
-                <div>Blog</div>
+                <Link to="/blog">Blog</Link>
                 <div>Contact</div>
             </div>
-            <div className="basis-4/12 text-primary text-3xl font-semibold font-brand">
+            <Link to="/" className="basis-4/12 text-primary text-3xl font-semibold font-brand">
                 BAKERY
-            </div>
+            </Link>
             <div className="flex basis-4/12 space-x-6 justify-end text-sm">
                 <button className="border border-primary text-primary px-5 py-2.5 rounded-md">
                     Sign in

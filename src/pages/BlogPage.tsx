@@ -6,7 +6,7 @@ import arrDown from "../assets/icons/arrow-down.svg";
 
 export default function BlogPage() {
     return (
-        <div>
+        <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
             <div className="pt-10 pl-28 pr-5 text-left">
                 <div className="text-lg">Home / Blog</div>

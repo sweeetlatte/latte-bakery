@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "./App.css";
 
 import LandingPage from "./pages/LandingPage";
@@ -9,14 +11,12 @@ import "./main.css";
 
 function App() {
     return (
-        <>
-            {/* <div className="font-body text-center mx-auto bg-dark-bg text-white">
-                <LandingPage />
-            </div> */}
-            <div className="font-body text-center mx-auto bg-light text-white">
-                <BlogPage />
-            </div>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
