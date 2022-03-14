@@ -72,7 +72,9 @@ export default function BlogPage() {
                     >
                         <div className="flex justify-between text-lg tab-bar py-7 px-3">
                             <div>Breads and rolls</div>
-                            <div>Cheesecake</div>
+                            <div className="underline underline-offset-[33.5px] decoration-primary decoration-[3px] text-primary">
+                                Cheesecake
+                            </div>
                             <div>Caramel</div>
                             <div>Dairy free</div>
                             <div>Peanut butter</div>
