@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import Blog from "../components/Blog/Blog";
+import Post from "../components/Blog/Post";
 
 import Navbar from "../components/Navbar";
 import search from "../assets/icons/search.svg";
@@ -9,7 +13,11 @@ export default function BlogPage() {
         <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
             <div className="pt-10 pl-28 pr-20 text-left">
-                <div className="text-lg">Home / Blog</div>
+                <div className="text-lg flex">
+                    <Link to="/">Home</Link>
+                    &nbsp;/&nbsp;
+                    <Link to="/blog">Blog</Link>
+                </div>
                 <div className="pt-11 text-5xl">Blog</div>
                 <div className="flex pt-14 pb-12">
                     <div className="flex bg-dark-bg border border-border rounded py-3.5 px-3.5 w-96">
@@ -59,10 +67,10 @@ export default function BlogPage() {
                 </div>
                 <div className="flex space-x-9">
                     <div
-                        className="pr-16 basis-9/12"
+                        className="pr-16 basis-9/12 mb-14"
                         style={{ borderRight: "1px solid white" }}
                     >
-                        <div className="flex justify-between  text-lg tab-bar py-7 px-3">
+                        <div className="flex justify-between text-lg tab-bar py-7 px-3">
                             <div>Breads and rolls</div>
                             <div>Cheesecake</div>
                             <div>Caramel</div>
@@ -70,9 +78,59 @@ export default function BlogPage() {
                             <div>Peanut butter</div>
                             <div>Cookies</div>
                         </div>
-                        <div>Blogs</div>
+                        <div className="pt-24 px-14">
+                            <div className="flex space-x-16 pb-14">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                            <div className="flex space-x-16 pb-14">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                            <div className="flex space-x-16 pb-14">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                            <div className="flex space-x-16">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="flex basis-3/12">right</div>
+                    <div className="basis-3/12">
+                        <div>
+                            <div className="text-xl">New post</div>
+                            <div className="pt-9">
+                                <Post />
+                                <Post />
+                                <Post />
+                            </div>
+                        </div>
+                        <div className="pt-2.5">
+                            <div className="text-xl">Popular</div>
+                            <div className="pt-9">
+                                <Post />
+                                <Post />
+                                <Post />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
