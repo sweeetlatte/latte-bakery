@@ -9,7 +9,7 @@ import GetInTouch from "../components/Landing Page/GetInTouch";
 
 export default function LandingPage() {
     return (
-        <div className="font-body text-center mx-auto bg-dark-bg text-white ">
+        <div className="font-body text-center mx-auto bg-dark-bg text-white">
             <HeroSection />
             <AboutUs />
             <div className="relative pt-20 pr-[9.875rem]">
