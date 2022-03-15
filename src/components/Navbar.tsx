@@ -17,9 +17,12 @@ export default function Navbar() {
                 BAKERY
             </Link>
             <div className="flex basis-4/12 space-x-6 justify-end text-sm">
-                <button className="border border-primary text-primary px-5 py-2.5 rounded-md">
+                <Link
+                    to="/login"
+                    className="border border-primary text-primary px-5 py-2.5 rounded-md"
+                >
                     Sign in
-                </button>
+                </Link>
                 <button className="border border-primary bg-primary px-5 py-2.5 rounded-md">
                     Register
                 </button>
