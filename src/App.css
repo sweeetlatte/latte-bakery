@@ -19,3 +19,22 @@
     text-overflow: ellipsis;
     word-break: break-word;
 }
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-bar .line {
+    position: absolute;
+    left: -2px;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 15px;
+    background-color: #f3a446;
+    transition: all 0.2s ease;
+}

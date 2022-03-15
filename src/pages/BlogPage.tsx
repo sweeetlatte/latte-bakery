@@ -9,6 +9,37 @@ import search from "../assets/icons/search.svg";
 import arrDown from "../assets/icons/arrow-down.svg";
 
 export default function BlogPage() {
+    // Gán chuỗi document... cho $ và document... cho $$
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    // chọn tất cả những element có class là tab-item và tab-pane
+    const tabs = $$(".tab-item");
+    const panes = $$(".tab-pane");
+
+    const tabActive = $(".tab-item.text-primary");
+    const line = $(".line");
+
+    console.log(line, tabActive);
+
+    // line.style.left = tabActive.offsetLeft + "px";
+    // line.style.width = tabActive.offsetWidth + "px";
+
+    // tabs.forEach((tab, index) => {
+    //     const pane = panes[index];
+
+    //     tab.onClick = function () {
+    //         $(".tab-item.active").classList.remove("active");
+    //         $(".tab-pane.active").classList.remove("active");
+
+    //         line.style.left = this.offsetLeft + "px";
+    //         line.style.width = this.offsetWidth + "px";
+
+    //         this.classList.add("active");
+    //         pane.classList.add("active");
+    //     };
+    // });
+
     return (
         <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
@@ -70,17 +101,62 @@ export default function BlogPage() {
                         className="pr-16 basis-9/12 mb-14"
                         style={{ borderRight: "1px solid white" }}
                     >
-                        <div className="flex justify-between text-lg tab-bar py-7 px-3">
-                            <div>Breads and rolls</div>
-                            <div className="underline underline-offset-[33.5px] decoration-primary decoration-[3px] text-primary">
+                        <div className="flex justify-between text-lg tab-bar py-7 px-3 relative">
+                            <div className="tab-item text-primary cursor-pointer">
+                                Breads and rolls
+                            </div>
+                            <div className="tab-item cursor-pointer">
                                 Cheesecake
                             </div>
-                            <div>Caramel</div>
-                            <div>Dairy free</div>
-                            <div>Peanut butter</div>
-                            <div>Cookies</div>
+                            <div className="tab-item cursor-pointer">
+                                Caramel
+                            </div>
+                            <div className="tab-item cursor-pointer">
+                                Dairy free
+                            </div>
+                            <div className="tab-item cursor-pointer">
+                                Peanut butter
+                            </div>
+                            <div className="tab-item cursor-pointer">
+                                Cookies
+                            </div>
+                            <div className="line"></div>
                         </div>
-                        <div className="pt-24 px-14">
+                        <div className="pt-24 px-14 tab-pane active">
+                            <div className="flex space-x-16 pb-14">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                            <div className="flex space-x-16 pb-14">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                            <div className="flex space-x-16 pb-14">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                            <div className="flex space-x-16">
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                                <div className="basis-1/2">
+                                    <Blog />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="pt-24 px-14 tab-pane">
                             <div className="flex space-x-16 pb-14">
                                 <div className="basis-1/2">
                                     <Blog />
