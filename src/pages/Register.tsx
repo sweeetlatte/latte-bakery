@@ -5,7 +5,7 @@ import login from "../assets/images/login.png";
 import facebook from "../assets/images/Facebook.png";
 import google from "../assets/images/Google.png";
 
-export default function LogIn() {
+export default function Register() {
     return (
         <div className="text-white">
             <img className="object-cover absolute" src={login} alt="login" />
@@ -16,7 +16,7 @@ export default function LogIn() {
                 >
                     Bakery
                 </Link>
-                <div className="pt-12 text-4xl font-semibold">Log in</div>
+                <div className="pt-12 text-4xl font-semibold">Register</div>
                 <div className="pt-14 flex space-x-9">
                     <div className="flex basis-1/2 space-x-4 items-center border rounded-lg px-4 py-4">
                         <img src={google} alt="google" />
@@ -39,43 +39,34 @@ export default function LogIn() {
                             name="uname"
                         />
                     </label>
+                    <label htmlFor="email">
+                        <span className="block">Email</span>
+                        <input
+                            className="w-full bg-light py-3.5 px-3 mb-8 focus:border-primary focus:outline-none disabled:bg-light"
+                            style={{ borderBottom: "1px solid white" }}
+                            type="email"
+                            id="email"
+                            name="email"
+                        />
+                    </label>
                     <label htmlFor="password">
                         <span className="block">Password</span>
                         <input
-                            className="w-full bg-light py-3.5 px-3 mb-8 focus:border-primary focus:outline-none disabled:bg-light"
+                            className="w-full bg-light py-3.5 px-3 mb-20 focus:border-primary focus:outline-none disabled:bg-light"
                             style={{ borderBottom: "1px solid white" }}
                             type="password"
                             id="password"
                             name="password"
                         />
                     </label>
-                    <div className="flex justify-between pb-20">
-                        <label
-                            htmlFor="rememberpw"
-                            className="custom-checkbox text-primary font-medium"
-                        >
-                            <input
-                                className="checkbox"
-                                type="checkbox"
-                                id="rememberpw"
-                                name="rememberpw"
-                                value="Remember"
-                            />
-                            Remeber password
-                            <span className="checkmark"></span>
-                        </label>
-                        <div className="text-primary font-medium">
-                            Forgot password?
-                        </div>
-                    </div>
                     <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
-                        Log in
+                        Register
                     </button>
                 </form>
                 <div className="">
-                    Not registered yet?{" "}
-                    <Link to="/register" className="text-primary">
-                        Create an account
+                    Already have an account?{" "}
+                    <Link to="/login" className="text-primary">
+                        Log in
                     </Link>
                 </div>
             </div>

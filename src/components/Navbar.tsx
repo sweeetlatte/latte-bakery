@@ -23,9 +23,12 @@ export default function Navbar() {
                 >
                     Log in
                 </Link>
-                <button className="border border-primary bg-primary px-5 py-2.5 rounded-md">
+                <Link
+                    to="/register"
+                    className="border border-primary bg-primary px-5 py-2.5 rounded-md"
+                >
                     Register
-                </button>
+                </Link>
             </div>
         </div>
     );
