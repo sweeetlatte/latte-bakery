@@ -8,12 +8,8 @@ import google from "../assets/images/Google.png";
 export default function LogIn() {
     return (
         <div className="text-white">
-            <img
-                className="max-h-screen object-cover absolute"
-                src={login}
-                alt="login"
-            />
-            <div className="relative h-screen px-48 pt-20 rounded-l-3xl bg-light ml-[24.5rem]">
+            <img className="object-cover absolute" src={login} alt="login" />
+            <div className="relative h-max px-48 py-20 rounded-l-3xl bg-light ml-[24.5rem]">
                 <Link
                     to="/"
                     className="text-primary text-4xl font-semibold font-brand"
@@ -32,7 +28,7 @@ export default function LogIn() {
                     </div>
                 </div>
                 <div className="pt-14 pb-14 text-center">- OR -</div>
-                <form>
+                <form className="mb-16">
                     <label htmlFor="uname">
                         <span className="block">Username</span>
                         <input
@@ -53,18 +49,33 @@ export default function LogIn() {
                             name="password"
                         />
                     </label>
-                    <label htmlFor="rememberpw" className="custom-checkbox text-primary">
-                        <input
-                            className="checkbox"
-                            type="checkbox"
-                            id="rememberpw"
-                            name="rememberpw"
-                            value="Remember"
-                        />
-                        Remeber password
-                        <span className="checkmark"></span>
-                    </label>
+                    <div className="flex justify-between pb-20">
+                        <label
+                            htmlFor="rememberpw"
+                            className="custom-checkbox text-primary font-medium"
+                        >
+                            <input
+                                className="checkbox"
+                                type="checkbox"
+                                id="rememberpw"
+                                name="rememberpw"
+                                value="Remember"
+                            />
+                            Remeber password
+                            <span className="checkmark"></span>
+                        </label>
+                        <div className="text-primary font-medium">
+                            Forgot password?
+                        </div>
+                    </div>
+                    <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
+                        Log in
+                    </button>
                 </form>
+                <div className="">
+                    Not registered yet?{" "}
+                    <span className="text-primary">Create an account.</span>
+                </div>
             </div>
         </div>
     );
