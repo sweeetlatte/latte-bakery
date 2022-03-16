@@ -21,7 +21,7 @@ export default function GetInTouch() {
                     Leave us a message
                 </div>
                 <div className="flex space-x-14 pt-8">
-                    <div className="basis-7/12">
+                    <form className="basis-7/12">
                         <input
                             className="w-full bg-light border rounded py-3.5 px-3.5 mb-6"
                             type="text"
@@ -45,7 +45,7 @@ export default function GetInTouch() {
                         <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
                             Send
                         </button>
-                    </div>
+                    </form>
                     <div className="basis-5/12 text-left flex flex-col justify-between">
                         <div>
                             Infomation technologies building, Victoria Island,
