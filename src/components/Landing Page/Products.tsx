@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import cake from "../../assets/images/products/cake-1.png";
 import cartIcon from "../../assets/icons/cart.svg";
@@ -11,9 +12,11 @@ export default function Products() {
             </div>
             <div className="flex pl-36 pt-28 justify-between items-center">
                 <div className="font-title text-7xl text-left">Products</div>
-                <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
-                    View all
-                </button>
+                <Link to="/products">
+                    <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
+                        View all
+                    </button>
+                </Link>
             </div>
             <div className="pt-28 pl-40 flex justify-between">
                 <div className="bg-white-rgba w-[15.688rem] h-[15.563rem]">
