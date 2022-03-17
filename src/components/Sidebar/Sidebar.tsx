@@ -5,8 +5,8 @@ import "./sidebar.css";
 
 export default function Sidebar() {
     return (
-        <>
-            <div className="h-full fixed w-[104px] z-10 top-0 left-0 bg-dark-bg rounded-r-3xl text-primary pt-20 flex flex-col items-center">
+        <div className="bg-light w-[104px]">
+            <div className="h-full fixed  z-10 top-0 left-0 bg-dark-bg rounded-r-3xl text-primary pt-20 flex flex-col items-center">
                 <Link to="/" className="text-lg font-semibold font-brand">
                     BAKERY
                 </Link>
@@ -19,6 +19,6 @@ export default function Sidebar() {
                 <div className="mb-[84px] sidebar-icon sidebar-icon-setting icon"></div>
                 <div className="mb-[84px] sidebar-icon sidebar-icon-logout icon"></div>
             </div>
-        </>
+        </div>
     );
 }
