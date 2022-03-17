@@ -11,7 +11,8 @@ module.exports = {
                 "light": "#323232",
                 "primary": "#F3A446",
                 "border": "#393C49",
-                "lightText": "#BEBEBE"
+                "lightText": "#BEBEBE",
+                "header": "#272727",
             },
         },
         fontFamily: {

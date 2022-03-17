@@ -9,7 +9,8 @@ import LandingPage from "./pages/LandingPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetail from "./pages/BlogDetail";
 
-import Products from "./pages/Products";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Products from "./pages/Dashboard/Products";
 
 // config tailwindcss
 import "./main.css";
@@ -23,7 +24,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/detail" element={<BlogDetail />} />
-                <Route path="/products" element={<Products />} />
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </BrowserRouter>
     );
