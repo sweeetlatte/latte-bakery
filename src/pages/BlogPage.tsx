@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import Blog from "../components/Blog/Blog";
 import Post from "../components/Blog/Post";
+import SearchBar from "../components/SearchBar";
 
 import Navbar from "../components/Navbar";
 import search from "../assets/icons/search.svg";
@@ -51,18 +52,9 @@ export default function BlogPage() {
                 </div>
                 <div className="pt-11 text-5xl">Blog</div>
                 <div className="flex pt-14 pb-12">
-                    <div className="flex bg-dark-bg border border-border rounded py-3.5 px-3.5 w-96">
-                        <img src={search} alt="icon search" />
-                        <input
-                            className="bg-dark-bg pl-2"
-                            type="text"
-                            id="fname"
-                            name="firstname"
-                            placeholder="Type something..."
-                        />
-                    </div>
+                    <SearchBar />
                     <div className="flex pl-9">
-                        <div className=" border w-48 border-white rounded py-3.5 px-3.5">
+                        <div className="border w-48 border-white rounded py-3.5 px-3.5">
                             <div className="flex justify-between">
                                 <div>Select month</div>
                                 <img src={arrDown} alt="arrow down" />
