@@ -16,7 +16,7 @@ export default function ProductCardHorizontal() {
                     Choco Protein Brownie
                 </div>
                 <div className="pt-1">60.000 VND</div>
-                <button className="border border-primary bg-primary pl-2 pr-2.5 py-1 mt-1.5 h-max rounded-md flex items-center">
+                <button className="border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center">
                     <img className="mr-1" src={cartIcon} alt="cart icon" />
                     Add
                 </button>

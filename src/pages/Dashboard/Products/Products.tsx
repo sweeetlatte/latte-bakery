@@ -108,7 +108,7 @@ export default function Products() {
                     </div>
                 </div>
                 <AddCard open={open} />
-                <div className="bg-light text-white basis-3/12">
+                <div className="text-white basis-3/12">
                     <div>
                         <div className="text-lg pb-6">New products</div>
                         <div className="flex flex-col space-y-4">
