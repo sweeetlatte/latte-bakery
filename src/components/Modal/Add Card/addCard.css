@@ -1,0 +1,7 @@
+.__mask-modal {
+    @apply fixed top-0 -left-10 h-screen w-screen z-[19] bg-black opacity-60 m-0;
+}
+
+.__bg-add-product-modal {
+    @apply fixed inset-auto bg-light z-[20] h-max w-[827px] p-10 rounded-xl opacity-100 top-48 left-80;
+}

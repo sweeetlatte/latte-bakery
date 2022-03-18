@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
-import SearchBar from "../../components/SearchBar";
-import ProductCard from "../../components/Dashboard/ProductCard";
-import ProductCardHorizontal from "../../components/Dashboard/ProductCardHorizontal";
+import SearchBar from "../../../components/SearchBar";
+import ProductCard from "../../../components/Dashboard/ProductCard";
+import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
+import AddCard from "../../../components/Modal/Add Card/AddCard";
 
-import arrowDown from "../../assets/icons/arrow-down.svg";
-import arrowRight from "../../assets/icons/arrow-right.svg";
-import ava from "../../assets/images/blog/detail/detail-1.png";
-import slider1 from "../../assets/images/dashboard/slider-1.png";
+import arrowDown from "../../../assets/icons/arrow-down.svg";
+import arrowRight from "../../../assets/icons/arrow-right.svg";
+import ava from "../../../assets/images/blog/detail/detail-1.png";
+import slider1 from "../../../assets/images/dashboard/slider-1.png";
 
 export default function Products() {
+    const [open, setOpenModal] = useState<boolean>(false);
+
+    const openModalAddProduct = () => {
+        setOpenModal(true);
+    };
+
     return (
         <>
             <div
@@ -72,18 +79,35 @@ export default function Products() {
                         </div>
                     </div>
                     <div className="pt-8 flex w-full justify-between">
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
                     </div>
                     <div className="pt-8 flex w-full justify-between">
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
+                        <ProductCard
+                            openModalAddProduct={() => openModalAddProduct()}
+                        />
                     </div>
                 </div>
+                <AddCard open={open} />
                 <div className="bg-light text-white basis-3/12">
                     <div>
                         <div className="text-lg pb-6">New products</div>
