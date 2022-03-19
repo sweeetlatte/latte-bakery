@@ -10,14 +10,18 @@ interface Props {
 
 export default function ProductCard({ openModalAddProduct }: Props) {
     return (
-        <Link
-            to="/dashboard/detail"
-            className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm"
-        >
-            <img className="h-[117px] object-cover" src={cake} alt="cake" />
+        <div className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm">
+            <Link to="/dashboard/detail">
+                <img className="h-[117px] object-cover" src={cake} alt="cake" />
+            </Link>
             <div className="pt-4">60.000 VND</div>
             <div className="flex justify-between items-center pt-2">
-                <div className="font-medium text-primary">Meringue Tart</div>
+                <Link
+                    to="/dashboard/detail"
+                    className="font-medium text-primary"
+                >
+                    Meringue Tart
+                </Link>
                 <button
                     onClick={openModalAddProduct}
                     className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex items-center"
@@ -26,6 +30,6 @@ export default function ProductCard({ openModalAddProduct }: Props) {
                     Add
                 </button>
             </div>
-        </Link>
+        </div>
     );
 }

@@ -53,7 +53,7 @@ export default function AddCard({ open }: Props) {
                         </div>
                         <p className="pt-4 text-sm">Filling</p>
                         <div className="text-sm text-primary pt-3 flex space-x-3">
-                            <button className="bg-dark-bg rounded-lg text-left py-3 px-2.5 w-[136px] h-[103px]">
+                            <button className="__filling bg-dark-bg h-[103px]">
                                 Butter
                                 <img
                                     className="h-[60px] w-full object-cover pt-1"
@@ -61,7 +61,7 @@ export default function AddCard({ open }: Props) {
                                     alt="creme"
                                 />
                             </button>
-                            <button className="bg-dark-bg rounded-lg text-left py-3 px-2.5 w-[136px]">
+                            <button className="__filling bg-dark-bg">
                                 Chocolate
                                 <img
                                     className="h-[60px] w-full object-cover pt-1"
@@ -69,7 +69,7 @@ export default function AddCard({ open }: Props) {
                                     alt="creme"
                                 />
                             </button>
-                            <button className="bg-dark-bg rounded-lg text-left py-3 px-2.5 w-[136px]">
+                            <button className="__filling bg-dark-bg">
                                 Crème
                                 <img
                                     className="h-[60px] w-full object-cover pt-1"

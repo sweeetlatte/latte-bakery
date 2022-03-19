@@ -1,0 +1,3 @@
+.dot {
+    @apply h-[9px] w-[9px] hover:bg-primary border border-white rounded-full cursor-pointer;
+}
