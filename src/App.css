@@ -123,3 +123,7 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.__filling {
+    @apply hover:border-primary border border-light rounded-lg text-left py-3 px-2.5 w-[136px];
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./products.css";
+
 import Icons from "../../../components/Icons";
 
 import ava from "../../../assets/images/blog/detail/detail-1.png";
@@ -83,7 +85,7 @@ export default function Detail() {
                                 </div>
                                 <p className="pt-4 text-sm">Filling</p>
                                 <div className="text-sm text-primary pt-3 flex space-x-3">
-                                    <button className="bg-light rounded-lg text-left py-3 px-2.5 w-[136px] h-[103px]">
+                                    <button className="__filling bg-light h-[103px]">
                                         Butter
                                         <img
                                             className="h-[60px] w-full object-cover pt-1"
@@ -91,7 +93,7 @@ export default function Detail() {
                                             alt="creme"
                                         />
                                     </button>
-                                    <button className="bg-light rounded-lg text-left py-3 px-2.5 w-[136px]">
+                                    <button className="__filling bg-light">
                                         Chocolate
                                         <img
                                             className="h-[60px] w-full object-cover pt-1"
@@ -99,7 +101,7 @@ export default function Detail() {
                                             alt="creme"
                                         />
                                     </button>
-                                    <button className="bg-light rounded-lg text-left py-3 px-2.5 w-[136px]">
+                                    <button className="__filling bg-light">
                                         Crème
                                         <img
                                             className="h-[60px] w-full object-cover pt-1"
@@ -118,6 +120,30 @@ export default function Detail() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
+                        <div className="text-xl font-medium pb-3">
+                            Description
+                        </div>
+                        <p>
+                            Fruit desserts covered with baked meringue were
+                            found beginning in the 18th century in France.
+                            Menon's pommes meringuées are a sort of thick apple
+                            sauce or apple butter covered with baked meringue in
+                            his 1739 cookbook.
+                        </p>
+                    </div>
+                    <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
+                        <div className="text-xl font-medium pb-3">
+                            Reviews
+                        </div>
+                        <p>
+                            Fruit desserts covered with baked meringue were
+                            found beginning in the 18th century in France.
+                            Menon's pommes meringuées are a sort of thick apple
+                            sauce or apple butter covered with baked meringue in
+                            his 1739 cookbook.
+                        </p>
                     </div>
                 </div>
                 <div className="basis-3/12">abc</div>
