@@ -41,13 +41,13 @@ export default function AddCard({ open }: Props) {
                         <p className="text-xl">80.000 VND</p>
                         <p className="pt-4 text-sm">Size</p>
                         <div className="text-sm text-primary pt-3 flex space-x-3">
-                            <button className="border border-primary rounded-full py-1 px-4 w-max">
+                            <button className="__yellow-outline-option py-1 px-4 w-max">
                                 Size S
                             </button>
-                            <button className="border border-primary rounded-full py-1 px-4 w-max">
+                            <button className="__yellow-outline-option py-1 px-4 w-max">
                                 Size M
                             </button>
-                            <button className="border border-primary rounded-full py-1 px-4 w-max">
+                            <button className="__yellow-outline-option py-1 px-4 w-max">
                                 Size L
                             </button>
                         </div>

@@ -5,6 +5,8 @@ import "./products.css";
 
 import Icons from "../../../components/Icons";
 import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
+import Review from "../../../components/Dashboard/Review";
+import Pagination from "../../../components/Dashboard/Pagination";
 
 import ava from "../../../assets/images/blog/detail/detail-1.png";
 import creme from "../../../assets/images/creme.png";
@@ -74,13 +76,13 @@ export default function Detail() {
                                 </p>
                                 <p className="pt-6 text-sm">Size</p>
                                 <div className="text-sm text-primary pt-3 flex space-x-3">
-                                    <button className="border border-primary rounded-full py-1 px-4 w-max">
+                                    <button className="__yellow-outline-option py-1 px-4 w-max">
                                         Size S
                                     </button>
-                                    <button className="border border-primary rounded-full py-1 px-4 w-max">
+                                    <button className="__yellow-outline-option py-1 px-4 w-max">
                                         Size M
                                     </button>
-                                    <button className="border border-primary rounded-full py-1 px-4 w-max">
+                                    <button className="__yellow-outline-option py-1 px-4 w-max">
                                         Size L
                                     </button>
                                 </div>
@@ -123,7 +125,7 @@ export default function Detail() {
                         </div>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
-                        <div className="text-xl font-medium pb-3">
+                        <div className="text-xl font-medium pb-3 text-primary">
                             Description
                         </div>
                         <p>
@@ -135,14 +137,44 @@ export default function Detail() {
                         </p>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
-                        <div className="text-xl font-medium pb-3">Reviews</div>
-                        <p>
-                            Fruit desserts covered with baked meringue were
-                            found beginning in the 18th century in France.
-                            Menon's pommes meringuées are a sort of thick apple
-                            sauce or apple butter covered with baked meringue in
-                            his 1739 cookbook.
-                        </p>
+                        <div className="text-xl font-medium pb-3 text-primary">
+                            Reviews
+                        </div>
+                        <div className="flex space-x-8">
+                            <div className="flex flex-col items-center">
+                                <p className="text-7xl pb-3">🤎</p>
+                                <p>5.0 of 5.0</p>
+                            </div>
+                            <div className="flex flex-wrap space-x-4">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                    All
+                                </button>
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                    5 🤎
+                                </button>
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                    4 🤎
+                                </button>
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                    3 🤎
+                                </button>
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                    2 🤎
+                                </button>
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                    1 🤎
+                                </button>
+                            </div>
+                        </div>
+                        <div className="py-9 flex flex-col space-y-4">
+                            <Review />
+                            <Review />
+                            <Review />
+                            <Review />
+                        </div>
+                        <div>
+                            <Pagination />
+                        </div>
                     </div>
                 </div>
                 <div className="basis-3/12">
