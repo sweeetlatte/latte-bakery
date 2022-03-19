@@ -4,9 +4,8 @@ import SearchBar from "../../../components/SearchBar";
 import ProductCard from "../../../components/Dashboard/ProductCard";
 import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
 import AddCard from "../../../components/Modal/Add Card/AddCard";
+import Icons from "../../../components/Icons";
 
-import arrowDown from "../../../assets/icons/arrow-down.svg";
-import arrowRight from "../../../assets/icons/arrow-right.svg";
 import ava from "../../../assets/images/blog/detail/detail-1.png";
 import slider1 from "../../../assets/images/dashboard/slider-1.png";
 
@@ -28,13 +27,9 @@ export default function Products() {
                     <div className="text-sm">Tuesday, 2 Nov 2021</div>
                 </div>
                 <div className="flex items-center basis-3/12">
-                    <div className="border border-primary rounded py-1 px-3.5 mr-8 flex items-center">
-                        EN
-                        <img
-                            className="w-[11px] ml-2"
-                            src={arrowDown}
-                            alt="arrow down"
-                        />
+                    <div className="border border-primary rounded py-1 pl-3.5 pr-1.5 mr-8 flex items-center space-x-1">
+                        <p>EN</p>
+                        <Icons.ChevronDown stroke="white" />
                     </div>
                     <div className="flex items-center space-x-4">
                         <img
@@ -71,11 +66,11 @@ export default function Products() {
                             <div className="cursor-pointer">Mousse</div>
                             <div className="cursor-pointer">Biscuit</div>
                             <div className="cursor-pointer">Ice cream</div>
-                            <img src={arrowRight} alt="arrow right" />
+                            <Icons.ChevronRight stroke="white" />
                         </div>
                         <div className="flex items-center space-x-4 border border-primary rounded py-3 px-6">
                             <div>Default sorting</div>
-                            <img src={arrowDown} alt="arrow down" />
+                            <Icons.BiggerChevronDown stroke="#F3A446" />
                         </div>
                     </div>
                     <div className="pt-8 flex w-full justify-between">
