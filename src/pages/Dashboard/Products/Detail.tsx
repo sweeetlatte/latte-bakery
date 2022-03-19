@@ -36,32 +36,40 @@ export default function Detail() {
                 </div>
             </div>
             <div className="ml-40 text-white flex pr-16 pb-6 pt-14 space-x-[42px]">
-                <div className="basis-9/12">
+                <div
+                    className="basis-9/12 pr-12"
+                    style={{ borderRight: "1px solid white" }}
+                >
                     <div className="flex space-x-[27.5px] text-lg">
                         <img src={arrowLeft} alt="arrow left" />
                         <div>
                             <Link to="/dashboard">Dashboard</Link>
                             &nbsp;/&nbsp;
-                            <Link to="/blog" className="text-primary">
+                            <Link
+                                to="/dashboard/detail"
+                                className="text-primary"
+                            >
                                 Meringue Tart
                             </Link>
                         </div>
                     </div>
-                    <div className="flex flex-col">
-                        <div className="flex flex-row w-full">
-                            <div className="basis-5/12">
+                    <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
+                        <div className="flex flex-row w-full space-x-9">
+                            <div className="basis-6/12">
                                 <img
-                                    className="w-[17.5rem] h-[17.5rem] object-cover rounded-lg"
+                                    className="w-full h-full object-cover rounded-lg"
                                     src={cake}
                                     alt="cake"
                                 />
                             </div>
-                            <div className="basis-7/12 flex flex-col">
+                            <div className="basis-6/12 flex flex-col">
                                 <div className="text-primary font-medium">
                                     Meringue Tart
                                 </div>
-                                <p className="text-xl">80.000 VND</p>
-                                <p className="pt-4 text-sm">Size</p>
+                                <p className="text-xl">
+                                    80.000 VND • 5 🤎🤎🤎🤎🤎
+                                </p>
+                                <p className="pt-6 text-sm">Size</p>
                                 <div className="text-sm text-primary pt-3 flex space-x-3">
                                     <button className="border border-primary rounded-full py-1 px-4 w-max">
                                         Size S
@@ -75,7 +83,7 @@ export default function Detail() {
                                 </div>
                                 <p className="pt-4 text-sm">Filling</p>
                                 <div className="text-sm text-primary pt-3 flex space-x-3">
-                                    <button className="bg-dark-bg rounded-lg text-left py-3 px-2.5 w-[136px] h-[103px]">
+                                    <button className="bg-light rounded-lg text-left py-3 px-2.5 w-[136px] h-[103px]">
                                         Butter
                                         <img
                                             className="h-[60px] w-full object-cover pt-1"
@@ -83,7 +91,7 @@ export default function Detail() {
                                             alt="creme"
                                         />
                                     </button>
-                                    <button className="bg-dark-bg rounded-lg text-left py-3 px-2.5 w-[136px]">
+                                    <button className="bg-light rounded-lg text-left py-3 px-2.5 w-[136px]">
                                         Chocolate
                                         <img
                                             className="h-[60px] w-full object-cover pt-1"
@@ -91,7 +99,7 @@ export default function Detail() {
                                             alt="creme"
                                         />
                                     </button>
-                                    <button className="bg-dark-bg rounded-lg text-left py-3 px-2.5 w-[136px]">
+                                    <button className="bg-light rounded-lg text-left py-3 px-2.5 w-[136px]">
                                         Crème
                                         <img
                                             className="h-[60px] w-full object-cover pt-1"
@@ -100,15 +108,15 @@ export default function Detail() {
                                         />
                                     </button>
                                 </div>
+                                <div className="flex flex-row pt-6">
+                                    <button className="border border-primary text-primary px-6 py-1.5 rounded-md w-fit">
+                                        Add to cart
+                                    </button>
+                                    <button className="font-medium border border-primary bg-primary px-8 py-1.5 ml-[0.85rem] rounded-md w-fit">
+                                        Buy now
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex flex-row justify-end pt-9">
-                            <button className="border border-primary text-primary px-6 py-1.5 ml-6 rounded-md w-fit">
-                                Add to cart
-                            </button>
-                            <button className="font-medium border border-primary bg-primary px-8 py-1.5 ml-6 rounded-md w-fit">
-                                Buy now
-                            </button>
                         </div>
                     </div>
                 </div>
