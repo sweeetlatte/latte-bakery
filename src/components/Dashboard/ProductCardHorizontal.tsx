@@ -1,11 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import cake from "../../assets/images/blog/blog-2.png";
 import cartIcon from "../../assets/icons/cart.svg";
 
 export default function ProductCardHorizontal() {
     return (
-        <div className="bg-dark-bg py-4 px-4 rounded-lg flex space-x-4">
+        <Link
+            to="/dashboard/detail"
+            className="bg-dark-bg py-4 px-4 rounded-lg flex space-x-4"
+        >
             <img
                 className="h-[100px] w-[100px] object-cover"
                 src={cake}
@@ -21,6 +25,6 @@ export default function ProductCardHorizontal() {
                     Add
                 </button>
             </div>
-        </div>
+        </Link>
     );
 }

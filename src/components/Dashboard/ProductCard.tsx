@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import cake from "../../assets/images/products/cake-1.png";
 import cartIcon from "../../assets/icons/cart.svg";
@@ -9,7 +10,10 @@ interface Props {
 
 export default function ProductCard({ openModalAddProduct }: Props) {
     return (
-        <div className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm">
+        <Link
+            to="/dashboard/detail"
+            className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm"
+        >
             <img className="h-[117px] object-cover" src={cake} alt="cake" />
             <div className="pt-4">60.000 VND</div>
             <div className="flex justify-between items-center pt-2">
@@ -22,6 +26,6 @@ export default function ProductCard({ openModalAddProduct }: Props) {
                     Add
                 </button>
             </div>
-        </div>
+        </Link>
     );
 }
