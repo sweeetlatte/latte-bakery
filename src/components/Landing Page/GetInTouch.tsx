@@ -9,7 +9,7 @@ import youtube from "../../assets/icons/Youtube.svg";
 
 export default function GetInTouch() {
     return (
-        <div className="pt-60">
+        <div className="pt-60 pb-24">
             <div className="absolute left-36">
                 <img src={getintouch1} alt="get in touch 1" />
             </div>
@@ -66,9 +66,6 @@ export default function GetInTouch() {
                         ></iframe>
                     </div>
                 </div>
-            </div>
-            <div className="absolute right-20  pb-[100px]">
-                <img src={getintouch2} alt="get in touch 2" />
             </div>
         </div>
     );
