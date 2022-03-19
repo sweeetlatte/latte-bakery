@@ -127,3 +127,7 @@
 .__filling {
     @apply hover:border-primary border border-light rounded-lg text-left py-3 px-2.5 w-[136px];
 }
+
+.__yellow-outline-option {
+    @apply border border-primary rounded-full;
+}
