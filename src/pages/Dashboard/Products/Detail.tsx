@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./products.css";
 
 import Icons from "../../../components/Icons";
+import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
 
 import ava from "../../../assets/images/blog/detail/detail-1.png";
 import creme from "../../../assets/images/creme.png";
@@ -134,9 +135,7 @@ export default function Detail() {
                         </p>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
-                        <div className="text-xl font-medium pb-3">
-                            Reviews
-                        </div>
+                        <div className="text-xl font-medium pb-3">Reviews</div>
                         <p>
                             Fruit desserts covered with baked meringue were
                             found beginning in the 18th century in France.
@@ -146,7 +145,13 @@ export default function Detail() {
                         </p>
                     </div>
                 </div>
-                <div className="basis-3/12">abc</div>
+                <div className="basis-3/12">
+                    <div className="text-lg pb-6">You may like</div>
+                    <div className="flex flex-col space-y-4">
+                        <ProductCardHorizontal />
+                        <ProductCardHorizontal />
+                    </div>
+                </div>
             </div>
         </>
     );
