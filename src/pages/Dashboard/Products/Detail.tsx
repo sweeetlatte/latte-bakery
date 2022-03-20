@@ -172,7 +172,7 @@ export default function Detail() {
                             <Review />
                             <Review />
                         </div>
-                        <div>
+                        <div className="w-full flex justify-center pt-6">
                             <Pagination />
                         </div>
                     </div>
