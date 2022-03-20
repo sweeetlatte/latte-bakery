@@ -64,6 +64,12 @@ export default function Cart() {
                     <ProductInCart />
                     <ProductInCart rounded="rounded-b-lg" />
                 </div>
+                <div className="flex flex-row justify-end items-center pt-9">
+                    <div className="text-lg">Total: 0 VND</div>
+                    <button className="border border-primary bg-primary px-8 py-1.5 ml-9 rounded-md w-fit">
+                        Check out
+                    </button>
+                </div>
             </div>
         </>
     );
