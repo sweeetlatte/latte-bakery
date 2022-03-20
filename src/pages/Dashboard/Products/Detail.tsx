@@ -23,7 +23,7 @@ export default function Detail() {
             >
                 <div className="basis-9/12">
                     <div className="text-2xl font-semibold pb-1">Dashboard</div>
-                    <div className="text-sm">Tuesday, 2 Nov 2021</div>
+                    <div className="text-sm">Tuesday, 27 Jun 2022</div>
                 </div>
                 <div className="flex items-center basis-3/12">
                     <div className="border border-primary rounded py-1 pl-3.5 pr-1.5 mr-8 flex items-center space-x-1">

@@ -11,9 +11,9 @@ export default function Sidebar() {
                     BAKERY
                 </Link>
                 <div className="bg-light ml-3.5 mt-[84px] mb-[84px] w-[92px] h-[80px] flex pl-3 items-center rounded-l-lg relative sidebar-tab">
-                    <div className="bg-primary w-[56px] h-[56px] flex items-center justify-center rounded-lg shadow-2xl shadow-yellowRgba">
+                    <Link to="/dashboard" className="bg-primary w-[56px] h-[56px] flex items-center justify-center rounded-lg shadow-2xl shadow-yellowRgba">
                         <div className="sidebar-active sidebar-icon-home icon bg-white"></div>
-                    </div>
+                    </Link>
                 </div>
                 <div className="mb-[84px] sidebar-icon sidebar-icon-cart icon"></div>
                 <div className="mb-[84px] sidebar-icon sidebar-icon-setting icon"></div>

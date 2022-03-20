@@ -10,8 +10,8 @@ import BlogPage from "./pages/BlogPage";
 import BlogDetail from "./pages/BlogDetail";
 
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Products from "./pages/Dashboard/Products/Products";
 import Detail from "./pages/Dashboard/Products/Detail";
+import Cart from "./pages/Dashboard/Cart/Cart";
 
 // config tailwindcss
 import "./main.css";
@@ -27,6 +27,7 @@ function App() {
                 <Route path="/blog/detail" element={<BlogDetail />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/dashboard/detail" element={<Detail />} />
+                <Route path="/dashboard/cart" element={<Detail />} />
             </Routes>
         </BrowserRouter>
     );
