@@ -6,7 +6,7 @@ import "./products.css";
 import Icons from "../../../components/Icons";
 import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
 import Review from "../../../components/Dashboard/Review";
-import Pagination from "../../../components/Dashboard/Pagination";
+import Pagination from "../../../components/Dashboard/Pagination/Pagination";
 
 import ava from "../../../assets/images/blog/detail/detail-1.png";
 import creme from "../../../assets/images/creme.png";
@@ -166,7 +166,7 @@ export default function Detail() {
                                 </button>
                             </div>
                         </div>
-                        <div className="py-9 flex flex-col space-y-4">
+                        <div className="py-9 flex flex-col space-y-5">
                             <Review />
                             <Review />
                             <Review />
