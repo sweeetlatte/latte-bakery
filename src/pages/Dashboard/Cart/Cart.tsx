@@ -1,6 +1,7 @@
 import React from "react";
 
 import Icons from "../../../components/Icons";
+import ProductInCart from "../../../components/Dashboard/ProductInCart";
 
 import "./cart.css";
 
@@ -47,16 +48,21 @@ export default function Cart() {
                     </label>
                     <div className="text-lg py-5 pl-20 flex justify-between pr-5 items-center">
                         <div className="basis-4/12">Products (3 items)</div>
-                        <div className="flex justify-between basis-5/12">
-                            <div>Size</div>
-                            <div>Quantity</div>
-                            <div>Price</div>
-                            <div>Subtotal</div>
+                        <div className="flex justify-between basis-6/12 text-center">
+                            <div className="basis-3/12">Size</div>
+                            <div className="basis-3/12">Quantity</div>
+                            <div className="basis-3/12">Price</div>
+                            <div className="basis-3/12">Subtotal</div>
                         </div>
                         <div className="basis-1/12 justify-end flex">
                             <img src={trash} alt="trash" />
                         </div>
                     </div>
+                </div>
+                <div className="flex flex-col space-y-1 pt-5">
+                    <ProductInCart rounded="rounded-t-lg" />
+                    <ProductInCart />
+                    <ProductInCart rounded="rounded-b-lg" />
                 </div>
             </div>
         </>

@@ -2,8 +2,6 @@
 .cart-custom-checkbox {
     display: block;
     position: relative;
-    padding-left: 23px;
-    margin-bottom: 12px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
