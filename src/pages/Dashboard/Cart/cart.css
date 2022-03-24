@@ -19,7 +19,7 @@
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.cart-custom-checkbox .checkmark {
     position: absolute;
     top: 23px;
     left: 21px;
