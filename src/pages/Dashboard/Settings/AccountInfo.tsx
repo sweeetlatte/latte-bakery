@@ -77,10 +77,10 @@ export default function AccountInfo() {
                         </label>
                     </div>
                 </label>
-                <button className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md">
-                    Edit account information
-                </button>
             </form>
+            <button className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md">
+                Edit account information
+            </button>
         </>
     );
 }

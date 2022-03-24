@@ -8,6 +8,7 @@ import Icons from "../../../components/Icons";
 import camera from "../../../assets/icons/camera.svg";
 
 import ava from "../../../assets/images/blog/detail/detail-1.png";
+import AddressCard from "../../../components/Dashboard/AddressCard";
 
 export default function Settings() {
     return (
@@ -57,12 +58,20 @@ export default function Settings() {
                         >
                             Account information
                         </div>
-                        <div className="pl-11">Address</div>
+                        <div className="pl-11">Address book</div>
                         <div className="pl-11">Change password</div>
                     </div>
                 </div>
                 <div className="basis-9/12 bg-dark-bg rounded-lg px-11 py-7">
-                    <AccountInfo />
+                    {/* <AccountInfo /> */}
+                    <div className="flex justify-between items-center">
+                        <div className="font-bold text-lg">Address book</div>
+                        <div className="text-primary">+ Add new address</div>
+                    </div>
+                    <div className="pt-6 space-y-5">
+                        <AddressCard />
+                        <AddressCard />
+                    </div>
                 </div>
             </div>
         </>
