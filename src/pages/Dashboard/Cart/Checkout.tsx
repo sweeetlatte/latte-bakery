@@ -125,7 +125,7 @@ export default function Checkout() {
                         </div>
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
                             <div className="text-primary pb-4">Payment</div>
-                            <div className="flex space-x-10">
+                            <div className="flex space-x-5">
                                 <button className="w-[100px] h-[64px] bg-primary rounded-lg text-black font-medium flex flex-col justify-center items-center space-y-1">
                                     <Icons.Cash stroke="black" />
                                     <div>Cash</div>
