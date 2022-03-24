@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Icons from "../../../components/Icons";
 import ProductInCart from "../../../components/Dashboard/ProductInCart";
@@ -66,9 +67,12 @@ export default function Cart() {
                 </div>
                 <div className="flex flex-row justify-end items-center pt-9">
                     <div className="text-lg">Total: 0 VND</div>
-                    <button className="border border-primary bg-primary px-8 py-1.5 ml-9 rounded-md w-fit">
+                    <Link
+                        to="/dashboard/cart/checkout"
+                        className="border border-primary bg-primary px-8 py-1.5 ml-9 rounded-md w-fit"
+                    >
                         Check out
-                    </button>
+                    </Link>
                 </div>
             </div>
         </>

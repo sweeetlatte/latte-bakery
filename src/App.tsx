@@ -12,6 +12,7 @@ import BlogDetail from "./pages/BlogDetail";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Detail from "./pages/Dashboard/Products/Detail";
 import Cart from "./pages/Dashboard/Cart/Cart";
+import Checkout from "./pages/Dashboard/Cart/Checkout";
 
 // config tailwindcss
 import "./main.css";
@@ -27,7 +28,8 @@ function App() {
                 <Route path="/blog/detail" element={<BlogDetail />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/dashboard/detail" element={<Detail />} />
-                <Route path="/dashboard/cart" element={<Detail />} />
+                <Route path="/dashboard/cart" element={<Cart />} />
+                <Route path="/dashboard/cart/checkout" element={<Checkout />} />
             </Routes>
         </BrowserRouter>
     );

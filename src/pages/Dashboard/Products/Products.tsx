@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import "./products.css";
 
 import SearchBar from "../../../components/SearchBar";
 import ProductCard from "../../../components/Dashboard/ProductCard";
@@ -8,13 +10,49 @@ import Icons from "../../../components/Icons";
 
 import ava from "../../../assets/images/blog/detail/detail-1.png";
 import slider1 from "../../../assets/images/dashboard/slider-1.png";
+import slider2 from "../../../assets/images/dashboard/slider-2.png";
+import slider3 from "../../../assets/images/dashboard/slider-3.png";
 
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
+    const [slider, setSlider] = useState<string>("hidden");
 
     const openModalAddProduct = () => {
         setOpenModal(true);
     };
+
+    // var slideIndex = 1;
+    // showDivs(slideIndex);
+
+    // function currentDiv(n: number) {
+    //     showDivs((slideIndex = n));
+    // }
+
+    function showDivs() {
+        var i: number;
+        var sliders = document.getElementsByClassName("slider");
+        var dots = document.getElementsByClassName("demo");
+
+        for (i = 0; i < sliders.length; i++) {
+            setTimeout(() => {
+                // sliders[i].classList += " block";
+            }, 3000);
+        }
+        console.log(sliders[0]);
+        //
+        //     for (i = 0; i < sliders.length; i++) {
+        //         sliders[i].style.display = "none";
+        //     }
+        //     for (i = 0; i < dots.length; i++) {
+        //         dots[i].className = dots[i].className.replace(" w3-white", "");
+        //     }
+        //     sliders[slideIndex - 1].style.display = "block";
+        //     dots[slideIndex - 1].className += " w3-white";
+    }
+
+    useEffect(() => showDivs(), []);
+    // get element ra
+    // setSlider("block") cho id nào được click
 
     return (
         <>
@@ -24,7 +62,7 @@ export default function Products() {
             >
                 <div className="basis-9/12">
                     <div className="text-2xl font-semibold pb-1">Dashboard</div>
-                    <div className="text-sm">Tuesday, 2 Nov 2021</div>
+                    <div className="text-sm">Tuesday, 27 Jun 2022</div>
                 </div>
                 <div className="flex items-center basis-3/12">
                     <div className="border border-primary rounded py-1 pl-3.5 pr-1.5 mr-8 flex items-center space-x-1">
@@ -49,13 +87,36 @@ export default function Products() {
                             Search
                         </button>
                     </div>
-                    <div className="relative pb-16">
-                        <img
-                            className="w-full object-cover"
+                    <div className="relative pb-9 w-full">
+                        {/* <img
+                            className={`${slider} slider w-full object-cover`}
                             src={slider1}
                             alt="slider 1"
+                        /> */}
+                        <img
+                            className={` slider w-full object-cover`}
+                            src={slider2}
+                            alt="slider 2"
                         />
-                        <div className="absolute"></div>
+                        {/* <img
+                            className={`${slider} slider w-full object-cover`}
+                            src={slider3}
+                            alt="slider 3"
+                        /> */}
+                        <div className="flex space-x-3 w-full justify-center pt-4">
+                            <div
+                                className="dot"
+                                onClick={() => {
+                                    // setSlider("block");
+                                }}
+                            ></div>
+                            <div
+                                className="dot"
+                            ></div>
+                            <div
+                                className="dot"
+                            ></div>
+                        </div>
                     </div>
                     <div className="flex items-center w-full justify-between">
                         <div className="flex space-x-12 relative text-base">
