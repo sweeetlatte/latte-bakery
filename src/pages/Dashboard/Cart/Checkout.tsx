@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import Icons from "../../../components/Icons";
 import arrowLeft from "../../../assets/icons/arrow-left.svg";
+import location from "../../../assets/icons/location.svg";
+import voucher from "../../../assets/icons/voucher.svg";
 
 import ava from "../../../assets/images/blog/detail/detail-1.png";
 import ProductInCheckout from "../../../components/Dashboard/ProductInCheckout";
@@ -57,9 +59,7 @@ export default function Checkout() {
                     <div className="basis-7/12 space-y-5">
                         <div className="bg-dark-bg rounded-lg px-12 py-6 max-h-80 overflow-y-scroll">
                             <div className="flex justify-between items-center pb-2">
-                                <div className="text-sm">
-                                    240.000 VND (5 products)
-                                </div>
+                                <div>240.000 VND (5 products)</div>
                                 <div className="bg-primary w-[32px] h-[32px] flex justify-center items-center">
                                     -
                                 </div>
@@ -73,7 +73,9 @@ export default function Checkout() {
                             </div>
                         </div>
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
-                            <div className="text-primary">Order summary</div>
+                            <div className="text-primary font-medium">
+                                Order summary
+                            </div>
                             <div
                                 className="text-sm py-4 mb-4 space-y-2"
                                 style={{ borderBottom: "1px solid #656870" }}
@@ -92,43 +94,60 @@ export default function Checkout() {
                                 </div>
                             </div>
                             <div className="flex justify-between">
-                                <div className="text-primary">item</div>
+                                <div className="text-primary">Total</div>
                                 <div>210.000 VND</div>
                             </div>
                         </div>
                     </div>
                     <div className="basis-5/12 space-y-5">
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
-                            <div className="flex justify-between">
-                                <div>item</div>
-                                <div>+-</div>
+                            <div className="flex justify-between text-primary pb-4">
+                                <div>Shipping address</div>
+                                <div>Change</div>
                             </div>
                             <div className="flex justify-between">
-                                <div className="flex">
-                                    <div>icon</div>
-                                    <div>text</div>
+                                <div className="flex space-x-3.5 items-start">
+                                    <img src={location} alt="location" />
+                                    <div>
+                                        <div>
+                                            271 Dakao Street, Espresso, Robusta
+                                            City
+                                        </div>
+                                        <div className="text-caption text-xs pt-1.5">
+                                            SWEET LATTE - 0365214789
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>+-</div>
+                                <div className="basis-3/12 text-right text-caption">
+                                    Default
+                                </div>
                             </div>
                         </div>
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
-                            <div>title</div>
-                            <div className="flex">
-                                <div>title</div>
-                                <div>title</div>
-                                <div>title</div>
+                            <div className="text-primary pb-4">Payment</div>
+                            <div className="flex space-x-10">
+                                <button className="w-[100px] h-[64px] bg-primary rounded-lg text-black font-medium flex flex-col justify-center items-center space-y-1">
+                                    <Icons.Cash stroke="black" />
+                                    <div>Cash</div>
+                                </button>
+                                <button className="w-[100px] h-[64px] bg-light rounded-lg flex flex-col justify-center items-center space-y-2">
+                                    <Icons.Card stroke="white" />
+                                    <div>Card</div>
+                                </button>
                             </div>
                         </div>
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
-                            <div>title</div>
-                            <div className="flex">
-                                <div>title</div>
-                                <div>title</div>
+                            <div className="text-primary pb-4">Giftcard</div>
+                            <div className="flex space-x-3">
+                                <img src={voucher} alt="voucher" />
+                                <div className="underline underline-offset-[3px] decoration-[0.5px] decoration-[#CBCBCB] text-[#CBCBCB]">
+                                    Choose or add a voucher
+                                </div>
                             </div>
                         </div>
-                        <div className="bg-dark-bg rounded-lg px-12 py-6">
-                            button
-                        </div>
+                        <button className="bg-primary font-bold rounded-lg px-12 py-6 w-full">
+                            ORDER
+                        </button>
                     </div>
                 </div>
             </div>
