@@ -5,6 +5,7 @@ import Products from "./Products/Products";
 import DetailProduct from "./Products/Detail";
 import Cart from "./Cart/Cart";
 import Checkout from "./Cart/Checkout";
+import Profile from "./Settings/Settings";
 
 export default function Dashboard() {
     return (
@@ -13,7 +14,8 @@ export default function Dashboard() {
             {/* <Products /> */}
             {/* <DetailProduct /> */}
             {/* <Cart /> */}
-            <Checkout />
+            {/* <Checkout /> */}
+            <Profile />
         </>
     );
 }
