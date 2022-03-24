@@ -13,6 +13,8 @@ module.exports = {
                 "border": "#393C49",
                 "lightText": "#BEBEBE",
                 "header": "#272727",
+                "caption": "#ABBBC2",
+                "underline": "#656870"
             },
         },
         fontFamily: {
