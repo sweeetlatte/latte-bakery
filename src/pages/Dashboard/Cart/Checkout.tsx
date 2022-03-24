@@ -134,6 +134,10 @@ export default function Checkout() {
                                     <Icons.Card stroke="white" />
                                     <div>Card</div>
                                 </button>
+                                <button className="w-[100px] h-[64px] bg-light rounded-lg flex flex-col justify-center items-center space-y-2">
+                                    <Icons.Card stroke="white" />
+                                    <div>Momo</div>
+                                </button>
                             </div>
                         </div>
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
