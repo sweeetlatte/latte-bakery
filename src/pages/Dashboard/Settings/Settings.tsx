@@ -1,5 +1,9 @@
 import React from "react";
 
+import "./settings.css";
+
+import AccountInfo from "../Settings/AccountInfo";
+
 import Icons from "../../../components/Icons";
 import camera from "../../../assets/icons/camera.svg";
 
@@ -58,22 +62,7 @@ export default function Settings() {
                     </div>
                 </div>
                 <div className="basis-9/12 bg-dark-bg rounded-lg px-11 py-7">
-                    <div className="font-bold text-lg">Account information</div>
-                    <form>
-                        <label className="flex" htmlFor="uname">
-                            <span className="block">Username</span>
-                            <input
-                                className="w-full bg-light py-3.5 px-3 mb-14 focus:border-primary focus:outline-none"
-                                style={{ borderBottom: "1px solid white" }}
-                                type="text"
-                                id="uname"
-                                name="uname"
-                            />
-                        </label>
-                        <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
-                            Edit account information
-                        </button>
-                    </form>
+                    <AccountInfo />
                 </div>
             </div>
         </>
