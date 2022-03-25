@@ -10,6 +10,7 @@ import camera from "../../../assets/icons/camera.svg";
 import ava from "../../../assets/images/blog/detail/detail-1.png";
 import AddressCard from "../../../components/Dashboard/AddressCard";
 import AddressBook from "./AddressBook";
+import ChangePassword from "./ChangePassword";
 
 export default function Settings() {
     return (
@@ -66,6 +67,7 @@ export default function Settings() {
                 <div className="basis-9/12 bg-dark-bg rounded-lg px-11 py-7">
                     {/* <AccountInfo /> */}
                     {/* <AddressBook /> */}
+                    <ChangePassword />
                 </div>
             </div>
         </>
