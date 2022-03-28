@@ -7,7 +7,7 @@ import roller from "../../assets/images/roller.png";
 export default function HeroSection() {
     return (
         <div className="h-screen navbar">
-            <div className="fixed w-full top-0">
+            <div className="fixed w-full top-0 z-50">
                 <Navbar />
             </div>
             {/* <Carousel /> */}
