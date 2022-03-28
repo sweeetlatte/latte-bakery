@@ -68,7 +68,7 @@ export default function Cart() {
                 <div className="flex flex-row justify-end items-center pt-9">
                     <div className="text-lg">Total: 0 VND</div>
                     <Link
-                        to="/dashboard/cart/checkout"
+                        to="checkout"
                         className="border border-primary bg-primary px-8 py-1.5 ml-9 rounded-md w-fit"
                     >
                         Check out
