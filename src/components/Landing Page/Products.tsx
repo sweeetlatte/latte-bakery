@@ -15,7 +15,7 @@ export default function Products() {
             </div>
             <div className="flex pl-36 pt-28 justify-between items-center">
                 <div className="font-title text-7xl text-left">Products</div>
-                <Link to="/dashboard">
+                <Link to="dashboard/product">
                     <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
                         View all
                     </button>

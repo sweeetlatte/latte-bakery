@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../Navbar";
 
 import roller from "../../assets/images/roller.png";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
     return (
@@ -19,9 +20,12 @@ export default function HeroSection() {
                     We're bringing you fresh ingredients everyday in ways you
                     can't resist
                 </div>
-                <button className="border border-primary bg-primary px-5 py-2.5 rounded-md w-fit">
+                <Link
+                    to="dashboard/product"
+                    className="border border-primary bg-primary px-5 py-2.5 rounded-md w-fit"
+                >
                     Shop now
-                </button>
+                </Link>
             </div>
             <div className="pt-[5.6rem]">
                 <img className="mx-auto" src={roller} alt="dough roller" />
