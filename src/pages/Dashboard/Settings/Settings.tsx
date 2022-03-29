@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import "./settings.css";
 
-import AccountInfo from "../Settings/AccountInfo";
-
 import Icons from "../../../components/Icons";
 import camera from "../../../assets/icons/camera.svg";
-
 import ava from "../../../assets/images/blog/detail/detail-1.png";
-import AddressCard from "../../../components/Dashboard/AddressCard";
-import AddressBook from "./AddressBook";
-import ChangePassword from "./ChangePassword";
 
 export default function Settings() {
+    const [index, setIndex] = useState<number>(0);
+    let location = useLocation();
+
+    useEffect(
+        function () {
+            console.log(location.pathname);
+            if (location.pathname === "/dashboard/setting/accountinfo")
+                setIndex(0);
+            else if (location.pathname === "/dashboard/setting/addressbook")
+                setIndex(1);
+            else if (location.pathname === "/dashboard/setting/changepassword")
+                setIndex(2);
+            console.log(index);
+        },
+        [location]
+    );
+
     return (
         <>
             <div
@@ -53,21 +65,41 @@ export default function Settings() {
                     <div className="pt-4 text-center font-bold text-lg pb-8">
                         Sweet Latte
                     </div>
-                    <div className="space-y-7">
-                        <div
-                            className="pl-11 text-primary font-medium"
-                            style={{ borderLeft: "3px solid #F3A446" }}
+                    <div className="space-y-7 flex flex-col">
+                        <Link
+                            to="accountinfo"
+                            className={
+                                index === 0
+                                    ? "pl-11 settings-active-tab"
+                                    : "pl-11"
+                            }
                         >
                             Account information
-                        </div>
-                        <div className="pl-11">Address book</div>
-                        <div className="pl-11">Change password</div>
+                        </Link>
+                        <Link
+                            to="addressbook"
+                            className={
+                                index === 1
+                                    ? "pl-11 settings-active-tab"
+                                    : "pl-11"
+                            }
+                        >
+                            Address book
+                        </Link>
+                        <Link
+                            to="changepassword"
+                            className={
+                                index === 2
+                                    ? "settings-active-tab pl-11"
+                                    : "pl-11"
+                            }
+                        >
+                            Change password
+                        </Link>
                     </div>
                 </div>
-                <div className="basis-9/12 bg-dark-bg rounded-lg px-11 py-7">
-                    {/* <AccountInfo /> */}
-                    {/* <AddressBook /> */}
-                    <ChangePassword />
+                <div className="basis-9/12 w-52 bg-dark-bg rounded-lg px-11 py-7">
+                    <Outlet />
                 </div>
             </div>
         </>
