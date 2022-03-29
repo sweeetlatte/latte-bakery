@@ -15,7 +15,7 @@ export default function BlogPage() {
                 <div className="text-lg flex">
                     <Link to="/">Home</Link>
                     &nbsp;/&nbsp;
-                    <Link to="/blog">Blog</Link>
+                    <Link to="/blog" className="text-primary">Blog</Link>
                 </div>
                 <div className="pt-11 text-5xl">Blog</div>
                 <div className="flex pt-14 pb-12">

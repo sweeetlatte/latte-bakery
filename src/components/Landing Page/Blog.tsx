@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import blog1 from "../../assets/images/blog-1.png";
 import blog2 from "../../assets/images/blog-2.png";
@@ -12,9 +13,11 @@ export default function Blog() {
                 </div>
                 <div className="flex pl-36 pt-28 justify-between items-center">
                     <div className="font-title text-7xl text-left">Blog</div>
-                    <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
-                        View all
-                    </button>
+                    <Link to="/blog">
+                        <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px]">
+                            View all
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className="w-[66.25rem] mx-auto pt-28">

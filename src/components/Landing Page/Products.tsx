@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import ProductCard from "../Dashboard/ProductCard";
 import ProductCardRgba from "../Landing Page/ProductCardRgba";
-
-import cake from "../../assets/images/products/cake-1.png";
-import cartIcon from "../../assets/icons/cart.svg";
 
 export default function Products() {
     return (
