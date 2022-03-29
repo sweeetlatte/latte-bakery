@@ -2,7 +2,7 @@ import React from "react";
 
 import Icons from "../../../components/Icons";
 
-export default function AccountInfo() {
+export default function     AccountInfo() {
     return (
         <>
             <div className="font-bold text-lg">Account information</div>

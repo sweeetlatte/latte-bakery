@@ -21,7 +21,7 @@ export default function Sidebar() {
                 <Link to="cart">
                     <div className="mb-[84px] sidebar-icon sidebar-icon-cart icon"></div>
                 </Link>
-                <Link to="setting">
+                <Link to="setting/accountinfo">
                     <div className="mb-[84px] sidebar-icon sidebar-icon-setting icon"></div>
                 </Link>
                 <div className="mb-[84px] sidebar-icon sidebar-icon-logout icon"></div>

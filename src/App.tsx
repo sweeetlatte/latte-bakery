@@ -36,10 +36,14 @@ function App() {
                     <Route path="detail" element={<Detail />} />
                     <Route path="cart" element={<Cart />} />
                     <Route path="cart/checkout" element={<Checkout />} />
-                    <Route path="setting" element={<Settings />} />
-                    <Route path="setting/accountinfo" element={<AccountInfo />} />
-                    <Route path="setting/addressbook" element={<AddressBook />} />
-                    <Route path="setting/changepassword" element={<ChangePassword />} />
+                    <Route path="setting" element={<Settings />}>
+                        <Route path="accountinfo" element={<AccountInfo />} />
+                        <Route path="addressbook" element={<AddressBook />} />
+                        <Route
+                            path="changepassword"
+                            element={<ChangePassword />}
+                        />
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
