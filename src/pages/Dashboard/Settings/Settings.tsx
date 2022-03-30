@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 import "./settings.css";
 
@@ -41,12 +41,16 @@ export default function Settings() {
                         <Icons.ChevronDown stroke="white" />
                     </div>
                     <div className="flex items-center space-x-4">
-                        <img
-                            className="w-14 h-14 object-cover rounded-full"
-                            src={ava}
-                            alt="ava"
-                        />
-                        <p>Latte</p>
+                        <Link to="accountinfo">
+                            <img
+                                className="w-14 h-14 object-cover rounded-full"
+                                src={ava}
+                                alt="ava"
+                            />
+                        </Link>
+                        <Link to="accountinfo">
+                            <p>Latte</p>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -26,12 +26,16 @@ export default function Cart() {
                         <Icons.ChevronDown stroke="white" />
                     </div>
                     <div className="flex items-center space-x-4">
-                        <img
-                            className="w-14 h-14 object-cover rounded-full"
-                            src={ava}
-                            alt="ava"
-                        />
-                        <p>Latte</p>
+                        <Link to="/dashboard/setting/accountinfo">
+                            <img
+                                className="w-14 h-14 object-cover rounded-full"
+                                src={ava}
+                                alt="ava"
+                            />
+                        </Link>
+                        <Link to="/dashboard/setting/accountinfo">
+                            <p>Latte</p>
+                        </Link>
                     </div>
                 </div>
             </div>

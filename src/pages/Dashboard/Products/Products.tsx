@@ -12,6 +12,7 @@ import ava from "../../../assets/images/blog/detail/detail-1.png";
 import slider1 from "../../../assets/images/dashboard/slider-1.png";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
 import slider3 from "../../../assets/images/dashboard/slider-3.png";
+import { Link } from "react-router-dom";
 
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -70,12 +71,16 @@ export default function Products() {
                         <Icons.ChevronDown stroke="white" />
                     </div>
                     <div className="flex items-center space-x-4">
-                        <img
-                            className="w-14 h-14 object-cover rounded-full"
-                            src={ava}
-                            alt="ava"
-                        />
-                        <p>Latte</p>
+                        <Link to="/dashboard/setting/accountinfo">
+                            <img
+                                className="w-14 h-14 object-cover rounded-full"
+                                src={ava}
+                                alt="ava"
+                            />
+                        </Link>
+                        <Link to="/dashboard/setting/accountinfo">
+                            <p>Latte</p>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -110,12 +115,8 @@ export default function Products() {
                                     // setSlider("block");
                                 }}
                             ></div>
-                            <div
-                                className="dot"
-                            ></div>
-                            <div
-                                className="dot"
-                            ></div>
+                            <div className="dot"></div>
+                            <div className="dot"></div>
                         </div>
                     </div>
                     <div className="flex items-center w-full justify-between">
