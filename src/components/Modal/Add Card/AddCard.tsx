@@ -8,12 +8,16 @@ import x from "../../../assets/icons/x.svg";
 
 interface Props {
     open: boolean;
+    closeModalAddProduct: () => void;
 }
 
-export default function AddCard({ open }: Props) {
+export default function AddCard({ open, closeModalAddProduct }: Props) {
     return (
         <>
-            <div className={open ? "__mask-modal" : "hidden"} />
+            <div
+                className={open ? "__mask-modal" : "hidden"}
+                onClick={closeModalAddProduct}
+            />
             <div
                 className={
                     open ? "flex flex-col __bg-add-product-modal" : "hidden"
@@ -33,6 +37,7 @@ export default function AddCard({ open }: Props) {
                                 Meringue Tart
                             </div>
                             <img
+                                onClick={closeModalAddProduct}
                                 className="absolute right-[-14px] top-[-14px]"
                                 src={x}
                                 alt="x"
@@ -81,7 +86,10 @@ export default function AddCard({ open }: Props) {
                     </div>
                 </div>
                 <div className="flex flex-row justify-end pt-9">
-                    <button className="border border-primary text-primary px-6 py-1.5 ml-6 rounded-md w-fit">
+                    <button
+                        onClick={closeModalAddProduct}
+                        className="border border-primary text-primary px-6 py-1.5 ml-6 rounded-md w-fit"
+                    >
                         Cancel
                     </button>
                     <button className="border border-primary bg-primary px-8 py-1.5 ml-6 rounded-md w-fit">

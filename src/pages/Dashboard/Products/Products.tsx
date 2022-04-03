@@ -22,6 +22,10 @@ export default function Products() {
         setOpenModal(true);
     };
 
+    const closeModalAddProduct = () => {
+        setOpenModal(false);
+    };
+
     // var slideIndex = 1;
     // showDivs(slideIndex);
 
@@ -164,7 +168,10 @@ export default function Products() {
                         />
                     </div>
                 </div>
-                <AddCard open={open} />
+                <AddCard
+                    open={open}
+                    closeModalAddProduct={() => closeModalAddProduct()}
+                />
                 <div className="text-white basis-3/12">
                     <div>
                         <div className="text-lg pb-6">New products</div>
