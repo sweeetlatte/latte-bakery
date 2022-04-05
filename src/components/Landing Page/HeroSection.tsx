@@ -19,13 +19,17 @@ export default function HeroSection() {
     }, []);
 
     let alpha = useRef(0);
-    console.log("2", scrolling);
-    useEffect(() => {
-        console.log("1", scrollTop);
+    let oldScroll = useRef(scrollTop);
 
-        var navbar = document.getElementById("navbar");
-        if (alpha.current < 1) alpha.current = alpha.current + 0.01;
+    console.log("2", scrolling);
+
+    useEffect(() => {
+
+
+        var navbar = document.getElementById("navbar");        
         let color = `rgba(29,30,30,${alpha.current})`;
+
+        console.log("oldScroll", oldScroll);
         console.log("alpha", alpha.current);
 
         // "!": non-null assertion operator

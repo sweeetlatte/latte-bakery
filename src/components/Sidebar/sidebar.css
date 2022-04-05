@@ -3,10 +3,6 @@
     height: 30px;
 }
 
-.sidebar-icon {
-    background-color: #f3a446;
-}
-
 .sidebar-icon-home {
     mask: url(../../assets/icons/home.svg) no-repeat center / contain;
     -webkit-mask: url(../../assets/icons/home.svg) no-repeat center / contain;
@@ -28,10 +24,6 @@
     -webkit-mask: url(../../assets/icons/log-out.svg) no-repeat center / contain;
 }
 
-.sidebar-icon:hover {
-    background-color: white;
-}
-
 .sidebar-active {
     background-color: white;
 }
@@ -40,33 +32,27 @@
 .sidebar-tab:after {
     content: "";
     position: absolute;
-
     height: 10px;
     width: 20px;
-
     bottom: 0;
 }
 
 .sidebar-tab:after {
     bottom: -10px;
     right: 0px;
-
     border-top-right-radius: 10px;
     /* -moz-border-radius: 0 0 0 10px;
-  -webkit-border-radius: 0 0 0 10px; */
-
-    /* -webkit-box-shadow: -10px 0 0 0 #fff; */
+    -webkit-border-radius: 0 0 0 10px; */
     box-shadow: 10px 0 0 0 #323232;
+    -webkit-box-shadow: 10px 0 0 0 #323232;
 }
 
 .sidebar-tab:before {
     top: -10px;
     right: 0px;
-
     border-bottom-right-radius: 10px;
     /* -moz-border-radius: 0 0 10px 0;
-  -webkit-border-radius: 0 0 10px 0; */
-
-    -webkit-box-shadow: 10px 0 0 0 #323232;
+    -webkit-border-radius: 0 0 10px 0; */
     box-shadow: 10px 0 0 0 #323232;
+    -webkit-box-shadow: 10px 0 0 0 #323232;
 }
