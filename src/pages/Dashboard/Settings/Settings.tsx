@@ -22,7 +22,7 @@ export default function Settings() {
                 setIndex(2);
             console.log(index);
         },
-        [location]
+        [location, index]
     );
 
     return (
