@@ -36,14 +36,9 @@ export default function ChangePassword() {
                 </form>
                 <p className="pt-3 pl-5 text-primary">Forgot password?</p>
             </div>
-            <div className="flex space-x-7 justify-end">
-                <button className="border w-max border-primary text-primary px-5 py-2.5 mt-14 rounded-md">
-                    Cancel
-                </button>
-                <button className="border w-max border-primary bg-primary px-5 py-2.5 mt-14 rounded-md">
-                    Update
-                </button>
-            </div>
+            <button className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md">
+                Update
+            </button>
         </>
     );
 }
