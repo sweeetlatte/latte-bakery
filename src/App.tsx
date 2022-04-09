@@ -5,6 +5,7 @@ import "./App.css";
 
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
 import LandingPage from "./pages/LandingPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetail from "./pages/BlogDetail";
@@ -28,6 +29,7 @@ function App() {
             <Routes>
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/forgotpassword" element={<ForgotPassword />} />
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/detail" element={<BlogDetail />} />
