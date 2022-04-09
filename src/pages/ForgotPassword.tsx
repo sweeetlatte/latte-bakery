@@ -19,7 +19,7 @@ export default function ForgotPassword() {
                     >
                         Bakery
                     </Link>
-                    <div className="pt-12 pb-14 flex items-baseline">
+                    <div className="py-14 flex items-baseline">
                         <p className="text-2xl font-semibold text-primary">
                             Forgot your password?&nbsp;
                         </p>
