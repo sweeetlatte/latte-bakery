@@ -7,7 +7,7 @@ import google from "../assets/images/Google.png";
 
 export default function Register() {
     return (
-        <div className="text-white">
+        <div className="text-white bg-dark-bg">
             <img className="object-cover absolute" src={login} alt="login" />
             <div className="relative h-max px-48 py-20 rounded-l-3xl bg-light ml-[24.5rem]">
                 <Link

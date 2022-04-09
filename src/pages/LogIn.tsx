@@ -7,7 +7,7 @@ import google from "../assets/images/Google.png";
 
 export default function LogIn() {
     return (
-        <div className="text-white">
+        <div className="text-white bg-dark-bg">
             <img className="object-cover absolute" src={login} alt="login" />
             <div className="relative h-max px-48 py-20 rounded-l-3xl bg-light ml-[24.5rem]">
                 <Link
@@ -64,9 +64,12 @@ export default function LogIn() {
                             Remeber password
                             <span className="checkmark"></span>
                         </label>
-                        <div className="text-primary font-medium">
+                        <Link
+                            to="/forgotpassword"
+                            className="text-primary font-medium"
+                        >
                             Forgot password?
-                        </div>
+                        </Link>
                     </div>
                     <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
                         Log in
