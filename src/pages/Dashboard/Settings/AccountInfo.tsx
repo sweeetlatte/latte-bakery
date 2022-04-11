@@ -15,7 +15,6 @@ export default function AccountInfo() {
             const responseData = await fetchUserData();
 
             if (responseData) {
-                console.log(responseData);
                 setUserData(responseData[0]);
             }
         })();

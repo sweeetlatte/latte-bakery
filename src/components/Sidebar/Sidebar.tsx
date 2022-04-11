@@ -9,7 +9,6 @@ export default function Sidebar() {
 
     useEffect(
         function () {
-            // console.log("location sidebar", locationSidebar.pathname);
             if (locationSidebar.pathname === "/dashboard/product")
                 setIndexSidebar(0);
             else if (locationSidebar.pathname === "/dashboard/cart")
@@ -18,7 +17,6 @@ export default function Sidebar() {
                 locationSidebar.pathname === "/dashboard/setting/accountinfo"
             )
                 setIndexSidebar(2);
-            // console.log("index sidebar", indexSidebar);
         },
         [locationSidebar]
     );

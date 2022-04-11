@@ -13,16 +13,14 @@ export default function Settings() {
 
     useEffect(
         function () {
-            console.log(location.pathname);
             if (location.pathname === "/dashboard/setting/accountinfo")
                 setIndex(0);
             else if (location.pathname === "/dashboard/setting/addressbook")
                 setIndex(1);
             else if (location.pathname === "/dashboard/setting/changepassword")
                 setIndex(2);
-            console.log(index);
         },
-        [location, index]
+        [location]
     );
 
     return (
