@@ -5,8 +5,8 @@ export default function Navbar() {
     return (
         <div className="pl-24 pr-20 flex items-center py-5">
             <div className="flex basis-4/12 justify-between text-sm">
-                <div>Products</div>
                 <div>About us</div>
+                <div>Products</div>
                 <Link to="/blog">Blog</Link>
                 <div>Contact</div>
             </div>

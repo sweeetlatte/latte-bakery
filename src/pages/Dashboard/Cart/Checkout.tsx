@@ -6,8 +6,8 @@ import arrowLeft from "../../../assets/icons/arrow-left.svg";
 import location from "../../../assets/icons/location.svg";
 import voucher from "../../../assets/icons/voucher.svg";
 
-import ava from "../../../assets/images/blog/detail/detail-1.png";
 import ProductInCheckout from "../../../components/Dashboard/ProductInCheckout";
+import Header from "../../../components/Dashboard/Header";
 
 export default function Checkout() {
     return (
@@ -20,23 +20,8 @@ export default function Checkout() {
                     <div className="text-2xl font-semibold pb-1">Checkout</div>
                     <div className="text-sm">Tuesday, 27 Jun 2022</div>
                 </div>
-                <div className="flex items-center basis-3/12">
-                    <div className="border border-primary rounded py-1 pl-3.5 pr-1.5 mr-8 flex items-center space-x-1">
-                        <p>EN</p>
-                        <Icons.ChevronDown stroke="white" />
-                    </div>
-                    <div className="flex items-center space-x-4">
-                    <Link to="/dashboard/setting/accountinfo">
-                            <img
-                                className="w-14 h-14 object-cover rounded-full"
-                                src={ava}
-                                alt="ava"
-                            />
-                        </Link>
-                        <Link to="/dashboard/setting/accountinfo">
-                            <p>Latte</p>
-                        </Link>
-                    </div>
+                <div className="basis-3/12">
+                    <Header />
                 </div>
             </div>
             <div className="ml-40 text-white pr-16 py-6">
