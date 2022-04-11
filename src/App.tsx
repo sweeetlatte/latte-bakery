@@ -22,6 +22,7 @@ import ChangePassword from "./pages/Dashboard/Settings/ChangePassword";
 
 // config tailwindcss
 import "./main.css";
+import NotFound from "./pages/NotFound";
 
 function App() {
     return (
@@ -47,6 +48,7 @@ function App() {
                         />
                     </Route>
                 </Route>
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     );
