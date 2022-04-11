@@ -26,15 +26,15 @@ export default function ForgotPassword() {
                         <p>Don't worry! We got your back!</p>
                     </div>
                 </div>
-                <form className="mb-16 flex flex-col items-center">
-                    <label htmlFor="uname" className="w-full">
+                <form className="mb-40 flex flex-col items-center">
+                    <label htmlFor="email" className="w-full">
                         <span className="block">Email</span>
                         <input
                             className="w-full bg-light py-3.5 px-3 focus:border-primary focus:outline-none"
                             style={{ borderBottom: "1px solid white" }}
                             type="text"
-                            id="uname"
-                            name="uname"
+                            id="email"
+                            name="email"
                         />
                     </label>
                     <div className="space-x-10">
@@ -48,12 +48,6 @@ export default function ForgotPassword() {
                         </button>
                     </div>
                 </form>
-                <div>
-                    Not registered yet?{" "}
-                    <Link to="/register" className="text-primary">
-                        Create an account
-                    </Link>
-                </div>
             </div>
         </div>
     );
