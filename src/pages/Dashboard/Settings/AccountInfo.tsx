@@ -42,7 +42,7 @@ export default function AccountInfo() {
                     <span className="w-[176px]">Phone number</span>
                     <input
                         className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
-                        type="text"
+                        type="number"
                         id="phone"
                         name="phone"
                         disabled={editMode}

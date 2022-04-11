@@ -11,7 +11,6 @@ export default function AddressBook() {
             </div>
             <div className="pt-6 space-y-5">
                 <AddressCard />
-                <AddressCard />
             </div>
         </>
     );

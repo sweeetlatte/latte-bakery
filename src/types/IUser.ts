@@ -7,13 +7,15 @@ export interface IUser {
     dob: string;
     gender: boolean;
     id: number;
-    address: {
-        name: string;
-        phone: string;
-        province: string;
-        district: string;
-        wards: string;
-        street: string;
-        type: string;
-    };
+    address: IAddress[];
+}
+
+export interface IAddress {
+    name: string;
+    phone: string;
+    province: string;
+    district: string;
+    wards: string;
+    street: string;
+    type: string;
 }
