@@ -18,11 +18,13 @@ import Checkout from "./pages/Dashboard/Cart/Checkout";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import AccountInfo from "./pages/Dashboard/Settings/AccountInfo";
 import AddressBook from "./pages/Dashboard/Settings/AddressBook";
+import AddAdress from "./pages/Dashboard/Settings/AddAdress";
 import ChangePassword from "./pages/Dashboard/Settings/ChangePassword";
+
+import NotFound from "./pages/NotFound";
 
 // config tailwindcss
 import "./main.css";
-import NotFound from "./pages/NotFound";
 
 function App() {
     return (
@@ -42,6 +44,10 @@ function App() {
                     <Route path="setting" element={<Settings />}>
                         <Route path="accountinfo" element={<AccountInfo />} />
                         <Route path="addressbook" element={<AddressBook />} />
+                        <Route
+                            path="addressbook/addaddress"
+                            element={<AddAdress />}
+                        />
                         <Route
                             path="changepassword"
                             element={<ChangePassword />}

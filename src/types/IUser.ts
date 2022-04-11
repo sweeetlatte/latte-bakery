@@ -18,4 +18,5 @@ export interface IAddress {
     wards: string;
     street: string;
     type: string;
+    isDefault: boolean;
 }
