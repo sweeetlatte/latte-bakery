@@ -31,8 +31,11 @@ export default function AccountInfo() {
                         type="text"
                         id="uname"
                         name="uname"
-                        value={userData.name}
                         disabled={editMode}
+                        value={userData.name}
+                        onChange={(e) =>
+                            setUserData({ ...userData, name: e.target.value })
+                        }
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="phone">
@@ -42,8 +45,11 @@ export default function AccountInfo() {
                         type="text"
                         id="phone"
                         name="phone"
-                        value={userData.phone}
                         disabled={editMode}
+                        value={userData.phone}
+                        onChange={(e) =>
+                            setUserData({ ...userData, phone: e.target.value })
+                        }
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="email">
@@ -53,8 +59,8 @@ export default function AccountInfo() {
                         type="email"
                         id="email"
                         name="email"
+                        disabled
                         value={userData.email}
-                        disabled={editMode}
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="uname">
@@ -80,49 +86,36 @@ export default function AccountInfo() {
                         </div>
                     </div>
                 </label>
-                <label className="flex items-center mb-4" htmlFor="uname">
-                    <span className="w-[176px]">Gender</span>
-                    <div className="setting-custom-radio flex w-full text-base space-x-9">
-                        <label className="setting-container">
-                            Male
-                            <input
-                                type="radio"
-                                name="radio"
-                                readOnly={editMode}
-                                checked={!userData.gender}
-                            />
-                            <span className="setting-checkmark"></span>
-                        </label>
-                        <label className="setting-container">
-                            Female
-                            <input
-                                type="radio"
-                                name="radio"
-                                checked={userData.gender}
-                                readOnly={editMode}
-                            />
-                            <span className="setting-checkmark"></span>
-                        </label>
-                        <label className="setting-container">
-                            Other
-                            <input
-                                type="radio"
-                                name="radio"
-                                readOnly={editMode}
-                            />
-                            <span className="setting-checkmark"></span>
-                        </label>
-                    </div>
-                </label>
             </form>
-            <button
-                className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md"
-                onClick={() => {
-                    setEditMode(false);
-                }}
-            >
-                Edit account information
-            </button>
+            {editMode ? (
+                <button
+                    className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md"
+                    onClick={() => {
+                        setEditMode(false);
+                    }}
+                >
+                    Edit account information
+                </button>
+            ) : (
+                <div className="flex space-x-5">
+                    <button
+                        className="border w-full border-primary text-primary px-5 py-2.5 mt-14 rounded-md"
+                        onClick={() => {
+                            setEditMode(true);
+                        }}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md"
+                        onClick={() => {
+                            setEditMode(true);
+                        }}
+                    >
+                        Save
+                    </button>
+                </div>
+            )}
         </>
     ) : (
         <Loader />
