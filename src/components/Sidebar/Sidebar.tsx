@@ -101,7 +101,10 @@ export default function Sidebar() {
                         ></div>
                     </Link>
                 </div>
-                <div className="mb-[84px] sidebar-icon-logout icon bg-primary hover:bg-white cursor-pointer"></div>
+                <Link
+                    to="/"
+                    className="mb-[84px] sidebar-icon-logout icon bg-primary hover:bg-white cursor-pointer"
+                ></Link>
             </div>
         </div>
     );
