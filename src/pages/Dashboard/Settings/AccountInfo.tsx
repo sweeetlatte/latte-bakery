@@ -4,10 +4,10 @@ import { fetchUserData } from "../../../app/api";
 import Icons from "../../../components/Icons";
 import Loader from "../../../components/Loader";
 
-import { IUserData } from "./types";
+import { IUser } from "../../../types";
 
 export default function AccountInfo() {
-    const [userData, setUserData] = useState<IUserData>();
+    const [userData, setUserData] = useState<IUser>();
     const [editMode, setEditMode] = useState<boolean>(true);
 
     useEffect(() => {
