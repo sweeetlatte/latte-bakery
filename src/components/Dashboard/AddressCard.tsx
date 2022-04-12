@@ -6,8 +6,10 @@ import { fetchUserData } from "../../app/api";
 import trash from "../../assets/icons/trash-2.svg";
 import edit from "../../assets/icons/edit.svg";
 import { AddressToString } from "../../utils/functions";
+import { useNavigate } from "react-router-dom";
 
 export default function AddressCard() {
+    const navigate = useNavigate();
     const [userData, setUserData] = useState<IUser>();
 
     useEffect(() => {
@@ -30,8 +32,21 @@ export default function AddressCard() {
                         <p>{AddressToString(addressItem!)}</p>
                     </div>
                     <div className="flex space-x-3">
-                        <img src={trash} alt="trash" />
-                        <img src={edit} alt="trash" />
+                        <img
+                            className="cursor-pointer"
+                            src={trash}
+                            alt="trash"
+                        />
+                        <img
+                            className="cursor-pointer"
+                            onClick={() =>
+                                navigate("editaddress", {
+                                    state: { address: addressItem },
+                                })
+                            }
+                            src={edit}
+                            alt="edit"
+                        />
                     </div>
                 </div>
             ))}

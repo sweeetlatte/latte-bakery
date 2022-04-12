@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function AddAdress() {
     return (
         <>
-            <div className="font-bold text-lg">Account information</div>
+            <div className="font-bold text-lg">Add new address</div>
             <form className="settings-form pt-14">
                 <label className="flex items-center mb-4" htmlFor="uname">
                     <span className="w-[176px]">Name</span>

@@ -17,8 +17,9 @@ import Cart from "./pages/Dashboard/Cart/Cart";
 import Checkout from "./pages/Dashboard/Cart/Checkout";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import AccountInfo from "./pages/Dashboard/Settings/AccountInfo";
-import AddressBook from "./pages/Dashboard/Settings/AddressBook";
-import AddAdress from "./pages/Dashboard/Settings/AddAdress";
+import AddressBook from "./pages/Dashboard/Settings/AddressBook/AddressBook";
+import AddAdress from "./pages/Dashboard/Settings/AddressBook/AddAdress";
+import EditAddress from "./pages/Dashboard/Settings/AddressBook/EditAddress";
 import ChangePassword from "./pages/Dashboard/Settings/ChangePassword";
 
 import NotFound from "./pages/NotFound";
@@ -47,6 +48,10 @@ function App() {
                         <Route
                             path="addressbook/addaddress"
                             element={<AddAdress />}
+                        />
+                        <Route
+                            path="addressbook/editaddress"
+                            element={<EditAddress />}
                         />
                         <Route
                             path="changepassword"

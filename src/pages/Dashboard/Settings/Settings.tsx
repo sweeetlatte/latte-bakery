@@ -13,6 +13,7 @@ export default function Settings() {
 
     useEffect(
         function () {
+            
             if (location.pathname === "/dashboard/setting/accountinfo")
                 setIndex(0);
             else if (location.pathname === "/dashboard/setting/addressbook")
