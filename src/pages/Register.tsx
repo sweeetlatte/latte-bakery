@@ -1,11 +1,39 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import login from "../assets/images/login.png";
 import facebook from "../assets/images/Facebook.png";
 import google from "../assets/images/Google.png";
+import { useForm } from "../utils/hooks/useForm";
 
 export default function Register() {
+    const { handleSubmit, handleChange, data, errors } = useForm({
+        validations: {
+            name: {
+                pattern: {
+                    value: "^[A-Za-z]*$",
+                    message: "Username does not include special characters.",
+                },
+            },
+            email: {
+                pattern: {
+                    value: "^[w-.]+@([w-]+.)+[w-]{2,4}$",
+                    message:
+                        "Invalid email address. Valid e-mail can contain only latin letters, numbers, '@' and '.'",
+                },
+            },
+            password: {
+                required: {
+                    value: true,
+                    message: "This field is required",
+                },
+                custom: {
+                    isValid: (value) => value.length > 7,
+                    message: "The password needs to be at least 8 characters.",
+                },
+            },
+        },
+    });
+
     return (
         <div className="text-white bg-dark-bg">
             <img className="object-cover absolute" src={login} alt="login" />
@@ -28,38 +56,56 @@ export default function Register() {
                     </div>
                 </div>
                 <div className="pt-14 pb-14 text-center">- OR -</div>
-                <form className="mb-16">
+                <form className="mb-16" onSubmit={handleSubmit} noValidate>
                     <label htmlFor="uname">
-                        <span className="block">Username</span>
+                        <span className="block mb-2">Username</span>
                         <input
-                            className="w-full bg-light py-3.5 px-3 mb-14 focus:border-primary focus:outline-none"
+                            className="w-full bg-light py-3.5 px-3 focus:border-primary focus:outline-none"
                             style={{ borderBottom: "1px solid white" }}
                             type="text"
                             id="uname"
                             name="uname"
+                            onChange={handleChange("name")}
                         />
+                        {errors.name && (
+                            <p className="error mt-2 text-error">
+                                {errors.name}
+                            </p>
+                        )}
                     </label>
                     <label htmlFor="email">
-                        <span className="block">Email</span>
+                        <span className="block mt-14 mb-2">Email</span>
                         <input
-                            className="w-full bg-light py-3.5 px-3 mb-8 focus:border-primary focus:outline-none disabled:bg-light"
+                            className="w-full bg-light py-3.5 px-3 focus:border-primary focus:outline-none disabled:bg-light"
                             style={{ borderBottom: "1px solid white" }}
                             type="email"
                             id="email"
                             name="email"
+                            onChange={handleChange("email")}
                         />
+                        {errors.email && (
+                            <p className="error mt-2 text-error">
+                                {errors.email}
+                            </p>
+                        )}
                     </label>
                     <label htmlFor="password">
-                        <span className="block">Password</span>
+                        <span className="block mt-14 mb-2">Password</span>
                         <input
-                            className="w-full bg-light py-3.5 px-3 mb-20 focus:border-primary focus:outline-none disabled:bg-light"
+                            className="w-full bg-light py-3.5 px-3 focus:border-primary focus:outline-none disabled:bg-light"
                             style={{ borderBottom: "1px solid white" }}
                             type="password"
                             id="password"
                             name="password"
+                            onChange={handleChange("password")}
                         />
+                        {errors.password && (
+                            <p className="error mt-2 text-error">
+                                {errors.password}
+                            </p>
+                        )}
                     </label>
-                    <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
+                    <button className="border w-full border-primary bg-primary px-5 py-2.5 mt-20 rounded-md">
                         Register
                     </button>
                 </form>

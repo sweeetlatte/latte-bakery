@@ -14,7 +14,8 @@ module.exports = {
                 "lightText": "#BEBEBE",
                 "header": "#272727",
                 "caption": "#ABBBC2",
-                "underline": "#656870"
+                "underline": "#656870",
+                "error": "#F24E1E"
             },
         },
         fontFamily: {
