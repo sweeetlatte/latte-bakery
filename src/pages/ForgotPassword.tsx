@@ -32,7 +32,7 @@ export default function ForgotPassword() {
                         <input
                             className="w-full bg-light py-3.5 px-3 focus:border-primary focus:outline-none"
                             style={{ borderBottom: "1px solid white" }}
-                            type="text"
+                            type="email"
                             id="email"
                             name="email"
                         />

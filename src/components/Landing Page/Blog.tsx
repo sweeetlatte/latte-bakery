@@ -38,9 +38,11 @@ export default function Blog() {
                                 sed.
                             </div>
                         </div>
-                        <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
-                            See more
-                        </button>
+                        <Link to="/blog/detail">
+                            <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
+                                See more
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="flex pt-24">
