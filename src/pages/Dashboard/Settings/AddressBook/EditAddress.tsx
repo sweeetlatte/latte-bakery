@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+
 import { fetchUserData } from "../../../../app/api";
-import { IUser } from "../../../../types";
+import { IAddress, IUser } from "../../../../types";
+
+interface ILocationState {
+    // Address is required
+    address: IAddress;
+    from?: {
+        pathname: string;
+    };
+}
 
 export default function EditAddress() {
     const location = useLocation();
-    const [userData, setUserData] = useState<IUser>();
+    const state = (location.state as ILocationState) || {
+        from: { pathname: "/" },
+    };
+    const [locationData, setLocationData] = useState<IAddress>(state.address!);
 
-    useEffect(() => {
-        console.log(location.state);
-
-        (async () => {
-            const responseData = await fetchUserData();
-
-            if (responseData) {
-                setUserData(responseData[0]);
-            }
-        })();
-    }, []);
+    // console.log(locationData);
 
     return (
         <>
@@ -30,7 +32,10 @@ export default function EditAddress() {
                         type="text"
                         id="uname"
                         name="uname"
-                        value={userData?.name}
+                        value={locationData?.name}
+                        onChange={(e) =>
+                            setLocationData({ ...locationData!, name: e.target.value })
+                        }
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="phone">
@@ -40,7 +45,10 @@ export default function EditAddress() {
                         type="text"
                         id="phone"
                         name="phone"
-                        value={userData?.phone}
+                        value={locationData?.phone}
+                        onChange={(e) =>
+                            setLocationData({ ...locationData!, phone: e.target.value })
+                        }
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="street">
@@ -50,7 +58,13 @@ export default function EditAddress() {
                         type="text"
                         id="street"
                         name="street"
-                        // value={userData?.address}
+                        value={state.address?.street}
+                        onChange={(e) =>
+                            setLocationData({
+                                ...locationData,
+                                street: e.target.value,
+                            })
+                        }
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="wards">
@@ -60,6 +74,7 @@ export default function EditAddress() {
                         type="text"
                         id="wards"
                         name="wards"
+                        value={state.address?.wards}
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="district">
@@ -69,6 +84,7 @@ export default function EditAddress() {
                         type="text"
                         id="district"
                         name="district"
+                        value={state.address?.district}
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="city">
@@ -78,6 +94,7 @@ export default function EditAddress() {
                         type="text"
                         id="city"
                         name="city"
+                        value={state.address?.province}
                     />
                 </label>
                 <label className="flex items-center mb-8 mt-6" htmlFor="type">
@@ -85,12 +102,28 @@ export default function EditAddress() {
                     <div className="setting-custom-radio flex w-full text-base space-x-9">
                         <label className="setting-container">
                             Company
-                            <input type="radio" name="radio" checked />
+                            <input
+                                type="radio"
+                                name="radio"
+                                checked={
+                                    state.address?.type === "Company"
+                                        ? true
+                                        : false
+                                }
+                            />
                             <span className="setting-checkmark"></span>
                         </label>
                         <label className="setting-container">
                             Home
-                            <input type="radio" name="radio" />
+                            <input
+                                type="radio"
+                                name="radio"
+                                checked={
+                                    state.address?.type === "Home"
+                                        ? true
+                                        : false
+                                }
+                            />
                             <span className="setting-checkmark"></span>
                         </label>
                     </div>
