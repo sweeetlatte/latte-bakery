@@ -3,11 +3,32 @@ import { Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
-import Icons from "../components/Icons";
 import Blog from "../components/Blog/Blog";
 import Post from "../components/Blog/Post";
+import CustomSelectBox from "../components/CustomSelectBox";
 
 export default function BlogPage() {
+    const month = [
+        { value: "january", label: "January" },
+        { value: "february", label: "February" },
+        { value: "march", label: "March" },
+        { value: "april", label: "April" },
+        { value: "may", label: "May" },
+        { value: "june", label: "June" },
+        { value: "july", label: "July" },
+        { value: "august", label: "August" },
+        { value: "september", label: "September" },
+        { value: "october", label: "October" },
+        { value: "november", label: "November" },
+        { value: "december", label: "December" },
+    ];
+
+    const year = [
+        { value: "2022", label: "2022" },
+        { value: "2021", label: "2021" },
+        { value: "2020", label: "2020" },
+    ];
+
     return (
         <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
@@ -15,44 +36,24 @@ export default function BlogPage() {
                 <div className="text-lg flex">
                     <Link to="/">Home</Link>
                     &nbsp;/&nbsp;
-                    <Link to="/blog" className="text-primary">Blog</Link>
+                    <Link to="/blog" className="text-primary">
+                        Blog
+                    </Link>
                 </div>
                 <div className="pt-11 text-5xl">Blog</div>
                 <div className="flex pt-14 pb-12">
                     <SearchBar />
-                    <div className="flex pl-9">
-                        <div className="border w-48 border-white rounded py-3.5 px-3.5">
-                            <div className="flex justify-between items-center">
-                                <div>Select month</div>
-                                <Icons.BiggerChevronDown stroke="white" />
-                            </div>
-                            {/* <select>
-                                <option value="0">Select month</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select> */}
-                        </div>
-                        <div className=" border w-48 border-white rounded py-3.5 px-3.5 ml-5">
-                            <div className="flex justify-between items-center">
-                                <div>Select year</div>
-                                <Icons.BiggerChevronDown stroke="white" />
-                            </div>
-                            {/* <select>
-                                <option value="0">Select month</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select> */}
-                        </div>
+                    <div className="flex pl-9 space-x-5">
+                        <CustomSelectBox
+                            width={"12rem"}
+                            data={month}
+                            placeholder={"Select month"}
+                        />
+                        <CustomSelectBox
+                            width={"12rem"}
+                            data={year}
+                            placeholder={"Select year"}
+                        />
                     </div>
                 </div>
                 <div className="flex space-x-9">
