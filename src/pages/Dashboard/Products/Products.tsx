@@ -12,6 +12,7 @@ import Icons from "../../../components/Icons";
 import slider1 from "../../../assets/images/dashboard/slider-1.png";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
 import slider3 from "../../../assets/images/dashboard/slider-3.png";
+import CustomSelectBox from "../../../components/CustomSelectBox";
 
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -57,6 +58,11 @@ export default function Products() {
     useEffect(() => showDivs(), []);
     // get element ra
     // setSlider("block") cho id nào được click
+
+    const sorting = [
+        { value: "price low to high", label: "Price: low to high" },
+        { value: "price high to low", label: "Price: high to low" },
+    ];
 
     return (
         <>
@@ -118,11 +124,16 @@ export default function Products() {
                             <div className="cursor-pointer">Ice cream</div>
                             <Icons.ChevronRight stroke="white" />
                         </div>
-                        <div className="flex items-center space-x-4 border border-primary rounded py-3 px-6">
-                            <div>Default sorting</div>
-                            <Icons.BiggerChevronDown stroke="#F3A446" />
+                        <div className="basis-3/12">
+                            <CustomSelectBox
+                                data={sorting}
+                                placeholder={"Default sorting"}
+                                width={"100%"}
+                                borderColor={"#F3A446"}
+                            />
                         </div>
                     </div>
+
                     <div className="pt-8 flex w-full justify-between">
                         <ProductCard
                             openModalAddProduct={() => openModalAddProduct()}

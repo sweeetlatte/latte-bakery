@@ -7,6 +7,7 @@ import { IUser } from "../../types";
 import { fetchUserData } from "../../app/api";
 
 import ava from "../../assets/images/blog/detail/detail-1.png";
+import CustomSelectBox from "../CustomSelectBox";
 
 export default function Header() {
     const [userData, setUserData] = useState<IUser>();
@@ -21,11 +22,22 @@ export default function Header() {
         })();
     }, []);
 
+    const language = [
+        { value: "en", label: "EN" },
+        { value: "vn", label: "VN" },
+    ];
+
     return (
-        <div className="flex items-center">
-            <div className="border border-primary rounded py-1 pl-3.5 pr-1.5 mr-8 flex items-center space-x-1">
-                <p>EN</p>
-                <Icons.ChevronDown stroke="white" />
+        <div className="flex items-center space-x-8">
+            <div>
+                <CustomSelectBox
+                    data={language}
+                    placeholder={"EN"}
+                    width={"100%"}
+                    height={"42px"}
+                    borderColor={"#F3A446"}
+                    controlBackgroundColor={"#272727"}
+                />
             </div>
             <div className="flex items-center space-x-4">
                 <Link to="/dashboard/setting/accountinfo">
