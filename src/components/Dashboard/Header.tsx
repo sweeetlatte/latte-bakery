@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Icons from "../Icons";
-
 import { IUser } from "../../types";
 import { fetchUserData } from "../../app/api";
 

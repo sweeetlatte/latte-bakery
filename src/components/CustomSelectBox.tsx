@@ -40,6 +40,10 @@ export default function CustomSelectBox({
             ...styles,
             color: "white",
         }),
+        indicatorSeparator: (styles: any) => ({
+            ...styles,
+            display: "none",
+        }),
     };
 
     const MyComponent = () => (
