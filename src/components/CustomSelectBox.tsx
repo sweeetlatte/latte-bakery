@@ -5,19 +5,29 @@ interface Props {
     data: any;
     placeholder: string;
     width: string;
+    height?: string;
+    borderColor?: string;
+    controlBackgroundColor?: string;
 }
 
-export default function CustomSelectBox({ data, placeholder, width }: Props) {
+export default function CustomSelectBox({
+    data,
+    placeholder,
+    width,
+    height = "54px",
+    borderColor = "white",
+    controlBackgroundColor = "#323232",
+}: Props) {
     const colourStyles = {
         control: (styles: any) => ({
             ...styles,
-            backgroundColor: "#323232",
+            backgroundColor: controlBackgroundColor,
             width: width,
-            height: "54px",
+            height: height,
             color: "white",
+            borderColor: borderColor,
         }),
         option: (styles: any, { isFocused }: any) => ({
-            ...styles, //có dòng này thì option mới nhận css custom này nhưng khi option active thì bị dính nền xanh
             color: "white",
             backgroundColor: isFocused ? "#F3A446" : "#323232",
             padding: "8px 12px",
