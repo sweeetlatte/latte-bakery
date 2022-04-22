@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../../pages/Dashboard/Cart/cart.css";
 
@@ -13,6 +13,18 @@ interface Props {
 }
 
 export default function ProductInCart({ rounded }: Props) {
+    const [quantity, setQuantity] = useState<number>(
+        Math.floor(Math.random() * 10) + 1
+    );
+
+    function minusQuantity() {
+        quantity > 1 && setQuantity(quantity - 1);
+    }
+
+    function plusQuantity() {
+        quantity < 10 && setQuantity(quantity + 1);
+    }
+
     return (
         <>
             <div className={`bg-dark-bg ${rounded}`}>
@@ -47,12 +59,28 @@ export default function ProductInCart({ rounded }: Props) {
                             />
                         </div>
                         <div className="basis-3/12 flex justify-center space-x-3">
-                            <button>
-                                <Icons.Minus stroke="#F3A446" />
+                            <button
+                                onClick={minusQuantity}
+                                className={quantity > 1 ? "" : "cursor-default"}
+                            >
+                                <Icons.Minus
+                                    stroke={
+                                        quantity > 1 ? "#F3A446" : "#BEBEBE"
+                                    }
+                                />
                             </button>
-                            <p>2</p>
-                            <button>
-                                <Icons.Plus stroke="#F3A446" />
+                            <p>{quantity}</p>
+                            <button
+                                onClick={plusQuantity}
+                                className={
+                                    quantity < 10 ? "" : "cursor-default"
+                                }
+                            >
+                                <Icons.Plus
+                                    stroke={
+                                        quantity < 10 ? "#F3A446" : "#BEBEBE"
+                                    }
+                                />
                             </button>
                         </div>
                         <div className="basis-3/12">80.000 VND</div>
