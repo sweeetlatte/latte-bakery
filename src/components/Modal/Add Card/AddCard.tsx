@@ -38,7 +38,7 @@ export default function AddCard({ open, closeModalAddProduct }: Props) {
                             </div>
                             <img
                                 onClick={closeModalAddProduct}
-                                className="absolute right-[-14px] top-[-14px]"
+                                className="absolute right-[-14px] top-[-14px] cursor-pointer"
                                 src={x}
                                 alt="x"
                             />
