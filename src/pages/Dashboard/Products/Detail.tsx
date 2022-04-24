@@ -188,11 +188,11 @@ export default function Detail() {
                             openModalAddProduct={openModalAddProduct}
                         />
                     </div>
+                    <AddCard
+                        open={open}
+                        closeModalAddProduct={() => closeModalAddProduct()}
+                    />
                 </div>
-                <AddCard
-                    open={open}
-                    closeModalAddProduct={() => closeModalAddProduct()}
-                />
             </div>
         </>
     );
