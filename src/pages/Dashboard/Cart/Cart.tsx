@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./cart.css";
@@ -10,6 +10,16 @@ import DeleteProducts from "../../../components/Modal/Warnings/DeleteProducts";
 import trash from "../../../assets/icons/trash-2.svg";
 
 export default function Cart() {
+    const [open, setOpenModal] = useState<boolean>(false);
+
+    const openModalWarningDelete = () => {
+        setOpenModal(true);
+    };
+
+    const closeModalWarningDelete = () => {
+        setOpenModal(false);
+    };
+
     return (
         <>
             <div
@@ -50,11 +60,22 @@ export default function Cart() {
                     </div>
                 </div>
                 <div className="flex flex-col space-y-1 pt-5">
-                    <ProductInCart rounded="rounded-t-lg" />
-                    <ProductInCart />
-                    <ProductInCart rounded="rounded-b-lg" />
+                    <ProductInCart
+                        rounded="rounded-t-lg"
+                        openModalWarningDelete={() => openModalWarningDelete()}
+                    />
+                    <ProductInCart
+                        openModalWarningDelete={() => openModalWarningDelete()}
+                    />
+                    <ProductInCart
+                        rounded="rounded-b-lg"
+                        openModalWarningDelete={() => openModalWarningDelete()}
+                    />
                 </div>
-                <DeleteProducts />
+                <DeleteProducts
+                    open={open}
+                    closeModalWarningDelete={() => closeModalWarningDelete()}
+                />
                 <div className="flex flex-row justify-end items-center pt-9">
                     <div className="text-lg">Total: 0 VND</div>
                     <Link

@@ -10,9 +10,13 @@ import cake from "../../assets/images/about-1.png";
 
 interface Props {
     rounded?: string;
+    openModalWarningDelete: () => void;
 }
 
-export default function ProductInCart({ rounded }: Props) {
+export default function ProductInCart({
+    rounded,
+    openModalWarningDelete,
+}: Props) {
     const [quantity, setQuantity] = useState<number>(
         Math.floor(Math.random() * 10) + 1
     );
@@ -87,7 +91,12 @@ export default function ProductInCart({ rounded }: Props) {
                         <div className="basis-3/12">160.000 VND</div>
                     </div>
                     <div className="basis-1/12 justify-end flex">
-                        <img src={trash} alt="trash" />
+                        <img
+                            className="cursor-pointer"
+                            src={trash}
+                            alt="trash"
+                            onClick={openModalWarningDelete}
+                        />
                     </div>
                 </div>
             </div>

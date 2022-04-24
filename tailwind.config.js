@@ -15,7 +15,7 @@ module.exports = {
                 "header": "#272727",
                 "caption": "#ABBBC2",
                 "underline": "#656870",
-                "error": "#F24E1E"
+                "error": "#f83b3b"
             },
         },
         fontFamily: {
