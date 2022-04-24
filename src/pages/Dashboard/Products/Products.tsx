@@ -162,11 +162,11 @@ export default function Products() {
                             openModalAddProduct={() => openModalAddProduct()}
                         />
                     </div>
+                    <AddCard
+                        open={open}
+                        closeModalAddProduct={() => closeModalAddProduct()}
+                    />
                 </div>
-                <AddCard
-                    open={open}
-                    closeModalAddProduct={() => closeModalAddProduct()}
-                />
                 <div className="text-white basis-3/12">
                     <div>
                         <div className="text-lg pb-6">New products</div>

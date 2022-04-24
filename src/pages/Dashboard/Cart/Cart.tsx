@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import ProductInCart from "../../../components/Dashboard/ProductInCart";
-
 import "./cart.css";
 
-import trash from "../../../assets/icons/trash-2.svg";
 import Header from "../../../components/Dashboard/Header";
+import ProductInCart from "../../../components/Dashboard/ProductInCart";
+import DeleteProducts from "../../../components/Modal/Warnings/DeleteProducts";
+
+import trash from "../../../assets/icons/trash-2.svg";
 
 export default function Cart() {
     return (
@@ -53,6 +54,7 @@ export default function Cart() {
                     <ProductInCart />
                     <ProductInCart rounded="rounded-b-lg" />
                 </div>
+                <DeleteProducts />
                 <div className="flex flex-row justify-end items-center pt-9">
                     <div className="text-lg">Total: 0 VND</div>
                     <Link
