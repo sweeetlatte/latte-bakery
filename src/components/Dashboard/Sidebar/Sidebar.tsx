@@ -9,9 +9,9 @@ export default function Sidebar() {
 
     useEffect(
         function () {
-            if (locationSidebar.pathname === "/dashboard/product")
+            if (locationSidebar.pathname.includes("/dashboard/product"))
                 setIndexSidebar(0);
-            else if (locationSidebar.pathname === "/dashboard/cart")
+            else if (locationSidebar.pathname.includes("/dashboard/cart"))
                 setIndexSidebar(1);
             else if (locationSidebar.pathname.includes("/dashboard/setting"))
                 setIndexSidebar(2);
