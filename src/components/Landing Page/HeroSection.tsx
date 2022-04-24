@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 
 import roller from "../../assets/images/roller.png";
 import { Link } from "react-router-dom";

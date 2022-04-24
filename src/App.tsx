@@ -6,9 +6,9 @@ import "./App.css";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
-import LandingPage from "./pages/LandingPage";
-import BlogPage from "./pages/BlogPage";
-import BlogDetail from "./pages/BlogDetail";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import BlogPage from "./pages/LandingPage/BlogPage";
+import BlogDetail from "./pages/LandingPage/BlogDetail";
 
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Product from "./pages/Dashboard/Products/Products";

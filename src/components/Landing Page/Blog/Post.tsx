@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import post1 from "../../assets/images/blog/blog-11.png";
+import post1 from "../../../assets/images/blog/blog-11.png";
 
 export default function Post() {
     return (

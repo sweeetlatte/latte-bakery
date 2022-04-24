@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
-import Post from "../components/Blog/Post";
+import Navbar from "../../components/Landing Page/Navbar";
+import Post from "../../components/Landing Page/Blog/Post";
 
-import detail1 from "../assets/images/blog/detail/detail-1.png";
-import detail2 from "../assets/images/blog/detail/detail-2.png";
-import detail3 from "../assets/images/blog/detail/detail-3.png";
-import detail4 from "../assets/images/blog/detail/detail-4.png";
+import detail1 from "../../assets/images/blog/detail/detail-1.png";
+import detail2 from "../../assets/images/blog/detail/detail-2.png";
+import detail3 from "../../assets/images/blog/detail/detail-3.png";
+import detail4 from "../../assets/images/blog/detail/detail-4.png";
 
 export default function BlogDetail() {
     return (

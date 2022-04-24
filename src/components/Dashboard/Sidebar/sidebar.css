@@ -4,24 +4,24 @@
 }
 
 .sidebar-icon-home {
-    mask: url(../../assets/icons/home.svg) no-repeat center / contain;
-    -webkit-mask: url(../../assets/icons/home.svg) no-repeat center / contain;
+    mask: url(../../../assets/icons/home.svg) no-repeat center / contain;
+    -webkit-mask: url(../../../assets/icons/home.svg) no-repeat center / contain;
 }
 
 .sidebar-icon-cart {
-    mask: url(../../assets/icons/cart-yellow.svg) no-repeat center / contain;
-    -webkit-mask: url(../../assets/icons/cart-yellow.svg) no-repeat center /
+    mask: url(../../../assets/icons/cart-yellow.svg) no-repeat center / contain;
+    -webkit-mask: url(../../../assets/icons/cart-yellow.svg) no-repeat center /
         contain;
 }
 
 .sidebar-icon-setting {
-    mask: url(../../assets/icons/setting.svg) no-repeat center / contain;
-    -webkit-mask: url(../../assets/icons/setting.svg) no-repeat center / contain;
+    mask: url(../../../assets/icons/setting.svg) no-repeat center / contain;
+    -webkit-mask: url(../../../assets/icons/setting.svg) no-repeat center / contain;
 }
 
 .sidebar-icon-logout {
-    mask: url(../../assets/icons/log-out.svg) no-repeat center / contain;
-    -webkit-mask: url(../../assets/icons/log-out.svg) no-repeat center / contain;
+    mask: url(../../../assets/icons/log-out.svg) no-repeat center / contain;
+    -webkit-mask: url(../../../assets/icons/log-out.svg) no-repeat center / contain;
 }
 
 .sidebar-active {

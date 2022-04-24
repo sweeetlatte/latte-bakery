@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
-import SearchBar from "../components/SearchBar";
-import Blog from "../components/Blog/Blog";
-import Post from "../components/Blog/Post";
-import CustomSelectBox from "../components/CustomSelectBox";
+import Navbar from "../../components/Landing Page/Navbar";
+import SearchBar from "../../components/SearchBar";
+import Blog from "../../components/Landing Page/Blog/Blog";
+import Post from "../../components/Landing Page/Blog/Post";
+import CustomSelectBox from "../../components/CustomSelectBox";
 
 export default function BlogPage() {
     const month = [

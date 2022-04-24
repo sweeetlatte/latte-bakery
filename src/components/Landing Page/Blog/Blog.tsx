@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import blog8 from "../../assets/images/blog/blog-8.png";
+import blog8 from "../../../assets/images/blog/blog-8.png";
 
 export default function Blog() {
     return (
