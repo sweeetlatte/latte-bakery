@@ -44,10 +44,12 @@ export default function Detail() {
                     className="basis-9/12 pr-12"
                     style={{ borderRight: "1px solid white" }}
                 >
-                    <div className="flex space-x-[27.5px] text-lg">
-                        <img src={arrowLeft} alt="arrow left" />
+                    <div className="flex space-x-[27.5px] text-lg items-center">
+                        <Link to="/dashboard/product">
+                            <img src={arrowLeft} alt="arrow left" />
+                        </Link>
                         <div>
-                            <Link to="/dashboard">Dashboard</Link>
+                            <Link to="/dashboard/product">Dashboard</Link>
                             &nbsp;/&nbsp;
                             <Link
                                 to="/dashboard/detail"
