@@ -38,14 +38,14 @@ export default function Header() {
                 />
             </div>
             <div className="flex items-center space-x-4">
-                <Link to="/dashboard/setting/accountinfo">
+                <Link to="/dashboard/setting/account-info">
                     <img
                         className="w-14 h-14 object-cover rounded-full"
                         src={ava}
                         alt="ava"
                     />
                 </Link>
-                <Link to="/dashboard/setting/accountinfo">
+                <Link to="/dashboard/setting/account-info">
                     <p>{userData?.name}</p>
                 </Link>
             </div>

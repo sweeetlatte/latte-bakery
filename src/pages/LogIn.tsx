@@ -65,7 +65,7 @@ export default function LogIn() {
                             <span className="checkmark"></span>
                         </label>
                         <Link
-                            to="/forgotpassword"
+                            to="/forgot-password"
                             className="text-primary font-medium"
                         >
                             Forgot password?

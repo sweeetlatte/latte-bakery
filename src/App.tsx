@@ -33,7 +33,7 @@ function App() {
             <Routes>
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/forgotpassword" element={<ForgotPassword />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/detail" element={<BlogDetail />} />
@@ -43,18 +43,18 @@ function App() {
                     <Route path="cart" element={<Cart />} />
                     <Route path="cart/checkout" element={<Checkout />} />
                     <Route path="setting" element={<Settings />}>
-                        <Route path="accountinfo" element={<AccountInfo />} />
-                        <Route path="addressbook" element={<AddressBook />} />
+                        <Route path="account-info" element={<AccountInfo />} />
+                        <Route path="address-book" element={<AddressBook />} />
                         <Route
-                            path="addressbook/addaddress"
+                            path="address-book/add-address"
                             element={<AddAdress />}
                         />
                         <Route
-                            path="addressbook/editaddress"
+                            path="address-book/edit-address"
                             element={<EditAddress />}
                         />
                         <Route
-                            path="changepassword"
+                            path="change-password"
                             element={<ChangePassword />}
                         />
                     </Route>

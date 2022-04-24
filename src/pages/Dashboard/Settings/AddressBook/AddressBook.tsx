@@ -8,7 +8,7 @@ export default function AddressBook() {
         <>
             <div className="flex justify-between items-center">
                 <div className="font-bold text-lg">Address book</div>
-                <Link to="addaddress" className="text-primary">
+                <Link to="add-address" className="text-primary">
                     + Add new address
                 </Link>
             </div>

@@ -40,7 +40,7 @@ export default function AddressCard() {
                         <img
                             className="cursor-pointer"
                             onClick={() =>
-                                navigate("editaddress", {
+                                navigate("edit-address", {
                                     state: { address: addressItem },
                                 })
                             }

@@ -34,7 +34,10 @@ export default function EditAddress() {
                         name="uname"
                         value={locationData?.name}
                         onChange={(e) =>
-                            setLocationData({ ...locationData!, name: e.target.value })
+                            setLocationData({
+                                ...locationData!,
+                                name: e.target.value,
+                            })
                         }
                     />
                 </label>
@@ -47,7 +50,10 @@ export default function EditAddress() {
                         name="phone"
                         value={locationData?.phone}
                         onChange={(e) =>
-                            setLocationData({ ...locationData!, phone: e.target.value })
+                            setLocationData({
+                                ...locationData!,
+                                phone: e.target.value,
+                            })
                         }
                     />
                 </label>
@@ -130,12 +136,12 @@ export default function EditAddress() {
                 </label>
             </form>
             <div className="flex space-x-5">
-                <Link className="w-full" to="/dashboard/setting/addressbook">
+                <Link className="w-full" to="/dashboard/setting/address-book">
                     <button className="border w-full border-primary text-primary px-5 py-2.5 mt-14 rounded-md">
                         Cancel
                     </button>
                 </Link>
-                <Link className="w-full" to="/dashboard/setting/addressbook">
+                <Link className="w-full" to="/dashboard/setting/address-book">
                     <button className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md">
                         Save
                     </button>
