@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import login from "../assets/images/login.png";
@@ -71,9 +70,11 @@ export default function LogIn() {
                             Forgot password?
                         </Link>
                     </div>
-                    <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
-                        Log in
-                    </button>
+                    <Link to="/dashboard/product">
+                        <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
+                            Log in
+                        </button>
+                    </Link>
                 </form>
                 <div className="">
                     Not registered yet?{" "}

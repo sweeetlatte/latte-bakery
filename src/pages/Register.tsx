@@ -4,8 +4,16 @@ import login from "../assets/images/login.png";
 import facebook from "../assets/images/Facebook.png";
 import google from "../assets/images/Google.png";
 import { useForm } from "../utils/hooks/useForm";
+import { useState } from "react";
+import RegisterSuccessfully from "../components/Modal/RegisterSuccessfully";
 
 export default function Register() {
+    const [open, setOpenModal] = useState<boolean>(false);
+
+    const openModalLoginNotify = () => {
+        setOpenModal(true);
+    };
+
     const { handleSubmit, handleChange, data, errors } = useForm({
         validations: {
             name: {
@@ -105,7 +113,13 @@ export default function Register() {
                             </p>
                         )}
                     </label>
-                    <button className="border w-full border-primary bg-primary px-5 py-2.5 mt-20 rounded-md">
+                    <button
+                        className="border w-full border-primary bg-primary px-5 py-2.5 mt-20 rounded-md"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            openModalLoginNotify();
+                        }}
+                    >
                         Register
                     </button>
                 </form>
@@ -115,6 +129,7 @@ export default function Register() {
                         Log in
                     </Link>
                 </div>
+                <RegisterSuccessfully open={open} />
             </div>
         </div>
     );
