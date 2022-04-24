@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./products.css";
@@ -12,8 +12,19 @@ import cake from "../../../assets/images/blog-2.png";
 
 import arrowLeft from "../../../assets/icons/arrow-left.svg";
 import Header from "../../../components/Dashboard/Header";
+import AddCard from "../../../components/Modal/Add Card/AddCard";
 
 export default function Detail() {
+    const [open, setOpenModal] = useState<boolean>(false);
+
+    const openModalAddProduct = () => {
+        setOpenModal(true);
+    };
+
+    const closeModalAddProduct = () => {
+        setOpenModal(false);
+    };
+
     return (
         <>
             <div
@@ -168,10 +179,18 @@ export default function Detail() {
                 <div className="basis-3/12">
                     <div className="text-lg pb-6">You may like</div>
                     <div className="flex flex-col space-y-4">
-                        <ProductCardHorizontal />
-                        <ProductCardHorizontal />
+                        <ProductCardHorizontal
+                            openModalAddProduct={openModalAddProduct}
+                        />
+                        <ProductCardHorizontal
+                            openModalAddProduct={openModalAddProduct}
+                        />
                     </div>
                 </div>
+                <AddCard
+                    open={open}
+                    closeModalAddProduct={() => closeModalAddProduct()}
+                />
             </div>
         </>
     );

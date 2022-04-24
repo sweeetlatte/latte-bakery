@@ -171,16 +171,26 @@ export default function Products() {
                     <div>
                         <div className="text-lg pb-6">New products</div>
                         <div className="flex flex-col space-y-4">
-                            <ProductCardHorizontal />
-                            <ProductCardHorizontal />
+                            <ProductCardHorizontal
+                                openModalAddProduct={openModalAddProduct}
+                            />
+                            <ProductCardHorizontal
+                                openModalAddProduct={openModalAddProduct}
+                            />
                         </div>
                     </div>
                     <div className="pt-12">
                         <div className="text-lg pb-6">Best sellers</div>
                         <div className="flex flex-col space-y-4">
-                            <ProductCardHorizontal />
-                            <ProductCardHorizontal />
-                            <ProductCardHorizontal />
+                            <ProductCardHorizontal
+                                openModalAddProduct={openModalAddProduct}
+                            />
+                            <ProductCardHorizontal
+                                openModalAddProduct={openModalAddProduct}
+                            />
+                            <ProductCardHorizontal
+                                openModalAddProduct={openModalAddProduct}
+                            />
                         </div>
                     </div>
                 </div>
