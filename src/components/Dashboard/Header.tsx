@@ -35,6 +35,7 @@ export default function Header() {
                     height={"42px"}
                     borderColor={"#F3A446"}
                     controlBackgroundColor={"#272727"}
+                    listBorderColor={"#F3A446"}
                 />
             </div>
             <div className="flex items-center space-x-4">

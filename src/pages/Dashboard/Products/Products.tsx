@@ -130,6 +130,7 @@ export default function Products() {
                                 placeholder={"Default sorting"}
                                 width={"100%"}
                                 borderColor={"#F3A446"}
+                                listBorderColor={"#F3A446"}
                             />
                         </div>
                     </div>

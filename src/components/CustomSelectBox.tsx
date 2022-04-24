@@ -8,6 +8,7 @@ interface Props {
     height?: string;
     borderColor?: string;
     controlBackgroundColor?: string;
+    listBorderColor?: string;
 }
 
 export default function CustomSelectBox({
@@ -17,6 +18,7 @@ export default function CustomSelectBox({
     height = "54px",
     borderColor = "white",
     controlBackgroundColor = "#323232",
+    listBorderColor,
 }: Props) {
     const colourStyles = {
         control: (styles: any) => ({
@@ -35,6 +37,7 @@ export default function CustomSelectBox({
         menuList: (styles: any) => ({
             ...styles,
             padding: 0,
+            border: `1px solid ${listBorderColor}`,
         }),
         singleValue: (styles: any) => ({
             ...styles,
