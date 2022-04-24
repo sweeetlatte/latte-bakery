@@ -2,6 +2,7 @@ import React from "react";
 
 import cake from "../../assets/images/products/cake-1.png";
 import cartIcon from "../../assets/icons/cart.svg";
+import { Link } from "react-router-dom";
 
 export default function ProductCardRgba() {
     return (
@@ -10,10 +11,12 @@ export default function ProductCardRgba() {
             <div className="pt-2.5 text-sm font-medium">60.000 VND</div>
             <div className="flex justify-between items-center pt-1.5">
                 <div className="font-medium text-primary">Mince Pie</div>
-                <button className="border border-primary bg-primary px-2.5 py-1 rounded-md flex items-center">
-                    <img className="pr-1" src={cartIcon} alt="cart icon" />
-                    Add
-                </button>
+                <Link to="/login">
+                    <button className="border border-primary bg-primary px-2.5 py-1 rounded-md flex items-center">
+                        <img className="pr-1" src={cartIcon} alt="cart icon" />
+                        Add
+                    </button>
+                </Link>
             </div>
         </div>
     );
