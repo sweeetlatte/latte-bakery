@@ -31,10 +31,10 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/" element={<LandingPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/detail" element={<BlogDetail />} />
                 <Route path="/dashboard" element={<Dashboard />}>
@@ -44,15 +44,14 @@ function App() {
                     <Route path="cart/checkout" element={<Checkout />} />
                     <Route path="setting" element={<Settings />}>
                         <Route path="account-info" element={<AccountInfo />} />
-                        <Route path="address-book" element={<AddressBook />} />
-                        <Route
-                            path="address-book/add-address"
-                            element={<AddAdress />}
-                        />
-                        <Route
-                            path="address-book/edit-address"
-                            element={<EditAddress />}
-                        />
+                        <Route path="address-book">
+                            <Route path="add-address" element={<AddAdress />} />
+                            <Route
+                                path="edit-address"
+                                element={<EditAddress />}
+                            />
+                            <Route index element={<AddressBook />} />
+                        </Route>
                         <Route
                             path="change-password"
                             element={<ChangePassword />}
