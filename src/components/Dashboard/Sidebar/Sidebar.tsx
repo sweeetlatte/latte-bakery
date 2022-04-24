@@ -13,9 +13,7 @@ export default function Sidebar() {
                 setIndexSidebar(0);
             else if (locationSidebar.pathname === "/dashboard/cart")
                 setIndexSidebar(1);
-            else if (
-                locationSidebar.pathname === "/dashboard/setting/accountinfo"
-            )
+            else if (locationSidebar.pathname.includes("/dashboard/setting"))
                 setIndexSidebar(2);
         },
         [locationSidebar]
@@ -83,7 +81,7 @@ export default function Sidebar() {
                     }
                 >
                     <Link
-                        to="setting/accountinfo"
+                        to="setting/account-info"
                         className={
                             indexSidebar === 2
                                 ? "bg-primary w-[56px] h-[56px] flex items-center justify-center rounded-lg shadow-2xl shadow-yellowRgba"

@@ -13,12 +13,15 @@ export default function Settings() {
 
     useEffect(
         function () {
-            
-            if (location.pathname === "/dashboard/setting/accountinfo")
+            if (location.pathname.includes("/dashboard/setting/account-info"))
                 setIndex(0);
-            else if (location.pathname === "/dashboard/setting/addressbook")
+            else if (
+                location.pathname.includes("/dashboard/setting/address-book")
+            )
                 setIndex(1);
-            else if (location.pathname === "/dashboard/setting/changepassword")
+            else if (
+                location.pathname.includes("/dashboard/setting/change-password")
+            )
                 setIndex(2);
         },
         [location]
@@ -55,7 +58,7 @@ export default function Settings() {
                     </div>
                     <div className="space-y-7 flex flex-col">
                         <Link
-                            to="accountinfo"
+                            to="account-info"
                             className={
                                 index === 0
                                     ? "pl-11 settings-active-tab"
@@ -65,7 +68,7 @@ export default function Settings() {
                             Account information
                         </Link>
                         <Link
-                            to="addressbook"
+                            to="address-book"
                             className={
                                 index === 1
                                     ? "pl-11 settings-active-tab"
@@ -75,7 +78,7 @@ export default function Settings() {
                             Address book
                         </Link>
                         <Link
-                            to="changepassword"
+                            to="change-password"
                             className={
                                 index === 2
                                     ? "settings-active-tab pl-11"
