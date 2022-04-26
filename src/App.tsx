@@ -17,7 +17,7 @@ import Checkout from "./pages/Dashboard/Cart/Checkout";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import AccountInfo from "./pages/Dashboard/Settings/AccountInfo";
 import AddressBook from "./pages/Dashboard/Settings/AddressBook/AddressBook";
-import AddAdress from "./pages/Dashboard/Settings/AddressBook/AddAdress";
+import AddAddress from "./pages/Dashboard/Settings/AddressBook/AddAddress";
 import EditAddress from "./pages/Dashboard/Settings/AddressBook/EditAddress";
 import ChangePassword from "./pages/Dashboard/Settings/ChangePassword";
 
@@ -44,7 +44,10 @@ function App() {
                     <Route path="setting" element={<Settings />}>
                         <Route path="account-info" element={<AccountInfo />} />
                         <Route path="address-book">
-                            <Route path="add-address" element={<AddAdress />} />
+                            <Route
+                                path="add-address"
+                                element={<AddAddress />}
+                            />
                             <Route
                                 path="edit-address"
                                 element={<EditAddress />}

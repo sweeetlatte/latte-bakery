@@ -20,7 +20,7 @@ export default function CustomSelectBox({
     controlBackgroundColor = "#323232",
     listBorderColor,
 }: Props) {
-    const colourStyles = {
+    const colorStyles = {
         control: (styles: any) => ({
             ...styles,
             backgroundColor: controlBackgroundColor,
@@ -51,7 +51,7 @@ export default function CustomSelectBox({
 
     const MyComponent = () => (
         <Select
-            styles={colourStyles}
+            styles={colorStyles}
             placeholder={placeholder}
             options={data}
             // menuIsOpen={true}

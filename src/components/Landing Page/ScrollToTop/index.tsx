@@ -16,8 +16,6 @@ export default function ScrollToTop() {
 
     useEffect(() => {
         // Button is displayed after scrolling for 500 pixels
-        console.log("abc");
-
         const toggleVisibility = () => {
             if (window.pageYOffset > 500) {
                 setIsVisible(true);

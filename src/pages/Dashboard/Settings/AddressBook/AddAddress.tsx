@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function AddAdress() {
+export default function AddAddress() {
     return (
         <>
             <div className="font-bold text-lg">Add new address</div>
