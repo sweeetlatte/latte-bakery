@@ -1,7 +1,7 @@
-export async function fetchUserData() {
+export async function fetchBlogData() {
     try {
         const response = await fetch(
-            "https://6253a2aac534af46cb98f401.mockapi.io/user",
+            "https://6253a2aac534af46cb98f401.mockapi.io/blog",
             {
                 method: "GET",
             }

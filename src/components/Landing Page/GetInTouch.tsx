@@ -1,7 +1,6 @@
 import React from "react";
 
 import getintouch1 from "../../assets/images/getintouch-1.png";
-import getintouch2 from "../../assets/images/getintouch-2.png";
 import facebook from "../../assets/icons/Facebook.svg";
 import instagram from "../../assets/icons/Instagram.svg";
 import twitter from "../../assets/icons/Twitter.svg";
@@ -9,7 +8,7 @@ import youtube from "../../assets/icons/Youtube.svg";
 
 export default function GetInTouch() {
     return (
-        <div className="pt-60 pb-24">
+        <div className="pt-4 pb-24">
             <div className="absolute left-36">
                 <img src={getintouch1} alt="get in touch 1" />
             </div>

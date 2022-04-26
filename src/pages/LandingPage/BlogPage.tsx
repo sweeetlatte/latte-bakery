@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import Navbar from "../../components/Landing Page/Navbar";
@@ -71,55 +70,20 @@ export default function BlogPage() {
                             <div className="cursor-pointer">Peanut butter</div>
                             <div className="cursor-pointer">Cookies</div>
                         </div>
-                        <div className="pt-24 px-14">
-                            <div className="flex space-x-16 pb-14">
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                            </div>
-                            <div className="flex space-x-16 pb-14">
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                            </div>
-                            <div className="flex space-x-16 pb-14">
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                            </div>
-                            <div className="flex space-x-16">
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                                <div className="basis-1/2">
-                                    <Blog />
-                                </div>
-                            </div>
+                        <div className="flex flex-wrap pt-24 w-full justify-center">
+                            <Blog />
                         </div>
                     </div>
                     <div className="basis-3/12">
-                        <div>
+                        <div className="">
                             <div className="text-xl">New post</div>
                             <div className="pt-9">
-                                <Post />
-                                <Post />
                                 <Post />
                             </div>
                         </div>
                         <div className="pt-2.5">
                             <div className="text-xl">Popular</div>
                             <div className="pt-9">
-                                <Post />
-                                <Post />
                                 <Post />
                             </div>
                         </div>

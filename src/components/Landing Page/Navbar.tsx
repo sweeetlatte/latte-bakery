@@ -21,12 +21,34 @@ export default function Navbar({
             }}
         >
             <div className="flex basis-4/12 justify-between text-sm">
-                <Link to="/" onClick={() => executeAboutUsScroll && executeAboutUsScroll()}>
+                <Link
+                    to="/"
+                    onClick={() =>
+                        executeAboutUsScroll && executeAboutUsScroll()
+                    }
+                >
                     About us
                 </Link>
-                <div onClick={() => executeProductsScroll && executeProductsScroll()}>Products</div>
-                <Link to="/" onClick={() => executeBlogScroll && executeBlogScroll()}>Blog</Link>
-                <div onClick={() => executeGetInTouchScroll && executeGetInTouchScroll()}>Contact</div>
+                <Link to="/"
+                    onClick={() =>
+                        executeProductsScroll && executeProductsScroll()
+                    }
+                >
+                    Products
+                </Link>
+                <Link
+                    to="/"
+                    onClick={() => executeBlogScroll && executeBlogScroll()}
+                >
+                    Blog
+                </Link>
+                <Link to="/"
+                    onClick={() =>
+                        executeGetInTouchScroll && executeGetInTouchScroll()
+                    }
+                >
+                    Contact
+                </Link>
             </div>
             <Link
                 to="/"

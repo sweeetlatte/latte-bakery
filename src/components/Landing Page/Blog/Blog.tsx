@@ -1,21 +1,48 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import blog8 from "../../../assets/images/blog/blog-8.png";
+import { fetchBlogData } from "../../../app/api";
+import { IBlog } from "../../../types";
 
 export default function Blog() {
-    return (
-        <Link to="/blog/detail" className="max-w-[326px]">
-            <img src={blog8} alt="blog 8" />
-            <div className="px-3 pt-5 font-light">
-                <div>
-                    July 25, 2021 &ensp;/&ensp; by&nbsp;
-                    <span className="text-primary">Jenna</span>
-                </div>
-                <div className="pt-3.5">
-                    SMOKEY BOURBON TOFFEE CHOCOLATE OAT COOKIES
-                </div>
-            </div>
-        </Link>
+    const [blogData, setBlogData] = useState<IBlog[]>();
+
+    useEffect(() => {
+        (async () => {
+            const responseData = await fetchBlogData();
+
+            if (responseData) {
+                setBlogData(responseData);
+            }
+        })();
+    }, []);
+
+    return blogData ? (
+        <>
+            {blogData.map((blogItem) => (
+                <Link
+                    key={blogItem.id}
+                    to="/blog/detail"
+                    className="w-1/2 max-w-[326px] mx-9 pb-14"
+                >
+                    <img
+                        className="h-56 w-full object-cover"
+                        src={blogItem?.image}
+                        alt="blog 8"
+                    />
+                    <div className="px-3 pt-5 font-light">
+                        <div>
+                            {blogItem?.createdAt} &ensp;/&ensp; by&nbsp;
+                            <span className="text-primary">
+                                {blogItem?.author}
+                            </span>
+                        </div>
+                        <div className="pt-3.5">{blogItem?.name}</div>
+                    </div>
+                </Link>
+            ))}
+        </>
+    ) : (
+        <></>
     );
 }

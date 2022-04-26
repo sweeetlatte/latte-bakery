@@ -6,7 +6,7 @@ import blog2 from "../../assets/images/blog-2.png";
 
 export default function Blog() {
     return (
-        <>
+        <div className="pb-56">
             <div className="relative pt-20 pr-[9.875rem]">
                 <div className="font-title text-[200px] text-white-rgba text-left pl-28 absolute top-14">
                     Blog
@@ -68,6 +68,6 @@ export default function Blog() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
