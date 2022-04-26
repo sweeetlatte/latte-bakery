@@ -1,14 +1,32 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+interface Props {
+    executeAboutUsScroll?: () => void;
+    executeProductsScroll?: () => void;
+    executeBlogScroll?: () => void;
+    executeGetInTouchScroll?: () => void;
+}
+
+export default function Navbar({
+    executeAboutUsScroll,
+    executeProductsScroll,
+    executeBlogScroll,
+    executeGetInTouchScroll,
+}: Props) {
     return (
-        <div className="pl-24 pr-20 flex items-center py-5">
+        <div
+            className="pl-24 pr-20 flex items-center py-5 "
+            style={{
+                backgroundImage: "linear-gradient(#1D1E1E, rgba(29,30,30,0))",
+            }}
+        >
             <div className="flex basis-4/12 justify-between text-sm">
-                <div>About us</div>
-                <div>Products</div>
-                <Link to="/blog">Blog</Link>
-                <div>Contact</div>
+                <Link to="/" onClick={() => executeAboutUsScroll && executeAboutUsScroll()}>
+                    About us
+                </Link>
+                <div onClick={() => executeProductsScroll && executeProductsScroll()}>Products</div>
+                <Link to="/" onClick={() => executeBlogScroll && executeBlogScroll()}>Blog</Link>
+                <div onClick={() => executeGetInTouchScroll && executeGetInTouchScroll()}>Contact</div>
             </div>
             <Link
                 to="/"

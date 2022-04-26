@@ -5,18 +5,53 @@ import Products from "../../components/Landing Page/Products";
 import Blog from "../../components/Landing Page/Blog";
 import GetInTouch from "../../components/Landing Page/GetInTouch";
 import ScrollToTop from "../../components/Landing Page/ScrollToTop";
+import useScroll from "../../utils/hooks/useScroll";
+import { useEffect } from "react";
 
 export default function LandingPage() {
+    const [aboutUsRef, executeAboutUsScroll] = useScroll() as [
+        HTMLElement | null,
+        () => void
+    ];
+    const [productsRef, executeProductsScroll] = useScroll() as [
+        HTMLElement | null,
+        () => void
+    ];
+    const [blogRef, executeBlogScroll] = useScroll() as [
+        HTMLElement | null,
+        () => void
+    ];
+    const [getInTouchRef, executeGetInTouchScroll] = useScroll() as [
+        HTMLElement | null,
+        () => void
+    ];
+
+    const navBarProps = {
+        executeAboutUsScroll,
+        executeProductsScroll,
+        executeBlogScroll,
+        executeGetInTouchScroll,
+    };
+
     return (
         <div className="font-body text-center mx-auto bg-dark-bg text-white">
-            <HeroSection />
+            <HeroSection navBarProps={navBarProps} />
             <ScrollToTop />
-            <AboutUs />
-            <div className="relative pt-20 pr-[9.875rem]">
+            <div ref={aboutUsRef as any}>
+                <AboutUs />
+            </div>
+            <div
+                ref={productsRef as any}
+                className="relative pt-20 pr-[9.875rem]"
+            >
                 <Products />
             </div>
-            <Blog />
-            <GetInTouch />
+            <div ref={blogRef as any}>
+                <Blog />
+            </div>
+            <div ref={getInTouchRef as any}>
+                <GetInTouch />
+            </div>
         </div>
     );
 }

@@ -5,7 +5,18 @@ import Navbar from "./Navbar";
 import roller from "../../assets/images/roller.png";
 import { Link } from "react-router-dom";
 
-export default function HeroSection() {
+interface Props {
+    navBarProps: NavBarProps;
+}
+
+interface NavBarProps {
+    executeAboutUsScroll: () => void;
+    executeProductsScroll: () => void;
+    executeBlogScroll: () => void;
+    executeGetInTouchScroll: () => void;
+}
+
+export default function HeroSection({ navBarProps }: Props) {
     const [scrolling, setScrolling] = useState(false);
     const [scrollTop, setScrollTop] = useState(0);
 
@@ -45,7 +56,7 @@ export default function HeroSection() {
     return (
         <div className="h-screen hero-section">
             <div className="fixed w-full top-0 z-50" id="navbar">
-                <Navbar />
+                <Navbar {...navBarProps} />
             </div>
             {/* <Carousel /> */}
             <div>
