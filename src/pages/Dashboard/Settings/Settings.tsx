@@ -4,7 +4,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import "./settings.css";
 
 import camera from "../../../assets/icons/camera.svg";
-import ava from "../../../assets/images/blog/detail/detail-1.png";
+import ava from "../../../assets/images/about-1.png";
 import Header from "../../../components/Dashboard/Header";
 
 export default function Settings() {
