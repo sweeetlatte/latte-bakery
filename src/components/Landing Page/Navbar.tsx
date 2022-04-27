@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 interface Props {
     executeAboutUsScroll?: () => void;
@@ -13,6 +13,10 @@ export default function Navbar({
     executeBlogScroll,
     executeGetInTouchScroll,
 }: Props) {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
     return (
         <div
             className="pl-24 pr-20 flex items-center py-5 "

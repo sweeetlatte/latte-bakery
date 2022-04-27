@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Icons from "../Icons";
 
-import ava from "../../assets/images/blog/detail/detail-1.png";
+import ava from "../../assets/images/about-1.png";
 
 export default function Review() {
     const [isHover, setIsHover] = useState<null | boolean>(null);

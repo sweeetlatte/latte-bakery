@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { IUser } from "../../types";
 import { fetchUserData } from "../../app/api";
 
-import ava from "../../assets/images/blog/detail/detail-1.png";
+import ava from "../../assets/images/about-1.png";
 import CustomSelectBox from "../CustomSelectBox";
 
 export default function Header() {

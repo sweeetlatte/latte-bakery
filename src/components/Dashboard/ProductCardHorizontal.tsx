@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import cake from "../../assets/images/blog/blog-2.png";
+import cake from "../../assets/images/about-1.png";
 import cartIcon from "../../assets/icons/cart.svg";
 
 interface Props {
