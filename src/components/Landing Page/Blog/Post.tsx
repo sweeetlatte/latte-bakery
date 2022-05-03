@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { fetchBlogData } from "../../../app/api";
 import { IBlog } from "../../../types";
+import { randomNumber } from "../../../utils/functions";
 
 export default function Post() {
     const [blogData, setBlogData] = useState<IBlog[]>();
@@ -19,7 +20,7 @@ export default function Post() {
 
     return blogData ? (
         <>
-            {blogData.map((blogItem) => (
+            {randomNumber(blogData, 3).map((blogItem) => (
                 <div className="pb-9 flex items-center">
                     <Link to="/blog/detail">
                         <img
