@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState, MouseEvent } from "react";
 
 interface Validation {
     required?: {
@@ -40,7 +40,7 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
             });
         };
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement> | FormEvent<HTMLFormElement>) => {
         //We need to call e.preventDefault() because it prevents the page from reloading on submission, which is the default HTML form behavior.
         e.preventDefault();
         const validations = options?.validations;
@@ -50,19 +50,21 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
             for (const key in validations) {
                 const value = data[key];
                 const validation = validations[key];
+                const pattern = validation?.pattern;
+                const custom = validation?.custom;
                 if (validation?.required?.value && !value) {
                     valid = false;
                     newErrors[key] = validation?.required?.message;
                 }
 
-                const pattern = validation?.pattern;
-                if (pattern?.value && !RegExp(pattern.value).test(value)) {
+                
+                else if (pattern?.value && !RegExp(pattern.value).test(value)) {
                     valid = false;
                     newErrors[key] = pattern.message;
                 }
 
-                const custom = validation?.custom;
-                if (custom?.isValid && !custom.isValid(value)) {
+                
+                else if (custom?.isValid && !custom.isValid(value)) {
                     valid = false;
                     newErrors[key] = custom.message;
                 }
