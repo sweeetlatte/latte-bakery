@@ -1,10 +1,10 @@
+import { useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 
 import login from "../assets/images/login.png";
 import facebook from "../assets/images/Facebook.png";
 import google from "../assets/images/Google.png";
 import { useForm } from "../utils/hooks/useForm";
-import { useState } from "react";
 import RegisterSuccessfully from "../components/Modal/RegisterSuccessfully";
 
 export default function Register() {
@@ -17,14 +17,22 @@ export default function Register() {
     const { handleSubmit, handleChange, data, errors } = useForm({
         validations: {
             name: {
+                required: {
+                    value: true,
+                    message: "This field is required",
+                },
                 pattern: {
                     value: "^[A-Za-z]*$",
                     message: "Username does not include special characters.",
                 },
             },
             email: {
+                required: {
+                    value: true,
+                    message: "This field is required",
+                },
                 pattern: {
-                    value: "^[w-.]+@([w-]+.)+[w-]{2,4}$",
+                    value: "^[0-9|A-Za-z]+@[A-Za-z]+[.][A-Za-z].*$",
                     message:
                         "Invalid email address. Valid e-mail can contain only latin letters, numbers, '@' and '.'",
                 },
@@ -35,7 +43,7 @@ export default function Register() {
                     message: "This field is required",
                 },
                 custom: {
-                    isValid: (value) => value.length > 7,
+                    isValid: (value) => value?.length > 7,
                     message: "The password needs to be at least 8 characters.",
                 },
             },
@@ -64,7 +72,7 @@ export default function Register() {
                     </div>
                 </div>
                 <div className="pt-14 pb-14 text-center">- OR -</div>
-                <form className="mb-16" onSubmit={handleSubmit} noValidate>
+                <form className="mb-16" noValidate>
                     <label htmlFor="uname">
                         <span className="block mb-2">Username</span>
                         <input
@@ -115,9 +123,10 @@ export default function Register() {
                     </label>
                     <button
                         className="border w-full border-primary bg-primary px-5 py-2.5 mt-20 rounded-md"
-                        onClick={(e) => {
+                        onClick={(e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
                             e.preventDefault();
-                            openModalLoginNotify();
+                            handleSubmit(e);
+                            !errors && openModalLoginNotify();
                         }}
                     >
                         Register
