@@ -33,6 +33,7 @@ export default function Post() {
                         <Link
                             to="/blog/detail"
                             className="font-light pb-3.5 text-overflow h-[44px]"
+                            style={{ WebkitLineClamp: 2 }}
                         >
                             {blogItem?.name}
                         </Link>

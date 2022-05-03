@@ -28,7 +28,7 @@
     /* height: adjustable */
     display: -webkit-box;
     width: 100%;
-    -webkit-line-clamp: 2;
+    /* -webkit-line-clamp: number; //after this number of line will appear "..." */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
