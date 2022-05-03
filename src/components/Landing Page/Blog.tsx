@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchBlogData } from "../../app/api";
-
-import blog1 from "../../assets/images/blog-1.png";
-import blog2 from "../../assets/images/blog-2.png";
 import { IBlog } from "../../types";
 import { randomNumber } from "../../utils/functions";
 
