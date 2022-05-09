@@ -6,7 +6,7 @@ import { fetchUserData } from "../../app/api";
 import trash from "../../assets/icons/trash-2.svg";
 import edit from "../../assets/icons/edit.svg";
 import { AddressToString } from "../../utils/functions";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AddressCard() {
     const navigate = useNavigate();
@@ -37,16 +37,18 @@ export default function AddressCard() {
                             src={trash}
                             alt="trash"
                         />
+                        <Link to="edit-address" state={{ address: addressItem }}>
                         <img
                             className="cursor-pointer"
-                            onClick={() =>
-                                navigate("edit-address", {
-                                    state: { address: addressItem },
-                                })
-                            }
+                            // onClick={() =>
+                            //     navigate("edit-address", {
+                            //         state: { address: addressItem },
+                            //     })
+                            // }
                             src={edit}
                             alt="edit"
                         />
+                        </Link>
                     </div>
                 </div>
             ))}
