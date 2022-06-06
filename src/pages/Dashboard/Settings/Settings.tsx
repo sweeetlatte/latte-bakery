@@ -3,13 +3,18 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 
 import "./settings.css";
 
+import { IUser } from "../../../types";
+
 import camera from "../../../assets/icons/camera.svg";
 import ava from "../../../assets/images/about-1.png";
 import Header from "../../../components/Dashboard/Header";
+import { fetchUserData } from "../../../app/api";
 
 export default function Settings() {
     const [index, setIndex] = useState<number>(0);
     let location = useLocation();
+
+    const [userData, setUserData] = useState<IUser>();
 
     useEffect(
         function () {
@@ -26,6 +31,16 @@ export default function Settings() {
         },
         [location]
     );
+
+    useEffect(() => {
+        (async () => {
+            const responseData = await fetchUserData();
+
+            if (responseData) {
+                setUserData(responseData[0]);
+            }
+        })();
+    }, []);
 
     return (
         <>
@@ -54,7 +69,7 @@ export default function Settings() {
                         </button>
                     </div>
                     <div className="pt-4 text-center font-bold text-lg pb-8">
-                        Sweet Latte
+                        {userData?.name}
                     </div>
                     <div className="space-y-7 flex flex-col">
                         <Link
