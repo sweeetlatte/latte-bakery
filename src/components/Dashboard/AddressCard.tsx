@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { IUser } from "../../types";
 import { fetchUserData } from "../../app/api";
@@ -6,10 +6,9 @@ import { fetchUserData } from "../../app/api";
 import trash from "../../assets/icons/trash-2.svg";
 import edit from "../../assets/icons/edit.svg";
 import { AddressToString } from "../../utils/functions";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function AddressCard() {
-    const navigate = useNavigate();
     const [userData, setUserData] = useState<IUser>();
 
     useEffect(() => {
@@ -37,17 +36,20 @@ export default function AddressCard() {
                             src={trash}
                             alt="trash"
                         />
-                        <Link to="edit-address" state={{ address: addressItem }}>
-                        <img
-                            className="cursor-pointer"
-                            // onClick={() =>
-                            //     navigate("edit-address", {
-                            //         state: { address: addressItem },
-                            //     })
-                            // }
-                            src={edit}
-                            alt="edit"
-                        />
+                        <Link
+                            to="edit-address"
+                            state={{ address: addressItem }}
+                        >
+                            <img
+                                className="cursor-pointer"
+                                // onClick={() =>
+                                //     navigate("edit-address", {
+                                //         state: { address: addressItem },
+                                //     })
+                                // }
+                                src={edit}
+                                alt="edit"
+                            />
                         </Link>
                     </div>
                 </div>

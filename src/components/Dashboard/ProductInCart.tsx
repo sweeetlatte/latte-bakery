@@ -34,7 +34,6 @@ export default function ProductInCart({
             <div className={`bg-dark-bg ${rounded}`}>
                 <label htmlFor="item1" className="cart-custom-checkbox">
                     <input
-                        className="cart-checkbox"
                         type="checkbox"
                         id="item1"
                         name="item1"

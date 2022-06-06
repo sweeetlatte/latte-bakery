@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { fetchUserData } from "../../../../app/api";
-import { IAddress, IUser } from "../../../../types";
+import { IAddress } from "../../../../types";
 
 interface ILocationState {
     // Address is required
