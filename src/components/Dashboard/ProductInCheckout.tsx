@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { fetchProductData } from "../../app/api";
 
-import cake from "../../assets/images/blog-2.png";
+import { fetchProductData } from "../../app/api";
 import { IProduct } from "../../types";
 import { randomNumber } from "../../utils/functions";
+import Loader from "../Loader";
 
 export default function ProductInCheckout() {
     const [productData, setProductData] = useState<IProduct[]>();
@@ -51,6 +51,6 @@ export default function ProductInCheckout() {
             ))}
         </>
     ) : (
-        <></>
+        <Loader />
     );
 }

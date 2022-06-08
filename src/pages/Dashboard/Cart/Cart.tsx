@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./cart.css";
@@ -60,6 +60,14 @@ export default function Cart() {
                     </div>
                 </div>
                 <div className="flex flex-col space-y-1 pt-5">
+                    <ProductInCart
+                        rounded="rounded-t-lg"
+                        openModalWarningDelete={() => openModalWarningDelete()}
+                    />
+                    <ProductInCart
+                        rounded="rounded-t-lg"
+                        openModalWarningDelete={() => openModalWarningDelete()}
+                    />
                     <ProductInCart
                         rounded="rounded-t-lg"
                         openModalWarningDelete={() => openModalWarningDelete()}

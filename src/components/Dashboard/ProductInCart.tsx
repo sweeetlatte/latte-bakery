@@ -45,7 +45,7 @@ export default function ProductInCart({
 
     return productData ? (
         <>
-            {randomNumber(productData, 3).map((productItem) => (
+            {randomNumber(productData, 1).map((productItem) => (
                 <div className={`bg-dark-bg ${rounded}`}>
                     <label htmlFor="item1" className="cart-custom-checkbox">
                         <input
