@@ -11,6 +11,7 @@ import BlogDetail from "./pages/LandingPage/BlogDetail";
 
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Product from "./pages/Dashboard/Products/Products";
+import Search from "./pages/Dashboard/Products/Search";
 import Detail from "./pages/Dashboard/Products/Detail";
 import Cart from "./pages/Dashboard/Cart/Cart";
 import Checkout from "./pages/Dashboard/Cart/Checkout";
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/blog/detail" element={<BlogDetail />} />
                 <Route path="/dashboard" element={<Dashboard />}>
                     <Route path="product" element={<Product />} />
+                    <Route path="product/search" element={<Search />} />
                     <Route path="detail" element={<Detail />} />
                     <Route path="cart" element={<Cart />} />
                     <Route path="cart/checkout" element={<Checkout />} />

@@ -1,3 +1,71 @@
 .dot {
     @apply h-[9px] w-[9px] hover:bg-primary border border-white rounded-full cursor-pointer;
 }
+
+/* The container */
+.filter-checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 32px;
+}
+
+/* Hide the browser's default checkbox */
+.filter-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.filter-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #1d1e1e;
+    border: 1px solid #f3a446;
+    border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.filter-checkbox:hover input ~ .checkmark {
+    background-color: #1e1e1e;
+}
+
+/* When the checkbox is checked, add a background */
+.filter-checkbox input:checked ~ .checkmark {
+    background-color: #f3a446;
+    border: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.filter-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.filter-checkbox .checkmark:after {
+    left: 8.5px;
+    top: 3.5px;
+    width: 7px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

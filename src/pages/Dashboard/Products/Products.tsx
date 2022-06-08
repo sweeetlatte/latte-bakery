@@ -13,6 +13,7 @@ import slider1 from "../../../assets/images/dashboard/slider-1.png";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
 import slider3 from "../../../assets/images/dashboard/slider-3.png";
 import CustomSelectBox from "../../../components/CustomSelectBox";
+import { Link } from "react-router-dom";
 
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -80,11 +81,13 @@ export default function Products() {
             </div>
             <div className="ml-40 text-white flex pr-16 py-6 space-x-[42px]">
                 <div className="bg-light text-white basis-9/12">
-                    <div className="flex pb-8">
+                    <div className="flex pb-8 w-3/5">
                         <SearchBar />
-                        <button className="border border-primary bg-primary px-8 py-3 ml-6 rounded-md w-fit">
-                            Search
-                        </button>
+                        <Link to="search">
+                            <button className="border border-primary bg-primary px-8 py-3 ml-6 rounded-md w-fit">
+                                Search
+                            </button>
+                        </Link>
                     </div>
                     <div className="relative pb-9 w-full">
                         {/* <img
