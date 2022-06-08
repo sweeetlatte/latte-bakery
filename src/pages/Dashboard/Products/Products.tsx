@@ -138,30 +138,7 @@ export default function Products() {
                         </div>
                     </div>
 
-                    <div className="pt-8 flex w-full justify-between">
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                    </div>
-                    <div className="pt-8 flex w-full justify-between">
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
+                    <div className="pt-8 w-full">
                         <ProductCard
                             openModalAddProduct={() => openModalAddProduct()}
                         />
@@ -178,20 +155,11 @@ export default function Products() {
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
                             />
-                            <ProductCardHorizontal
-                                openModalAddProduct={openModalAddProduct}
-                            />
                         </div>
                     </div>
                     <div className="pt-12">
                         <div className="text-lg pb-6">Best sellers</div>
                         <div className="flex flex-col space-y-4">
-                            <ProductCardHorizontal
-                                openModalAddProduct={openModalAddProduct}
-                            />
-                            <ProductCardHorizontal
-                                openModalAddProduct={openModalAddProduct}
-                            />
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
                             />

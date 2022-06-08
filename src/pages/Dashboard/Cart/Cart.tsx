@@ -64,13 +64,6 @@ export default function Cart() {
                         rounded="rounded-t-lg"
                         openModalWarningDelete={() => openModalWarningDelete()}
                     />
-                    <ProductInCart
-                        openModalWarningDelete={() => openModalWarningDelete()}
-                    />
-                    <ProductInCart
-                        rounded="rounded-b-lg"
-                        openModalWarningDelete={() => openModalWarningDelete()}
-                    />
                 </div>
                 <DeleteProducts
                     open={open}

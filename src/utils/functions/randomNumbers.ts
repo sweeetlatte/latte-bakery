@@ -1,6 +1,4 @@
-import { IBlog } from "../../types";
-
-export function randomNumber(array: IBlog[], quantity: number) {
+export function randomNumber(array: Array<any>, quantity: number) {
     var indexArray: number[] = [];
     let pointer: number = -1;
 

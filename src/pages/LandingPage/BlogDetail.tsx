@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { fetchBlogData } from "../../app/api";
+import { IBlog } from "../../types";
 
 import Navbar from "../../components/Landing Page/Navbar";
 import Post from "../../components/Landing Page/Blog/Post";
 
 import detail1 from "../../assets/images/about-1.png";
 import detail2 from "../../assets/images/about-1.png";
-import detail3 from "../../assets/images/about-1.png";
 import detail4 from "../../assets/images/about-1.png";
+import Loader from "../../components/Loader";
 
 export default function BlogDetail() {
-    return (
+    const [blogData, setBlogData] = useState<IBlog[]>();
+
+    useEffect(() => {
+        (async () => {
+            const responseData = await fetchBlogData();
+
+            if (responseData) {
+                setBlogData(responseData);
+            }
+        })();
+    }, []);
+
+    return blogData ? (
+        <>
         <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
             <div className="pt-10 pl-28 pr-20 text-left">
@@ -19,7 +35,7 @@ export default function BlogDetail() {
                     &nbsp;/&nbsp;
                     <Link to="/blog">Blog</Link>
                     &nbsp;/&nbsp;
-                    <div className="text-primary">Cookies</div>
+                    <div className="text-primary">{}</div>
                 </div>
                 <div className="flex space-x-9">
                     <div className="basis-9/12 ">
@@ -73,7 +89,6 @@ export default function BlogDetail() {
                             </p>
                             <div className="pt-12 pb-12 flex space-x-3">
                                 <img src={detail2} alt="detail 2" />
-                                <img src={detail3} alt="detail 3" />
                             </div>
                             <p>HOW TO MAKE SMOKEY BOURBON TOFFEE</p>
                             <p className="pt-8">
@@ -153,12 +168,14 @@ export default function BlogDetail() {
                             <div className="pt-9">
                                 <Post />
                                 <Post />
-                                <Post />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </>
+    ) : (
+        <Loader />
     );
 }
