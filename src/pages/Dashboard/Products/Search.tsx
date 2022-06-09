@@ -39,7 +39,7 @@ export default function Search() {
                 </div>
             </div>
             <div className="ml-40 text-white pr-16 py-6 flex justify-between space-x-12">
-                <div className="basis-2/12 bg-dark-bg rounded-lg px-6 py-3">
+                <div className="basis-1/5 h-fit bg-dark-bg rounded-lg px-6 py-3">
                     <div className="font-bold text-lg pt-1">Filter</div>
                     <div className="font-bold pt-4">Category</div>
                     <div className="space-y-4 pt-3 pb-6">
@@ -98,7 +98,7 @@ export default function Search() {
                         </label>
                     </div>
                 </div>
-                <div className="basis-10/12 space-y-9">
+                <div className="basis-4/5 space-y-9">
                     <div className="flex space-x-3">
                         <div className="flex space-x-5 w-4/5">
                             <SearchBar />
@@ -118,16 +118,7 @@ export default function Search() {
                             />
                         </div>
                     </div>
-                    <div className="pt-8 flex w-full justify-between">
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
-                        <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
-                        />
+                    <div className="w-full">
                         <ProductCard
                             openModalAddProduct={() => openModalAddProduct()}
                         />
