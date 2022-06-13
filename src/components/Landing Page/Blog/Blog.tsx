@@ -22,6 +22,7 @@ export default function Blog() {
             {blogData.map((blogItem) => (
                 <Link
                     key={blogItem.id}
+                    state={{ detail: blogItem }}
                     to="/blog/detail"
                     className="w-1/2 max-w-[326px] mx-9 pb-14"
                 >

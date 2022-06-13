@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { fetchBlogData } from "../../../app/api";
@@ -22,7 +22,7 @@ export default function Post() {
         <>
             {randomNumber(blogData, 3).map((blogItem) => (
                 <div className="pb-9 flex items-center">
-                    <Link to="/blog/detail">
+                    <Link to="/blog/detail" state={{ detail: blogItem }}>
                         <img
                             className="w-[133px] h-[123px] object-cover"
                             src={blogItem?.image}

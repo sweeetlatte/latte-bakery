@@ -57,7 +57,10 @@ export default function Blog() {
                                         {blogItem.content}
                                     </div>
                                 </div>
-                                <Link to="/blog/detail">
+                                <Link
+                                    to="/blog/detail"
+                                    state={{ detail: blogItem }}
+                                >
                                     <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
                                         See more
                                     </button>
