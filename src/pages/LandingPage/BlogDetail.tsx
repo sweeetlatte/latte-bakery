@@ -61,17 +61,17 @@ export default function BlogDetail() {
                                 </span>
                             </div>
                             <div
-                                className="pt-20 text-lg pr-16 mb-14"
-                                style={{ borderRight: "1px solid white" }}
+                                className="pt-20 text-lg mb-14"
                             >
                                 {blogDetail.content}
                             </div>
                         </div>
                         <div className="basis-3/12">
-                            <div className="pt-[14.15rem]">
+                            <div className="pt-[14.15rem] pl-16 mb-10" 
+                                style={{ borderLeft: "1px solid white" }}
+                                >
                                 <div className="text-xl">Popular</div>
                                 <div className="pt-9">
-                                    <Post />
                                     <Post />
                                 </div>
                             </div>
