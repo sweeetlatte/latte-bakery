@@ -23,9 +23,12 @@ export default function ProductCard({ openModalAddProduct }: Props) {
     }, []);
 
     return productData ? (
-        <div className="flex flex-wrap justify-between">
+        <div 
+        // className="grid w-full grid-cols-4 auto-cols-max mx-auto place-items-center place-self-center gap-5"
+        className="flex flex-wrap justify-center"
+        >
             {productData.map((productItem) => (
-                <div className="w-[204px] h-[245px] px-6 py-5 mb-6 bg-dark-bg rounded-lg text-left text-sm">
+                <div className="w-[204px] h-[245px] px-6 py-5 m-6 bg-dark-bg rounded-lg text-left text-sm flex-initial">
                     <Link to="/dashboard/detail">
                         <img
                             className="h-[117px] w-full object-cover"

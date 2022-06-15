@@ -19,11 +19,6 @@
     }
 }
 
-.tab-bar {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-}
-
 .text-overflow {
     /* height: adjustable */
     display: -webkit-box;
@@ -33,6 +28,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-word;
+}
+
+.tab-bar {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .tab-pane {
@@ -52,6 +52,10 @@
     border-radius: 15px;
     background-color: #f3a446;
     transition: all 0.2s ease;
+}
+
+.active-blog-tab {
+    @apply text-primary underline underline-offset-[31px] decoration-[5px];
 }
 
 /* ============= Custom checkbox ============= */

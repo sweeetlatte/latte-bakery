@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./products.css";
 
@@ -8,12 +9,11 @@ import ProductCard from "../../../components/Dashboard/ProductCard";
 import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
 import AddCard from "../../../components/Modal/Add Card/AddCard";
 import Icons from "../../../components/Icons";
+import CustomSelectBox from "../../../components/CustomSelectBox";
 
 import slider1 from "../../../assets/images/dashboard/slider-1.png";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
 import slider3 from "../../../assets/images/dashboard/slider-3.png";
-import CustomSelectBox from "../../../components/CustomSelectBox";
-import { Link } from "react-router-dom";
 
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);

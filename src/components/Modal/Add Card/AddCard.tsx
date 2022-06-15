@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./addCard.css";
 
 import cake from "../../../assets/images/blog-2.png";
