@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Navbar from "../../components/Landing Page/Navbar";
@@ -27,6 +28,12 @@ export default function BlogPage() {
         { value: "2021", label: "2021" },
         { value: "2020", label: "2020" },
     ];
+
+    const [type, setType] = useState<string>("Breads and rolls");
+
+    const [active, setActive] = useState<string>("");
+
+    // const [offsetWidth, setWidth] = useState<string>();
 
     return (
         <div className="font-body text-center mx-auto bg-light text-white">
@@ -61,17 +68,61 @@ export default function BlogPage() {
                         style={{ borderRight: "1px solid white" }}
                     >
                         <div className="flex justify-between text-lg tab-bar py-7 px-3 relative">
-                            <div className="text-primary cursor-pointer">
+                            <div
+                                className={`${active} cursor-pointer`}
+                                onClick={() => {
+                                    setType("Breads and rolls");
+                                }}
+                            >
                                 Breads and rolls
                             </div>
-                            <div className="cursor-pointer">Cheesecake</div>
-                            <div className="cursor-pointer">Caramel</div>
-                            <div className="cursor-pointer">Dairy free</div>
-                            <div className="cursor-pointer">Peanut butter</div>
-                            <div className="cursor-pointer">Cookies</div>
+                            <div
+                                className={`${active} cursor-pointer`}
+                                onClick={() => {
+                                    setType("Cheesecake");
+                                }}
+                            >
+                                Cheesecake
+                            </div>
+                            <div
+                                className="cursor-pointer"
+                                onClick={() => {
+                                    setType("Caramel");
+                                }}
+                            >
+                                Caramel
+                            </div>
+                            <div
+                                className="cursor-pointer"
+                                onClick={() => {
+                                    setType("Dairy free");
+                                }}
+                            >
+                                Dairy free
+                            </div>
+                            <div
+                                className="cursor-pointer"
+                                onClick={() => {
+                                    setType("Peanut butter");
+                                }}
+                            >
+                                Peanut butter
+                            </div>
+                            <div
+                                className="cursor-pointer"
+                                onClick={() => {
+                                    setType("Cookies");
+                                }}
+                            >
+                                Cookies
+                            </div>
+                            {/* <div
+                                className="line"
+                                style={{ width: offsetWidth }}
+                            ></div> */}
                         </div>
                         <div className="flex flex-wrap pt-24 w-full justify-center">
-                            <Blog />
+                            <Blog type={type} />
                         </div>
                     </div>
                     <div className="basis-3/12">
