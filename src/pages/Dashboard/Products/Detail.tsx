@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import "./products.css";
+import { IProduct, IProductDestail } from "../../../types";
+import { fetchProductData } from "../../../app/api";
 
 import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
 import Review from "../../../components/Dashboard/Review";
 import Pagination from "../../../components/Dashboard/Pagination/Pagination";
-
-import creme from "../../../assets/images/creme.png";
-import cake from "../../../assets/images/blog-2.png";
-
-import arrowLeft from "../../../assets/icons/arrow-left.svg";
 import Header from "../../../components/Dashboard/Header";
 import AddCard from "../../../components/Modal/Add Card/AddCard";
+
+import creme from "../../../assets/images/creme.png";
+import arrowLeft from "../../../assets/icons/arrow-left.svg";
 
 export default function Detail() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -25,7 +25,29 @@ export default function Detail() {
         setOpenModal(false);
     };
 
-    return (
+    const location = useLocation();
+
+    const state = (location.state as IProductDestail) || {
+        from: { pathname: "/" },
+    };
+
+    // console.log(state.detail);
+
+    const productDetail = state?.detail ?? null;
+
+    const [productData, setProductData] = useState<IProduct[]>();
+
+    useEffect(() => {
+        (async () => {
+            const responseData = await fetchProductData();
+
+            if (responseData) {
+                setProductData(responseData);
+            }
+        })();
+    }, []);
+
+    return productData ? (
         <>
             <div
                 className="w-full pl-40 text-white py-9 pr-16 flex items-center"
@@ -55,7 +77,7 @@ export default function Detail() {
                                 to="/dashboard/detail"
                                 className="text-primary"
                             >
-                                Meringue Tart
+                                {productDetail.name}
                             </Link>
                         </div>
                     </div>
@@ -63,17 +85,21 @@ export default function Detail() {
                         <div className="flex flex-row w-full space-x-9">
                             <div className="basis-6/12">
                                 <img
-                                    className="w-full h-full object-cover rounded-lg"
-                                    src={cake}
+                                    className="w-full h-[355px] object-cover rounded-lg"
+                                    src={productDetail.image}
                                     alt="cake"
                                 />
                             </div>
                             <div className="basis-6/12 flex flex-col">
                                 <div className="text-primary font-medium">
-                                    Meringue Tart
+                                    {productDetail.name}
                                 </div>
                                 <p className="text-xl">
-                                    80.000 VND • 5 🤎🤎🤎🤎🤎
+                                    {new Intl.NumberFormat("de-DE", {
+                                        style: "currency",
+                                        currency: "VND",
+                                    }).format(productDetail.price)}{" "}
+                                    • 5 🤎🤎🤎🤎🤎
                                 </p>
                                 <p className="pt-6 text-sm">Size</p>
                                 <div className="text-sm text-primary pt-3 flex space-x-3">
@@ -129,13 +155,7 @@ export default function Detail() {
                         <div className="text-xl font-medium pb-3 text-primary">
                             Description
                         </div>
-                        <p>
-                            Fruit desserts covered with baked meringue were
-                            found beginning in the 18th century in France.
-                            Menon's pommes meringuées are a sort of thick apple
-                            sauce or apple butter covered with baked meringue in
-                            his 1739 cookbook.
-                        </p>
+                        <p>{productDetail.description}</p>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
                         <div className="text-xl font-medium pb-3 text-primary">
@@ -195,5 +215,7 @@ export default function Detail() {
                 </div>
             </div>
         </>
+    ) : (
+        <></>
     );
 }

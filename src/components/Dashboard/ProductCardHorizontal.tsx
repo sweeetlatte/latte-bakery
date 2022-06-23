@@ -28,16 +28,20 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
         <>
             {randomNumber(productData, 3).map((productItem) => (
                 <div className="bg-dark-bg py-4 px-4 rounded-lg flex space-x-4 w-full mb-5">
-                    <Link to="/dashboard/detail">
+                    <Link
+                        to="/dashboard/detail"
+                        state={{ detail: productItem }}
+                    >
                         <img
                             className="h-[100px] w-[100px] object-cover"
                             src={productItem.image}
-                            alt="cake"
+                            alt={productItem.name}
                         />
                     </Link>
                     <div className="text-sm h-full">
                         <Link
                             to="/dashboard/detail"
+                            state={{ detail: productItem }}
                             className="font-medium text-primary text-overflow w-[145px]"
                             style={{ WebkitLineClamp: 1 }}
                         >

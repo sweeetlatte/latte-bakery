@@ -23,13 +23,16 @@ export default function ProductCard({ openModalAddProduct }: Props) {
     }, []);
 
     return productData ? (
-        <div 
-        // className="grid w-full grid-cols-4 auto-cols-max mx-auto place-items-center place-self-center gap-5"
-        className="flex flex-wrap justify-center"
+        <div
+            className="grid w-full grid-cols-4 auto-cols-max mx-auto place-items-center place-self-center gap-5"
+            // className="flex flex-wrap justify-center"
         >
             {productData.map((productItem) => (
-                <div className="w-[204px] h-[245px] px-6 py-5 m-6 bg-dark-bg rounded-lg text-left text-sm flex-initial">
-                    <Link to="/dashboard/detail">
+                <div className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm">
+                    <Link
+                        to="/dashboard/detail"
+                        state={{ detail: productItem }}
+                    >
                         <img
                             className="h-[117px] w-full object-cover"
                             src={productItem.image}
@@ -45,6 +48,7 @@ export default function ProductCard({ openModalAddProduct }: Props) {
                     <div className="flex justify-between items-center pt-2">
                         <Link
                             to="/dashboard/detail"
+                            state={{ detail: productItem }}
                             className="font-medium text-primary text-overflow w-[85px]"
                             style={{ WebkitLineClamp: 2 }}
                         >

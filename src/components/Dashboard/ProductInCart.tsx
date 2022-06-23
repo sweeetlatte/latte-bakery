@@ -9,6 +9,7 @@ import "../../pages/Dashboard/Cart/cart.css";
 
 import trash from "../../assets/icons/trash-2.svg";
 import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
+import { Link } from "react-router-dom";
 
 interface Props {
     rounded?: string;
@@ -61,14 +62,25 @@ export default function ProductInCart({
                     </label>
                     <div className="text-lg py-7 pl-20 pr-5 flex justify-between items-center">
                         <div className="basis-4/12 flex space-x-[27px] items-center">
-                            <img
-                                className="w-[132px] h-[86px] object-cover rounded-lg"
-                                src={productItem.image}
-                                alt="cake"
-                            />
+                            <Link
+                                to="/dashboard/detail"
+                                state={{ detail: productItem }}
+                            >
+                                <img
+                                    className="w-[132px] h-[86px] object-cover rounded-lg"
+                                    src={productItem.image}
+                                    alt={productItem.name}
+                                />
+                            </Link>
+
                             <div>
                                 <div className="text-primary">
-                                    {productItem.name}
+                                    <Link
+                                        to="/dashboard/detail"
+                                        state={{ detail: productItem }}
+                                    >
+                                        {productItem.name}
+                                    </Link>
                                 </div>
                                 <div className="text-sm">
                                     Filling: Chocolate
