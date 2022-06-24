@@ -1,8 +1,10 @@
 import "./addCard.css";
+import { IProductDestail } from "../../../types";
 
 import cake from "../../../assets/images/blog-2.png";
 import creme from "../../../assets/images/creme.png";
 import x from "../../../assets/icons/x.svg";
+import { useLocation } from "react-router-dom";
 
 interface Props {
     open: boolean;
@@ -10,6 +12,14 @@ interface Props {
 }
 
 export default function AddCard({ open, closeModalAddProduct }: Props) {
+    const location = useLocation();
+
+    const state = (location.state as IProductDestail) || {
+        from: { pathname: "/" },
+    };
+
+    // console.log(location);
+    
     return (
         <>
             <div

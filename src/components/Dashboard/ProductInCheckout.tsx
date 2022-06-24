@@ -22,6 +22,7 @@ export default function ProductInCheckout() {
         <>
             {randomNumber(productData, 5).map((productItem) => (
                 <div
+                    key={productItem.id}
                     className="flex text-sm items-center py-4"
                     style={{ borderBottom: "1px solid #656870" }}
                 >

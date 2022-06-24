@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Icons from "../../../components/Icons";
-import arrowLeft from "../../../assets/icons/arrow-left.svg";
-import location from "../../../assets/icons/location.svg";
-import voucher from "../../../assets/icons/voucher.svg";
+import { CheckoutMethod } from "../../../types";
 
 import ProductInCheckout from "../../../components/Dashboard/ProductInCheckout";
 import Header from "../../../components/Dashboard/Header";
 
-import { CheckoutMethod } from "../../../types";
+import Icons from "../../../components/Icons";
+import voucher from "../../../assets/icons/voucher.svg";
+import AddressCardInCheckout from "../../../components/Dashboard/AddressCardInCheckout";
+import SelectedAddress from "../../../components/Dashboard/SelectedAddress";
 
 export default function Checkout() {
     const [showingProducts, setShowingProducts] = useState(true);
@@ -21,8 +21,51 @@ export default function Checkout() {
         setCheckoutMethod(method);
     };
 
+    const [isHidden, setIsHidden] = useState<boolean | null>(null);
+
     return (
         <>
+            <div
+                className={
+                    isHidden === false
+                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 in-right text-white p-6 flex flex-col justify-between"
+                        : isHidden === true
+                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 out-left text-white p-6 flex flex-col justify-between"
+                        : "hidden"
+                }
+                style={
+                    {
+                        "--opacity": 1,
+                        "--duration": "300ms",
+                    } as React.CSSProperties
+                }
+            >
+                <div className="basis-11/12 overflow-hidden">
+                    <div className="text-xl pb-5 flex items-center space-x-3">
+                        <div className="cursor-pointer" onClick={() => setIsHidden(true)}>
+                            <Icons.ArrowLeft />
+                        </div>
+                        <p>Select address</p>
+                    </div>
+                    <div className="h-[90%] space-y-3 overflow-scroll address-list">
+                        <AddressCardInCheckout />
+                    </div>
+                </div>
+                <div className="basis-1/12 flex items-end">
+                    <button
+                        className="bg-primary rounded-lg w-full py-3"
+                        onClick={() => setIsHidden(true)}
+                    >
+                        APPLY
+                    </button>
+                </div>
+            </div>
+            <div
+                className={isHidden === false ? "__mask-modal" : ""}
+                onClick={() => {
+                    setIsHidden(true);
+                }}
+            />
             <div
                 className="w-full pl-40 text-white py-9 pr-16 flex items-center"
                 style={{ backgroundColor: "#272727" }}
@@ -36,8 +79,8 @@ export default function Checkout() {
                 </div>
             </div>
             <div className="ml-40 text-white pr-16 py-6">
-                <div className="flex space-x-[27.5px] pb-8">
-                    <img src={arrowLeft} alt="arrow left" />
+                <div className="flex space-x-[27.5px] pb-8 items-center">
+                    <Icons.ArrowLeft />
                     <div className="flex">
                         <Link to="/dashboard/cart">Cart</Link>
                         &nbsp;/&nbsp;
@@ -102,25 +145,16 @@ export default function Checkout() {
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
                             <div className="flex justify-between text-primary pb-4">
                                 <div>Shipping address</div>
-                                <div>Change</div>
-                            </div>
-                            <div className="flex justify-between">
-                                <div className="flex space-x-3.5 items-start">
-                                    <img src={location} alt="location" />
-                                    <div>
-                                        <div>
-                                            271 Dakao Street, Espresso, Robusta
-                                            City
-                                        </div>
-                                        <div className="text-caption text-xs pt-1.5">
-                                            SWEET LATTE - 0365214789
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="basis-3/12 text-right text-caption">
-                                    Default
+                                <div
+                                className="cursor-pointer"
+                                    onClick={() => {
+                                        setIsHidden(false);
+                                    }}
+                                >
+                                    Change
                                 </div>
                             </div>
+                            <SelectedAddress />
                         </div>
                         <div className="bg-dark-bg rounded-lg px-12 py-6">
                             <div className="text-primary pb-4">Payment</div>
@@ -223,7 +257,7 @@ export default function Checkout() {
                                 </div>
                             </div>
                         </div>
-                        <button className="bg-primary font-bold rounded-lg px-12 py-6 w-full">
+                        <button className="bg-primary font-bold rounded-lg px-12 py-3 w-full">
                             ORDER
                         </button>
                     </div>

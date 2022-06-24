@@ -135,3 +135,39 @@
 .__yellow-outline-option {
     @apply border border-primary rounded-full;
 }
+
+/* ============= In from Right ============= */
+@keyframes inRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+    100% {
+        opacity: var(--opacity);
+        transform: translateX(0);
+    }
+}
+
+.in-right {
+    animation-name: inRight;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+}
+
+/* ============= Out from Left ============= */
+@keyframes outLeft {
+    0% {
+        opacity: var(--opacity);
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+}
+
+.out-left {
+    animation-name: outLeft;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+}

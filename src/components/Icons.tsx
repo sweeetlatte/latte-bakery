@@ -214,6 +214,41 @@ const ArrowUp = ({ stroke }: Props) => (
     </svg>
 );
 
+const ArrowLeft = ({ stroke }: Props) => (
+    <svg
+        width="21"
+        height="13"
+        viewBox="0 0 21 13"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M6.5625 11.5625L1.5 6.5M1.5 6.5L6.5625 1.4375M1.5 6.5L19.5 6.5"
+            stroke="white"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+
+const Tick = ({ stroke }: Props) => (
+    <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M13.9377 7.80523L9.7504 13.3052C9.57807 13.5317 9.31132 13.6655 9.02715 13.6673H9.02073C8.73932 13.6673 8.47348 13.5372 8.29932 13.3153L6.06998 10.4672C5.75832 10.0694 5.82798 9.49282 6.22673 9.18115C6.62457 8.86857 7.20207 8.93823 7.51373 9.3379L9.01065 11.2501L12.4793 6.69515C12.7855 6.29273 13.3602 6.2139 13.7645 6.52098C14.1669 6.82807 14.2448 7.40282 13.9377 7.80523ZM10.0007 0.833984C4.9379 0.833984 0.833984 4.9379 0.833984 10.0007C0.833984 15.0625 4.9379 19.1673 10.0007 19.1673C15.0634 19.1673 19.1673 15.0625 19.1673 10.0007C19.1673 4.9379 15.0634 0.833984 10.0007 0.833984Z"
+            fill="#F3A446"
+        />
+    </svg>
+);
+
 const Icons = {
     BiggerChevronDown,
     ChevronDown,
@@ -227,6 +262,8 @@ const Icons = {
     Cash,
     Card,
     ArrowUp,
+    ArrowLeft,
+    Tick,
 };
 
 export default Icons;

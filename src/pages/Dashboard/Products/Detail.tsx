@@ -10,9 +10,9 @@ import Review from "../../../components/Dashboard/Review";
 import Pagination from "../../../components/Dashboard/Pagination/Pagination";
 import Header from "../../../components/Dashboard/Header";
 import AddCard from "../../../components/Modal/Add Card/AddCard";
+import Icons from "../../../components/Icons";
 
 import creme from "../../../assets/images/creme.png";
-import arrowLeft from "../../../assets/icons/arrow-left.svg";
 
 export default function Detail() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -68,7 +68,7 @@ export default function Detail() {
                 >
                     <div className="flex space-x-[27.5px] text-lg items-center">
                         <Link to="/dashboard/product">
-                            <img src={arrowLeft} alt="arrow left" />
+                            <Icons.ArrowLeft />
                         </Link>
                         <div>
                             <Link to="/dashboard/product">Dashboard</Link>
