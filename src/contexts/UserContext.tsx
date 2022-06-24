@@ -15,7 +15,7 @@ const INITIAL_STATE = {
 // Step 1: Create Context
 export const UserDataContext = createContext<IContext>(INITIAL_STATE);
 
-// Step 2: Create manager of Context
+// Step 2: Create Context manager: Provider
 const UserDataProvider: React.FC = ({ children }) => {
     // Step 3: Init resources inside context
     const [userData, setUserData] = useState<IUser | null>(null);

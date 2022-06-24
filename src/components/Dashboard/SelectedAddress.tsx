@@ -1,9 +1,8 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 
 import { UserDataContext } from "../../contexts/UserContext";
 
 import { fetchUserData } from "../../app/api";
-import { IUser } from "../../types";
 import { AddressToString } from "../../utils/functions";
 
 import location from "../../assets/icons/location.svg";

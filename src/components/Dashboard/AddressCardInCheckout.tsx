@@ -1,11 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 
-import { UserDataContext } from "../../contexts/UserContext";
-
 import "./dashboard.css";
 
-import { IUser } from "../../types";
-import { fetchUserData } from "../../app/api";
+import { UserDataContext } from "../../contexts/UserContext";
 import { AddressToString } from "../../utils/functions";
 
 import Icons from "../Icons";
