@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+
+import { UserDataContext } from "../../contexts/userContext";
 
 import "./dashboard.css";
 
@@ -8,12 +10,8 @@ import { AddressToString } from "../../utils/functions";
 
 import Icons from "../Icons";
 
-interface Props {
-    userData: IUser;
-    setUserData: (userData: IUser) => void;
-}
-
-export default function AddressCardInCheckout({userData, setUserData}: Props) {
+export default function AddressCardInCheckout() {
+    const { userData } = useContext(UserDataContext);
     const [selectedAddress, setSelectedAddress] = useState<number>();
 
     useEffect(() => {

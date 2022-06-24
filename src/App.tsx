@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import UserProvider from "./contexts/userContext";
+
 import "./App.css";
 
 import LogIn from "./pages/LogIn";
@@ -28,44 +30,37 @@ import NotFound from "./pages/NotFound";
 import "./main.css";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/login" element={<LogIn />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/detail" element={<BlogDetail />} />
-                <Route path="/dashboard" element={<Dashboard />}>
-                    <Route path="product" element={<Product />} />
-                    <Route path="product/search" element={<Search />} />
-                    <Route path="detail" element={<Detail />} />
-                    <Route path="cart" element={<Cart />} />
-                    <Route path="cart/checkout" element={<Checkout />} />
-                    <Route path="setting" element={<Settings />}>
-                        <Route path="account-info" element={<AccountInfo />} />
-                        <Route path="address-book">
-                            <Route
-                                path="add-address"
-                                element={<AddAddress />}
-                            />
-                            <Route
-                                path="edit-address"
-                                element={<EditAddress />}
-                            />
-                            <Route index element={<AddressBook />} />
-                        </Route>
-                        <Route
-                            path="change-password"
-                            element={<ChangePassword />}
-                        />
-                    </Route>
-                </Route>
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/detail" element={<BlogDetail />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="product" element={<Product />} />
+            <Route path="product/search" element={<Search />} />
+            <Route path="detail" element={<Detail />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="cart/checkout" element={<Checkout />} />
+            <Route path="setting" element={<Settings />}>
+              <Route path="account-info" element={<AccountInfo />} />
+              <Route path="address-book">
+                <Route path="add-address" element={<AddAddress />} />
+                <Route path="edit-address" element={<EditAddress />} />
+                <Route index element={<AddressBook />} />
+              </Route>
+              <Route path="change-password" element={<ChangePassword />} />
+            </Route>
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
+  );
 }
 
 export default App;

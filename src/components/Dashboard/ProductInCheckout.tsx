@@ -13,14 +13,14 @@ export default function ProductInCheckout() {
             const responseData = await fetchProductData();
 
             if (responseData) {
-                setProductData(responseData);
+                setProductData(randomNumber(responseData, 5));
             }
         })();
     }, []);
 
     return productData ? (
         <>
-            {randomNumber(productData, 5).map((productItem) => (
+            {productData.map((productItem) => (
                 <div
                     key={productItem.id}
                     className="flex text-sm items-center py-4"
