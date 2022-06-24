@@ -2,13 +2,13 @@ import React, { createContext, useState } from "react";
 import { IUser } from "../types";
 
 type IContext = {
-    userData: IUser | undefined;
-    setUserData: (user: IUser | undefined) => void;
+    userData: IUser | null;
+    setUserData: (user: IUser) => void;
 };
 
 // Step 0: Init state inside Provider
 const INITIAL_STATE = {
-    userData: undefined,
+    userData: null,
     setUserData: () => null,
 };
 
@@ -18,7 +18,7 @@ export const UserDataContext = createContext<IContext>(INITIAL_STATE);
 // Step 2: Create manager of Context
 const UserDataProvider: React.FC = ({ children }) => {
     // Step 3: Init resources inside context
-    const [userData, setUserData] = useState<IUser>();
+    const [userData, setUserData] = useState<IUser | null>(null);
 
     const value = {
         userData,
