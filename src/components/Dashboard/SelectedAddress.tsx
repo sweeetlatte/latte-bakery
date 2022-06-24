@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+
+import { UserDataContext } from "../../contexts/userContext";
 
 import { fetchUserData } from "../../app/api";
 import { IUser } from "../../types";
@@ -7,17 +9,18 @@ import { AddressToString } from "../../utils/functions";
 import location from "../../assets/icons/location.svg";
 
 export default function SelectedAddress() {
-    const [userData, setUserData] = useState<IUser>();
+    const { userData, setUserData } = useContext(UserDataContext);
 
     useEffect(() => {
         (async () => {
             const responseData = await fetchUserData();
 
-            if (responseData) {
+            if (responseData.length > 0) {
                 setUserData(responseData[0]);
             }
         })();
     }, []);
+    
     return userData ? (
         <>
             {userData.address
