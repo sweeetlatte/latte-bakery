@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import UserProvider from "./contexts/userContext";
+import AppContextProvider from "./contexts/AppContext";
 
 import "./App.css";
 
@@ -31,7 +31,7 @@ import "./main.css";
 
 function App() {
   return (
-    <UserProvider>
+    <AppContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -59,7 +59,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </UserProvider>
+    </AppContextProvider>
   );
 }
 

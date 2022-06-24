@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 
-import { UserDataContext } from "../../contexts/userContext";
+import { UserDataContext } from "../../contexts/UserContext";
 
 import "./dashboard.css";
 
