@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Navbar from "./Navbar";
 
@@ -54,13 +54,13 @@ export default function HeroSection({ navBarProps }: Props) {
     }, [scrollTop]);
 
     return (
-        <div className="h-screen hero-section">
-            <div className="fixed w-full top-0 z-50" id="navbar">
+        <div className="relative flex justify-center h-screen hero-section">
+            <div id="navbar" className="fixed w-full top-0 z-50">
                 <Navbar {...navBarProps} />
             </div>
             {/* <Carousel /> */}
-            <div>
-                <div className="font-title text-[144px] pt-44">
+            <div className="self-center">
+                <div className="font-title text-[144px]">
                     Pastry with love
                 </div>
                 <div className="text-2xl w-[33rem] mx-auto pb-8">
@@ -74,8 +74,8 @@ export default function HeroSection({ navBarProps }: Props) {
                     Shop now
                 </Link>
             </div>
-            <div className="pt-[5.6rem]">
-                <img className="mx-auto" src={roller} alt="dough roller" />
+            <div className="absolute bottom-[-10.65rem]">
+                <img src={roller} alt="dough roller" />
             </div>
         </div>
     );

@@ -8,11 +8,11 @@ import youtube from "../../assets/icons/Youtube.svg";
 
 export default function GetInTouch() {
     return (
-        <div className="pt-4 pb-24">
+        <div className="pt-20 relative">
             <div className="absolute left-36">
                 <img src={getintouch1} alt="get in touch 1" />
             </div>
-            <div className="mt-32 bg-light h-max relative px-14 py-14 mx-[245px] rounded-lg">
+            <div className="mt-32 bg-light h-max px-14 py-14 mx-[245px] rounded-lg">
                 <div className="text-primary font-bold text-2xl underline underline-offset-8">
                     Get In Touch
                 </div>

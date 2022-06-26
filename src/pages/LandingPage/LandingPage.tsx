@@ -6,6 +6,7 @@ import Blog from "../../components/Landing Page/Blog";
 import GetInTouch from "../../components/Landing Page/GetInTouch";
 import ScrollToTop from "../../components/Landing Page/ScrollToTop";
 import useScroll from "../../utils/hooks/useScroll";
+import SectionTitle from "../../components/Landing Page/SectionTitle";
 
 export default function LandingPage() {
     const [aboutUsRef, executeAboutUsScroll] = useScroll() as [
@@ -36,20 +37,20 @@ export default function LandingPage() {
         <div className="font-body text-center mx-auto bg-dark-bg text-white">
             <HeroSection navBarProps={navBarProps} />
             <ScrollToTop />
-            <div ref={aboutUsRef as any}>
-                <AboutUs />
-            </div>
-            <div
-                ref={productsRef as any}
-                className="relative pt-20 pr-[9.875rem]"
-            >
-                <Products />
-            </div>
-            <div ref={blogRef as any}>
-                <Blog />
-            </div>
-            <div ref={getInTouchRef as any}>
-                <GetInTouch />
+            <div className="space-y-20 px-36 py-20">
+                <SectionTitle />
+                <div ref={aboutUsRef as any}>
+                    <AboutUs />
+                </div>
+                <div ref={productsRef as any}>
+                    <Products />
+                </div>
+                <div ref={blogRef as any}>
+                    <Blog />
+                </div>
+                <div ref={getInTouchRef as any}>
+                    <GetInTouch />
+                </div>
             </div>
         </div>
     );

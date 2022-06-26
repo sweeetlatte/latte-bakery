@@ -171,3 +171,7 @@
     animation-duration: var(--duration);
     animation-fill-mode: both;
 }
+
+.regular-button {
+    @apply border border-primary bg-primary px-10 rounded-md w-fit h-[44px];
+}

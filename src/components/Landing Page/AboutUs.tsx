@@ -6,21 +6,19 @@ import about2 from "../../assets/images/about-2.png";
 
 export default function AboutUs() {
     return (
-        <div className="relative mt-36">
-            <div className="font-title text-7xl text-left pl-36 pt-28">
+        <div className="relative">
+            <div className="font-title text-[200px] text-white-rgba text-left absolute top-14 left-[4.75rem]">
                 About us
             </div>
-            <div className="font-title text-[200px] text-white-rgba text-left pl-28 absolute top-[-1.25rem]">
-                About us
+            <div className="flex py-28 justify-between items-center">
+                <div className="font-title text-7xl text-left">About us</div>
             </div>
-            <div>
-                <img
-                    className="absolute right-4 top-40"
-                    src={bread1}
-                    alt="bread-1"
-                />
-            </div>
-            <div className="w-[66.25rem] mx-auto pt-36">
+            <img
+                className="absolute right-0 top-40"
+                src={bread1}
+                alt="bread-1"
+            />
+            <div className="w-[66.25rem] mx-auto">
                 <img src={about1} alt="about-1" />
                 <div className="pt-7 flex">
                     <img src={about2} alt="about-2" />
