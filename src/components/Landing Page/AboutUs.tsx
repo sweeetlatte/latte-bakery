@@ -3,16 +3,12 @@ import React from "react";
 import bread1 from "../../assets/images/bread-1.svg";
 import about1 from "../../assets/images/about-1.png";
 import about2 from "../../assets/images/about-2.png";
+import SectionTitle from "./SectionTitle";
 
 export default function AboutUs() {
     return (
         <div className="relative">
-            <div className="font-title text-[200px] text-white-rgba text-left absolute top-14 left-[4.75rem]">
-                About us
-            </div>
-            <div className="flex py-28 justify-between items-center">
-                <div className="font-title text-7xl text-left">About us</div>
-            </div>
+            <SectionTitle title={"About us"} />
             <img
                 className="absolute right-0 top-40"
                 src={bread1}

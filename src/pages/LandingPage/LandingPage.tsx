@@ -38,7 +38,6 @@ export default function LandingPage() {
             <HeroSection navBarProps={navBarProps} />
             <ScrollToTop />
             <div className="space-y-20 px-36 py-20">
-                <SectionTitle />
                 <div ref={aboutUsRef as any}>
                     <AboutUs />
                 </div>
