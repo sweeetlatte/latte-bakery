@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchBlogData } from "../../app/api";
 import { IBlog } from "../../types";
 import { randomNumber } from "../../utils/functions";
+import SectionTitle from "./SectionTitle";
 
 export default function Blog() {
     const [blogData, setBlogData] = useState<IBlog[]>();
@@ -19,17 +20,7 @@ export default function Blog() {
 
     return blogData ? (
         <>
-            <div className="font-title text-[200px] text-white-rgba text-left absolute left-[-2.25rem]">
-                Blog
-            </div>
-            <div className="flex py-28 justify-between items-center">
-                <div className="font-title text-7xl text-left">Blog</div>
-                <Link to="dashboard/product">
-                    <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
-                        View all
-                    </button>
-                </Link>
-            </div>
+            <SectionTitle title={"Blog"} variant="one-button" linkTo="/blog" />
             <div className="w-[66.25rem] mx-auto space-y-12">
                 {randomNumber(blogData, 2).map((blogItem) => (
                     <div className="flex">

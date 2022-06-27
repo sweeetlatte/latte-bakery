@@ -23,7 +23,7 @@ export default function ProductCardRgba() {
     return productData ? (
         <>
             {productData.map((productItem) => (
-                <div className="bg-white-rgba w-[15.688rem] h-[15.563rem] rounded-lg px-[1.875rem] pt-[1.875rem] mb-12 text-left">
+                <div key={productItem.id} className="bg-white-rgba w-[15.688rem] h-[15.563rem] rounded-lg px-[1.875rem] pt-[1.875rem] mb-12 text-left">
                     <img
                         className="w-[191px] h-[118px] object-cover"
                         src={productItem.image}
