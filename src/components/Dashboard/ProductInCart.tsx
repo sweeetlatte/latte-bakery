@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import "../../pages/Dashboard/Cart/cart.css";
 
 import { IProduct } from "../../types";
 import { fetchProductData } from "../../app/api";
 import { randomNumber } from "../../utils/functions";
 import Icons from "../Icons";
 
-import "../../pages/Dashboard/Cart/cart.css";
-
-import trash from "../../assets/icons/trash-2.svg";
 import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
-import { Link } from "react-router-dom";
 
 interface Props {
     rounded?: string;
@@ -138,12 +137,12 @@ export default function ProductInCart({
                             </div>
                         </div>
                         <div className="basis-1/12 justify-end flex">
-                            <img
+                            <div
                                 className="cursor-pointer"
-                                src={trash}
-                                alt="trash"
                                 onClick={openModalWarningDelete}
-                            />
+                            >
+                                <Icons.Trash stroke="#f83b3b" />
+                            </div>
                         </div>
                     </div>
                 </div>

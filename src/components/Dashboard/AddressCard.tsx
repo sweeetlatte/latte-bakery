@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { IUser } from "../../types";
 import { fetchUserData } from "../../app/api";
-
-import trash from "../../assets/icons/trash-2.svg";
-import edit from "../../assets/icons/edit.svg";
 import { AddressToString } from "../../utils/functions";
-import { Link } from "react-router-dom";
+import Icons from "../Icons";
+
+import edit from "../../assets/icons/edit.svg";
 
 export default function AddressCard() {
     const [userData, setUserData] = useState<IUser>();
@@ -31,11 +31,7 @@ export default function AddressCard() {
                         <p>{AddressToString(addressItem!)}</p>
                     </div>
                     <div className="flex space-x-3">
-                        <img
-                            className="cursor-pointer"
-                            src={trash}
-                            alt="trash"
-                        />
+                        <Icons.Trash stroke="#f83b3b" />
                         <Link
                             to="edit-address"
                             state={{ address: addressItem }}
