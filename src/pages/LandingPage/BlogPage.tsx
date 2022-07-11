@@ -31,8 +31,6 @@ export default function BlogPage() {
 
     const [type, setType] = useState<string>("Breads and rolls");
 
-    const [active, setActive] = useState<string>("");
-
     // const [offsetWidth, setWidth] = useState<string>();
 
     return (
@@ -47,29 +45,33 @@ export default function BlogPage() {
                     </Link>
                 </div>
                 <div className="pt-11 text-5xl">Blog</div>
-                <div className="flex pt-14 pb-12">
-                    <SearchBar />
-                    <div className="flex pl-9 space-x-5">
-                        <CustomSelectBox
-                            width={"12rem"}
-                            data={month}
-                            placeholder={"Select month"}
-                        />
-                        <CustomSelectBox
-                            width={"12rem"}
-                            data={year}
-                            placeholder={"Select year"}
-                        />
-                    </div>
-                </div>
                 <div className="flex space-x-9">
                     <div
                         className="pr-16 basis-9/12 mb-14"
                         style={{ borderRight: "1px solid white" }}
                     >
+                        <div className="flex pt-14 pb-12">
+                            <SearchBar />
+                            <div className="flex pl-9 space-x-5">
+                                <CustomSelectBox
+                                    width={"12rem"}
+                                    data={month}
+                                    placeholder={"Select month"}
+                                />
+                                <CustomSelectBox
+                                    width={"12rem"}
+                                    data={year}
+                                    placeholder={"Select year"}
+                                />
+                            </div>
+                        </div>
                         <div className="flex justify-between text-lg tab-bar py-7 px-3 relative">
                             <div
-                                className={`${active} cursor-pointer`}
+                                className={
+                                    type === "Breads and rolls"
+                                        ? `active-blog-tab cursor-pointer`
+                                        : "cursor-pointer"
+                                }
                                 onClick={() => {
                                     setType("Breads and rolls");
                                 }}
@@ -77,7 +79,11 @@ export default function BlogPage() {
                                 Breads and rolls
                             </div>
                             <div
-                                className={`${active} cursor-pointer`}
+                                className={
+                                    type === "Cheesecake"
+                                        ? `active-blog-tab cursor-pointer`
+                                        : "cursor-pointer"
+                                }
                                 onClick={() => {
                                     setType("Cheesecake");
                                 }}
@@ -85,7 +91,11 @@ export default function BlogPage() {
                                 Cheesecake
                             </div>
                             <div
-                                className="cursor-pointer"
+                                className={
+                                    type === "Caramel"
+                                        ? `active-blog-tab cursor-pointer`
+                                        : "cursor-pointer"
+                                }
                                 onClick={() => {
                                     setType("Caramel");
                                 }}
@@ -93,7 +103,11 @@ export default function BlogPage() {
                                 Caramel
                             </div>
                             <div
-                                className="cursor-pointer"
+                                className={
+                                    type === "Dairy free"
+                                        ? `active-blog-tab cursor-pointer`
+                                        : "cursor-pointer"
+                                }
                                 onClick={() => {
                                     setType("Dairy free");
                                 }}
@@ -101,7 +115,11 @@ export default function BlogPage() {
                                 Dairy free
                             </div>
                             <div
-                                className="cursor-pointer"
+                                className={
+                                    type === "Peanut butter"
+                                        ? `active-blog-tab cursor-pointer`
+                                        : "cursor-pointer"
+                                }
                                 onClick={() => {
                                     setType("Peanut butter");
                                 }}
@@ -109,7 +127,11 @@ export default function BlogPage() {
                                 Peanut butter
                             </div>
                             <div
-                                className="cursor-pointer"
+                                className={
+                                    type === "Cookies"
+                                        ? `active-blog-tab cursor-pointer`
+                                        : "cursor-pointer"
+                                }
                                 onClick={() => {
                                     setType("Cookies");
                                 }}
@@ -121,12 +143,12 @@ export default function BlogPage() {
                                 style={{ width: offsetWidth }}
                             ></div> */}
                         </div>
-                        <div className="flex flex-wrap pt-24 w-full justify-center">
+                        <div className="grid grid-cols-2 pt-24 w-full auto-cols-max mx-auto place-items-center place-self-center">
                             <Blog type={type} />
                         </div>
                     </div>
-                    <div className="basis-3/12">
-                        <div className="">
+                    <div className="basis-3/12 pt-14">
+                        <div>
                             <div className="text-xl">New post</div>
                             <div className="pt-9">
                                 <Post />
