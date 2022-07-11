@@ -58,6 +58,10 @@
     @apply text-primary underline underline-offset-[31px] decoration-[5px];
 }
 
+.active-product-tab {
+    @apply underline decoration-primary underline-offset-[15px];
+}
+
 /* ============= Custom checkbox ============= */
 /* The container */
 .custom-checkbox {

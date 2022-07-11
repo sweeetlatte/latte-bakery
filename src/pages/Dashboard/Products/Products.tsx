@@ -65,6 +65,8 @@ export default function Products() {
         { value: "price high to low", label: "Price: high to low" },
     ];
 
+    const [type, setType] = useState<string>("Sweet Pastry");
+
     return (
         <>
             <div
@@ -118,13 +120,56 @@ export default function Products() {
                     </div>
                     <div className="flex items-center w-full justify-between">
                         <div className="flex space-x-12 relative text-base">
-                            <div className="cursor-pointer underline decoration-primary underline-offset-[15px]">
+                            <div
+                                className={
+                                    type === "Sweet Pastry"
+                                        ? "cursor-pointer active-product-tab"
+                                        : "cursor-pointer"
+                                }
+                                onClick={() => setType("Sweet Pastry")}
+                            >
                                 Sweet Pastry
                             </div>
-                            <div className="cursor-pointer">Red Velvet</div>
-                            <div className="cursor-pointer">Mousse</div>
-                            <div className="cursor-pointer">Biscuit</div>
-                            <div className="cursor-pointer">Ice cream</div>
+                            <div
+                                className={
+                                    type === "Velvet"
+                                        ? "cursor-pointer active-product-tab"
+                                        : "cursor-pointer"
+                                }
+                                onClick={() => setType("Velvet")}
+                            >
+                                Velvet
+                            </div>
+                            <div
+                                className={
+                                    type === "Mousse"
+                                        ? "cursor-pointer active-product-tab"
+                                        : "cursor-pointer"
+                                }
+                                onClick={() => setType("Mousse")}
+                            >
+                                Mousse
+                            </div>
+                            <div
+                                className={
+                                    type === "Biscuit"
+                                        ? "cursor-pointer active-product-tab"
+                                        : "cursor-pointer"
+                                }
+                                onClick={() => setType("Biscuit")}
+                            >
+                                Biscuit
+                            </div>
+                            <div
+                                className={
+                                    type === "Ice cream"
+                                        ? "cursor-pointer active-product-tab"
+                                        : "cursor-pointer"
+                                }
+                                onClick={() => setType("Ice cream")}
+                            >
+                                Ice Cream
+                            </div>
                             <Icons.ChevronRight stroke="white" />
                         </div>
                         <div className="basis-3/12">
@@ -140,6 +185,7 @@ export default function Products() {
 
                     <div className="pt-8 w-full">
                         <ProductCard
+                            type={type}
                             openModalAddProduct={() => openModalAddProduct()}
                         />
                     </div>
