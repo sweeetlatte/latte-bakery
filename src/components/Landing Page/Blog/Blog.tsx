@@ -30,7 +30,7 @@ export default function Blog({ type }: Props) {
                         key={blogItem.id}
                         state={{ detail: blogItem }}
                         to="/blog/detail"
-                        className="w-1/2 max-w-[326px] mx-9 pb-14"
+                        className="w-[326px] mx-9 pb-14"
                     >
                         <img
                             className="h-56 w-full object-cover"
@@ -44,7 +44,7 @@ export default function Blog({ type }: Props) {
                                     {blogItem?.author}
                                 </span>
                             </div>
-                            <div className="pt-3.5">{blogItem?.name}</div>
+                            <div className="pt-3.5 text-overflow" style={{WebkitLineClamp: 1}}>{blogItem?.name}</div>
                         </div>
                     </Link>
                 ))}

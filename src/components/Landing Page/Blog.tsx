@@ -33,7 +33,7 @@ export default function Blog() {
                         </div>
                         <div className="basis-7/12 h-72 pl-12 text-left flex flex-col justify-between">
                             <div>
-                                <div className="text-lg">{blogItem.name}</div>
+                                <div className="text-lg uppercase">{blogItem.name}</div>
                                 <div
                                     className="pt-6 text-overflow h-48"
                                     style={{ WebkitLineClamp: 7 }}
