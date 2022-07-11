@@ -39,14 +39,14 @@ export default function ProductInCart({
             const responseData = await fetchProductData();
 
             if (responseData) {
-                setProductData(responseData);
+                setProductData(randomNumber(responseData, 1));
             }
         })();
     }, []);
 
     return productData ? (
         <>
-            {randomNumber(productData, 1).map((productItem) => (
+            {productData.map((productItem) => (
                 <div className={`bg-dark-bg ${rounded}`}>
                     <label htmlFor="item1" className="cart-custom-checkbox">
                         <input

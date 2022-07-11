@@ -13,14 +13,14 @@ export default function Post() {
             const responseData = await fetchBlogData();
 
             if (responseData) {
-                setBlogData(responseData);
+                setBlogData(randomNumber(responseData, 3));
             }
         })();
     }, []);
 
     return blogData ? (
         <>
-            {randomNumber(blogData, 3).map((blogItem) => (
+            {blogData.map((blogItem) => (
                 <div className="pb-9 flex items-center">
                     <Link to="/blog/detail" state={{ detail: blogItem }}>
                         <img
