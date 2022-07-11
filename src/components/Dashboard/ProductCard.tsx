@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import cartIcon from "../../assets/icons/cart.svg";
 import { IProduct } from "../../types";
 import { fetchProductData } from "../../app/api";
+
+import cartIcon from "../../assets/icons/cart.svg";
 
 interface Props {
     openModalAddProduct: () => void;
@@ -23,10 +24,7 @@ export default function ProductCard({ openModalAddProduct }: Props) {
     }, []);
 
     return productData ? (
-        <div
-            className="grid w-full grid-cols-4 auto-cols-max mx-auto place-items-center place-self-center gap-5"
-            // className="flex flex-wrap justify-center"
-        >
+        <div className="grid w-full grid-cols-4 auto-cols-max mx-auto place-items-center place-self-center gap-5">
             {productData.map((productItem) => (
                 <div className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm">
                     <Link

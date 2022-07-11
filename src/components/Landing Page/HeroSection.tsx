@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Navbar from "./Navbar";
 
 import roller from "../../assets/images/roller.png";
-import { Link } from "react-router-dom";
 
 interface Props {
     navBarProps: NavBarProps;

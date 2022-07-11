@@ -1,5 +1,3 @@
-import React from "react";
-
 import bread1 from "../../assets/images/bread-1.svg";
 import about1 from "../../assets/images/about-1.png";
 import about2 from "../../assets/images/about-2.png";
@@ -20,7 +18,7 @@ export default function AboutUs() {
                     <img src={about2} alt="about-2" />
                     <div className="pl-12 pt-16 text-left">
                         <div className="text-lg">
-                            SMOKEY BOURBON TOFFEE CHOCOLATE OAT COOKIES
+                            LATTE BAKERY
                         </div>
                         <div className="pt-6">
                             Lorem ipsum dolor sit amet, consectetur adipiscing

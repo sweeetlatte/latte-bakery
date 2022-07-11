@@ -6,7 +6,6 @@ import Blog from "../../components/Landing Page/Blog";
 import GetInTouch from "../../components/Landing Page/GetInTouch";
 import ScrollToTop from "../../components/Landing Page/ScrollToTop";
 import useScroll from "../../utils/hooks/useScroll";
-import SectionTitle from "../../components/Landing Page/SectionTitle";
 
 export default function LandingPage() {
     const [aboutUsRef, executeAboutUsScroll] = useScroll() as [

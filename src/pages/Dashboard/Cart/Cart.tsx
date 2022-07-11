@@ -6,8 +6,7 @@ import "./cart.css";
 import Header from "../../../components/Dashboard/Header";
 import ProductInCart from "../../../components/Dashboard/ProductInCart";
 import DeleteProducts from "../../../components/Modal/Warnings/DeleteProducts";
-
-import trash from "../../../assets/icons/trash-2.svg";
+import Icons from "../../../components/Icons";
 
 export default function Cart() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -55,7 +54,7 @@ export default function Cart() {
                             <div className="basis-3/12">Subtotal</div>
                         </div>
                         <div className="basis-1/12 justify-end flex">
-                            <img src={trash} alt="trash" />
+                            <Icons.Trash stroke="#323232" />
                         </div>
                     </div>
                 </div>
