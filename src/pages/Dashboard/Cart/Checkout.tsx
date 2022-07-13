@@ -5,11 +5,13 @@ import { CheckoutMethod } from "../../../types";
 
 import ProductInCheckout from "../../../components/Dashboard/ProductInCheckout";
 import Header from "../../../components/Dashboard/Header";
-
-import Icons from "../../../components/Icons";
-import voucher from "../../../assets/icons/voucher.svg";
+import Voucher from "../../../components/Dashboard/Voucher";
 import AddressCardInCheckout from "../../../components/Dashboard/AddressCardInCheckout";
 import SelectedAddress from "../../../components/Dashboard/SelectedAddress";
+import Icons from "../../../components/Icons";
+
+import voucher from "../../../assets/icons/voucher.svg";
+import SearchBar from "../../../components/SearchBar";
 
 export default function Checkout() {
     const [showingProducts, setShowingProducts] = useState(true);
@@ -22,6 +24,7 @@ export default function Checkout() {
     };
 
     const [isHidden, setIsHidden] = useState<boolean | null>(null);
+    const [isChoosen, setIsChoosen] = useState<string | null>(null);
 
     return (
         <>
@@ -40,17 +43,49 @@ export default function Checkout() {
                     } as React.CSSProperties
                 }
             >
-                <div className="basis-11/12 overflow-hidden">
-                    <div className="text-xl pb-5 flex items-center space-x-3">
-                        <div className="cursor-pointer" onClick={() => setIsHidden(true)}>
-                            <Icons.ArrowLeft />
+                {isChoosen === "voucher" ? (
+                    <div className="basis-11/12 overflow-hidden">
+                        <div className="text-xl pb-5 flex items-center space-x-3">
+                            <div
+                                className="cursor-pointer"
+                                onClick={() => setIsHidden(true)}
+                            >
+                                <Icons.ArrowLeft />
+                            </div>
+                            <p>Select voucher</p>
                         </div>
-                        <p>Select address</p>
+                        <div className="h-[90%] space-y-3 overflow-scroll address-list">
+                            <div className="flex items-center space-x-5">
+                                <SearchBar />
+                                <button
+                                    className="regular-button"
+                                    onClick={() => setIsHidden(true)}
+                                >
+                                    Apply
+                                </button>
+                            </div>
+                            <p>Discount</p>
+                            <Voucher type="discount" />
+                            <p>Free Shipping</p>
+                            <Voucher type="shipping" />
+                        </div>
                     </div>
-                    <div className="h-[90%] space-y-3 overflow-scroll address-list">
-                        <AddressCardInCheckout />
+                ) : (
+                    <div className="basis-11/12 overflow-hidden">
+                        <div className="text-xl pb-5 flex items-center space-x-3">
+                            <div
+                                className="cursor-pointer"
+                                onClick={() => setIsHidden(true)}
+                            >
+                                <Icons.ArrowLeft />
+                            </div>
+                            <p>Select address</p>
+                        </div>
+                        <div className="h-[90%] space-y-3 overflow-scroll address-list">
+                            <AddressCardInCheckout />
+                        </div>
                     </div>
-                </div>
+                )}
                 <div className="basis-1/12 flex items-end">
                     <button
                         className="bg-primary rounded-lg w-full py-3"
@@ -146,9 +181,10 @@ export default function Checkout() {
                             <div className="flex justify-between text-primary pb-4">
                                 <div>Shipping address</div>
                                 <div
-                                className="cursor-pointer"
+                                    className="cursor-pointer"
                                     onClick={() => {
                                         setIsHidden(false);
+                                        setIsChoosen("address");
                                     }}
                                 >
                                     Change
@@ -252,7 +288,13 @@ export default function Checkout() {
                             <div className="text-primary pb-4">Giftcard</div>
                             <div className="flex space-x-3">
                                 <img src={voucher} alt="voucher" />
-                                <div className="underline underline-offset-[3px] decoration-[0.5px] decoration-[#CBCBCB] text-[#CBCBCB]">
+                                <div
+                                    className="cursor-pointer underline underline-offset-[3px] decoration-[0.5px] decoration-[#CBCBCB] text-[#CBCBCB]"
+                                    onClick={() => {
+                                        setIsHidden(false);
+                                        setIsChoosen("voucher");
+                                    }}
+                                >
                                     Choose or add a voucher
                                 </div>
                             </div>
