@@ -20,17 +20,21 @@ export default function ProductInCheckout() {
 
     return productData ? (
         <>
-            {productData.map((productItem) => (
+            {productData.map((productItem, index) => (
                 <div
                     key={productItem.id}
                     className="flex text-sm items-center py-4"
-                    style={{ borderBottom: "1px solid #656870" }}
+                    style={{
+                        borderBottom: index !== 4 ? "1px solid #656870" : "",
+                    }}
                 >
-                    <img
-                        className="w-[65px] h-[65px] object-cover"
-                        src={productItem.image}
-                        alt="cake"
-                    />
+                    <div>
+                        <img
+                            className="w-[65px] h-[65px] object-cover"
+                            src={productItem.image}
+                            alt="cake"
+                        />
+                    </div>
                     <div className="w-full flex justify-between items-center px-5">
                         <div>
                             <div className="text-primary pb-1">

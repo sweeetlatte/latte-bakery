@@ -11,13 +11,13 @@ import AddCard from "../../../components/Modal/Add Card/AddCard";
 import Icons from "../../../components/Icons";
 import CustomSelectBox from "../../../components/CustomSelectBox";
 
-import slider1 from "../../../assets/images/dashboard/slider-1.png";
+// import slider1 from "../../../assets/images/dashboard/slider-1.png";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
-import slider3 from "../../../assets/images/dashboard/slider-3.png";
+// import slider3 from "../../../assets/images/dashboard/slider-3.png";
 
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
-    const [slider, setSlider] = useState<string>("hidden");
+    // const [slider, setSlider] = useState<string>("hidden");
 
     const openModalAddProduct = () => {
         setOpenModal(true);
@@ -37,7 +37,7 @@ export default function Products() {
     function showDivs() {
         var i: number;
         var sliders = document.getElementsByClassName("slider");
-        var dots = document.getElementsByClassName("demo");
+        // var dots = document.getElementsByClassName("demo");
 
         for (i = 0; i < sliders.length; i++) {
             setTimeout(() => {
