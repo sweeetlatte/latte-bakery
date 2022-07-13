@@ -135,7 +135,7 @@ export default function Checkout() {
                 </div>
                 <div className="flex justify-between space-x-16">
                     <div className="basis-7/12 space-y-5">
-                        <div className="bg-dark-bg rounded-lg px-12 py-6 max-h-80 overflow-y-scroll">
+                        <div className="bg-dark-bg rounded-lg px-12 py-6 max-h-72 overflow-y-scroll">
                             <div className="flex justify-between items-center pb-2">
                                 <div>240.000 VND (5 products)</div>
                                 <div
@@ -299,9 +299,13 @@ export default function Checkout() {
                                 </div>
                             </div>
                         </div>
-                        <button className="bg-primary font-bold rounded-lg px-12 py-3 w-full">
-                            ORDER
-                        </button>
+                        <div>
+                            <Link to="/dashboard/cart/order">
+                                <button className="bg-primary font-bold rounded-lg px-12 py-3 w-full">
+                                    ORDER
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

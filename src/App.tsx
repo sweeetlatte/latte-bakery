@@ -17,6 +17,7 @@ import Search from "./pages/Dashboard/Products/Search";
 import Detail from "./pages/Dashboard/Products/Detail";
 import Cart from "./pages/Dashboard/Cart/Cart";
 import Checkout from "./pages/Dashboard/Cart/Checkout";
+import Order from "./pages/Dashboard/Cart/Order";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import AccountInfo from "./pages/Dashboard/Settings/AccountInfo";
 import AddressBook from "./pages/Dashboard/Settings/AddressBook/AddressBook";
@@ -46,6 +47,7 @@ function App() {
             <Route path="detail" element={<Detail />} />
             <Route path="cart" element={<Cart />} />
             <Route path="cart/checkout" element={<Checkout />} />
+            <Route path="cart/order" element={<Order />} />
             <Route path="setting" element={<Settings />}>
               <Route path="account-info" element={<AccountInfo />} />
               <Route path="address-book">
