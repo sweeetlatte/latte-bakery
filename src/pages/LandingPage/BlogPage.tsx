@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Navbar from "../../components/Landing Page/Navbar";
@@ -31,7 +31,21 @@ export default function BlogPage() {
 
     const [type, setType] = useState<string>("Breads and rolls");
 
-    // const [offsetWidth, setWidth] = useState<string>();
+    var element = document.getElementsByClassName(
+        "active-blog-tab"
+    ) as HTMLCollectionOf<HTMLElement>;
+
+    console.log(element);
+
+    const [offsetWidth, setWidth] = useState<string>("");
+    const [offsetLeft, setLeft] = useState<string>("");
+
+    useEffect(() => {
+        if (element) {
+            setWidth(`${element[0].offsetWidth}px`);
+            setLeft(`${element[0].offsetLeft}px`);
+        }
+    }, [element, type]);
 
     return (
         <div className="font-body text-center mx-auto bg-light text-white">
@@ -138,10 +152,10 @@ export default function BlogPage() {
                             >
                                 Cookies
                             </div>
-                            {/* <div
+                            <div
                                 className="line"
-                                style={{ width: offsetWidth }}
-                            ></div> */}
+                                style={{ width: offsetWidth, left: offsetLeft }}
+                            ></div>
                         </div>
                         <div className="grid grid-cols-2 pt-24 w-full auto-cols-max mx-auto place-items-center place-self-center">
                             <Blog type={type} />
