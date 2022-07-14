@@ -44,7 +44,12 @@ export default function Blog({ type }: Props) {
                                     {blogItem?.author}
                                 </span>
                             </div>
-                            <div className="pt-3.5 text-overflow" style={{WebkitLineClamp: 1}}>{blogItem?.name}</div>
+                            <div
+                                className="pt-3.5 text-overflow"
+                                style={{ WebkitLineClamp: 1 }}
+                            >
+                                {blogItem?.name}
+                            </div>
                         </div>
                     </Link>
                 ))}

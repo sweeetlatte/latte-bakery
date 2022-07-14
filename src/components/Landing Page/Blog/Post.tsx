@@ -20,8 +20,8 @@ export default function Post() {
 
     return blogData ? (
         <>
-            {blogData.map((blogItem) => (
-                <div className="pb-9 flex items-center">
+            {blogData.map((blogItem, index) => (
+                <div className="pb-9 flex items-center" key={index}>
                     <Link to="/blog/detail" state={{ detail: blogItem }}>
                         <img
                             className="w-[133px] h-[123px] object-cover"
@@ -32,7 +32,7 @@ export default function Post() {
                     <div className="pl-3 text-sm basis-9/12">
                         <Link
                             to="/blog/detail"
-                            className="font-light pb-3.5 text-overflow h-[44px]"
+                            className="font-light pb-3.5 text-overflow h-[44px] hover:text-primary"
                             style={{ WebkitLineClamp: 2 }}
                         >
                             {blogItem?.name}
