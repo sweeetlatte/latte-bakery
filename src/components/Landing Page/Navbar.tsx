@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
     executeAboutUsScroll?: () => void;
@@ -13,13 +13,9 @@ export default function Navbar({
     executeBlogScroll,
     executeGetInTouchScroll,
 }: Props) {
-
-    const navigate = useNavigate();
-    const location = useLocation();
-
     return (
         <div
-            className="pl-24 pr-20 flex items-center py-5 "
+            className="pl-24 pr-20 lg:px-12 flex items-center py-5"
             style={{
                 backgroundImage: "linear-gradient(#1D1E1E, rgba(29,30,30,0))",
             }}
@@ -33,7 +29,8 @@ export default function Navbar({
                 >
                     About us
                 </Link>
-                <Link to="/"
+                <Link
+                    to="/"
                     onClick={() =>
                         executeProductsScroll && executeProductsScroll()
                     }
@@ -46,7 +43,8 @@ export default function Navbar({
                 >
                     Blog
                 </Link>
-                <Link to="/"
+                <Link
+                    to="/"
                     onClick={() =>
                         executeGetInTouchScroll && executeGetInTouchScroll()
                     }

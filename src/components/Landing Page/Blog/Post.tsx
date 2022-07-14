@@ -21,10 +21,10 @@ export default function Post() {
     return blogData ? (
         <>
             {blogData.map((blogItem, index) => (
-                <div className="pb-9 flex items-center" key={index}>
+                <div className="flex items-center pb-9 lg:pb-5" key={index}>
                     <Link to="/blog/detail" state={{ detail: blogItem }}>
                         <img
-                            className="w-[133px] h-[123px] xl:h-[101px] object-cover"
+                            className="w-[133px] h-[123px] xl:h-[101px] lg:h-[90px] object-cover"
                             src={blogItem?.image}
                             alt="post"
                         />
@@ -37,7 +37,9 @@ export default function Post() {
                         >
                             {blogItem?.name}
                         </Link>
-                        <div className="font-extralight">25 minutes ago</div>
+                        <div className="font-extralight text-sm lg:text-xs">
+                            25 minutes ago
+                        </div>
                     </div>
                 </div>
             ))}

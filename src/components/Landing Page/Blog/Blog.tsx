@@ -30,16 +30,16 @@ export default function Blog({ type }: Props) {
                         key={blogItem.id}
                         state={{ detail: blogItem }}
                         to="/blog/detail"
-                        className="w-[326px] xl:w-[236px] mx-9 pb-14 xl:pb-6"
+                        className="w-[326px] xl:w-[236px] lg:w-[180px] mx-9 pb-14 xl:pb-6"
                     >
                         <img
-                            className="h-56 xl:h-40 w-full object-cover"
+                            className="h-56 xl:h-40 lg:h-32 w-full object-cover"
                             src={blogItem?.image}
                             alt="blog 8"
                         />
                         <div className="px-3 pt-5 font-light">
                             <div
-                                className="text-sm text-overflow"
+                                className="text-sm lg:text-xs text-overflow"
                                 style={{ WebkitLineClamp: 1 }}
                             >
                                 {blogItem?.createdAt} &ensp;/&ensp; by&nbsp;
