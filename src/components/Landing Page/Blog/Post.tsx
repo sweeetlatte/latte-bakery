@@ -24,7 +24,7 @@ export default function Post() {
                 <div className="pb-9 flex items-center" key={index}>
                     <Link to="/blog/detail" state={{ detail: blogItem }}>
                         <img
-                            className="w-[133px] h-[123px] object-cover"
+                            className="w-[133px] h-[123px] xl:h-[101px] object-cover"
                             src={blogItem?.image}
                             alt="post"
                         />

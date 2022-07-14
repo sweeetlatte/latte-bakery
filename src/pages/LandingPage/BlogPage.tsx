@@ -48,36 +48,42 @@ export default function BlogPage() {
     return (
         <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
-            <div className="pt-10 pl-28 pr-20 text-left">
-                <div className="text-lg flex">
+            <div className="pt-10 pl-28 xl:pl-24 pr-20 text-left">
+                <div className="flex text-lg xl:text-base">
                     <Link to="/">Home</Link>
                     &nbsp;/&nbsp;
                     <Link to="/blog" className="text-primary">
                         Blog
                     </Link>
                 </div>
-                <div className="pt-11 text-5xl">Blog</div>
+                <div className="pt-11 xl:pt-7 text-5xl xl:text-4xl">Blog</div>
                 <div className="flex space-x-9">
                     <div
                         className="pr-16 basis-9/12 mb-14"
                         style={{ borderRight: "1px solid white" }}
                     >
-                        <div className="flex pt-14 pb-12">
-                            <SearchBar />
-                            <div className="flex pl-9 space-x-5">
-                                <CustomSelectBox
-                                    width={"12rem"}
-                                    data={month}
-                                    placeholder={"Select month"}
-                                />
-                                <CustomSelectBox
-                                    width={"12rem"}
-                                    data={year}
-                                    placeholder={"Select year"}
-                                />
+                        <div className="flex pt-14 xl:pt-10 pb-12 xl:pb-8">
+                            <div className="basis-[52%] xl:basis-1/2">
+                                <SearchBar />
+                            </div>
+                            <div className="basis-[48%] xl:basis-1/2 xl:text-sm flex pl-9 space-x-5">
+                                <div className="basis-1/2">
+                                    <CustomSelectBox
+                                        width={"full"}
+                                        data={month}
+                                        placeholder={"Select month"}
+                                    />
+                                </div>
+                                <div className="basis-1/2">
+                                    <CustomSelectBox
+                                        width={"full"}
+                                        data={year}
+                                        placeholder={"Select year"}
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div className="tab-bar">
+                        <div className="tab-bar text-center">
                             <div
                                 className={
                                     type === "Breads and rolls"
@@ -155,11 +161,11 @@ export default function BlogPage() {
                                 style={{ width: offsetWidth, left: offsetLeft }}
                             ></div>
                         </div>
-                        <div className="grid grid-cols-2 pt-24 w-full auto-cols-max mx-auto place-items-center place-self-center">
+                        <div className="grid grid-cols-2 pt-24 xl:pt-8 w-full auto-cols-max mx-auto place-items-center place-self-center">
                             <Blog type={type} />
                         </div>
                     </div>
-                    <div className="basis-3/12 pt-14">
+                    <div className="basis-3/12 pt-14 xl:pt-10">
                         <div>
                             <div className="text-xl">New post</div>
                             <div className="pt-9">

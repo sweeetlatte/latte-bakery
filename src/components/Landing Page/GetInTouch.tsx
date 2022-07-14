@@ -24,21 +24,21 @@ export default function GetInTouch() {
                         <input
                             className="w-full bg-light border rounded py-3.5 px-3.5 mb-6"
                             type="text"
-                            id="fname"
-                            name="firstname"
+                            id="name"
+                            name="name"
                             placeholder="Name"
                         />
                         <input
                             className="w-full bg-light border rounded py-3.5 px-3.5 mb-6"
                             type="text"
                             id="email"
-                            name="firstname"
+                            name="email"
                             placeholder="Email Address"
                         />
                         <textarea
                             className="w-full bg-light border rounded py-3.5 px-3.5 mb-10 h-32"
                             id="message"
-                            name="firstname"
+                            name="message"
                             placeholder="Your Message"
                         />
                         <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
