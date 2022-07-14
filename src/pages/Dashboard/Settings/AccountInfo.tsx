@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchUserData } from "../../../app/api";
 
 import Icons from "../../../components/Icons";

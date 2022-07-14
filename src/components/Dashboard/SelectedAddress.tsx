@@ -19,7 +19,7 @@ export default function SelectedAddress() {
             }
         })();
     }, []);
-    
+
     return userData ? (
         <>
             {userData.address
@@ -29,7 +29,11 @@ export default function SelectedAddress() {
                         <div className="flex space-x-3.5 items-start">
                             <img src={location} alt="location" />
                             <div>
-                                <div>{addressItem ? AddressToString(addressItem) : ""}</div>
+                                <div>
+                                    {addressItem
+                                        ? AddressToString(addressItem)
+                                        : ""}
+                                </div>
                                 <div className="text-caption text-xs pt-1.5">
                                     {addressItem?.name} - {addressItem?.phone}
                                 </div>
