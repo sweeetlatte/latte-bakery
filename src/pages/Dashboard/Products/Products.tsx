@@ -67,6 +67,22 @@ export default function Products() {
 
     const [type, setType] = useState<string>("Sweet Pastry");
 
+    var element = document.getElementsByClassName(
+        "active-product-tab"
+    ) as HTMLCollectionOf<HTMLElement>;
+
+    console.log(element);
+
+    const [offsetWidth, setWidth] = useState<string>("");
+    const [offsetLeft, setLeft] = useState<string>("");
+
+    useEffect(() => {
+        if (element) {
+            setWidth(`${element[0].offsetWidth}px`);
+            setLeft(`${element[0].offsetLeft}px`);
+        }
+    }, [element, type]);
+
     return (
         <>
             <div
@@ -119,58 +135,68 @@ export default function Products() {
                         </div>
                     </div>
                     <div className="flex items-center w-full justify-between">
-                        <div className="flex space-x-12 relative text-base">
+                        <div className="relative">
                             <div
-                                className={
-                                    type === "Sweet Pastry"
-                                        ? "cursor-pointer active-product-tab"
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => setType("Sweet Pastry")}
-                            >
-                                Sweet Pastry
+                                className="line"
+                                style={{
+                                    width: offsetWidth,
+                                    left: offsetLeft,
+                                    bottom: "-10px",
+                                }}
+                            ></div>
+                            <div className="flex space-x-12  text-base">
+                                <div
+                                    className={
+                                        type === "Sweet Pastry"
+                                            ? "cursor-pointer active-product-tab"
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => setType("Sweet Pastry")}
+                                >
+                                    Sweet Pastry
+                                </div>
+                                <div
+                                    className={
+                                        type === "Velvet"
+                                            ? "cursor-pointer active-product-tab"
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => setType("Velvet")}
+                                >
+                                    Velvet
+                                </div>
+                                <div
+                                    className={
+                                        type === "Mousse"
+                                            ? "cursor-pointer active-product-tab"
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => setType("Mousse")}
+                                >
+                                    Mousse
+                                </div>
+                                <div
+                                    className={
+                                        type === "Biscuit"
+                                            ? "cursor-pointer active-product-tab"
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => setType("Biscuit")}
+                                >
+                                    Biscuit
+                                </div>
+                                <div
+                                    className={
+                                        type === "Ice cream"
+                                            ? "cursor-pointer active-product-tab"
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => setType("Ice cream")}
+                                >
+                                    Ice Cream
+                                </div>
+                                <Icons.ChevronRight stroke="white" />
                             </div>
-                            <div
-                                className={
-                                    type === "Velvet"
-                                        ? "cursor-pointer active-product-tab"
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => setType("Velvet")}
-                            >
-                                Velvet
-                            </div>
-                            <div
-                                className={
-                                    type === "Mousse"
-                                        ? "cursor-pointer active-product-tab"
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => setType("Mousse")}
-                            >
-                                Mousse
-                            </div>
-                            <div
-                                className={
-                                    type === "Biscuit"
-                                        ? "cursor-pointer active-product-tab"
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => setType("Biscuit")}
-                            >
-                                Biscuit
-                            </div>
-                            <div
-                                className={
-                                    type === "Ice cream"
-                                        ? "cursor-pointer active-product-tab"
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => setType("Ice cream")}
-                            >
-                                Ice Cream
-                            </div>
-                            <Icons.ChevronRight stroke="white" />
                         </div>
                         <div className="basis-3/12">
                             <CustomSelectBox

@@ -35,8 +35,6 @@ export default function BlogPage() {
         "active-blog-tab"
     ) as HTMLCollectionOf<HTMLElement>;
 
-    console.log(element);
-
     const [offsetWidth, setWidth] = useState<string>("");
     const [offsetLeft, setLeft] = useState<string>("");
 
@@ -79,7 +77,7 @@ export default function BlogPage() {
                                 />
                             </div>
                         </div>
-                        <div className="flex justify-between text-lg tab-bar py-7 px-3 relative">
+                        <div className="tab-bar">
                             <div
                                 className={
                                     type === "Breads and rolls"
