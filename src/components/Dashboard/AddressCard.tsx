@@ -23,8 +23,11 @@ export default function AddressCard() {
 
     return userData ? (
         <>
-            {userData.address.map((addressItem) => (
-                <div className="border border-primary rounded-lg px-5 py-4 flex justify-between items-start">
+            {userData.address.map((addressItem, index) => (
+                <div
+                    key={index}
+                    className="border border-primary rounded-lg px-5 py-4 flex justify-between items-start"
+                >
                     <div className="space-y-1">
                         <p>{addressItem?.name}</p>
                         <p>{addressItem?.phone}</p>

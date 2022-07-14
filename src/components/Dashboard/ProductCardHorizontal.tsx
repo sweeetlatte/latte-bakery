@@ -26,8 +26,11 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
 
     return productData ? (
         <>
-            {randomNumber(productData, 3).map((productItem) => (
-                <div className="bg-dark-bg py-4 px-4 rounded-lg flex space-x-4 w-full">
+            {randomNumber(productData, 3).map((productItem, index) => (
+                <div
+                    key={index}
+                    className="bg-dark-bg py-4 px-4 rounded-lg flex space-x-4 w-full"
+                >
                     <Link
                         to="/dashboard/detail"
                         state={{ detail: productItem }}

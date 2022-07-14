@@ -22,7 +22,7 @@ export default function ProductInCheckout() {
         <>
             {productData.map((productItem, index) => (
                 <div
-                    key={productItem.id}
+                    key={index}
                     className="flex text-sm items-center py-4"
                     style={{
                         borderBottom: index !== 4 ? "1px solid #656870" : "",

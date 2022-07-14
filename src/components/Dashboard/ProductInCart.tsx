@@ -45,8 +45,8 @@ export default function ProductInCart({
 
     return productData ? (
         <>
-            {productData.map((productItem) => (
-                <div className={`bg-dark-bg ${rounded}`}>
+            {productData.map((productItem, index) => (
+                <div key={index} className={`bg-dark-bg ${rounded}`}>
                     <label htmlFor="item1" className="cart-custom-checkbox">
                         <input
                             type="checkbox"

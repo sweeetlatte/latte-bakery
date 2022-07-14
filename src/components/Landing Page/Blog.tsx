@@ -22,8 +22,8 @@ export default function Blog() {
         <>
             <SectionTitle title={"Blog"} variant="one-button" linkTo="/blog" />
             <div className="w-[66.25rem] mx-auto space-y-12">
-                {randomNumber(blogData, 2).map((blogItem) => (
-                    <div className="flex">
+                {randomNumber(blogData, 2).map((blogItem, index) => (
+                    <div key={index} className="flex">
                         <div className="basis-5/12">
                             <img
                                 className="w-full h-72 object-cover"
@@ -33,7 +33,9 @@ export default function Blog() {
                         </div>
                         <div className="basis-7/12 h-72 pl-12 text-left flex flex-col justify-between">
                             <div>
-                                <div className="text-lg uppercase">{blogItem.name}</div>
+                                <div className="text-lg uppercase">
+                                    {blogItem.name}
+                                </div>
                                 <div
                                     className="pt-6 text-overflow h-48"
                                     style={{ WebkitLineClamp: 7 }}
