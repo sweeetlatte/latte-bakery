@@ -30,6 +30,10 @@
     word-break: break-word;
 }
 
+.border-right {
+    border-right: 1px solid white;
+}
+
 .tab-bar {
     @apply relative flex justify-between text-lg xl:text-base lg:text-xs text-center py-7 xl:py-5 px-3 xl:px-1;
     border-top: 1px solid white;
@@ -168,4 +172,10 @@
 
 .regular-button {
     @apply border border-primary bg-primary px-10 rounded-md w-fit h-[44px];
+}
+
+@media (max-width: 767px) {
+    .border-right {
+        border-right: none;
+    }
 }

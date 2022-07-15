@@ -30,16 +30,16 @@ export default function Blog({ type }: Props) {
                         key={blogItem.id}
                         state={{ detail: blogItem }}
                         to="/blog/detail"
-                        className="w-[326px] xl:w-[236px] lg:w-[180px] mx-9 pb-14 xl:pb-6"
+                        className="w-[326px] xl:w-[236px] lg:w-[200px] mx-9 pb-14 xl:pb-8"
                     >
                         <img
                             className="h-56 xl:h-40 lg:h-32 w-full object-cover"
                             src={blogItem?.image}
                             alt="blog 8"
                         />
-                        <div className="px-3 pt-5 font-light">
+                        <div className="px-3 pt-5 xl:pt-4 font-light">
                             <div
-                                className="text-sm lg:text-xs text-overflow"
+                                className="text-xs md:text-[10px] text-overflow"
                                 style={{ WebkitLineClamp: 1 }}
                             >
                                 {blogItem?.createdAt} &ensp;/&ensp; by&nbsp;
@@ -48,7 +48,7 @@ export default function Blog({ type }: Props) {
                                 </span>
                             </div>
                             <div
-                                className="pt-3.5 text-overflow"
+                                className="pt-3.5 xl:pt-2 text-overflow md:text-sm"
                                 style={{ WebkitLineClamp: 1 }}
                             >
                                 {blogItem?.name}
