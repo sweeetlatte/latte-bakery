@@ -6,6 +6,7 @@ import SearchBar from "../../components/SearchBar";
 import Blog from "../../components/Landing Page/Blog/Blog";
 import Post from "../../components/Landing Page/Blog/Post";
 import CustomSelectBox from "../../components/CustomSelectBox";
+import Icons from "../../components/Icons";
 
 export default function BlogPage() {
     const month = [
@@ -45,6 +46,16 @@ export default function BlogPage() {
         }
     }, [element, type]);
 
+    var tab = document.getElementsByClassName(
+        "tab-bar"
+    ) as HTMLCollectionOf<HTMLElement>;
+
+    function slideRight() {
+        if (tab) {
+            tab[0].scrollLeft += 27;
+        }
+    }
+
     return (
         <div className="font-body text-center mx-auto bg-light text-white">
             <Navbar />
@@ -80,85 +91,100 @@ export default function BlogPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="tab-bar">
-                            <div className="flex justify-between sm:justify-start sm:items-center sm:space-x-9 text-lg xl:text-base lg:text-xs text-center">
-                                <div
-                                    className={
-                                        type === "Breads and rolls"
-                                            ? `active-blog-tab cursor-pointer`
-                                            : "cursor-pointer"
-                                    }
-                                    onClick={() => {
-                                        setType("Breads and rolls");
-                                    }}
-                                >
-                                    Breads and rolls
+                        <div className="relative">
+                            <div className="tab-bar">
+                                <div className="flex justify-between sm:justify-start sm:items-center sm:space-x-9 text-lg xl:text-base lg:text-xs text-center sm:pr-12 x sm:w-max">
+                                    <div
+                                        className={
+                                            type === "Breads and rolls"
+                                                ? `active-blog-tab cursor-pointer`
+                                                : "cursor-pointer"
+                                        }
+                                        onClick={() => {
+                                            setType("Breads and rolls");
+                                        }}
+                                    >
+                                        Breads and rolls
+                                    </div>
+                                    <div
+                                        className={
+                                            type === "Cheesecake"
+                                                ? `active-blog-tab cursor-pointer`
+                                                : "cursor-pointer"
+                                        }
+                                        onClick={() => {
+                                            setType("Cheesecake");
+                                        }}
+                                    >
+                                        Cheesecake
+                                    </div>
+                                    <div
+                                        className={
+                                            type === "Caramel"
+                                                ? `active-blog-tab cursor-pointer`
+                                                : "cursor-pointer"
+                                        }
+                                        onClick={() => {
+                                            setType("Caramel");
+                                        }}
+                                    >
+                                        Caramel
+                                    </div>
+                                    <div
+                                        className={
+                                            type === "Dairy free"
+                                                ? `active-blog-tab cursor-pointer`
+                                                : "cursor-pointer"
+                                        }
+                                        onClick={() => {
+                                            setType("Dairy free");
+                                        }}
+                                    >
+                                        Dairy free
+                                    </div>
+                                    <div
+                                        className={
+                                            type === "Peanut butter"
+                                                ? `active-blog-tab cursor-pointer`
+                                                : "cursor-pointer"
+                                        }
+                                        onClick={() => {
+                                            setType("Peanut butter");
+                                        }}
+                                    >
+                                        Peanut butter
+                                    </div>
+                                    <div
+                                        className={
+                                            type === "Cookies"
+                                                ? `active-blog-tab cursor-pointer`
+                                                : "cursor-pointer"
+                                        }
+                                        onClick={() => {
+                                            setType("Cookies");
+                                        }}
+                                    >
+                                        Cookies
+                                    </div>
                                 </div>
                                 <div
-                                    className={
-                                        type === "Cheesecake"
-                                            ? `active-blog-tab cursor-pointer`
-                                            : "cursor-pointer"
-                                    }
-                                    onClick={() => {
-                                        setType("Cheesecake");
+                                    className="line"
+                                    style={{
+                                        width: offsetWidth,
+                                        left: offsetLeft,
                                     }}
-                                >
-                                    Cheesecake
-                                </div>
-                                <div
-                                    className={
-                                        type === "Caramel"
-                                            ? `active-blog-tab cursor-pointer`
-                                            : "cursor-pointer"
-                                    }
-                                    onClick={() => {
-                                        setType("Caramel");
-                                    }}
-                                >
-                                    Caramel
-                                </div>
-                                <div
-                                    className={
-                                        type === "Dairy free"
-                                            ? `active-blog-tab cursor-pointer`
-                                            : "cursor-pointer"
-                                    }
-                                    onClick={() => {
-                                        setType("Dairy free");
-                                    }}
-                                >
-                                    Dairy free
-                                </div>
-                                <div
-                                    className={
-                                        type === "Peanut butter"
-                                            ? `active-blog-tab cursor-pointer`
-                                            : "cursor-pointer"
-                                    }
-                                    onClick={() => {
-                                        setType("Peanut butter");
-                                    }}
-                                >
-                                    Peanut butter
-                                </div>
-                                <div
-                                    className={
-                                        type === "Cookies"
-                                            ? `active-blog-tab cursor-pointer`
-                                            : "cursor-pointer"
-                                    }
-                                    onClick={() => {
-                                        setType("Cookies");
-                                    }}
-                                >
-                                    Cookies
-                                </div>
+                                />
                             </div>
                             <div
-                                className="line"
-                                style={{ width: offsetWidth, left: offsetLeft }}
-                            ></div>
+                                className="hidden sm:absolute sm:flex justify-end items-center z-50 right-0 top-px w-12 h-[3.5rem]"
+                                style={{
+                                    backgroundImage:
+                                        "linear-gradient(to left, rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,0))",
+                                }}
+                                onClick={() => slideRight()}
+                            >
+                                <Icons.ChevronRight />
+                            </div>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-1 pt-20 xl:pt-12 w-full auto-cols-max mx-auto place-items-center place-self-center">
                             <Blog type={type} />

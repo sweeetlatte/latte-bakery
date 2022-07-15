@@ -47,7 +47,7 @@ const ChevronDown = ({ stroke }: Props) => (
     </svg>
 );
 
-const ChevronRight = ({ stroke }: Props) => (
+const ChevronRight = ({ stroke = "white" }: Props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -116,7 +116,7 @@ const ChevronsLeft = ({ stroke }: Props) => (
     </svg>
 );
 
-const ChevronsRight = ({ stroke }: Props) => (
+const ChevronsRight = ({ stroke = "white" }: Props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
