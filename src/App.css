@@ -35,9 +35,15 @@
 }
 
 .tab-bar {
-    @apply relative flex justify-between text-lg xl:text-base lg:text-xs text-center py-7 xl:py-5 px-3 xl:px-1;
+    @apply relative sm:overflow-x-scroll sm:overflow-y-hidden py-7 xl:py-5 px-3 xl:px-1;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.tab-bar::-webkit-scrollbar {
+    display: none;
 }
 
 .line {

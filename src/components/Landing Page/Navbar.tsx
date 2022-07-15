@@ -106,13 +106,13 @@ export default function Navbar({
                 </>
             ) : (
                 <div
-                    className="hidden md:block md:basis-1/3 sm:basis-[26.5%]"
+                    className="hidden md:block md:basis-1/3"
                     onClick={() => setShowNavbar(true)}
                 >
                     <Icons.Menu />
                 </div>
             )}
-            <div className="md:hidden basis-4/12 flex justify-between text-left text-sm">
+            <div className="md:hidden basis-1/3 flex justify-between text-left text-sm">
                 <Link
                     to="/"
                     onClick={() =>
@@ -146,11 +146,12 @@ export default function Navbar({
             </div>
             <Link
                 to="/"
-                className="basis-4/12 md:basis-1/3 text-primary text-3xl font-semibold font-brand"
+                className="basis-1/3 text-center text-primary text-3xl font-semibold font-brand"
             >
                 BAKERY
             </Link>
-            <div className="md:hidden flex basis-4/12 space-x-6 justify-end text-sm">
+            <div className="md:basis-1/3"></div>
+            <div className="md:hidden flex basis-1/3 space-x-6 justify-end text-sm">
                 <Link
                     to="/register"
                     className="border border-primary text-primary px-5 py-2.5 rounded-md"

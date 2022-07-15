@@ -81,77 +81,79 @@ export default function BlogPage() {
                             </div>
                         </div>
                         <div className="tab-bar">
-                            <div
-                                className={
-                                    type === "Breads and rolls"
-                                        ? `active-blog-tab cursor-pointer`
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => {
-                                    setType("Breads and rolls");
-                                }}
-                            >
-                                Breads and rolls
-                            </div>
-                            <div
-                                className={
-                                    type === "Cheesecake"
-                                        ? `active-blog-tab cursor-pointer`
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => {
-                                    setType("Cheesecake");
-                                }}
-                            >
-                                Cheesecake
-                            </div>
-                            <div
-                                className={
-                                    type === "Caramel"
-                                        ? `active-blog-tab cursor-pointer`
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => {
-                                    setType("Caramel");
-                                }}
-                            >
-                                Caramel
-                            </div>
-                            <div
-                                className={
-                                    type === "Dairy free"
-                                        ? `active-blog-tab cursor-pointer`
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => {
-                                    setType("Dairy free");
-                                }}
-                            >
-                                Dairy free
-                            </div>
-                            <div
-                                className={
-                                    type === "Peanut butter"
-                                        ? `active-blog-tab cursor-pointer`
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => {
-                                    setType("Peanut butter");
-                                }}
-                            >
-                                Peanut butter
-                            </div>
-                            <div
-                                className={
-                                    type === "Cookies"
-                                        ? `active-blog-tab cursor-pointer`
-                                        : "cursor-pointer"
-                                }
-                                onClick={() => {
-                                    setType("Cookies");
-                                }}
-                            >
-                                Cookies
+                            <div className="flex justify-between sm:justify-start sm:items-center sm:space-x-9 text-lg xl:text-base lg:text-xs text-center">
+                                <div
+                                    className={
+                                        type === "Breads and rolls"
+                                            ? `active-blog-tab cursor-pointer`
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => {
+                                        setType("Breads and rolls");
+                                    }}
+                                >
+                                    Breads and rolls
+                                </div>
+                                <div
+                                    className={
+                                        type === "Cheesecake"
+                                            ? `active-blog-tab cursor-pointer`
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => {
+                                        setType("Cheesecake");
+                                    }}
+                                >
+                                    Cheesecake
+                                </div>
+                                <div
+                                    className={
+                                        type === "Caramel"
+                                            ? `active-blog-tab cursor-pointer`
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => {
+                                        setType("Caramel");
+                                    }}
+                                >
+                                    Caramel
+                                </div>
+                                <div
+                                    className={
+                                        type === "Dairy free"
+                                            ? `active-blog-tab cursor-pointer`
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => {
+                                        setType("Dairy free");
+                                    }}
+                                >
+                                    Dairy free
+                                </div>
+                                <div
+                                    className={
+                                        type === "Peanut butter"
+                                            ? `active-blog-tab cursor-pointer`
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => {
+                                        setType("Peanut butter");
+                                    }}
+                                >
+                                    Peanut butter
+                                </div>
+                                <div
+                                    className={
+                                        type === "Cookies"
+                                            ? `active-blog-tab cursor-pointer`
+                                            : "cursor-pointer"
+                                    }
+                                    onClick={() => {
+                                        setType("Cookies");
+                                    }}
+                                >
+                                    Cookies
+                                </div>
                             </div>
                             <div
                                 className="line"
