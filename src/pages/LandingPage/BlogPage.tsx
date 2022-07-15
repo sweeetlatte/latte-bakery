@@ -50,9 +50,27 @@ export default function BlogPage() {
         "tab-bar"
     ) as HTMLCollectionOf<HTMLElement>;
 
+    const [showRightArrow, setShowRightArrow] = useState<boolean>(true);
+    const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false);
+
     function slideRight() {
         if (tab) {
-            tab[0].scrollLeft += 27;
+            var maxScrollLeft = tab[0].scrollWidth - tab[0].clientWidth;
+            tab[0].scrollLeft += maxScrollLeft / 3;
+            if (tab[0].scrollLeft > 0 && maxScrollLeft - tab[0].scrollLeft > 1)
+                setShowLeftArrow(true);
+            else if (maxScrollLeft - tab[0].scrollLeft <= 1)
+                setShowRightArrow(false);
+        }
+    }
+
+    function slideLeft() {
+        if (tab) {
+            var maxScrollLeft = tab[0].scrollWidth - tab[0].clientWidth;
+            tab[0].scrollLeft -= maxScrollLeft / 3;
+            if (tab[0].scrollLeft > 0 && maxScrollLeft - tab[0].scrollLeft > 1)
+                setShowRightArrow(true);
+            else if (tab[0].scrollLeft === 0) setShowLeftArrow(false);
         }
     }
 
@@ -93,7 +111,7 @@ export default function BlogPage() {
                         </div>
                         <div className="relative">
                             <div className="tab-bar">
-                                <div className="flex justify-between sm:justify-start sm:items-center sm:space-x-9 text-lg xl:text-base lg:text-xs text-center sm:pr-12 x sm:w-max">
+                                <div className="flex justify-between sm:justify-start sm:items-center sm:space-x-9 text-lg xl:text-base lg:text-xs text-center sm:w-max">
                                     <div
                                         className={
                                             type === "Breads and rolls"
@@ -176,7 +194,25 @@ export default function BlogPage() {
                                 />
                             </div>
                             <div
-                                className="hidden sm:absolute sm:flex justify-end items-center z-50 right-0 top-px w-12 h-[3.5rem]"
+                                className={
+                                    showLeftArrow === true
+                                        ? "hidden sm:absolute sm:flex justify-start items-center z-50 left-0 top-px w-12 h-[3.5rem]"
+                                        : "hidden"
+                                }
+                                style={{
+                                    backgroundImage:
+                                        "linear-gradient(to right, rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,0))",
+                                }}
+                                onClick={() => slideLeft()}
+                            >
+                                <Icons.ChevronLeft />
+                            </div>
+                            <div
+                                className={
+                                    showRightArrow === true
+                                        ? "hidden sm:absolute sm:flex justify-end items-center z-50 right-0 top-px w-12 h-[3.5rem]"
+                                        : "hidden"
+                                }
                                 style={{
                                     backgroundImage:
                                         "linear-gradient(to left, rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,0))",
