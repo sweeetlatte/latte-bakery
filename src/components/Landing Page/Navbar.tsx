@@ -22,7 +22,7 @@ export default function Navbar({
         <div className="md:relative px-16 lg:px-8 flex items-center py-5 sm:text-left">
             {showNavbar === true ? (
                 <>
-                    <div className="fixed top-0 left-0 z-50 w-2/3 sm:w-full bg-light flex flex-col h-screen justify-between text-left text-sm p-6">
+                    <div className="fixed top-0 left-0 z-50 w-2/3 sm:w-full bg-light flex flex-col h-screen justify-between text-left text-sm p-6 sm:p-5">
                         <div>
                             <Link
                                 to="/"
@@ -106,7 +106,7 @@ export default function Navbar({
                 </>
             ) : (
                 <div
-                    className="hidden md:block md:basis-1/3"
+                    className="hidden md:block md:basis-1/3 sm:basis-[26.5%]"
                     onClick={() => setShowNavbar(true)}
                 >
                     <Icons.Menu />

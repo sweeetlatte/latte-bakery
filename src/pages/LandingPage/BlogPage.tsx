@@ -162,14 +162,14 @@ export default function BlogPage() {
                             <Blog type={type} />
                         </div>
                     </div>
-                    <div className="basis-3/12 md:flex pt-14 xl:pt-10 sm:pt-0">
+                    <div className="basis-3/12 md:flex sm:flex-col pt-14 xl:pt-10 sm:pt-0">
                         <div className="md:basis-1/2">
                             <div className="text-xl">New post</div>
                             <div className="pt-9 lg:pt-5">
                                 <Post />
                             </div>
                         </div>
-                        <div className="pt-2.5 md:pt-0 md:basis-1/2">
+                        <div className="pt-2.5 md:pt-0 sm:pt-2.5 md:basis-1/2">
                             <div className="text-xl">Popular</div>
                             <div className="pt-9 lg:pt-5">
                                 <Post />
