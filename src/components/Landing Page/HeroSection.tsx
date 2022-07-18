@@ -63,7 +63,7 @@ export default function HeroSection({ navBarProps }: Props) {
                 <div className="font-title text-[144px]">
                     Pastry with love
                 </div>
-                <div className="text-2xl w-[33rem] mx-auto pb-8">
+                <div className="text-2xl xl:text-xl w-[33rem] mx-auto pb-8">
                     We're bringing you fresh ingredients everyday in ways you
                     can't resist
                 </div>

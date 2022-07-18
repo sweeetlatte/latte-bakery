@@ -29,6 +29,7 @@ module.exports = {
             // => @media (max-width: 1535px)
             'xl': { 'max': '1279px' },
             // => @media (max-width: 1279px)
+            // fontsize: 24 -> 20, 16 -> 14
             'lg': { 'max': '1023px' },
             // => @media (max-width: 1023px)
             'md': { 'max': '767px' },

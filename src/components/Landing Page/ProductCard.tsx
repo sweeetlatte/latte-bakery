@@ -25,36 +25,38 @@ export default function ProductCardRgba() {
             {productData.map((productItem, index) => (
                 <div
                     key={index}
-                    className="bg-white-rgba w-[15.688rem] h-[15.563rem] rounded-lg px-[1.875rem] pt-[1.875rem] mb-12 text-left"
+                    className="bg-white-rgba w-[15.688rem] xl:w-[12.7rem] h-[15.563rem] xl:h-[14.563rem] rounded-lg px-[1.875rem] py-[1.875rem] mb-12 text-left flex flex-col justify-between"
                 >
                     <img
-                        className="w-[191px] h-[118px] object-cover"
+                        className="w-full h-[118px] xl:h-[90px] object-cover"
                         src={productItem.image}
-                        alt="banner"
+                        alt={productItem.name}
                     />
-                    <div className="pt-2.5 text-sm font-medium">
+                    <div className="text-sm font-medium">
                         {new Intl.NumberFormat("de-DE", {
                             style: "currency",
                             currency: "VND",
                         }).format(productItem.price)}
                     </div>
-                    <div className="flex justify-between items-center pt-1.5">
+                    <div className="flex justify-between items-center">
                         <div
-                            className="font-medium text-primary text-overflow w-6/12"
-                            style={{ WebkitLineClamp: 2 }}
+                            className="basis-1/2 font-medium text-primary text-overflow"
+                            style={{ WebkitLineClamp: 1 }}
                         >
                             {productItem.name}
                         </div>
-                        <Link to="/login">
-                            <button className="border border-primary bg-primary px-2.5 py-1 rounded-md flex items-center">
-                                <img
-                                    className="pr-1"
-                                    src={cartIcon}
-                                    alt="cart icon"
-                                />
-                                Add
-                            </button>
-                        </Link>
+                        <div className="basis-1/2 w-full px-auto">
+                            <Link to="/login">
+                                <button className="flex justify-center items-center border border-primary bg-primary w-full py-1 rounded-md ">
+                                    <img
+                                        className="pr-1"
+                                        src={cartIcon}
+                                        alt="cart icon"
+                                    />
+                                    Add
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             ))}

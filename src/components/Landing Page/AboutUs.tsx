@@ -18,7 +18,7 @@ export default function AboutUs() {
                     <img src={about2} alt="about-2" />
                     <div className="pl-12 text-left">
                         <div className="text-lg">LATTE BAKERY</div>
-                        <div className="pt-6 text-justify">
+                        <div className="pt-6 text-justify xl:text-sm">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Porttitor vulputate cursus id erat purus quam.
                             Semper egestas ipsum pellentesque sollicitudin. Nunc

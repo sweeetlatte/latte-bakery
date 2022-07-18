@@ -37,7 +37,7 @@ export default function Blog() {
                                     {blogItem.name}
                                 </div>
                                 <div
-                                    className="pt-6 text-overflow h-48 text-justify"
+                                    className="pt-6 text-overflow h-48 xl:h-40 text-justify xl:text-sm"
                                     style={{ WebkitLineClamp: 7 }}
                                 >
                                     {blogItem.content}
