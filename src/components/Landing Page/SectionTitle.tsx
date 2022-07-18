@@ -17,9 +17,13 @@ export default function SectionTitle({
 }: ISectionTitleProps) {
     return (
         <div className="relative text-left w-full h-fit">
-            <h6 className="font-title text-[200px] text-white-rgba">{title}</h6>
+            <h6 className="font-title text-[200px] xl:text-[160px] text-white-rgba">
+                {title}
+            </h6>
             <div className="absolute left-[5%] bottom-1/3 flex flex-row items-center justify-between w-[95%]">
-                <h6 className="font-title text-7xl text-white">{title}</h6>
+                <h6 className="font-title text-7xl xl:text-[3.5rem] text-white">
+                    {title}
+                </h6>
                 {variant === "one-button" && linkTo && (
                     <Link to={`${linkTo}`}>
                         <button className="regular-button">

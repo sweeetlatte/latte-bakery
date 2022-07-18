@@ -12,7 +12,7 @@ export default function GetInTouch() {
             <div className="absolute left-36">
                 <img src={getintouch1} alt="get in touch 1" />
             </div>
-            <div className="mt-32 bg-light h-max px-14 py-14 mx-[245px] rounded-lg">
+            <div className="mt-32 bg-light h-max px-14 py-14 mx-[20%] rounded-lg">
                 <div className="text-primary font-bold text-2xl underline underline-offset-8">
                     Get In Touch
                 </div>
