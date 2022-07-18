@@ -51,7 +51,7 @@ export default function HeroSection({ navBarProps }: Props) {
 
         // "!": non-null assertion operator
         navbar!.style.backgroundColor = color;
-    }, [scrollTop]);
+    }, [scrollTop, scrolling]);
 
     return (
         <div className="relative flex justify-center h-screen hero-section">
@@ -60,10 +60,10 @@ export default function HeroSection({ navBarProps }: Props) {
             </div>
             {/* <Carousel /> */}
             <div className="self-center">
-                <div className="font-title text-[144px]">
+                <div className="font-title text-[144px] lg:text-[100px]">
                     Pastry with love
                 </div>
-                <div className="text-2xl xl:text-xl w-[33rem] mx-auto pb-8">
+                <div className="text-2xl xl:text-xl lg:text-lg w-[33rem] mx-auto pb-8">
                     We're bringing you fresh ingredients everyday in ways you
                     can't resist
                 </div>
@@ -74,7 +74,7 @@ export default function HeroSection({ navBarProps }: Props) {
                     Shop now
                 </Link>
             </div>
-            <div className="absolute bottom-[-10.65rem]">
+            <div className="absolute bottom-[-10.65rem] lg:bottom-[-6.9rem] lg:w-96">
                 <img src={roller} alt="dough roller" />
             </div>
         </div>

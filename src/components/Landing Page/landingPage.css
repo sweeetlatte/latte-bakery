@@ -1,0 +1,16 @@
+.blog-item-content {
+    @apply h-[10.5rem] xl:h-24 lg:h-16 text-justify xl:text-sm;
+    -webkit-line-clamp: 7;
+}
+
+@media (max-width: 1279px) {
+    .blog-item-content {
+        -webkit-line-clamp: 5;
+    }
+}
+
+@media (max-width: 1023px) {
+    .blog-item-content {
+        -webkit-line-clamp: 3;
+    }
+}

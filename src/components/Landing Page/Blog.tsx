@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import "./landingPage.css";
+
 import { fetchBlogData } from "../../app/api";
 import { IBlog } from "../../types";
 import { randomNumber } from "../../utils/functions";
+
 import SectionTitle from "./SectionTitle";
 
 export default function Blog() {
@@ -21,25 +25,25 @@ export default function Blog() {
     return blogData ? (
         <>
             <SectionTitle title={"Blog"} variant="one-button" linkTo="/blog" />
-            <div className="w-full mx-auto space-y-12">
+            <div className="w-full mx-auto space-y-12 lg:space-y-9">
                 {randomNumber(blogData, 2).map((blogItem, index) => (
-                    <div key={index} className="flex">
-                        <div className="basis-5/12">
+                    <div key={index} className="flex space-x-12">
+                        <div className="basis-2/5">
                             <img
-                                className="w-full h-72 object-cover"
+                                className="w-full h-72 xl:h-52 lg:h-40 object-cover"
                                 src={blogItem.image}
                                 alt="blog"
                             />
                         </div>
-                        <div className="basis-7/12 h-72 pl-12 text-left flex flex-col justify-between">
-                            <div>
-                                <div className="text-lg uppercase">
+                        <div className="basis-3/5 text-left flex flex-col justify-between">
+                            <div className="space-y-4 xl:space-y-2">
+                                <div
+                                    className="text-lg uppercase text-overflow"
+                                    style={{ WebkitLineClamp: 1 }}
+                                >
                                     {blogItem.name}
                                 </div>
-                                <div
-                                    className="pt-6 text-overflow h-48 xl:h-40 text-justify xl:text-sm"
-                                    style={{ WebkitLineClamp: 7 }}
-                                >
+                                <div className="text-overflow blog-item-content">
                                     {blogItem.content}
                                 </div>
                             </div>
@@ -47,7 +51,7 @@ export default function Blog() {
                                 to="/blog/detail"
                                 state={{ detail: blogItem }}
                             >
-                                <button className="border border-primary bg-primary px-10 rounded-md w-fit h-[44px] ">
+                                <button className="regular-button">
                                     See more
                                 </button>
                             </Link>
