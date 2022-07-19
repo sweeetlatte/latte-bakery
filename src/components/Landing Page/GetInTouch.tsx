@@ -16,10 +16,10 @@ export default function GetInTouch() {
                 <div className="text-primary font-bold text-2xl underline underline-offset-8">
                     Get In Touch
                 </div>
-                <div className="text-left pt-12 text-xl">
+                <div className="text-left pt-12 md:pt-8 text-xl md:text-lg">
                     Leave us a message
                 </div>
-                <div className="flex space-x-14 xl:space-x-10 pt-8 xl:text-sm">
+                <div className="flex space-x-14 xl:space-x-10 md:space-x-6 pt-8 xl:text-sm md:text-xs">
                     <form className="basis-7/12">
                         <input
                             className="w-full bg-light border rounded py-3.5 px-3.5 mb-6"

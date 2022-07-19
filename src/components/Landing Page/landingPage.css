@@ -1,5 +1,5 @@
 .blog-item-content {
-    @apply h-[10.5rem] xl:h-24 lg:h-16 text-justify xl:text-sm;
+    @apply h-[10.5rem] xl:h-24 lg:h-16 md:h-12 text-justify xl:text-sm md:text-xs;
     -webkit-line-clamp: 7;
 }
 
