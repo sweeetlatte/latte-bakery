@@ -9,34 +9,34 @@ import youtube from "../../assets/icons/Youtube.svg";
 export default function GetInTouch() {
     return (
         <div className="pt-24 relative">
-            <div className="absolute left-36 xl:left-12 lg:-left-12">
+            <div className="absolute left-36 xl:left-12 lg:-left-12 xl:w-56 sm:w-36">
                 <img src={getintouch1} alt="get in touch 1" />
             </div>
-            <div className="mt-32 bg-light h-max px-14 py-14 mx-[20%] xl:mx-[15%] lg:mx-[5%] rounded-lg">
+            <div className="mt-32 sm:mt-20 bg-light h-max p-14 sm:p-6 mx-[20%] xl:mx-[15%] lg:mx-[5%] sm:mx-0 rounded-lg">
                 <div className="text-primary font-bold text-2xl underline underline-offset-8">
                     Get In Touch
                 </div>
-                <div className="text-left pt-12 md:pt-8 text-xl md:text-lg">
+                <div className="text-left pt-12 md:pt-8 sm:pt-4 text-xl md:text-lg sm:text-base">
                     Leave us a message
                 </div>
-                <div className="flex space-x-14 xl:space-x-10 md:space-x-6 pt-8 xl:text-sm md:text-xs">
-                    <form className="basis-7/12">
+                <div className="flex sm:flex-col space-x-14 xl:space-x-10 md:space-x-6 sm:space-x-0 pt-8 sm:pt-4 xl:text-sm md:text-xs">
+                    <form className="basis-7/12 space-y-5">
                         <input
-                            className="w-full bg-light border rounded py-3.5 px-3.5 mb-6"
+                            className="w-full bg-light border rounded py-3.5 px-3.5"
                             type="text"
                             id="name"
                             name="name"
                             placeholder="Name"
                         />
                         <input
-                            className="w-full bg-light border rounded py-3.5 px-3.5 mb-6"
+                            className="w-full bg-light border rounded py-3.5 px-3.5"
                             type="text"
                             id="email"
                             name="email"
                             placeholder="Email Address"
                         />
                         <textarea
-                            className="w-full bg-light border rounded py-3.5 px-3.5 mb-10 h-32"
+                            className="w-full bg-light border rounded py-3.5 px-3.5 h-32"
                             id="message"
                             name="message"
                             placeholder="Your Message"
@@ -45,7 +45,7 @@ export default function GetInTouch() {
                             Send
                         </button>
                     </form>
-                    <div className="basis-5/12 text-left flex flex-col justify-between">
+                    <div className="basis-5/12 text-left flex flex-col justify-between sm:pt-4 sm:space-y-5">
                         <div>
                             Infomation technologies building, Victoria Island,
                             Lagos, Nigeria.

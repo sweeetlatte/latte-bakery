@@ -60,10 +60,10 @@ export default function HeroSection({ navBarProps }: Props) {
             </div>
             {/* <Carousel /> */}
             <div className="self-center">
-                <div className="font-title text-[144px] lg:text-[100px]">
+                <div className="font-title text-[144px] lg:text-[100px] sm:text-[58px]">
                     Pastry with love
                 </div>
-                <div className="text-2xl xl:text-xl lg:text-lg w-[33rem] mx-auto pb-8">
+                <div className="text-2xl xl:text-xl lg:text-lg sm:text-base w-[33rem] sm:w-[19rem] mx-auto pb-8">
                     We're bringing you fresh ingredients everyday in ways you
                     can't resist
                 </div>
@@ -74,7 +74,7 @@ export default function HeroSection({ navBarProps }: Props) {
                     Shop now
                 </Link>
             </div>
-            <div className="absolute bottom-[-10.65rem] lg:bottom-[-6.9rem] lg:w-96">
+            <div className="absolute bottom-[-10.65rem] lg:bottom-[-6.9rem] sm:-bottom-9 lg:w-96 sm:w-32">
                 <img src={roller} alt="dough roller" />
             </div>
         </div>

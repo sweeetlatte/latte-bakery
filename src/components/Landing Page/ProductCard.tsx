@@ -25,7 +25,7 @@ export default function ProductCardRgba() {
             {productData.map((productItem, index) => (
                 <div
                     key={index}
-                    className="bg-white-rgba w-[15.688rem] xl:w-[12.7rem] h-[15.563rem] xl:h-[14.563rem] rounded-lg px-[1.875rem] py-[1.875rem] mb-12 text-left flex flex-col justify-between"
+                    className="bg-white-rgba w-[15.688rem] xl:w-[12.7rem] h-[15.563rem] xl:h-[14.563rem] rounded-lg px-[1.875rem] py-[1.875rem] mb-12 sm:mb-8 text-left flex flex-col justify-between"
                 >
                     <img
                         className="w-full h-[118px] xl:h-[90px] object-cover"
