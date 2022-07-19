@@ -196,7 +196,7 @@ export default function BlogPage() {
                             <div
                                 className={
                                     showLeftArrow === true
-                                        ? "hidden sm:absolute sm:flex justify-start items-center z-50 left-0 top-px w-12 h-[3.5rem]"
+                                        ? "hidden z-40 sm:absolute sm:flex justify-start items-center left-0 top-px w-12 h-[3.5rem]"
                                         : "hidden"
                                 }
                                 style={{
@@ -210,7 +210,7 @@ export default function BlogPage() {
                             <div
                                 className={
                                     showRightArrow === true
-                                        ? "hidden sm:absolute sm:flex justify-end items-center z-50 right-0 top-px w-12 h-[3.5rem]"
+                                        ? "hidden z-40 sm:absolute sm:flex justify-end items-center right-0 top-px w-12 h-[3.5rem]"
                                         : "hidden"
                                 }
                                 style={{

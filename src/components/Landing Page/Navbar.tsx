@@ -22,7 +22,7 @@ export default function Navbar({
         <div className="md:relative px-16 lg:px-8 flex items-center py-5 sm:text-left">
             {showNavbar === true ? (
                 <>
-                    <div className="fixed top-0 left-0 z-50 w-2/3 sm:w-full bg-light flex flex-col h-screen justify-between text-left text-sm p-6 sm:p-5">
+                    <div className="z-50 fixed top-0 left-0 w-2/3 sm:w-full bg-light flex flex-col h-screen justify-between text-left text-sm p-6 sm:p-5">
                         <div>
                             <Link
                                 to="/"
@@ -38,53 +38,21 @@ export default function Navbar({
                             </div>
                             <div className="pt-16 flex flex-col space-y-5 w-full">
                                 <div>
-                                    <Link
-                                        to="/"
-                                        onClick={() =>
-                                            executeAboutUsScroll &&
-                                            executeAboutUsScroll()
-                                        }
-                                    >
-                                        About us
-                                    </Link>
+                                    <Link to="/">About us</Link>
                                     <div className="bg-underline w-full h-[0.5px] mt-5" />
                                 </div>
                                 <div>
-                                    <Link
-                                        to="/"
-                                        onClick={() =>
-                                            executeProductsScroll &&
-                                            executeProductsScroll()
-                                        }
-                                    >
-                                        Products
-                                    </Link>
+                                    <Link to="/">Products</Link>
                                     <div className="bg-underline w-full h-[0.5px] mt-5" />
                                 </div>
                                 <div>
-                                    <Link
-                                        to="/"
-                                        onClick={() =>
-                                            executeBlogScroll &&
-                                            executeBlogScroll()
-                                        }
-                                    >
-                                        Blog
-                                    </Link>
+                                    <Link to="/blog">Blog</Link>
                                     <div className="bg-underline w-full h-[0.5px] mt-5" />
                                 </div>
-                                <Link
-                                    to="/"
-                                    onClick={() =>
-                                        executeGetInTouchScroll &&
-                                        executeGetInTouchScroll()
-                                    }
-                                >
-                                    Contact
-                                </Link>
+                                <Link to="/">Contact</Link>
                             </div>
                         </div>
-                        <div className="flex space-x-5 text-sm text-center">
+                        <div className="flex space-x-5 text-sm text-center pb-4">
                             <Link
                                 to="/register"
                                 className="w-full border border-primary text-primary px-5 py-2.5 rounded-md"
