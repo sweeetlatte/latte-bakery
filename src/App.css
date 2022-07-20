@@ -159,15 +159,33 @@
     animation-fill-mode: both;
 }
 
+/* ============= In from Left ============= */
+@keyframes inLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.in-left {
+    animation: inLeft;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+}
+
 /* ============= Out from Left ============= */
 @keyframes outLeft {
     0% {
-        opacity: var(--opacity);
+        opacity: 1;
         transform: translateX(0);
     }
     100% {
         opacity: 0;
-        transform: translateX(100vw);
+        transform: translateX(-100vw);
     }
 }
 

@@ -16,13 +16,33 @@ export default function Navbar({
     executeBlogScroll,
     executeGetInTouchScroll,
 }: Props) {
-    const [showNavbar, setShowNavbar] = useState<boolean>(false);
+    const [showNavbar, setShowNavbar] = useState<boolean | null>(null);
 
     return (
         <div className="md:relative px-16 lg:px-8 flex items-center py-5 sm:text-left">
-            {showNavbar === true ? (
+            <div
+                className={
+                    !showNavbar
+                        ? "hidden md:block md:basis-1/3"
+                        : "absolute top-7 right-4 z-50 in-left"
+                }
+                style={{ "--duration": "2s" } as React.CSSProperties}
+                onClick={() => setShowNavbar(!showNavbar)}
+            >
+                {!showNavbar ? <Icons.Menu /> : <Icons.X />}
+            </div>
+            {
                 <>
-                    <div className="z-50 fixed top-0 left-0 w-2/3 sm:w-full bg-light flex flex-col h-screen justify-between text-left text-sm p-6 sm:p-5">
+                    <div
+                        className={`z-40 fixed top-0 left-0 w-2/3 sm:w-full bg-light flex flex-col h-screen justify-between text-left text-sm p-6 sm:p-5 ${
+                            showNavbar === null
+                                ? "hidden"
+                                : showNavbar
+                                ? "in-left"
+                                : "out-left"
+                        }`}
+                        style={{ "--duration": "2s" } as React.CSSProperties}
+                    >
                         <div>
                             <Link
                                 to="/"
@@ -30,12 +50,12 @@ export default function Navbar({
                             >
                                 BAKERY
                             </Link>
-                            <div
+                            {/* <div
                                 className="absolute top-7 right-4"
                                 onClick={() => setShowNavbar(false)}
                             >
                                 <Icons.X />
-                            </div>
+                            </div> */}
                             <div className="pt-16 flex flex-col space-y-5 w-full">
                                 <div>
                                     <Link to="/">About us</Link>
@@ -67,19 +87,14 @@ export default function Navbar({
                             </Link>
                         </div>
                     </div>
-                    <div
-                        className="__mask-modal"
-                        onClick={() => setShowNavbar(false)}
-                    ></div>
+                    {showNavbar && (
+                        <div
+                            className="__mask-modal"
+                            onClick={() => setShowNavbar(false)}
+                        ></div>
+                    )}
                 </>
-            ) : (
-                <div
-                    className="hidden md:block md:basis-1/3"
-                    onClick={() => setShowNavbar(true)}
-                >
-                    <Icons.Menu />
-                </div>
-            )}
+            }
             <div className="md:hidden basis-1/3 flex justify-between text-left text-sm">
                 <Link
                     to="/"
