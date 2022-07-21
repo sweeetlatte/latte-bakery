@@ -89,11 +89,11 @@ export default function Products() {
                 className="w-full pl-40 text-white py-9 pr-16 flex items-center"
                 style={{ backgroundColor: "#272727" }}
             >
-                <div className="basis-9/12 xl:basis-8/12">
+                <div className="basis-9/12 xl:basis-8/12 lg:basis-7/12 md:basis-8/12 sm:basis-7/12">
                     <div className="text-2xl font-semibold pb-1">Dashboard</div>
                     <div className="text-sm">Tuesday, 27 Jun 2022</div>
                 </div>
-                <div className="basis-3/12 xl:basis-4/12">
+                <div className="basis-3/12 xl:basis-4/12 lg:basis-5/12 md:basis-4/12 sm:basis-5/12">
                     <Header />
                 </div>
             </div>
