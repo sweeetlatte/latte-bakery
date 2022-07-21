@@ -144,7 +144,7 @@ export default function Products() {
                                     bottom: "-10px",
                                 }}
                             ></div>
-                            <div className="flex space-x-12  text-base">
+                            <div className="flex space-x-12 text-base whitespace-nowrap">
                                 <div
                                     className={
                                         type === "Sweet Pastry"
