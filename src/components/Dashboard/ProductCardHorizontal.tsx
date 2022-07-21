@@ -43,7 +43,7 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
                             alt={productItem.name}
                         />
                     </Link>
-                    <div className="text-sm h-full overflow-hidden">
+                    <div className="text-sm h-full overflow-hidden lg:hidden">
                         <Link
                             to="/dashboard/detail"
                             state={{ detail: productItem }}
