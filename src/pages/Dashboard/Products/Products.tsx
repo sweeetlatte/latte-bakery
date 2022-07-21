@@ -89,16 +89,16 @@ export default function Products() {
                 className="w-full pl-40 text-white py-9 pr-16 flex items-center"
                 style={{ backgroundColor: "#272727" }}
             >
-                <div className="basis-9/12">
+                <div className="basis-9/12 xl:basis-8/12 lg:basis-7/12 md:basis-8/12 sm:basis-7/12">
                     <div className="text-2xl font-semibold pb-1">Dashboard</div>
                     <div className="text-sm">Tuesday, 27 Jun 2022</div>
                 </div>
-                <div className="basis-3/12">
+                <div className="basis-3/12 xl:basis-4/12 lg:basis-5/12 md:basis-4/12 sm:basis-5/12">
                     <Header />
                 </div>
             </div>
-            <div className="ml-40 text-white flex pr-16 py-6 space-x-[42px]">
-                <div className="bg-light text-white basis-9/12">
+            <div className="ml-40 lg:ml-32 text-white flex pr-16 py-6 space-x-[42px] lg:space-x-[20px]">
+                <div className="bg-light text-white basis-9/12 lg:basis-7/12">
                     <div className="flex pb-8 w-3/5">
                         <SearchBar />
                         <Link to="search">
@@ -144,7 +144,7 @@ export default function Products() {
                                     bottom: "-10px",
                                 }}
                             ></div>
-                            <div className="flex space-x-12  text-base">
+                            <div className="flex space-x-12 text-base whitespace-nowrap">
                                 <div
                                     className={
                                         type === "Sweet Pastry"
@@ -220,7 +220,7 @@ export default function Products() {
                         closeModalAddProduct={() => closeModalAddProduct()}
                     />
                 </div>
-                <div className="text-white basis-3/12">
+                <div className="text-white basis-3/12 lg:basis-5/12">
                     <div>
                         <div className="text-lg pb-6">New products</div>
                         <div className="flex flex-col space-y-4">

@@ -26,7 +26,7 @@ export default function Header() {
     ];
 
     return (
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-8 justify-between">
             <div>
                 <CustomSelectBox
                     data={language}
@@ -46,7 +46,7 @@ export default function Header() {
                         alt="ava"
                     />
                 </Link>
-                <Link to="/dashboard/setting/account-info">
+                <Link className="truncate md:hidden" to="/dashboard/setting/account-info">
                     <p>{userData?.name}</p>
                 </Link>
             </div>

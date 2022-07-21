@@ -48,7 +48,7 @@ export default function ProductCard({
                       .map((productItem, index) => (
                           <div
                               key={index}
-                              className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm"
+                              className="w-[204px] xl:w-[180px] lg:w-[170px] h-[245px] lg:h-[230px] px-6 xl:px-4 py-5 bg-dark-bg rounded-lg text-left text-sm"
                           >
                               <Link
                                   to="/dashboard/detail"
@@ -77,10 +77,10 @@ export default function ProductCard({
                                   </Link>
                                   <button
                                       onClick={openModalAddProduct}
-                                      className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex items-center"
+                                      className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px]"
                                   >
                                       <img
-                                          className="mr-1"
+                                          className="lg:mr-0 xl:mr-1"
                                           src={cartIcon}
                                           alt="cart icon"
                                       />
@@ -94,7 +94,7 @@ export default function ProductCard({
                       (productItem, index) => (
                           <div
                               key={index}
-                              className="w-[204px] h-[245px] px-6 py-5 bg-dark-bg rounded-lg text-left text-sm"
+                              className="w-[204px] xl:w-[180px] lg:w-[170px] h-[245px] lg:h-[230px] px-6 xl:px-4 py-5 bg-dark-bg rounded-lg text-left text-sm"
                           >
                               <Link
                                   to="/dashboard/detail"
@@ -123,10 +123,10 @@ export default function ProductCard({
                                   </Link>
                                   <button
                                       onClick={openModalAddProduct}
-                                      className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex items-center"
+                                      className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px]"
                                   >
                                       <img
-                                          className="mr-1"
+                                          className="lg:mr-0 xl:mr-1"
                                           src={cartIcon}
                                           alt="cart icon"
                                       />
