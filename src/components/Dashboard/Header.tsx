@@ -46,7 +46,7 @@ export default function Header() {
                         alt="ava"
                     />
                 </Link>
-                <Link to="/dashboard/setting/account-info">
+                <Link className="truncate" to="/dashboard/setting/account-info">
                     <p>{userData?.name}</p>
                 </Link>
             </div>
