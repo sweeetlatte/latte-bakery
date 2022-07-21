@@ -27,6 +27,7 @@ export default function CustomSelectBox({
             height: height,
             color: "white",
             borderColor: borderColor,
+            whiteSpace: "nowrap",
         }),
         option: (styles: any, { isFocused }: any) => ({
             color: "white",
