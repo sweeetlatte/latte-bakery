@@ -29,10 +29,10 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
             {randomNumber(productData, 3).map((productItem, index) => (
                 <div
                     key={index}
-                    className="bg-dark-bg py-4 px-4 rounded-lg flex space-x-4 justify-between w-full"
+                    className="bg-dark-bg py-4 px-4 rounded-lg flex xl:flex-col space-x-4 xl:space-x-0 justify-start w-full xl:w-[180px] lg:w-[170px] xl:h-[245px]"
                 >
                     <Link
-                        className="h-[100px] w-[100px]"
+                        className="h-[100px] w-[100px] xl:h-[117px] xl:w-full"
                         to="/dashboard/detail"
                         state={{ detail: productItem }}
                     >
@@ -43,32 +43,36 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
                             alt={productItem.name}
                         />
                     </Link>
-                    <div className="text-sm h-full overflow-hidden lg:hidden">
-                        <Link
-                            to="/dashboard/detail"
-                            state={{ detail: productItem }}
-                            className="font-medium text-primary text-overflow w-[145px]"
-                            style={{ WebkitLineClamp: 1 }}
-                        >
-                            {productItem.name}
-                        </Link>
-                        <div className="pt-1">
-                            {new Intl.NumberFormat("de-DE", {
-                                style: "currency",
-                                currency: "VND",
-                            }).format(productItem.price)}
-                        </div>
-                        <button
-                            className="border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center"
-                            onClick={openModalAddProduct}
-                        >
-                            <img
-                                className="mr-1"
-                                src={cartIcon}
-                                alt="cart icon"
-                            />
-                            Add
-                        </button>
+                    <div className="text-sm h-full overflow-hidden xl:flex xl:h-fit xl:items-end">
+                        <section className="xl:basis-1/2">
+                            <Link
+                                to="/dashboard/detail"
+                                state={{ detail: productItem }}
+                                className="font-medium text-primary text-overflow w-[145px] xl:w-full xl:pt-4"
+                                style={{ WebkitLineClamp: 1 }}
+                            >
+                                {productItem.name}
+                            </Link>
+                            <div className="pt-1 xl:pt-4">
+                                {new Intl.NumberFormat("de-DE", {
+                                    style: "currency",
+                                    currency: "VND",
+                                }).format(productItem.price)}
+                            </div>
+                        </section>
+                        <section className="xl:basis-1/2">
+                            <button
+                                className="border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center"
+                                onClick={openModalAddProduct}
+                            >
+                                <img
+                                    className="mr-1"
+                                    src={cartIcon}
+                                    alt="cart icon"
+                                />
+                                Add
+                            </button>
+                        </section>
                     </div>
                 </div>
             ))}
