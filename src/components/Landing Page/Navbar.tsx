@@ -17,6 +17,11 @@ export default function Navbar({
     executeGetInTouchScroll,
 }: Props) {
     const [showNavbar, setShowNavbar] = useState<boolean | null>(null);
+    const navBarActionMap = {
+        null: "hidden",
+        true: "in-left",
+        false: "out-left",
+    };
 
     return (
         <div className="md:relative px-16 lg:px-8 flex items-center py-5 sm:text-left">
@@ -29,17 +34,17 @@ export default function Navbar({
                 style={{ "--duration": "2s" } as React.CSSProperties}
                 onClick={() => setShowNavbar(!showNavbar)}
             >
-                {!showNavbar ? <Icons.Menu /> : <Icons.X />}
+                <div className={`container ${showNavbar && "change"}`}>
+                    <div className="bar1"></div>
+                    <div className="bar2"></div>
+                    <div className="bar3"></div>
+                </div>
             </div>
             {
                 <>
                     <div
                         className={`z-40 fixed top-0 left-0 w-2/3 sm:w-full bg-light flex flex-col h-screen justify-between text-left text-sm p-6 sm:p-5 ${
-                            showNavbar === null
-                                ? "hidden"
-                                : showNavbar
-                                ? "in-left"
-                                : "out-left"
+                            navBarActionMap[`${showNavbar}`]
                         }`}
                         style={{ "--duration": "2s" } as React.CSSProperties}
                     >
