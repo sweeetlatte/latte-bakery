@@ -89,16 +89,16 @@ export default function Products() {
                 className="w-full pl-40 text-white py-9 pr-16 flex items-center"
                 style={{ backgroundColor: "#272727" }}
             >
-                <div className="basis-9/12 xl:basis-8/12 lg:basis-7/12 md:basis-8/12 sm:basis-7/12">
+                <div className="basis-9/12 2xl:basis-8/12 xl:basis-8/12 lg:basis-5/12 md:basis-8/12 sm:basis-7/12">
                     <div className="text-2xl font-semibold pb-1">Dashboard</div>
                     <div className="text-sm">Tuesday, 27 Jun 2022</div>
                 </div>
-                <div className="basis-3/12 xl:basis-4/12 lg:basis-5/12 md:basis-4/12 sm:basis-5/12">
+                <div className="basis-3/12 2xl:basis-4/12 xl:basis-4/12 lg:basis-7/12 md:basis-4/12 sm:basis-5/12">
                     <Header />
                 </div>
             </div>
-            <div className="ml-40 lg:ml-32 text-white flex pr-16 py-6 space-x-[42px] lg:space-x-[20px]">
-                <div className="bg-light text-white basis-9/12 lg:basis-7/12">
+            <div className="ml-40 lg:ml-32 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
+                <div className="bg-light text-white basis-9/12 lg:basis-7/12 xl:w-full">
                     <div className="flex pb-8 w-3/5">
                         <SearchBar />
                         <Link to="search">
@@ -134,8 +134,8 @@ export default function Products() {
                             <div className="dot"></div>
                         </div>
                     </div>
-                    <div className="flex items-center w-full justify-between">
-                        <div className="relative">
+                    <div className="flex lg:flex-col lg:space-y-6 items-center lg:items-end w-full justify-between">
+                        <div className="relative lg:w-full">
                             <div
                                 className="line"
                                 style={{
@@ -144,7 +144,7 @@ export default function Products() {
                                     bottom: "-10px",
                                 }}
                             ></div>
-                            <div className="flex space-x-12 text-base whitespace-nowrap">
+                            <div className="flex space-x-12 text-base whitespace-nowrap lg:overflow-x-scroll lg:scroll-smooth">
                                 <div
                                     className={
                                         type === "Sweet Pastry"
@@ -195,7 +195,7 @@ export default function Products() {
                                 >
                                     Ice Cream
                                 </div>
-                                <Icons.ChevronRight stroke="white" />
+                                {/* <Icons.ChevronRight stroke="white" /> */}
                             </div>
                         </div>
                         <div className="basis-3/12">
@@ -220,10 +220,10 @@ export default function Products() {
                         closeModalAddProduct={() => closeModalAddProduct()}
                     />
                 </div>
-                <div className="text-white basis-3/12 lg:basis-5/12">
+                <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full">
                     <div>
                         <div className="text-lg pb-6">New products</div>
-                        <div className="flex flex-col space-y-4">
+                        <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
                             />
@@ -231,7 +231,7 @@ export default function Products() {
                     </div>
                     <div className="pt-12">
                         <div className="text-lg pb-6">Best sellers</div>
-                        <div className="flex flex-col space-y-4">
+                        <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
                             />

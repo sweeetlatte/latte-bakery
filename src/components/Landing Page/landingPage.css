@@ -14,3 +14,64 @@
         -webkit-line-clamp: 3;
     }
 }
+
+.menu-icon-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 25px;
+    height: 2.5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 2s;
+    border-radius: 20px;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 3px);
+    transform: rotate(-45deg) translate(-6px, 3px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -6px);
+    transform: rotate(45deg) translate(-8px, -6px);
+}
+
+/* ============= In from Left ============= */
+@keyframes iconTranslateFromLeft {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.icon-in-left {
+    animation: iconTranslateFromLeft;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+}
+
+/* ============= Out from Left ============= */
+@keyframes iconTranslateToLeft {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+.icon-out-left {
+    animation-name: iconTranslateToLeft;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+}
