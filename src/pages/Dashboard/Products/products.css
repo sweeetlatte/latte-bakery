@@ -69,3 +69,11 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+* {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

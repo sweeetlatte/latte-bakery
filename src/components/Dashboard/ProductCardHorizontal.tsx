@@ -29,7 +29,7 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
             {randomNumber(productData, 3).map((productItem, index) => (
                 <div
                     key={index}
-                    className="bg-dark-bg py-4 px-4 rounded-lg flex xl:flex-col space-x-4 xl:space-x-0 justify-start w-full xl:w-[180px] lg:w-[170px] xl:h-[245px]"
+                    className="bg-dark-bg py-4 px-4 rounded-lg flex xl:flex-col space-x-4 xl:space-x-0 justify-start w-full xl:w-[180px] lg:w-[150px] xl:h-[245px]"
                 >
                     <Link
                         className="h-[100px] w-[100px] xl:h-[117px] xl:w-full"
@@ -60,13 +60,13 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
                                 }).format(productItem.price)}
                             </div>
                         </section>
-                        <section className="xl:basis-1/2">
+                        <section className="xl:basis-1/2 lg:flex lg:justify-end">
                             <button
-                                className="border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center"
+                                className="border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center lg:text-[0px]"
                                 onClick={openModalAddProduct}
                             >
                                 <img
-                                    className="mr-1"
+                                    className="lg:mr-0 xl:mr-1"
                                     src={cartIcon}
                                     alt="cart icon"
                                 />

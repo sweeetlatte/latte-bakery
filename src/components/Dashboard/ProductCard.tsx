@@ -48,7 +48,7 @@ export default function ProductCard({
                       .map((productItem, index) => (
                           <div
                               key={index}
-                              className="w-[204px] 2xl:w-[180px] xl:w-[180px] lg:w-[170px] h-[245px] lg:h-[230px] px-6 xl:px-4 py-5 bg-dark-bg rounded-lg text-left text-sm"
+                              className="w-[204px] 2xl:w-[180px] xl:w-[180px] lg:w-[150px] h-[245px] lg:h-[230px] px-6 xl:px-4 py-5 bg-dark-bg rounded-lg text-left text-sm"
                           >
                               <Link
                                   to="/dashboard/detail"
@@ -94,7 +94,7 @@ export default function ProductCard({
                       (productItem, index) => (
                           <div
                               key={index}
-                              className="w-[204px] xl:w-[180px] lg:w-[170px] h-[245px] lg:h-[230px] px-6 xl:px-4 py-5 bg-dark-bg rounded-lg text-left text-sm"
+                              className="w-[204px] xl:w-[180px] lg:w-[150px] h-[245px] lg:h-[230px] px-6 xl:px-4 py-5 bg-dark-bg rounded-lg text-left text-sm"
                           >
                               <Link
                                   to="/dashboard/detail"

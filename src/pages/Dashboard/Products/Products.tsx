@@ -97,7 +97,7 @@ export default function Products() {
                     <Header />
                 </div>
             </div>
-            <div className="ml-40 lg:ml-32 text-white flex xl:flex-col xl:items-start pr-16 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
+            <div className="ml-40 lg:ml-32 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
                 <div className="bg-light text-white basis-9/12 lg:basis-7/12 xl:w-full">
                     <div className="flex pb-8 w-3/5">
                         <SearchBar />
@@ -134,8 +134,8 @@ export default function Products() {
                             <div className="dot"></div>
                         </div>
                     </div>
-                    <div className="flex items-center w-full justify-between">
-                        <div className="relative">
+                    <div className="flex lg:flex-col lg:space-y-6 items-center lg:items-end w-full justify-between">
+                        <div className="relative lg:w-full">
                             <div
                                 className="line"
                                 style={{
@@ -144,7 +144,7 @@ export default function Products() {
                                     bottom: "-10px",
                                 }}
                             ></div>
-                            <div className="flex space-x-12 text-base whitespace-nowrap">
+                            <div className="flex space-x-12 text-base whitespace-nowrap lg:overflow-x-scroll lg:scroll-smooth">
                                 <div
                                     className={
                                         type === "Sweet Pastry"
@@ -195,7 +195,7 @@ export default function Products() {
                                 >
                                     Ice Cream
                                 </div>
-                                <Icons.ChevronRight stroke="white" />
+                                {/* <Icons.ChevronRight stroke="white" /> */}
                             </div>
                         </div>
                         <div className="basis-3/12">
