@@ -39,7 +39,7 @@ export default function ProductCard({
             className={
                 variant === "row"
                     ? "grid w-full grid-cols-5 auto-cols-max mx-auto place-items-center place-self-center gap-5"
-                    : "grid w-full grid-cols-4 auto-cols-max mx-auto place-items-center place-self-center gap-5"
+                    : "grid w-full grid-cols-4 sm:grid-cols-2 auto-cols-max mx-auto place-items-center place-self-center gap-5"
             }
         >
             {type !== undefined

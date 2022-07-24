@@ -15,6 +15,8 @@ import CustomSelectBox from "../../../components/CustomSelectBox";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
 // import slider3 from "../../../assets/images/dashboard/slider-3.png";
 
+type NavBarResponsive = "100%" | "0";
+
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
     // const [slider, setSlider] = useState<string>("hidden");
@@ -75,6 +77,8 @@ export default function Products() {
 
     const [offsetWidth, setWidth] = useState<string>("");
     const [offsetLeft, setLeft] = useState<string>("");
+    const [widthofNavBarResponsive, setWidthofNavBarResponsive] =
+        useState<NavBarResponsive>("0");
 
     useEffect(() => {
         if (element) {
@@ -86,18 +90,25 @@ export default function Products() {
     return (
         <>
             <div
-                className="w-full pl-40 text-white py-9 pr-16 flex items-center"
+                className="w-full pl-40 md:px-6 text-white py-9 pr-16 flex items-center"
                 style={{ backgroundColor: "#272727" }}
             >
-                <div className="basis-9/12 2xl:basis-8/12 xl:basis-8/12 lg:basis-5/12 md:basis-8/12 sm:basis-7/12">
+                <div
+                    className="hidden md:block md:basis-1/12 sm:basis-5/12"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setWidthofNavBarResponsive("100%")}
+                >
+                    <Icons.Menu stroke="#F3A446" />
+                </div>
+                <div className="basis-9/12 2xl:basis-8/12 xl:basis-7/12 lg:basis-5/12 md:basis-7/12 sm:hidden">
                     <div className="text-2xl font-semibold pb-1">Dashboard</div>
                     <div className="text-sm">Tuesday, 27 Jun 2022</div>
                 </div>
-                <div className="basis-3/12 2xl:basis-4/12 xl:basis-4/12 lg:basis-7/12 md:basis-4/12 sm:basis-5/12">
+                <div className="basis-3/12 2xl:basis-4/12 xl:basis-5/12 lg:basis-7/12 md:basis-4/12 sm:basis-7/12">
                     <Header />
                 </div>
             </div>
-            <div className="ml-40 lg:ml-32 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
+            <div className="ml-40 lg:ml-32 md:ml-0 md:px-6 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
                 <div className="bg-light text-white basis-9/12 lg:basis-7/12 xl:w-full">
                     <div className="flex pb-8 w-3/5">
                         <SearchBar />
@@ -223,7 +234,7 @@ export default function Products() {
                 <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full">
                     <div>
                         <div className="text-lg pb-6">New products</div>
-                        <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
+                        <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
                             />
@@ -231,13 +242,33 @@ export default function Products() {
                     </div>
                     <div className="pt-12">
                         <div className="text-lg pb-6">Best sellers</div>
-                        <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
+                        <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
                             />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div
+                id="mySidenav"
+                className="sidenav hover:text-primary"
+                style={{ width: widthofNavBarResponsive }}
+            >
+                <a
+                    href="javascript:void(0)"
+                    className="closebtn"
+                    onClick={() => setWidthofNavBarResponsive("0")}
+                >
+                    &times;
+                </a>
+                <Link style={{color: "#F3A446"}} to="/" className="text-lg font-semibold font-brand mb-14">
+                    BAKERY
+                </Link>
+                <Link to="/dashboard/product">Product</Link>
+                <Link to="/dashboard/cart">Cart</Link>
+                <Link to="/dashboard/setting/account-info">Setting</Link>
+                <Link style={{color: "rgb(185 28 28)"}} to="/">Logout</Link>
             </div>
         </>
     );
