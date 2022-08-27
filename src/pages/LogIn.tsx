@@ -7,7 +7,7 @@ import google from "../assets/images/Google.png";
 
 export default function LogIn() {
     return (
-        <div className="text-white bg-dark-bg h-max login">
+        <div className="text-white bg-dark-bg h-max login xl:text-sm">
             <div className="flex items-center px-[11%] py-20 rounded-l-3xl bg-light ml-[24%]">
                 <div className="w-full">
                     <div>
@@ -29,7 +29,7 @@ export default function LogIn() {
                             <div>Continue with Facebook</div>
                         </div>
                     </div>
-                    <div className="pt-14 pb-14 text-center">- OR -</div>
+                    <div className="py-14 text-center">- OR -</div>
                     <form className="mb-16">
                         <label htmlFor="uname">
                             <span className="block">Username</span>
@@ -51,7 +51,7 @@ export default function LogIn() {
                                 name="password"
                             />
                         </label>
-                        <div className="flex justify-between pb-20">
+                        <div className="flex justify-between pb-14">
                             <label
                                 htmlFor="rememberpw"
                                 className="custom-checkbox text-primary font-medium"
