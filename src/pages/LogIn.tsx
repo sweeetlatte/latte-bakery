@@ -8,17 +8,19 @@ import google from "../assets/images/Google.png";
 export default function LogIn() {
     return (
         <div className="text-white bg-dark-bg h-max login xl:text-sm">
-            <div className="flex items-center px-[11%] py-20 rounded-l-3xl bg-light ml-[24%]">
+            <div className="flex items-center px-[11%] py-[6%] rounded-l-3xl bg-light ml-[24%]">
                 <div className="w-full">
                     <div>
                         <Link
                             to="/"
-                            className="text-primary text-4xl font-semibold font-brand"
+                            className="text-primary text-4xl lg:text-3xl font-semibold font-brand"
                         >
                             Bakery
                         </Link>
                     </div>
-                    <div className="pt-12 text-4xl font-semibold">Log in</div>
+                    <div className="pt-12 text-4xl lg:text-3xl font-semibold">
+                        Log in
+                    </div>
                     <div className="pt-14 flex space-x-9">
                         <div className="flex basis-1/2 space-x-4 items-center border rounded-lg px-4 py-4">
                             <img src={google} alt="google" />
