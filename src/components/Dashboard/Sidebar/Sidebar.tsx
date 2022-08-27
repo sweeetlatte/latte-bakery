@@ -21,7 +21,7 @@ export default function Sidebar() {
 
     return (
         <div className="bg-light w-[104px]">
-            <div className="h-full fixed z-10 top-0 left-0 bg-dark-bg rounded-r-3xl text-primary pt-20 flex flex-col items-center">
+            <div className="h-full fixed z-10 top-0 left-0 bg-dark-bg rounded-r-3xl text-primary pt-20 flex flex-col items-center md:hidden">
                 <Link to="/" className="text-lg font-semibold font-brand">
                     BAKERY
                 </Link>

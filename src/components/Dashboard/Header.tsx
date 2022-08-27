@@ -26,7 +26,7 @@ export default function Header() {
     ];
 
     return (
-        <div className="flex items-center space-x-8 justify-between">
+        <div className="flex items-center space-x-8 justify-end">
             <div>
                 <CustomSelectBox
                     data={language}
