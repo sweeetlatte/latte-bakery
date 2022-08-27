@@ -13,12 +13,12 @@ export default function LogIn() {
                     <div>
                         <Link
                             to="/"
-                            className="text-primary text-4xl lg:text-3xl font-semibold font-brand"
+                            className="text-primary text-4xl lg:text-3xl md:text-2xl font-semibold font-brand"
                         >
                             Bakery
                         </Link>
                     </div>
-                    <div className="pt-12 text-4xl lg:text-3xl font-semibold">
+                    <div className="pt-12 md:pt-8 text-4xl lg:text-3xl md:text-2xl font-semibold">
                         Log in
                     </div>
                     <div className="pt-14 flex space-x-9">
