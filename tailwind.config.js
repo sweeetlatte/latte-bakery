@@ -38,7 +38,7 @@ module.exports = {
             // fontsize: 20 -> 18, 18 -> 16, 14 -> 12
             'sm': { 'max': '639px' },
             // => @media (max-width: 639px)
-            // fontsize: 18 -> 16
+            // fontsize: 18 -> 16, 14 -> 12
         }
     },
     variants: {},

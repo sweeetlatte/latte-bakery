@@ -7,8 +7,8 @@ import google from "../assets/images/Google.png";
 
 export default function LogIn() {
     return (
-        <div className="text-white bg-dark-bg h-max login xl:text-sm">
-            <div className="flex items-center px-[11%] py-[6%] rounded-l-3xl bg-light ml-[24%]">
+        <div className="text-white bg-dark-bg h-max login xl:text-sm sm:text-xs">
+            <div className="flex items-center px-[11%] py-[6%] rounded-l-3xl sm:rounded-none bg-light ml-[24%] sm:ml-0">
                 <div className="w-full">
                     <div>
                         <Link
@@ -18,16 +18,24 @@ export default function LogIn() {
                             Bakery
                         </Link>
                     </div>
-                    <div className="pt-12 md:pt-8 text-4xl lg:text-3xl md:text-2xl font-semibold">
+                    <div className="pt-12 md:pt-14 text-4xl lg:text-3xl md:text-2xl font-semibold sm:text-center">
                         Log in
                     </div>
-                    <div className="pt-14 flex space-x-9">
-                        <div className="flex basis-1/2 space-x-4 items-center border rounded-lg px-4 py-4">
-                            <img src={google} alt="google" />
+                    <div className="pt-14 flex space-x-9 sm:flex-col sm:space-x-0 sm:space-y-5">
+                        <div className="flex basis-1/2 space-x-4 items-center border rounded-lg p-4 sm:p-2">
+                            <img
+                                className="w-8 h-8"
+                                src={google}
+                                alt="google"
+                            />
                             <div>Continue with Google</div>
                         </div>
-                        <div className="flex basis-1/2 space-x-4 items-center border rounded-lg px-4 py-4">
-                            <img src={facebook} alt="facebook" />
+                        <div className="flex basis-1/2 space-x-4 items-center border rounded-lg p-4 sm:p-2">
+                            <img
+                                className="w-8 h-8"
+                                src={facebook}
+                                alt="facebook"
+                            />
                             <div>Continue with Facebook</div>
                         </div>
                     </div>
@@ -36,7 +44,7 @@ export default function LogIn() {
                         <label htmlFor="uname">
                             <span className="block">Username</span>
                             <input
-                                className="w-full bg-light py-3.5 px-3 mb-14 focus:border-primary focus:outline-none"
+                                className="w-full bg-light py-3.5 px-3 mb-14 sm:mb-8 focus:border-primary focus:outline-none"
                                 style={{ borderBottom: "1px solid white" }}
                                 type="text"
                                 id="uname"
