@@ -6,15 +6,21 @@ import google from "../assets/images/Google.png";
 
 export default function LogIn() {
     return (
-        <div className="text-white bg-dark-bg">
-            <img className="object-cover absolute" src={login} alt="login" />
-            <div className="relative h-max px-48 py-20 rounded-l-3xl bg-light ml-[24.5rem]">
-                <Link
-                    to="/"
-                    className="text-primary text-4xl font-semibold font-brand"
-                >
-                    Bakery
-                </Link>
+        <div className="text-white bg-dark-bg h-screen">
+            <img
+                className="object-cover absolute h-screen"
+                src={login}
+                alt="login"
+            />
+            <div className="flex flex-col justify-center relative h-screen px-48 py-20 rounded-l-3xl bg-light ml-[24.5rem]">
+                <div>
+                    <Link
+                        to="/"
+                        className="text-primary text-4xl font-semibold font-brand"
+                    >
+                        Bakery
+                    </Link>
+                </div>
                 <div className="pt-12 text-4xl font-semibold">Log in</div>
                 <div className="pt-14 flex space-x-9">
                     <div className="flex basis-1/2 space-x-4 items-center border rounded-lg px-4 py-4">
