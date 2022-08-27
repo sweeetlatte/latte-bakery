@@ -7,8 +7,8 @@ import google from "../assets/images/Google.png";
 
 export default function LogIn() {
     return (
-        <div className="text-white bg-dark-bg h-max login xl:text-sm sm:text-xs">
-            <div className="flex items-center px-[11%] py-[6%] rounded-l-3xl sm:rounded-none bg-light ml-[24%] sm:ml-0">
+        <div className="text-white bg-dark-bg h-screen login xl:text-sm sm:text-xs">
+            <div className="flex items-center h-screen px-[11%] py-[6%] rounded-l-3xl sm:rounded-none bg-light ml-[24%] sm:ml-0">
                 <div className="w-full">
                     <div>
                         <Link

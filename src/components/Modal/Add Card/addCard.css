@@ -1,7 +1,13 @@
 .__mask-modal {
-    @apply fixed top-0 left-0 h-screen w-screen z-[19] bg-black opacity-60 m-0;
+    @apply fixed top-0 left-0 h-screen w-screen m-0;
+    opacity: var(--opacity);
+    z-index: var(--z);
+}
+
+.__mask-modal-dark {
+    @apply bg-black;
 }
 
 .__bg-add-product-modal {
-    @apply fixed inset-auto bg-light z-[20] h-max w-[827px] p-10 rounded-xl opacity-100 top-48 left-80;
+    @apply fixed bg-light z-[20] h-max w-[827px] p-10 rounded-xl opacity-100;
 }
