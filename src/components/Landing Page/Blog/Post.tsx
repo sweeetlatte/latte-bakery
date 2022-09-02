@@ -35,6 +35,7 @@ export default function Post() {
                         <Link
                             to="/blog/detail"
                             className="font-light text-overflow lg:text-sm h-[44px] hover:text-primary"
+                            title={blogItem?.name}
                             style={{ WebkitLineClamp: 2 }}
                         >
                             {blogItem?.name}
