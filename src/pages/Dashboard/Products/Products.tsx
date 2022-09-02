@@ -73,8 +73,6 @@ export default function Products() {
         "active-product-tab"
     ) as HTMLCollectionOf<HTMLElement>;
 
-    console.log(element);
-
     const [offsetWidth, setWidth] = useState<string>("");
     const [offsetLeft, setLeft] = useState<string>("");
     const [widthofNavBarResponsive, setWidthofNavBarResponsive] =
@@ -86,6 +84,34 @@ export default function Products() {
             setLeft(`${element[0].offsetLeft}px`);
         }
     }, [element, type]);
+
+    var tab = document.getElementsByClassName(
+        "tab-bar"
+    ) as HTMLCollectionOf<HTMLElement>;
+
+    const [showRightArrow, setShowRightArrow] = useState<boolean>(true);
+    const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false);
+
+    function slideRight() {
+        if (tab) {
+            var maxScrollLeft = tab[0].scrollWidth - tab[0].clientWidth;
+            tab[0].scrollLeft += maxScrollLeft / 3;
+            if (tab[0].scrollLeft > 0 && maxScrollLeft - tab[0].scrollLeft > 1)
+                setShowLeftArrow(true);
+            else if (maxScrollLeft - tab[0].scrollLeft <= 1)
+                setShowRightArrow(false);
+        }
+    }
+
+    function slideLeft() {
+        if (tab) {
+            var maxScrollLeft = tab[0].scrollWidth - tab[0].clientWidth;
+            tab[0].scrollLeft -= maxScrollLeft / 3;
+            if (tab[0].scrollLeft > 0 && maxScrollLeft - tab[0].scrollLeft > 1)
+                setShowRightArrow(true);
+            else if (tab[0].scrollLeft === 0) setShowLeftArrow(false);
+        }
+    }
 
     return (
         <>
@@ -145,17 +171,16 @@ export default function Products() {
                             <div className="dot"></div>
                         </div>
                     </div>
-                    <div className="flex lg:flex-col lg:space-y-6 items-center lg:items-end w-full justify-between">
-                        <div className="relative lg:w-full">
+                    <div className="relative flex md:flex-col md:items-stretch items-center justify-between w-full md:overflow-hidden">
+                        <div className="basis-9/12 tab-bar border-t-0 border-b-0">
                             <div
                                 className="line"
                                 style={{
                                     width: offsetWidth,
                                     left: offsetLeft,
-                                    bottom: "-10px",
                                 }}
                             ></div>
-                            <div className="flex space-x-12 text-base whitespace-nowrap lg:overflow-x-scroll lg:scroll-smooth">
+                            <div className="flex items-center text-center space-x-12 text-base">
                                 <div
                                     className={
                                         type === "Sweet Pastry"
@@ -206,10 +231,37 @@ export default function Products() {
                                 >
                                     Ice Cream
                                 </div>
-                                {/* <Icons.ChevronRight stroke="white" /> */}
                             </div>
                         </div>
-                        <div className="basis-3/12">
+                        <div
+                            className={
+                                showLeftArrow === true
+                                    ? "hidden z-40 sm:absolute sm:flex justify-start items-center left-0 top-px w-12 h-[5.5rem]"
+                                    : "hidden"
+                            }
+                            style={{
+                                backgroundImage:
+                                    "linear-gradient(to right, rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,0))",
+                            }}
+                            onClick={() => slideLeft()}
+                        >
+                            <Icons.ChevronLeft />
+                        </div>
+                        <div
+                            className={
+                                showRightArrow === true
+                                    ? "hidden z-40 sm:absolute sm:flex justify-end items-center right-0 top-px w-12 h-[5.5rem]"
+                                    : "hidden"
+                            }
+                            style={{
+                                backgroundImage:
+                                    "linear-gradient(to left, rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,1), rgba(50,50,50,0))",
+                            }}
+                            onClick={() => slideRight()}
+                        >
+                            <Icons.ChevronRight />
+                        </div>
+                        <div className="basis-3/12 md:pt-6">
                             <CustomSelectBox
                                 data={sorting}
                                 placeholder={"Default sorting"}
@@ -231,7 +283,7 @@ export default function Products() {
                         closeModalAddProduct={() => closeModalAddProduct()}
                     />
                 </div>
-                <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full">
+                <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full xl:pt-12">
                     <div>
                         <div className="text-lg pb-6">New products</div>
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
@@ -262,13 +314,19 @@ export default function Products() {
                 >
                     &times;
                 </a>
-                <Link style={{color: "#F3A446"}} to="/" className="text-lg font-semibold font-brand mb-14">
+                <Link
+                    style={{ color: "#F3A446" }}
+                    to="/"
+                    className="text-lg font-semibold font-brand mb-14"
+                >
                     BAKERY
                 </Link>
                 <Link to="/dashboard/product">Product</Link>
                 <Link to="/dashboard/cart">Cart</Link>
                 <Link to="/dashboard/setting/account-info">Setting</Link>
-                <Link style={{color: "rgb(185 28 28)"}} to="/">Logout</Link>
+                <Link style={{ color: "rgb(185 28 28)" }} to="/">
+                    Logout
+                </Link>
             </div>
         </>
     );
