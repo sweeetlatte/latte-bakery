@@ -39,38 +39,37 @@ export default function BlogDetail() {
 
     return blogData ? (
         <>
-            <div className="font-body text-center mx-auto bg-light text-white">
+            <div className="font-body text-center mx-auto bg-light text-white xl:text-sm md:text-sm">
                 <Navbar />
-                <div className="pt-10 pl-28 pr-20 text-left">
-                    <div className="text-lg flex">
+                <div className="pt-10 px-16 lg:px-8 text-left">
+                    <div className="flex text-lg xl:text-base md:text-sm">
                         <Link to="/">Home</Link>
                         &nbsp;/&nbsp;
                         <Link to="/blog">Blog</Link>
                         &nbsp;/&nbsp;
                         <div className="text-primary">{blogDetail.type}</div>
                     </div>
-                    <div className="flex space-x-9">
+                    <div className="flex space-x-9 sm:flex-col sm:space-x-0">
                         <div className="basis-9/12 ">
-                            <div className="pt-11 text-4xl font-light leading-[3.5rem]">
+                            <div className="pt-11 text-4xl lg:text-3xl md:text-2xl font-light leading-[3.5rem]">
                                 {blogDetail.name}
                             </div>
-                            <div className="pt-12 text-lg underline underline-offset-[18px] text-lightText decoration-lightText decoration-1">
+                            <div className="pt-12 underline underline-offset-[18px] text-lightText decoration-lightText decoration-1">
                                 {blogDetail.createdAt} &ensp;/&ensp; by&nbsp;
                                 <span className="text-primary">
                                     {blogDetail.author}
                                 </span>
                             </div>
-                            <div className="pt-20 text-lg mb-14">
+                            <div className="pt-20 lg:pt-16 mb-14">
                                 {blogDetail.content}
                             </div>
                         </div>
                         <div className="basis-3/12">
-                            <div
-                                className="pt-11 pl-16 mb-10"
-                                style={{ borderLeft: "1px solid white" }}
-                            >
-                                <div className="text-xl">Popular</div>
-                                <div className="pt-9">
+                            <div className="pt-11 pl-12 lg:pl-10 sm:pl-0 mb-10 border-left">
+                                <div className="text-xl lg:text-lg">
+                                    Popular
+                                </div>
+                                <div className="pt-9 lg:pt-7">
                                     <Post />
                                 </div>
                             </div>

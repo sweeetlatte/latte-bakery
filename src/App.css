@@ -34,6 +34,10 @@
     border-right: 1px solid white;
 }
 
+.border-left {
+    border-left: 1px solid white;
+}
+
 .tab-bar {
     @apply relative sm:overflow-x-hidden sm:overflow-y-hidden py-7 xl:py-5 px-3 xl:px-1;
     border-top: 1px solid white;
@@ -208,6 +212,10 @@
 @media screen and (max-width: 639px) {
     .checkmark {
         top: 0px;
+    }
+
+    .border-left {
+        border-left: none;
     }
 }
 
