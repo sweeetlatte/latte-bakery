@@ -83,7 +83,7 @@ export default function ProductCard({
                                           className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
                                       >
                                           <img
-                                              className="lg:mr-0 xl:mr-1 sm:mr-3"
+                                              className="lg:mr-0 xl:mr-1 "
                                               src={cartIcon}
                                               alt="cart icon"
                                           />
