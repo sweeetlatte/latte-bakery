@@ -134,17 +134,17 @@ export default function Products() {
                     <Header />
                 </div>
             </div>
-            <div className="ml-40 lg:ml-32 md:ml-0 md:px-6 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
+            <div className="ml-40 lg:ml-32 md:ml-0 md:px-6 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0] xl:text-sm">
                 <div className="bg-light text-white basis-9/12 lg:basis-7/12 xl:w-full">
-                    <div className="flex pb-8 w-3/5">
+                    <div className="flex pb-8">
                         <SearchBar />
                         <Link to="search">
-                            <button className="border border-primary bg-primary px-8 py-3 ml-6 rounded-md w-fit">
+                            <button className="border border-primary bg-primary px-8 sm:px-4 py-3 ml-6 rounded-md w-fit">
                                 Search
                             </button>
                         </Link>
                     </div>
-                    <div className="relative pb-9 w-full">
+                    <div className="relative pb-9 sm:pb-3 w-full">
                         {/* <img
                             className={`${slider} slider w-full object-cover`}
                             src={slider1}
@@ -180,7 +180,7 @@ export default function Products() {
                                     left: offsetLeft,
                                 }}
                             ></div>
-                            <div className="flex items-center text-center space-x-12 text-base">
+                            <div className="flex items-center text-center space-x-12 md:space-x-0 md:justify-between sm:space-x-9">
                                 <div
                                     className={
                                         type === "Sweet Pastry"
@@ -283,7 +283,7 @@ export default function Products() {
                         closeModalAddProduct={() => closeModalAddProduct()}
                     />
                 </div>
-                <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full xl:pt-12">
+                <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full xl:pt-12 sm:pt-7">
                     <div>
                         <div className="text-lg pb-6">New products</div>
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
