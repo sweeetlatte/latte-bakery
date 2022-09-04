@@ -77,3 +77,22 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+@media (max-width: 1023px) {
+    .filter-checkbox {
+        padding-left: 27px;
+    }
+
+    .filter-checkbox .checkmark {
+        top: -1px;
+        height: 18px;
+        width: 18px;
+    }
+    .filter-checkbox .checkmark:after {
+        left: 7.5px;
+        top: 3px;
+        width: 5px;
+        height: 8px;
+        border-width: 0 2px 2px 0;
+    }
+}
