@@ -9,11 +9,14 @@ import { randomNumber } from "../../utils/functions";
 
 type Variant = "grid" | "row";
 
+type quantityOnRow = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
 interface Props {
     openModalAddProduct: () => void;
     type?: string;
     quantity?: number;
     variant?: Variant;
+    quantityOnRow?: quantityOnRow;
 }
 
 export default function ProductCard({
@@ -21,6 +24,7 @@ export default function ProductCard({
     type,
     quantity = 16,
     variant = "grid",
+    quantityOnRow = 4,
 }: Props) {
     const [productData, setProductData] = useState<IProduct[]>();
 
@@ -39,7 +43,7 @@ export default function ProductCard({
             className={
                 variant === "row"
                     ? "grid w-full grid-cols-5 auto-cols-max mx-auto place-items-center place-self-center gap-5"
-                    : "grid w-full grid-cols-4 sm:grid-cols-2 auto-cols-max mx-auto place-items-center place-self-center gap-5"
+                    : `grid w-full grid-cols-${quantityOnRow} sm:grid-cols-2 auto-cols-max mx-auto place-items-center place-self-center gap-5`
             }
         >
             {type !== undefined
@@ -128,7 +132,7 @@ export default function ProductCard({
                                   </Link>
                                   <button
                                       onClick={openModalAddProduct}
-                                      className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px]"
+                                      className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
                                   >
                                       <img
                                           className="lg:mr-0 xl:mr-1"
