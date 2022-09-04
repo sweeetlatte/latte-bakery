@@ -127,8 +127,12 @@ export default function Products() {
                     <Icons.Menu stroke="#F3A446" />
                 </div>
                 <div className="basis-9/12 2xl:basis-8/12 xl:basis-7/12 lg:basis-5/12 md:basis-7/12 sm:hidden">
-                    <div className="text-2xl font-semibold pb-1">Dashboard</div>
-                    <div className="text-sm">Tuesday, 27 Jun 2022</div>
+                    <div className="text-2xl xl:text-xl lg:text-lg font-semibold pb-1">
+                        Dashboard
+                    </div>
+                    <div className="text-sm xl:text-xs lg:text-[10px]">
+                        Tuesday, 27 Jun 2022
+                    </div>
                 </div>
                 <div className="basis-3/12 2xl:basis-4/12 xl:basis-5/12 lg:basis-7/12 md:basis-4/12 sm:basis-7/12">
                     <Header />
