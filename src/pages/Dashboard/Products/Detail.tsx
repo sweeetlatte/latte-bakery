@@ -14,6 +14,8 @@ import Icons from "../../../components/Icons";
 
 import creme from "../../../assets/images/creme.png";
 
+type NavBarResponsive = "100%" | "0";
+
 export default function Detail() {
     const [open, setOpenModal] = useState<boolean>(false);
 
@@ -47,26 +49,37 @@ export default function Detail() {
         })();
     }, []);
 
+    const [widthofNavBarResponsive, setWidthofNavBarResponsive] =
+        useState<NavBarResponsive>("0");
+
     return productData ? (
         <>
             <div
-                className="w-full pl-40 text-white py-9 pr-16 flex items-center"
+                className="w-full pl-40 md:px-6 text-white py-9 pr-16 flex items-center"
                 style={{ backgroundColor: "#272727" }}
             >
-                <div className="basis-9/12">
-                    <div className="text-2xl font-semibold pb-1">Dashboard</div>
-                    <div className="text-sm">Tuesday, 27 Jun 2022</div>
+                <div
+                    className="hidden md:block md:basis-1/12 sm:basis-5/12"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setWidthofNavBarResponsive("100%")}
+                >
+                    <Icons.Menu stroke="#F3A446" />
                 </div>
-                <div className="basis-3/12">
+                <div className="basis-9/12 2xl:basis-8/12 xl:basis-7/12 lg:basis-5/12 md:basis-7/12 sm:hidden">
+                    <div className="text-2xl xl:text-xl lg:text-lg font-semibold pb-1">
+                        Dashboard
+                    </div>
+                    <div className="text-sm xl:text-xs lg:text-[10px]">
+                        Tuesday, 27 Jun 2022
+                    </div>
+                </div>
+                <div className="basis-3/12 2xl:basis-4/12 xl:basis-5/12 lg:basis-7/12 md:basis-4/12 sm:basis-7/12">
                     <Header />
                 </div>
             </div>
-            <div className="ml-40 text-white flex pr-16 pb-6 pt-14 space-x-[42px]">
-                <div
-                    className="basis-9/12 pr-12"
-                    style={{ borderRight: "1px solid white" }}
-                >
-                    <div className="flex space-x-[27.5px] text-lg items-center">
+            <div className="ml-40 md:ml-0 md:px-6 md:py-9 text-white flex md:flex-col pr-16 pb-6 pt-14 space-x-[42px] lg:space-x-[32px] md:space-x-0 md:space-y-9 xl:text-sm sm:text-xs">
+                <div className="basis-9/12 xl:basis-10/12 pr-12 lg:pr-8 md:pr-0 border-right">
+                    <div className="flex space-x-[27.5px] text-lg lg:text-base items-center">
                         <Link to="/dashboard/product">
                             <Icons.ArrowLeft />
                         </Link>
@@ -82,19 +95,19 @@ export default function Detail() {
                         </div>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
-                        <div className="flex flex-row w-full space-x-9">
+                        <div className="flex lg:flex-col w-full space-x-9 lg:space-x-0 lg:space-y-6">
                             <div className="basis-6/12">
                                 <img
-                                    className="w-full h-[355px] object-cover rounded-lg"
+                                    className="w-full h-[355px] lg:h-[180px] object-cover rounded-lg"
                                     src={productDetail.image}
                                     alt="cake"
                                 />
                             </div>
                             <div className="basis-6/12 flex flex-col">
-                                <div className="text-primary font-medium">
+                                <div className="sm:text-base text-primary font-medium">
                                     {productDetail.name}
                                 </div>
-                                <p className="text-xl">
+                                <p className="text-xl sm:text-xs">
                                     {new Intl.NumberFormat("de-DE", {
                                         style: "currency",
                                         currency: "VND",
@@ -102,7 +115,7 @@ export default function Detail() {
                                     • 5 🤎🤎🤎🤎🤎
                                 </p>
                                 <p className="pt-6 text-sm">Size</p>
-                                <div className="text-sm text-primary pt-3 flex space-x-3">
+                                <div className="text-sm sm:text-xs text-primary pt-3 flex space-x-3">
                                     <button className="__yellow-outline-option py-1 px-4 w-max">
                                         Size S
                                     </button>
@@ -114,7 +127,7 @@ export default function Detail() {
                                     </button>
                                 </div>
                                 <p className="pt-4 text-sm">Filling</p>
-                                <div className="text-sm text-primary pt-3 flex space-x-3">
+                                <div className="text-sm text-primary pt-3 flex sm:flex-col space-x-3 sm:space-x-0 sm:space-y-3 lg:justify-between">
                                     <button className="__filling bg-light h-[103px]">
                                         Butter
                                         <img
@@ -140,11 +153,11 @@ export default function Detail() {
                                         />
                                     </button>
                                 </div>
-                                <div className="flex flex-row pt-6">
-                                    <button className="border border-primary text-primary px-6 py-1.5 rounded-md w-fit">
+                                <div className="flex pt-6">
+                                    <button className="lg:basis-1/2 border border-primary text-primary px-6 sm:px-3 py-1.5 rounded-md w-fit">
                                         Add to cart
                                     </button>
-                                    <button className="font-medium border border-primary bg-primary px-8 py-1.5 ml-[0.85rem] rounded-md w-fit">
+                                    <button className="lg:basis-1/2 font-medium border border-primary bg-primary px-8 sm:px-3 py-1.5 ml-[0.85rem] rounded-md w-fit">
                                         Buy now
                                     </button>
                                 </div>
@@ -152,37 +165,37 @@ export default function Detail() {
                         </div>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
-                        <div className="text-xl font-medium pb-3 text-primary">
+                        <div className="text-xl sm:text-sm font-medium pb-3 text-primary">
                             Description
                         </div>
                         <p>{productDetail.description}</p>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
-                        <div className="text-xl font-medium pb-3 text-primary">
+                        <div className="text-xl sm:text-sm font-medium pb-3 text-primary">
                             Reviews
                         </div>
-                        <div className="flex space-x-8">
+                        <div className="flex sm:flex-col sm:space-y-3 space-x-8 sm:space-x-0 xl:space-x-6 xl:items-center">
                             <div className="flex flex-col items-center">
                                 <p className="text-7xl pb-3">🤎</p>
                                 <p>5.0 of 5.0</p>
                             </div>
-                            <div className="flex flex-wrap space-x-4">
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                            <div className="flex flex-wrap space-x-4 sm:space-x-0 sm:grid sm:grid-cols-3 sm:gap-3">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     All
                                 </button>
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     5 🤎
                                 </button>
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     4 🤎
                                 </button>
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     3 🤎
                                 </button>
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max lg:mt-3 md:mt-0">
                                     2 🤎
                                 </button>
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] h-max">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max lg:mt-3 sm:mt-0">
                                     1 🤎
                                 </button>
                             </div>
@@ -198,9 +211,11 @@ export default function Detail() {
                         </div>
                     </div>
                 </div>
-                <div className="basis-3/12">
-                    <div className="text-lg pb-6">You may like</div>
-                    <div className="flex flex-col space-y-4">
+                <div className="basis-3/12 xl:basis-2/12">
+                    <div className="text-lg lg:text-base pb-6 lg:pb-5">
+                        You may like
+                    </div>
+                    <div className="flex flex-col space-y-4 md:space-y-0 md:grid md:grid-cols-4 sm:grid-cols-2 md:gap-5">
                         <ProductCardHorizontal
                             openModalAddProduct={openModalAddProduct}
                         />
@@ -213,6 +228,32 @@ export default function Detail() {
                         closeModalAddProduct={() => closeModalAddProduct()}
                     />
                 </div>
+            </div>
+            <div
+                id="mySidenav"
+                className="sidenav hover:text-primary"
+                style={{ width: widthofNavBarResponsive }}
+            >
+                <a
+                    href="javascript:void(0)"
+                    className="closebtn"
+                    onClick={() => setWidthofNavBarResponsive("0")}
+                >
+                    &times;
+                </a>
+                <Link
+                    style={{ color: "#F3A446" }}
+                    to="/"
+                    className="text-lg font-semibold font-brand mb-14"
+                >
+                    BAKERY
+                </Link>
+                <Link to="/dashboard/product">Product</Link>
+                <Link to="/dashboard/cart">Cart</Link>
+                <Link to="/dashboard/setting/account-info">Setting</Link>
+                <Link style={{ color: "rgb(185 28 28)" }} to="/">
+                    Logout
+                </Link>
             </div>
         </>
     ) : (
