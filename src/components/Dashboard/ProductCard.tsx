@@ -114,33 +114,35 @@ export default function ProductCard({
                                       alt="cake"
                                   />
                               </Link>
-                              <div className="pt-4">
-                                  {new Intl.NumberFormat("de-DE", {
-                                      style: "currency",
-                                      currency: "VND",
-                                  }).format(productItem.price)}
-                              </div>
-                              <div className="flex sm:flex-col sm:space-y-3 justify-between items-center pt-2">
-                                  <Link
-                                      to="/dashboard/detail"
-                                      title={productItem.name}
-                                      state={{ detail: productItem }}
-                                      className="font-medium text-primary text-overflow w-[85px]"
-                                      style={{ WebkitLineClamp: 2 }}
-                                  >
-                                      {productItem.name}
-                                  </Link>
-                                  <button
-                                      onClick={openModalAddProduct}
-                                      className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
-                                  >
-                                      <img
-                                          className="lg:mr-0 xl:mr-1"
-                                          src={cartIcon}
-                                          alt="cart icon"
-                                      />
-                                      Add
-                                  </button>
+                              <div className="pt-4 sm:flex sm:flex-col sm:justify-between sm:h-[59%]">
+                                  <div>
+                                      {new Intl.NumberFormat("de-DE", {
+                                          style: "currency",
+                                          currency: "VND",
+                                      }).format(productItem.price)}
+                                  </div>
+                                  <div className="flex sm:flex-col sm:space-y-3 justify-between items-center pt-2">
+                                      <Link
+                                          to="/dashboard/detail"
+                                          title={productItem.name}
+                                          state={{ detail: productItem }}
+                                          className="font-medium text-primary text-overflow w-[85px]"
+                                          style={{ WebkitLineClamp: 2 }}
+                                      >
+                                          {productItem.name}
+                                      </Link>
+                                      <button
+                                          onClick={openModalAddProduct}
+                                          className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
+                                      >
+                                          <img
+                                              className="lg:mr-0 xl:mr-1"
+                                              src={cartIcon}
+                                              alt="cart icon"
+                                          />
+                                          Add
+                                      </button>
+                                  </div>
                               </div>
                           </div>
                       )
