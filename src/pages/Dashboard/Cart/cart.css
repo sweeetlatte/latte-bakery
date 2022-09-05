@@ -21,7 +21,7 @@
 /* Create a custom checkbox */
 .cart-custom-checkbox .checkmark {
     position: absolute;
-    top: 23px;
+    top: 58px;
     left: 21px;
     height: 24px;
     width: 24px;
@@ -64,4 +64,19 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+@media (max-width: 639px) {
+    .cart-custom-checkbox .checkmark {
+        top: 48px;
+        height: 18px;
+        width: 18px;
+    }
+
+    .cart-custom-checkbox .checkmark:after {
+        left: 6.75px;
+        top: 2.5px;
+        width: 5px;
+        height: 10px;
+    }
 }

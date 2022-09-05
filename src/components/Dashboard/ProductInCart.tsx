@@ -54,39 +54,86 @@ export default function ProductInCart({
                             name="item1"
                             value="item1"
                         />
-                        <span
-                            className="checkmark"
-                            style={{ top: "58px" }}
-                        ></span>
+                        <span className="checkmark"></span>
                     </label>
-                    <div className="text-lg py-7 pl-20 pr-5 flex justify-between items-center">
-                        <div className="basis-4/12 flex space-x-[27px] items-center">
+                    <div className="text-lg py-7 sm:py-5 pl-20 md:pl-[4.5rem] sm:pl-[3.75rem] pr-5 flex sm:flex-col justify-between items-center sm:items-start">
+                        <div className="basis-5/12 flex space-x-[27px] md:space-x-5 items-center md:text-xs">
                             <Link
                                 to="/dashboard/detail"
                                 state={{ detail: productItem }}
                             >
-                                <img
-                                    className="w-[132px] h-[86px] object-cover rounded-lg"
-                                    src={productItem.image}
-                                    alt={productItem.name}
-                                />
+                                <div className="w-[132px] sm:w-[50px] h-[86px] sm:h-[50px]">
+                                    <img
+                                        className="w-full h-full object-cover rounded-lg"
+                                        src={productItem.image}
+                                        alt={productItem.name}
+                                    />
+                                </div>
                             </Link>
-
-                            <div>
-                                <div className="text-primary">
+                            <div className="sm:space-y-2">
+                                <div className="text-primary xl:text-base sm:text-sm">
                                     <Link
                                         to="/dashboard/detail"
+                                        className="text-overflow"
+                                        style={{ WebkitLineClamp: 2 }}
+                                        title={productItem.name}
                                         state={{ detail: productItem }}
                                     >
                                         {productItem.name}
                                     </Link>
                                 </div>
-                                <div className="text-sm">
+                                <div className="text-sm xl:text-xs">
                                     Filling: Chocolate
+                                </div>
+                                <div className="basis-3/12 flex justify-start items-center space-x-3">
+                                    <p>Size</p> <p>M</p>
+                                    <img
+                                        src={circleChevronDown}
+                                        alt="circle chevron down"
+                                    />
+                                </div>
+                                <div className="basis-3/12 flex justify-start items-center space-x-3">
+                                    <button
+                                        onClick={minusQuantity}
+                                        className={
+                                            quantity > 1 ? "" : "cursor-default"
+                                        }
+                                    >
+                                        <Icons.Minus
+                                            stroke={
+                                                quantity > 1
+                                                    ? "#F3A446"
+                                                    : "#BEBEBE"
+                                            }
+                                        />
+                                    </button>
+                                    <p>{quantity}</p>
+                                    <button
+                                        onClick={plusQuantity}
+                                        className={
+                                            quantity < 10
+                                                ? ""
+                                                : "cursor-default"
+                                        }
+                                    >
+                                        <Icons.Plus
+                                            stroke={
+                                                quantity < 10
+                                                    ? "#F3A446"
+                                                    : "#BEBEBE"
+                                            }
+                                        />
+                                    </button>
+                                </div>
+                                <div className="basis-3/12 pt-1 sm:pt-[3px]">
+                                    {new Intl.NumberFormat("de-DE", {
+                                        style: "currency",
+                                        currency: "VND",
+                                    }).format(productItem.price)}
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-between basis-6/12 text-sm text-center">
+                        <div className="flex justify-between basis-6/12 text-sm md:text-xs text-center sm:hidden">
                             <div className="basis-3/12 flex justify-center items-center space-x-3">
                                 <p>M</p>
                                 <img
@@ -94,7 +141,7 @@ export default function ProductInCart({
                                     alt="circle chevron down"
                                 />
                             </div>
-                            <div className="basis-3/12 flex justify-center space-x-3">
+                            <div className="basis-3/12 flex justify-center items-center space-x-3">
                                 <button
                                     onClick={minusQuantity}
                                     className={
@@ -123,20 +170,20 @@ export default function ProductInCart({
                                     />
                                 </button>
                             </div>
-                            <div className="basis-3/12">
+                            <div className="basis-3/12 pt-1 sm:pt-[3px]">
                                 {new Intl.NumberFormat("de-DE", {
                                     style: "currency",
                                     currency: "VND",
                                 }).format(productItem.price)}
                             </div>
-                            <div className="basis-3/12">
+                            <div className="basis-3/12 pt-1">
                                 {new Intl.NumberFormat("de-DE", {
                                     style: "currency",
                                     currency: "VND",
                                 }).format(productItem.price * quantity)}
                             </div>
                         </div>
-                        <div className="basis-1/12 justify-end flex">
+                        <div className="basis-1/12 justify-end flex sm:hidden">
                             <div
                                 className="cursor-pointer"
                                 onClick={openModalWarningDelete}
