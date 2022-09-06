@@ -101,18 +101,7 @@ export default function Checkout() {
                     setIsHidden(true);
                 }}
             />
-            <div
-                className="w-full pl-40 text-white py-9 pr-16 flex items-center"
-                style={{ backgroundColor: "#272727" }}
-            >
-                <div className="basis-9/12">
-                    <div className="text-2xl font-semibold pb-1">Checkout</div>
-                    <div className="text-sm">Tuesday, 27 Jun 2022</div>
-                </div>
-                <div className="basis-3/12">
-                    <Header />
-                </div>
-            </div>
+            <Header header="Checkout" />
             <div className="ml-40 text-white pr-16 py-6">
                 <div className="flex space-x-[27.5px] pb-8 items-center">
                     <Icons.ArrowLeft />

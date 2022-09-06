@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import "./products.css";
 
 import CustomSelectBox from "../../../components/CustomSelectBox";
@@ -7,9 +5,6 @@ import Header from "../../../components/Dashboard/Header";
 import SearchBar from "../../../components/SearchBar";
 import ProductCard from "../../../components/Dashboard/ProductCard";
 import { useState } from "react";
-import Icons from "../../../components/Icons";
-
-type NavBarResponsive = "100%" | "0";
 
 export default function Search() {
     const sorting = [
@@ -27,34 +22,9 @@ export default function Search() {
         setOpenModal(false);
     };
 
-    const [widthofNavBarResponsive, setWidthofNavBarResponsive] =
-        useState<NavBarResponsive>("0");
-
     return (
         <>
-            <div
-                className="w-full pl-40 md:px-6 text-white py-9 pr-16 flex items-center"
-                style={{ backgroundColor: "#272727" }}
-            >
-                <div
-                    className="hidden md:block md:basis-1/12 sm:basis-5/12"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => setWidthofNavBarResponsive("100%")}
-                >
-                    <Icons.Menu stroke="#F3A446" />
-                </div>
-                <div className="basis-9/12 2xl:basis-8/12 xl:basis-7/12 lg:basis-5/12 md:basis-7/12 sm:hidden">
-                    <div className="text-2xl xl:text-xl lg:text-lg font-semibold pb-1">
-                        Dashboard
-                    </div>
-                    <div className="text-sm xl:text-xs lg:text-[10px]">
-                        Tuesday, 27 Jun 2022
-                    </div>
-                </div>
-                <div className="basis-3/12 2xl:basis-4/12 xl:basis-5/12 lg:basis-7/12 md:basis-4/12 sm:basis-7/12">
-                    <Header />
-                </div>
-            </div>
+            <Header header="Dashboard" />
             <div className="ml-40 md:ml-0 text-white pr-16 py-6 md:p-6 flex sm:flex-col justify-between space-x-10 md:space-x-7 sm:space-x-0 xl:text-sm lg:text-xs">
                 <div className="basis-1/5 h-fit bg-dark-bg rounded-lg px-6 py-3">
                     <div className="font-bold text-lg xl:text-base pt-1">
@@ -163,32 +133,6 @@ export default function Search() {
                         />
                     </div>
                 </div>
-            </div>
-            <div
-                id="mySidenav"
-                className="sidenav hover:text-primary"
-                style={{ width: widthofNavBarResponsive }}
-            >
-                <a
-                    href="javascript:void(0)"
-                    className="closebtn"
-                    onClick={() => setWidthofNavBarResponsive("0")}
-                >
-                    &times;
-                </a>
-                <Link
-                    style={{ color: "#F3A446" }}
-                    to="/"
-                    className="text-lg font-semibold font-brand mb-14"
-                >
-                    BAKERY
-                </Link>
-                <Link to="/dashboard/product">Product</Link>
-                <Link to="/dashboard/cart">Cart</Link>
-                <Link to="/dashboard/setting/account-info">Setting</Link>
-                <Link style={{ color: "rgb(185 28 28)" }} to="/">
-                    Logout
-                </Link>
             </div>
         </>
     );

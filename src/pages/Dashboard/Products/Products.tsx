@@ -15,8 +15,6 @@ import CustomSelectBox from "../../../components/CustomSelectBox";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
 // import slider3 from "../../../assets/images/dashboard/slider-3.png";
 
-type NavBarResponsive = "100%" | "0";
-
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
     // const [slider, setSlider] = useState<string>("hidden");
@@ -75,8 +73,6 @@ export default function Products() {
 
     const [offsetWidth, setWidth] = useState<string>("");
     const [offsetLeft, setLeft] = useState<string>("");
-    const [widthofNavBarResponsive, setWidthofNavBarResponsive] =
-        useState<NavBarResponsive>("0");
 
     useEffect(() => {
         if (element) {
@@ -115,29 +111,7 @@ export default function Products() {
 
     return (
         <>
-            <div
-                className="w-full pl-40 md:px-6 text-white py-9 pr-16 flex items-center"
-                style={{ backgroundColor: "#272727" }}
-            >
-                <div
-                    className="hidden md:block md:basis-1/12 sm:basis-5/12"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => setWidthofNavBarResponsive("100%")}
-                >
-                    <Icons.Menu stroke="#F3A446" />
-                </div>
-                <div className="basis-9/12 2xl:basis-8/12 xl:basis-7/12 lg:basis-5/12 md:basis-7/12 sm:hidden">
-                    <div className="text-2xl xl:text-xl lg:text-lg font-semibold pb-1">
-                        Dashboard
-                    </div>
-                    <div className="text-sm xl:text-xs lg:text-[10px]">
-                        Tuesday, 27 Jun 2022
-                    </div>
-                </div>
-                <div className="basis-3/12 2xl:basis-4/12 xl:basis-5/12 lg:basis-7/12 md:basis-4/12 sm:basis-7/12">
-                    <Header />
-                </div>
-            </div>
+            <Header header={"Dashboard"} />
             <div className="ml-40 lg:ml-32 md:ml-0 md:px-6 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0] xl:text-sm">
                 <div className="bg-light text-white basis-9/12 lg:basis-7/12 xl:w-full">
                     <div className="flex pb-8">
@@ -240,7 +214,7 @@ export default function Products() {
                         <div
                             className={
                                 showLeftArrow === true
-                                    ? "hidden z-40 sm:absolute sm:flex justify-start items-center left-0 top-px w-12 h-[5.5rem]"
+                                    ? "hidden sm:absolute sm:flex justify-start items-center left-0 top-px w-12 h-[5.5rem]"
                                     : "hidden"
                             }
                             style={{
@@ -254,7 +228,7 @@ export default function Products() {
                         <div
                             className={
                                 showRightArrow === true
-                                    ? "hidden z-40 sm:absolute sm:flex justify-end items-center right-0 top-px w-12 h-[5.5rem]"
+                                    ? "hidden sm:absolute sm:flex justify-end items-center right-0 top-px w-12 h-[5.5rem]"
                                     : "hidden"
                             }
                             style={{
@@ -305,32 +279,6 @@ export default function Products() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div
-                id="mySidenav"
-                className="sidenav hover:text-primary"
-                style={{ width: widthofNavBarResponsive }}
-            >
-                <a
-                    href="javascript:void(0)"
-                    className="closebtn"
-                    onClick={() => setWidthofNavBarResponsive("0")}
-                >
-                    &times;
-                </a>
-                <Link
-                    style={{ color: "#F3A446" }}
-                    to="/"
-                    className="text-lg font-semibold font-brand mb-14"
-                >
-                    BAKERY
-                </Link>
-                <Link to="/dashboard/product">Product</Link>
-                <Link to="/dashboard/cart">Cart</Link>
-                <Link to="/dashboard/setting/account-info">Setting</Link>
-                <Link style={{ color: "rgb(185 28 28)" }} to="/">
-                    Logout
-                </Link>
             </div>
         </>
     );

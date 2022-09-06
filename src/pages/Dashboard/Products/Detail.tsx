@@ -14,8 +14,6 @@ import Icons from "../../../components/Icons";
 
 import creme from "../../../assets/images/creme.png";
 
-type NavBarResponsive = "100%" | "0";
-
 export default function Detail() {
     const [open, setOpenModal] = useState<boolean>(false);
 
@@ -49,34 +47,9 @@ export default function Detail() {
         })();
     }, []);
 
-    const [widthofNavBarResponsive, setWidthofNavBarResponsive] =
-        useState<NavBarResponsive>("0");
-
     return productData ? (
         <>
-            <div
-                className="w-full pl-40 md:px-6 text-white py-9 pr-16 flex items-center"
-                style={{ backgroundColor: "#272727" }}
-            >
-                <div
-                    className="hidden md:block md:basis-1/12 sm:basis-5/12"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => setWidthofNavBarResponsive("100%")}
-                >
-                    <Icons.Menu stroke="#F3A446" />
-                </div>
-                <div className="basis-9/12 2xl:basis-8/12 xl:basis-7/12 lg:basis-5/12 md:basis-7/12 sm:hidden">
-                    <div className="text-2xl xl:text-xl lg:text-lg font-semibold pb-1">
-                        Dashboard
-                    </div>
-                    <div className="text-sm xl:text-xs lg:text-[10px]">
-                        Tuesday, 27 Jun 2022
-                    </div>
-                </div>
-                <div className="basis-3/12 2xl:basis-4/12 xl:basis-5/12 lg:basis-7/12 md:basis-4/12 sm:basis-7/12">
-                    <Header />
-                </div>
-            </div>
+            <Header header="Dashboard" />
             <div className="ml-40 md:ml-0 md:px-6 md:py-9 text-white flex md:flex-col pr-16 pb-6 pt-14 space-x-[42px] lg:space-x-[32px] md:space-x-0 md:space-y-9 xl:text-sm sm:text-xs">
                 <div className="basis-9/12 xl:basis-10/12 pr-12 lg:pr-8 md:pr-0 border-right">
                     <div className="flex space-x-[27.5px] text-lg lg:text-base items-center">
@@ -228,32 +201,6 @@ export default function Detail() {
                         closeModalAddProduct={() => closeModalAddProduct()}
                     />
                 </div>
-            </div>
-            <div
-                id="mySidenav"
-                className="sidenav hover:text-primary"
-                style={{ width: widthofNavBarResponsive }}
-            >
-                <a
-                    href="javascript:void(0)"
-                    className="closebtn"
-                    onClick={() => setWidthofNavBarResponsive("0")}
-                >
-                    &times;
-                </a>
-                <Link
-                    style={{ color: "#F3A446" }}
-                    to="/"
-                    className="text-lg font-semibold font-brand mb-14"
-                >
-                    BAKERY
-                </Link>
-                <Link to="/dashboard/product">Product</Link>
-                <Link to="/dashboard/cart">Cart</Link>
-                <Link to="/dashboard/setting/account-info">Setting</Link>
-                <Link style={{ color: "rgb(185 28 28)" }} to="/">
-                    Logout
-                </Link>
             </div>
         </>
     ) : (
