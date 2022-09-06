@@ -57,7 +57,7 @@ export default function ProductInCart({
                         <span className="checkmark"></span>
                     </label>
                     <div className="text-lg py-7 sm:py-5 pl-20 md:pl-[4.5rem] sm:pl-[3.75rem] pr-5 flex sm:flex-col justify-between items-center sm:items-start">
-                        <div className="basis-5/12 flex space-x-[27px] md:space-x-5 items-center md:text-xs">
+                        <div className="basis-5/12 flex space-x-[27px] md:space-x-5 items-center sm:items-start md:text-xs">
                             <Link
                                 to="/dashboard/detail"
                                 state={{ detail: productItem }}
@@ -85,54 +85,59 @@ export default function ProductInCart({
                                 <div className="text-sm xl:text-xs">
                                     Filling: Chocolate
                                 </div>
-                                <div className="basis-3/12 flex justify-start items-center space-x-3">
-                                    <p>Size</p> <p>M</p>
-                                    <img
-                                        src={circleChevronDown}
-                                        alt="circle chevron down"
-                                    />
-                                </div>
-                                <div className="basis-3/12 flex justify-start items-center space-x-3">
-                                    <button
-                                        onClick={minusQuantity}
-                                        className={
-                                            quantity > 1 ? "" : "cursor-default"
-                                        }
-                                    >
-                                        <Icons.Minus
-                                            stroke={
+                                <div className="hidden sm:block space-y-2">
+                                    <div className="flex justify-start items-center space-x-3">
+                                        <p>Size</p> <p>M</p>
+                                        <img
+                                            src={circleChevronDown}
+                                            alt="circle chevron down"
+                                        />
+                                    </div>
+                                    <div className="flex justify-start items-center space-x-3">
+                                        <button
+                                            onClick={minusQuantity}
+                                            className={
                                                 quantity > 1
-                                                    ? "#F3A446"
-                                                    : "#BEBEBE"
+                                                    ? ""
+                                                    : "cursor-default"
                                             }
-                                        />
-                                    </button>
-                                    <p>{quantity}</p>
-                                    <button
-                                        onClick={plusQuantity}
-                                        className={
-                                            quantity < 10
-                                                ? ""
-                                                : "cursor-default"
-                                        }
-                                    >
-                                        <Icons.Plus
-                                            stroke={
+                                        >
+                                            <Icons.Minus
+                                                stroke={
+                                                    quantity > 1
+                                                        ? "#F3A446"
+                                                        : "#BEBEBE"
+                                                }
+                                            />
+                                        </button>
+                                        <p>{quantity}</p>
+                                        <button
+                                            onClick={plusQuantity}
+                                            className={
                                                 quantity < 10
-                                                    ? "#F3A446"
-                                                    : "#BEBEBE"
+                                                    ? ""
+                                                    : "cursor-default"
                                             }
-                                        />
-                                    </button>
-                                </div>
-                                <div className="basis-3/12 pt-1 sm:pt-[3px]">
-                                    {new Intl.NumberFormat("de-DE", {
-                                        style: "currency",
-                                        currency: "VND",
-                                    }).format(productItem.price)}
+                                        >
+                                            <Icons.Plus
+                                                stroke={
+                                                    quantity < 10
+                                                        ? "#F3A446"
+                                                        : "#BEBEBE"
+                                                }
+                                            />
+                                        </button>
+                                    </div>
+                                    <div>
+                                        {new Intl.NumberFormat("de-DE", {
+                                            style: "currency",
+                                            currency: "VND",
+                                        }).format(productItem.price)}
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div className="flex justify-between basis-6/12 text-sm md:text-xs text-center sm:hidden">
                             <div className="basis-3/12 flex justify-center items-center space-x-3">
                                 <p>M</p>

@@ -59,7 +59,12 @@ export default function Cart() {
                             name="checkall"
                             value="checkall"
                         />
-                        <span className="checkmark"></span>
+                        <span
+                            className="checkmark"
+                            style={{
+                                top: "23px",
+                            }}
+                        ></span>
                     </label>
                     <div className="text-lg xl:text-base py-5 pl-20 flex justify-between pr-5 items-center">
                         <div className="basis-5/12">Products (3 items)</div>
@@ -74,7 +79,9 @@ export default function Cart() {
                         </div>
                     </div>
                 </div>
-                <header className="hidden sm:block text-base font-semibold">My Cart</header>
+                <header className="hidden sm:block text-base font-semibold">
+                    My Cart
+                </header>
                 <div className="flex flex-col space-y-1 pt-5">
                     <ProductInCart
                         rounded="rounded-t-lg"

@@ -68,7 +68,7 @@
 
 @media (max-width: 639px) {
     .cart-custom-checkbox .checkmark {
-        top: 48px;
+        top: 36px;
         height: 18px;
         width: 18px;
     }
