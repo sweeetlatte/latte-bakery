@@ -31,9 +31,9 @@ export default function Checkout() {
             <div
                 className={
                     isHidden === false
-                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 in-right text-white p-6 flex flex-col justify-between"
+                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 in-right text-white p-6 flex flex-col justify-between xl:text-sm"
                         : isHidden === true
-                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 out-left text-white p-6 flex flex-col justify-between"
+                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 out-right text-white p-6 flex flex-col justify-between xl:text-sm"
                         : "hidden"
                 }
                 style={
@@ -96,13 +96,16 @@ export default function Checkout() {
                 </div>
             </div>
             <div
-                className={isHidden === false ? "__mask-modal" : ""}
+                className={
+                    isHidden === false ? "__mask-modal __mask-modal-dark" : ""
+                }
+                style={{ "--opacity": 0.6, "--z": 10 } as React.CSSProperties}
                 onClick={() => {
                     setIsHidden(true);
                 }}
             />
             <Header header="Checkout" />
-            <div className="ml-40 text-white pr-16 py-6">
+            <div className="ml-40 text-white pr-16 py-6 xl:text-sm">
                 <div className="flex space-x-[27.5px] pb-8 items-center">
                     <Icons.ArrowLeft />
                     <div className="flex">

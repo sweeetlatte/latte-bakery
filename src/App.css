@@ -182,19 +182,19 @@
 }
 
 /* ============= Out from Left ============= */
-@keyframes outLeft {
+@keyframes outRight {
     0% {
         opacity: 1;
         transform: translateX(0);
     }
     100% {
         opacity: 0;
-        transform: translateX(-100vw);
+        transform: translateX(100vw);
     }
 }
 
-.out-left {
-    animation-name: outLeft;
+.out-right {
+    animation-name: outRight;
     animation-duration: var(--duration);
     animation-fill-mode: both;
 }

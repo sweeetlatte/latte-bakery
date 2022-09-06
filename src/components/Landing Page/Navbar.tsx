@@ -20,7 +20,7 @@ export default function Navbar({
     const navBarActionMap = {
         null: "hidden",
         true: "in-left",
-        false: "out-left",
+        false: "out-right",
     };
 
     return (
