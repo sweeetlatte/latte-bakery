@@ -26,14 +26,14 @@ export default function AddressCard() {
             {userData.address.map((addressItem, index) => (
                 <div
                     key={index}
-                    className="border border-primary rounded-lg px-5 py-4 flex justify-between items-start"
+                    className="border border-primary rounded-lg px-5 py-4 flex justify-between items-start md:text-xs"
                 >
                     <div className="space-y-1">
                         <p>{addressItem?.name}</p>
                         <p>{addressItem?.phone}</p>
                         <p>{AddressToString(addressItem!)}</p>
                     </div>
-                    <div className="flex space-x-3">
+                    <div className="flex sm:flex-col sm:items-center space-x-3 sm:space-x-0 sm:space-y-4">
                         <Icons.Trash stroke="#f83b3b" />
                         <Link
                             to="edit-address"
