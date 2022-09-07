@@ -38,7 +38,7 @@ export default function Header({ header }: Props) {
     return (
         <>
             <div
-                className="w-full pl-40 md:px-6 text-white py-9 pr-16 flex items-center"
+                className="w-full py-9 pr-16 pl-40 md:px-6 sm:p-6 text-white flex items-center"
                 style={{ backgroundColor: "#272727" }}
             >
                 <div
