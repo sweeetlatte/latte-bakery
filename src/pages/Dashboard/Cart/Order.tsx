@@ -11,8 +11,8 @@ export default function Order() {
     return (
         <>
             <Header header="Order" />
-            <div className="ml-40 text-white pr-16 py-6">
-                <div className="flex space-x-[27.5px] pb-8 items-center">
+            <div className="ml-40 md:ml-0 text-white pr-16 md:px-6 py-6 xl:text-sm md:text-xs">
+                <div className="flex space-x-[27.5px] md:space-x-3 pb-8 md:pb-6 items-center">
                     <Icons.ArrowLeft />
                     <div className="flex">
                         <Link to="/dashboard/cart">Cart</Link>
@@ -20,13 +20,13 @@ export default function Order() {
                         <div className="text-primary">Shipping information</div>
                     </div>
                 </div>
-                <div className="bg-dark-bg py-3.5 rounded-lg mb-8">
+                <div className="bg-dark-bg py-3.5 rounded-lg mb-8 md:mb-6">
                     <div className="w-max mx-auto">progress bar</div>
                 </div>
-                <div className="flex items-center bg-dark-bg w-max mx-auto mb-8">
-                    <div className="px-16 pt-8 pb-3 text-center text-primary text-lg">
+                <div className="flex sm:flex-col items-center bg-dark-bg w-max sm:w-full mx-auto mb-8">
+                    <div className="px-16 pt-8 pb-3 text-center text-primary">
                         <img src={bike} alt="bike" />
-                        <p>On the way</p>
+                        <p className="text-lg md:text-base">On the way</p>
                     </div>
                     <div className="relative">
                         <img src={map} alt="map" />
@@ -42,14 +42,24 @@ export default function Order() {
                         </div>
                     </div>
                 </div>
-                <div className="pb-8">Suggested Products</div>
-                <ProductCard
-                    openModalAddProduct={function (): void {
-                        throw new Error("Function not implemented.");
-                    }}
-                    quantity={5}
-                    variant={"row"}
-                />
+                <div className="pb-4">Suggested Products</div>
+                <div className="md:hidden">
+                    <ProductCard
+                        openModalAddProduct={function (): void {
+                            throw new Error("Function not implemented.");
+                        }}
+                        quantity={5}
+                        variant={"row"}
+                    />
+                </div>
+                <div className="hidden md:block">
+                    <ProductCard
+                        openModalAddProduct={function (): void {
+                            throw new Error("Function not implemented.");
+                        }}
+                        quantity={4}
+                    />
+                </div>
             </div>
         </>
     );
