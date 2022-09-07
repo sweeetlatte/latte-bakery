@@ -59,7 +59,7 @@ export default function Checkout() {
                             <div className="flex items-center space-x-5">
                                 <SearchBar />
                                 <button
-                                    className="regular-button"
+                                    className="filled-button"
                                     onClick={() => setIsHidden(true)}
                                 >
                                     Apply
@@ -89,7 +89,7 @@ export default function Checkout() {
                 )}
                 <div className="basis-1/12 flex items-end">
                     <button
-                        className="bg-primary rounded-lg w-full py-3"
+                        className="filled-button w-full"
                         onClick={() => setIsHidden(true)}
                     >
                         APPLY
@@ -343,7 +343,7 @@ export default function Checkout() {
 
                         <div className="basis-5/12">
                             <Link to="/dashboard/cart/order">
-                                <button className="bg-primary font-bold rounded-lg px-12 py-3 w-full">
+                                <button className="filled-button font-bold w-full">
                                     ORDER
                                 </button>
                             </Link>
@@ -481,7 +481,7 @@ export default function Checkout() {
                         </div>
                         <div className="basis-5/12">
                             <Link to="/dashboard/cart/order">
-                                <button className="bg-primary font-bold rounded-lg px-12 py-3 w-full">
+                                <button className="filled-button font-bold w-full">
                                     ORDER
                                 </button>
                             </Link>

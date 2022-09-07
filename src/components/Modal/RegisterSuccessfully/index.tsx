@@ -36,7 +36,7 @@ export default function RegisterSuccessfully({ open }: Props) {
                             Register Successfully!
                         </div>
                         <Link to="/login">
-                            <button className="border w-full border-primary bg-primary px-5 py-2.5 mt-10 rounded-md">
+                            <button className="filled-button w-full mt-10">
                                 Log in
                             </button>
                         </Link>

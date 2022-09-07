@@ -112,7 +112,7 @@ export default function Search() {
                     <div className="flex sm:flex-col-reverse space-x-5 sm:space-x-0">
                         <div className="flex items-center space-x-3 w-[70%] sm:w-full">
                             <SearchBar />
-                            <button className="border border-primary bg-primary px-8 sm:px-4 py-3 ml-6 rounded-md w-fit">
+                            <button className="filled-button ml-6 w-fit">
                                 Search
                             </button>
                         </div>

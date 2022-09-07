@@ -114,10 +114,10 @@ export default function Products() {
             <Header header={"Dashboard"} />
             <div className="dashboard-container flex xl:flex-col xl:items-start xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
                 <div className="bg-light text-white basis-9/12 lg:basis-7/12 xl:w-full">
-                    <div className="flex pb-8">
+                    <div className="flex items-center pb-8">
                         <SearchBar />
                         <Link to="search">
-                            <button className="border border-primary bg-primary px-8 sm:px-4 py-3 ml-6 rounded-md w-fit">
+                            <button className="filled-button ml-6 w-fit">
                                 Search
                             </button>
                         </Link>

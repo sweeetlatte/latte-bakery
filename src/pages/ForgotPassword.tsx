@@ -29,11 +29,11 @@ export default function ForgotPassword() {
                     </label>
                     <div className="space-x-10 sm:space-x-0 sm:flex sm:flex-col-reverse sm:w-full">
                         <Link to="/login">
-                            <button className="border border-primary text-primary px-5 py-2.5 rounded-md mt-10 sm:mt-6 sm:w-full">
+                            <button className="outlined-button mt-10 sm:mt-6 sm:w-full">
                                 Back to log in
                             </button>
                         </Link>
-                        <button className="border border-primary bg-primary px-5 py-2.5 rounded-md mt-10 sm:mt-14">
+                        <button className="filled-button mt-10 sm:mt-14">
                             Send request
                         </button>
                     </div>

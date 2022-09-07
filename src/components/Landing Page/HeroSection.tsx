@@ -67,10 +67,7 @@ export default function HeroSection({ navBarProps }: Props) {
                     We're bringing you fresh ingredients everyday in ways you
                     can't resist
                 </div>
-                <Link
-                    to="dashboard/product"
-                    className="border border-primary bg-primary px-5 py-2.5 rounded-md w-fit"
-                >
+                <Link to="dashboard/product" className="filled-button w-fit">
                     Shop now
                 </Link>
             </div>

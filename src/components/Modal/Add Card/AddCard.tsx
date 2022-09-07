@@ -19,7 +19,7 @@ export default function AddCard({ open, closeModalAddProduct }: Props) {
     };
 
     // console.log(location);
-    
+
     return (
         <>
             <div
@@ -96,11 +96,11 @@ export default function AddCard({ open, closeModalAddProduct }: Props) {
                 <div className="flex flex-row justify-end pt-9">
                     <button
                         onClick={closeModalAddProduct}
-                        className="border border-primary text-primary px-6 py-1.5 ml-6 rounded-md w-fit"
+                        className="outlined-button ml-6 w-fit"
                     >
                         Cancel
                     </button>
-                    <button className="border border-primary bg-primary px-8 py-1.5 ml-6 rounded-md w-fit">
+                    <button className="filled-button ml-6 w-fit">
                         Add to cart
                     </button>
                 </div>

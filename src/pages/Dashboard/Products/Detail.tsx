@@ -128,10 +128,10 @@ export default function Detail() {
                                     </button>
                                 </div>
                                 <div className="flex pt-6">
-                                    <button className="lg:basis-1/2 border border-primary text-primary px-6 sm:px-3 py-1.5 rounded-md w-fit">
+                                    <button className="lg:basis-1/2 outlined-button w-fit">
                                         Add to cart
                                     </button>
-                                    <button className="lg:basis-1/2 font-medium border border-primary bg-primary px-8 sm:px-3 py-1.5 ml-[0.85rem] rounded-md w-fit">
+                                    <button className="lg:basis-1/2 font-medium filled-button ml-[0.85rem] w-fit">
                                         Buy now
                                     </button>
                                 </div>

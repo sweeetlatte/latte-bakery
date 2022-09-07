@@ -88,7 +88,7 @@ export default function AddAddress() {
                         className="w-full"
                         to="/dashboard/setting/address-book"
                     >
-                        <button className="settings-outlined-button">
+                        <button className="outlined-button w-full">
                             Cancel
                         </button>
                     </Link>
@@ -96,7 +96,7 @@ export default function AddAddress() {
                         className="w-full"
                         to="/dashboard/setting/address-book"
                     >
-                        <button className="filled-button">Add</button>
+                        <button className="filled-button w-full">Add</button>
                     </Link>
                 </div>
             </form>

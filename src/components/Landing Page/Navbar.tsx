@@ -80,14 +80,11 @@ export default function Navbar({
                         <div className="flex space-x-5 text-sm text-center pb-4">
                             <Link
                                 to="/register"
-                                className="w-full border border-primary text-primary px-5 py-2.5 rounded-md"
+                                className="outlined-button w-full"
                             >
                                 Register
                             </Link>
-                            <Link
-                                to="/login"
-                                className="w-full border border-primary bg-primary px-5 py-2.5 rounded-md"
-                            >
+                            <Link to="/login" className="filled-button w-full">
                                 Log in
                             </Link>
                         </div>
@@ -140,16 +137,10 @@ export default function Navbar({
             </Link>
             <div className="md:basis-1/3"></div>
             <div className="md:hidden flex basis-1/3 space-x-6 justify-end text-sm">
-                <Link
-                    to="/register"
-                    className="border border-primary text-primary px-5 py-2.5 rounded-md"
-                >
+                <Link to="/register" className="outlined-button">
                     Register
                 </Link>
-                <Link
-                    to="/login"
-                    className="border border-primary bg-primary px-5 py-2.5 rounded-md"
-                >
+                <Link to="/login" className="filled-button">
                     Log in
                 </Link>
             </div>

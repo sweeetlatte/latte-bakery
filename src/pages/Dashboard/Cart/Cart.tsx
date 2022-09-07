@@ -76,10 +76,7 @@ export default function Cart() {
                 />
                 <div className="flex flex-row justify-end sm:justify-between items-center pt-9">
                     <div className="text-lg xl:text-base">Total: 0 VND</div>
-                    <Link
-                        to="checkout"
-                        className="border border-primary bg-primary px-8 py-1.5 ml-9 rounded-md w-fit"
-                    >
+                    <Link to="checkout" className="filled-button ml-9">
                         Check out
                     </Link>
                 </div>

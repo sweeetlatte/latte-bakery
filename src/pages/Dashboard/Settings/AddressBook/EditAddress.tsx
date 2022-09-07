@@ -141,7 +141,7 @@ export default function EditAddress() {
                         className="w-full"
                         to="/dashboard/setting/address-book"
                     >
-                        <button className="settings-outlined-button">
+                        <button className="outlined-button w-full">
                             Cancel
                         </button>
                     </Link>
@@ -149,7 +149,7 @@ export default function EditAddress() {
                         className="w-full"
                         to="/dashboard/setting/address-book"
                     >
-                        <button className="filled-button">Save</button>
+                        <button className="filled-button w-full">Save</button>
                     </Link>
                 </div>
             </form>

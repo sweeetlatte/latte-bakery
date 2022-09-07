@@ -137,7 +137,7 @@ export default function Register() {
                             )}
                         </label>
                         <button
-                            className="border w-full border-primary bg-primary px-5 py-2.5 mt-20 rounded-md"
+                            className="filled-button w-full mt-20"
                             onClick={(
                                 e: MouseEvent<
                                     HTMLButtonElement | HTMLAnchorElement

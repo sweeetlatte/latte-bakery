@@ -51,7 +51,7 @@ export default function Blog() {
                                 to="/blog/detail"
                                 state={{ detail: blogItem }}
                             >
-                                <button className="regular-button">
+                                <button className="filled-button">
                                     See more
                                 </button>
                             </Link>

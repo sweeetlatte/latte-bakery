@@ -94,7 +94,7 @@ export default function AccountInfo() {
                 {editMode ? (
                     <div className="pt-6 sm:pt-2">
                         <button
-                            className="filled-button"
+                            className="filled-button w-full"
                             onClick={() => {
                                 setEditMode(false);
                             }}
@@ -105,7 +105,7 @@ export default function AccountInfo() {
                 ) : (
                     <div className="flex space-x-5 pt-6 sm:pt-2">
                         <button
-                            className="settings-outlined-button"
+                            className="outlined-button w-full"
                             onClick={() => {
                                 setEditMode(true);
                             }}
@@ -113,7 +113,7 @@ export default function AccountInfo() {
                             Cancel
                         </button>
                         <button
-                            className="filled-button"
+                            className="filled-button w-full"
                             onClick={() => {
                                 setEditMode(true);
                             }}

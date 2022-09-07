@@ -47,7 +47,7 @@ export default function ProductCardRgba() {
                         </div>
                         <div className="basis-1/2 w-full px-auto">
                             <Link to="/login">
-                                <button className="flex justify-center items-center border border-primary bg-primary w-full py-1 rounded-md ">
+                                <button className="flex justify-center items-center border border-primary bg-primary w-full py-1 rounded-md">
                                     <img
                                         className="pr-1"
                                         src={cartIcon}

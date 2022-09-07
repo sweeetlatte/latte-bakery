@@ -26,7 +26,7 @@ export default function SectionTitle({
                 </h6>
                 {variant === "one-button" && linkTo && (
                     <Link to={`${linkTo}`}>
-                        <button className="regular-button">
+                        <button className="filled-button">
                             {titleRegularButton}
                         </button>
                     </Link>

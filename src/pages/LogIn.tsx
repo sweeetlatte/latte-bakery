@@ -84,7 +84,9 @@ export default function LogIn() {
                             </Link>
                         </div>
                         <Link to="/dashboard/product">
-                            <button className="filled-button">Log in</button>
+                            <button className="filled-button w-full">
+                                Log in
+                            </button>
                         </Link>
                     </form>
                     <div className="">

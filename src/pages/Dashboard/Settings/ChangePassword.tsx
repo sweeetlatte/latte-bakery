@@ -45,7 +45,7 @@ export default function ChangePassword() {
                 <div className="text-primary pt-1 pb-6 sm:pb-2 text-right">
                     <Link to="/forgot-password">Forgot password?</Link>
                 </div>
-                <button className="filled-button">Update</button>
+                <button className="filled-button w-full">Update</button>
             </form>
         </>
     );
