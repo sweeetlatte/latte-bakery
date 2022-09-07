@@ -7,6 +7,7 @@ interface Props {
 
 const BiggerChevronDown = ({ stroke }: Props) => (
     <svg
+        className="lg:w-3"
         width="20"
         height="11"
         viewBox="0 0 20 11"

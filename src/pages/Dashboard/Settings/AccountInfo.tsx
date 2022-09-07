@@ -22,10 +22,12 @@ export default function AccountInfo() {
 
     return userData ? (
         <>
-            <div className="font-bold text-lg">Account information</div>
-            <form className="settings-form pt-14">
+            <div className="font-bold text-lg lg:text-base ">
+                Account information
+            </div>
+            <form className="settings-form py-10 sm:py-6">
                 <label className="flex items-center mb-4" htmlFor="uname">
-                    <span className="w-[176px]">Name</span>
+                    <span className="w-[176px] sm:w-[100px]">Name</span>
                     <input
                         className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
                         type="text"
@@ -39,7 +41,7 @@ export default function AccountInfo() {
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="phone">
-                    <span className="w-[176px]">Phone number</span>
+                    <span className="w-[176px] sm:w-[100px]">Phone number</span>
                     <input
                         className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
                         type="text"
@@ -53,7 +55,7 @@ export default function AccountInfo() {
                     />
                 </label>
                 <label className="flex items-center mb-4" htmlFor="email">
-                    <span className="w-[176px]">Email</span>
+                    <span className="w-[176px] sm:w-[100px]">Email</span>
                     <input
                         className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
                         type="email"
@@ -63,22 +65,27 @@ export default function AccountInfo() {
                         value={userData.email}
                     />
                 </label>
-                <label className="flex items-center mb-4" htmlFor="uname">
-                    <span className="w-[176px]">Date of birth</span>
-                    <div className="w-full flex justify-between space-x-8">
-                        <div className="border w-full border-primary rounded-lg py-3.5 px-3.5">
+                <label
+                    className="flex items-center sm:items-start"
+                    htmlFor="dob"
+                >
+                    <span className="w-[176px] sm:w-[100px] sm:pt-1">
+                        Date of birth
+                    </span>
+                    <div className="w-full flex sm:flex-col justify-between space-x-8 lg:space-x-4 sm:space-x-0 sm:space-y-4">
+                        <div className="basis-3/12 border w-full border-primary rounded-lg py-3.5 px-3.5">
                             <div className="flex justify-between items-center">
                                 <div>{userData.dob.split("/")[0]}</div>
                                 <Icons.BiggerChevronDown stroke="white" />
                             </div>
                         </div>
-                        <div className="border w-full border-primary rounded-lg py-3.5 px-3.5">
+                        <div className="basis-5/12 border w-full border-primary rounded-lg py-3.5 px-3.5">
                             <div className="flex justify-between items-center">
                                 <div>{userData.dob.split("/")[1]}</div>
                                 <Icons.BiggerChevronDown stroke="white" />
                             </div>
                         </div>
-                        <div className="border w-full border-primary rounded-lg py-3.5 px-3.5">
+                        <div className="basis-4/12 border w-full border-primary rounded-lg py-3.5 px-3.5">
                             <div className="flex justify-between items-center">
                                 <div>{userData.dob.split("/")[2]}</div>
                                 <Icons.BiggerChevronDown stroke="white" />
@@ -89,7 +96,7 @@ export default function AccountInfo() {
             </form>
             {editMode ? (
                 <button
-                    className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md"
+                    className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md"
                     onClick={() => {
                         setEditMode(false);
                     }}
@@ -99,7 +106,7 @@ export default function AccountInfo() {
             ) : (
                 <div className="flex space-x-5">
                     <button
-                        className="border w-full border-primary text-primary px-5 py-2.5 mt-14 rounded-md"
+                        className="border w-full border-primary text-primary px-5 py-2.5 rounded-md"
                         onClick={() => {
                             setEditMode(true);
                         }}
@@ -107,7 +114,7 @@ export default function AccountInfo() {
                         Cancel
                     </button>
                     <button
-                        className="border w-full border-primary bg-primary px-5 py-2.5 mt-14 rounded-md"
+                        className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md"
                         onClick={() => {
                             setEditMode(true);
                         }}
