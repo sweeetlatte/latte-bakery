@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./../dashboard.css";
 import { CheckoutMethod } from "../../../types";
 
 import ProductInCheckout from "../../../components/Dashboard/ProductInCheckout";
@@ -105,7 +106,7 @@ export default function Checkout() {
                 }}
             />
             <Header header="Checkout" />
-            <div className="ml-40 md:ml-0 text-white pr-16 md:px-6 py-6 xl:text-sm md:text-xs">
+            <div className="dashboard-container">
                 <div className="flex space-x-[27.5px] md:space-x-3 pb-8 md:pb-6 items-center">
                     <Icons.ArrowLeft />
                     <div className="flex">

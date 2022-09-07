@@ -45,8 +45,8 @@ export default function Settings() {
     return (
         <>
             <Header header="Settings" />
-            <div className="flex sm:flex-col justify-between space-x-12 md:space-x-6 sm:space-x-0 sm:space-y-5 ml-40 md:ml-0 text-white pr-16 py-6 md:p-6 lg:text-sm">
-                <div className="basis-3/12 bg-dark-bg rounded-lg py-7 ">
+            <div className="dashboard-container flex sm:flex-col justify-between space-x-12 md:space-x-6 sm:space-x-0 sm:space-y-5">
+                <div className="basis-3/12 bg-dark-bg rounded-lg py-7">
                     <div>
                         <div className="w-[182px] lg:w-[132px] sm:w-16 h-[182px] lg:h-[132px] sm:h-16 mx-auto border-primary rounded-full border-4 sm:border-2 relative">
                             <img
@@ -66,9 +66,7 @@ export default function Settings() {
                         <Link
                             to="account-info"
                             className={
-                                index === 0
-                                    ? "pl-5 settings-active-tab"
-                                    : "pl-5"
+                                index === 0 ? "settings-active-tab" : "pl-5"
                             }
                         >
                             Account information
@@ -76,9 +74,7 @@ export default function Settings() {
                         <Link
                             to="address-book"
                             className={
-                                index === 1
-                                    ? "pl-5 settings-active-tab"
-                                    : "pl-5"
+                                index === 1 ? "settings-active-tab" : "pl-5"
                             }
                         >
                             Address book
@@ -86,9 +82,7 @@ export default function Settings() {
                         <Link
                             to="change-password"
                             className={
-                                index === 2
-                                    ? "settings-active-tab pl-5"
-                                    : "pl-5"
+                                index === 2 ? "settings-active-tab" : "pl-5"
                             }
                         >
                             Change password

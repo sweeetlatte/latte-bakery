@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import "./../dashboard.css";
 import "./products.css";
 import { IProduct, IProductDestail } from "../../../types";
 import { fetchProductData } from "../../../app/api";
@@ -50,7 +51,7 @@ export default function Detail() {
     return productData ? (
         <>
             <Header header="Dashboard" />
-            <div className="ml-40 md:ml-0 md:px-6 md:py-9 text-white flex md:flex-col pr-16 pb-6 pt-14 space-x-[42px] lg:space-x-[32px] md:space-x-0 md:space-y-9 xl:text-sm sm:text-xs">
+            <div className="dashboard-container flex md:flex-col space-x-[42px] lg:space-x-[32px] md:space-x-0 md:space-y-9">
                 <div className="basis-9/12 xl:basis-10/12 pr-12 lg:pr-8 md:pr-0 border-right">
                     <div className="flex space-x-[27.5px] text-lg lg:text-base items-center">
                         <Link to="/dashboard/product">

@@ -62,7 +62,7 @@
 
 .settings-active-tab {
     border-left: 3px solid #f3a446;
-    @apply text-primary font-bold;
+    @apply text-primary font-bold pl-5;
 }
 
 .settings-outlined-button {

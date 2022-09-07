@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import "./../dashboard.css";
+
 import Header from "../../../components/Dashboard/Header";
 import ProductCard from "../../../components/Dashboard/ProductCard";
 import Icons from "../../../components/Icons";
@@ -11,7 +13,7 @@ export default function Order() {
     return (
         <>
             <Header header="Order" />
-            <div className="ml-40 md:ml-0 text-white pr-16 md:px-6 py-6 xl:text-sm md:text-xs">
+            <div className="dashboard-container">
                 <div className="flex space-x-[27.5px] md:space-x-3 pb-8 md:pb-6 items-center">
                     <Icons.ArrowLeft />
                     <div className="flex">

@@ -25,7 +25,7 @@ export default function Search() {
     return (
         <>
             <Header header="Dashboard" />
-            <div className="ml-40 md:ml-0 text-white pr-16 py-6 md:p-6 flex sm:flex-col justify-between space-x-10 md:space-x-7 sm:space-x-0 xl:text-sm lg:text-xs">
+            <div className="dashboard-container flex sm:flex-col justify-between space-x-10 md:space-x-7 sm:space-x-0">
                 <div className="basis-1/5 h-fit bg-dark-bg rounded-lg px-6 py-3">
                     <div className="font-bold text-lg xl:text-base pt-1">
                         Filter

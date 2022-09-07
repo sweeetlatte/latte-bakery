@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./../dashboard.css";
 import "./cart.css";
 
 import Header from "../../../components/Dashboard/Header";
@@ -22,7 +23,7 @@ export default function Cart() {
     return (
         <>
             <Header header={"My Cart"} />
-            <div className="ml-40 md:ml-0 text-white pr-16 md:px-6 py-6 xl:text-sm md:text-xs">
+            <div className="dashboard-container">
                 <div className="bg-dark-bg w-full rounded-lg sm:hidden">
                     <label htmlFor="checkall" className="cart-custom-checkbox">
                         <input

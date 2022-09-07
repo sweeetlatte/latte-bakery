@@ -112,7 +112,7 @@ export default function Products() {
     return (
         <>
             <Header header={"Dashboard"} />
-            <div className="ml-40 lg:ml-32 md:ml-0 md:px-6 text-white flex xl:flex-col xl:items-start pr-16 lg:pr-6 py-6 xl:space-y-[20px] space-x-[42px] xl:space-x-[0] xl:text-sm">
+            <div className="dashboard-container flex xl:flex-col xl:items-start xl:space-y-[20px] space-x-[42px] xl:space-x-[0]">
                 <div className="bg-light text-white basis-9/12 lg:basis-7/12 xl:w-full">
                     <div className="flex pb-8">
                         <SearchBar />

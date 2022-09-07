@@ -1,0 +1,3 @@
+.dashboard-container {
+    @apply ml-40 md:ml-0 pr-16 md:px-6 py-6 text-white xl:text-sm md:text-xs;
+}
