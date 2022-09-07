@@ -45,28 +45,30 @@ export default function Settings() {
     return (
         <>
             <Header header="Settings" />
-            <div className="ml-40 text-white pr-16 py-6 flex justify-between space-x-12">
-                <div className="basis-3/12 bg-dark-bg rounded-lg py-7">
-                    <div className="w-[182px] h-[182px] mx-auto border-primary rounded-full border-4 relative">
-                        <img
-                            className="w-full h-full object-cover rounded-full"
-                            src={ava}
-                            alt="ava"
-                        />
-                        <button className="absolute right-0 bottom-0 bg-primary w-[36px] h-[36px] rounded-full flex justify-center items-center">
-                            <img src={camera} alt="camera" />
-                        </button>
-                    </div>
-                    <div className="pt-4 text-center font-bold text-lg pb-8">
-                        {userData?.name}
+            <div className="flex sm:flex-col justify-between space-x-12 md:space-x-6 sm:space-x-0 sm:space-y-5 ml-40 md:ml-0 text-white pr-16 py-6 md:p-6 lg:text-sm">
+                <div className="basis-3/12 bg-dark-bg rounded-lg py-7 ">
+                    <div>
+                        <div className="w-[182px] lg:w-[132px] sm:w-16 h-[182px] lg:h-[132px] sm:h-16 mx-auto border-primary rounded-full border-4 sm:border-2 relative">
+                            <img
+                                className="w-full h-full object-cover rounded-full"
+                                src={ava}
+                                alt="ava"
+                            />
+                            <button className="absolute right-0 sm:-right-2 bottom-0 sm:-bottom-2 bg-primary w-[36px] sm:w-8 h-[36px] sm:h-8 rounded-full flex justify-center items-center">
+                                <img src={camera} alt="camera" />
+                            </button>
+                        </div>
+                        <div className="pt-4 text-center font-bold text-lg lg:text-base pb-8">
+                            {userData?.name}
+                        </div>
                     </div>
                     <div className="space-y-7 flex flex-col">
                         <Link
                             to="account-info"
                             className={
                                 index === 0
-                                    ? "pl-11 settings-active-tab"
-                                    : "pl-11"
+                                    ? "pl-5 settings-active-tab"
+                                    : "pl-5"
                             }
                         >
                             Account information
@@ -75,8 +77,8 @@ export default function Settings() {
                             to="address-book"
                             className={
                                 index === 1
-                                    ? "pl-11 settings-active-tab"
-                                    : "pl-11"
+                                    ? "pl-5 settings-active-tab"
+                                    : "pl-5"
                             }
                         >
                             Address book
@@ -85,15 +87,15 @@ export default function Settings() {
                             to="change-password"
                             className={
                                 index === 2
-                                    ? "settings-active-tab pl-11"
-                                    : "pl-11"
+                                    ? "settings-active-tab pl-5"
+                                    : "pl-5"
                             }
                         >
                             Change password
                         </Link>
                     </div>
                 </div>
-                <div className="basis-9/12 w-52 bg-dark-bg rounded-lg px-11 py-7">
+                <div className="basis-9/12 w-52 bg-dark-bg rounded-lg px-11 py-7 md:p-7 sm:p-5 sm:w-full">
                     <Outlet />
                 </div>
             </div>
