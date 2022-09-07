@@ -104,8 +104,8 @@ export default function EditAddress() {
                 </label>
                 <label className="flex items-center mb-8 mt-6" htmlFor="type">
                     <span className="w-[176px]">Address type</span>
-                    <div className="setting-custom-radio flex w-full text-base space-x-9">
-                        <label className="setting-container">
+                    <div className="flex w-full text-base space-x-9">
+                        <label className="custom-radio-container">
                             Company
                             <input
                                 type="radio"
@@ -116,9 +116,9 @@ export default function EditAddress() {
                                         : false
                                 }
                             />
-                            <span className="setting-checkmark"></span>
+                            <span className="radio-checkmark"></span>
                         </label>
-                        <label className="setting-container">
+                        <label className="custom-radio-container">
                             Home
                             <input
                                 type="radio"
@@ -129,7 +129,7 @@ export default function EditAddress() {
                                         : false
                                 }
                             />
-                            <span className="setting-checkmark"></span>
+                            <span className="radio-checkmark"></span>
                         </label>
                     </div>
                 </label>

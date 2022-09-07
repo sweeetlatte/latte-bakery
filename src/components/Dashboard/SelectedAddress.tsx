@@ -18,16 +18,19 @@ export default function SelectedAddress() {
                 setUserData(responseData[0]);
             }
         })();
-    }, []);
+    }, [setUserData]);
 
     return userData ? (
         <>
             {userData.address
                 .filter((address) => address.isDefault)
                 .map((addressItem, index) => (
-                    <div key={index} className="flex justify-between">
-                        <div className="flex space-x-3.5 items-start">
-                            <img src={location} alt="location" />
+                    <div
+                        key={index}
+                        className="flex justify-between lg:space-x-1"
+                    >
+                        <div className="flex space-x-3.5 lg:space-x-2 items-start">
+                            <img className="md:w-5 md:h-5" src={location} alt="location" />
                             <div>
                                 <div>
                                     {addressItem
