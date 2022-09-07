@@ -64,3 +64,27 @@
     border-left: 3px solid #f3a446;
     @apply text-primary font-bold;
 }
+
+.settings-outlined-button {
+    @apply border w-full border-primary text-primary px-5 py-2.5 rounded-md;
+}
+
+.settings-title {
+    @apply font-bold text-lg lg:text-base;
+}
+
+.settings-form {
+    @apply pt-10 sm:pt-6 space-y-4;
+}
+
+.settings-form__label {
+    @apply flex items-center;
+}
+
+.settings-form__span {
+    @apply w-[176px] sm:w-[100px];
+}
+
+.settings-form__input {
+    @apply w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none;
+}

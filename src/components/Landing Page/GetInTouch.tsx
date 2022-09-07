@@ -41,9 +41,7 @@ export default function GetInTouch() {
                             name="message"
                             placeholder="Your Message"
                         />
-                        <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
-                            Send
-                        </button>
+                        <button className="filled-button">Send</button>
                     </form>
                     <div className="basis-5/12 text-left flex flex-col justify-between sm:pt-4 sm:space-y-5">
                         <div>

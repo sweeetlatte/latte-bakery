@@ -6,9 +6,7 @@ export default function AddressBook() {
     return (
         <>
             <div className="flex sm:flex-col justify-between items-center sm:items-start">
-                <div className="font-bold text-lg lg:text-base">
-                    Address book
-                </div>
+                <div className="settings-title">Address book</div>
                 <Link
                     to="add-address"
                     className="text-primary sm:w-full sm:text-xs sm:mt-4 sm:border sm:border-primary sm:rounded-lg sm:px-5 sm:py-4"

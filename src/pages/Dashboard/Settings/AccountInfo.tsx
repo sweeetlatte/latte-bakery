@@ -22,14 +22,12 @@ export default function AccountInfo() {
 
     return userData ? (
         <>
-            <div className="font-bold text-lg lg:text-base">
-                Account information
-            </div>
-            <form className="settings-form py-10 sm:py-6 space-y-4">
-                <label className="flex items-center" htmlFor="uname">
-                    <span className="w-[176px] sm:w-[100px]">Name</span>
+            <div className="settings-title">Account information</div>
+            <form className="settings-form">
+                <label className="settings-form__label" htmlFor="uname">
+                    <span className="settings-form__span">Name</span>
                     <input
-                        className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
+                        className="settings-form__input"
                         type="text"
                         id="uname"
                         name="uname"
@@ -40,10 +38,10 @@ export default function AccountInfo() {
                         }
                     />
                 </label>
-                <label className="flex items-center" htmlFor="phone">
-                    <span className="w-[176px] sm:w-[100px]">Phone number</span>
+                <label className="settings-form__label" htmlFor="phone">
+                    <span className="settings-form__span">Phone number</span>
                     <input
-                        className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
+                        className="settings-form__input"
                         type="text"
                         id="phone"
                         name="phone"
@@ -54,10 +52,10 @@ export default function AccountInfo() {
                         }
                     />
                 </label>
-                <label className="flex items-center" htmlFor="email">
-                    <span className="w-[176px] sm:w-[100px]">Email</span>
+                <label className="settings-form__label" htmlFor="email">
+                    <span className="settings-form__span">Email</span>
                     <input
-                        className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
+                        className="settings-form__input"
                         type="email"
                         id="email"
                         name="email"
@@ -93,36 +91,38 @@ export default function AccountInfo() {
                         </div>
                     </div>
                 </label>
+                {editMode ? (
+                    <div className="pt-6 sm:pt-2">
+                        <button
+                            className="filled-button"
+                            onClick={() => {
+                                setEditMode(false);
+                            }}
+                        >
+                            Edit account information
+                        </button>
+                    </div>
+                ) : (
+                    <div className="flex space-x-5 pt-6 sm:pt-2">
+                        <button
+                            className="settings-outlined-button"
+                            onClick={() => {
+                                setEditMode(true);
+                            }}
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            className="filled-button"
+                            onClick={() => {
+                                setEditMode(true);
+                            }}
+                        >
+                            Save
+                        </button>
+                    </div>
+                )}
             </form>
-            {editMode ? (
-                <button
-                    className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md"
-                    onClick={() => {
-                        setEditMode(false);
-                    }}
-                >
-                    Edit account information
-                </button>
-            ) : (
-                <div className="flex space-x-5">
-                    <button
-                        className="border w-full border-primary text-primary px-5 py-2.5 rounded-md"
-                        onClick={() => {
-                            setEditMode(true);
-                        }}
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md"
-                        onClick={() => {
-                            setEditMode(true);
-                        }}
-                    >
-                        Save
-                    </button>
-                </div>
-            )}
         </>
     ) : (
         <Loader />

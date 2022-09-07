@@ -84,9 +84,7 @@ export default function LogIn() {
                             </Link>
                         </div>
                         <Link to="/dashboard/product">
-                            <button className="border w-full border-primary bg-primary px-5 py-2.5 rounded-md">
-                                Log in
-                            </button>
+                            <button className="filled-button">Log in</button>
                         </Link>
                     </form>
                     <div className="">
