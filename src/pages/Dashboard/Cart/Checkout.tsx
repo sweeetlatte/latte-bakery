@@ -125,9 +125,233 @@ export default function Checkout() {
                         Orders #354262
                     </div>
                 </div>
-                <div className="space-y-5">
-                    <div className="flex sm:flex-col space-x-16 lg:space-x-5 sm:space-x-0 sm:space-y-5">
-                        <div className="basis-7/12 bg-dark-bg rounded-lg px-12 py-6 lg:p-6 h-fit overflow-y-scroll">
+                <div className="flex space-x-16 lg:space-x-5 sm:hidden">
+                    <div className="basis-7/12 space-y-5">
+                        <div className="bg-dark-bg rounded-lg px-12 py-6 lg:p-6 max-h-80 overflow-y-scroll">
+                            <div className="flex justify-between items-center">
+                                <div>240.000 VND (5 products)</div>
+                                <div
+                                    className="bg-primary w-[32px] h-[32px] flex justify-center items-center cursor-pointer"
+                                    onClick={() =>
+                                        setShowingProducts(!showingProducts)
+                                    }
+                                >
+                                    {showingProducts ? "-" : "+"}
+                                </div>
+                            </div>
+                            {showingProducts && <ProductInCheckout />}
+                        </div>
+                        <div className="space-y-5">
+                            <div className="basis-7/12 bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                                <div className="text-primary font-medium">
+                                    Order summary
+                                </div>
+                                <div
+                                    className="text-sm md:text-xs py-4 mb-4 space-y-2"
+                                    style={{
+                                        borderBottom: "1px solid #656870",
+                                    }}
+                                >
+                                    <div className="flex justify-between">
+                                        <div>Subtotal</div>
+                                        <div>240.000 VND</div>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <div>Shipping fee</div>
+                                        <div>0 VND</div>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <div>Discount</div>
+                                        <div>-30.000 VND</div>
+                                    </div>
+                                </div>
+                                <div className="flex justify-between">
+                                    <div className="text-primary">Total</div>
+                                    <div>210.000 VND</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="basis-5/12 space-y-5">
+                        <div className="bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                            <div className="flex justify-between text-primary pb-4">
+                                <div>Shipping address</div>
+                                <div
+                                    className="cursor-pointer"
+                                    onClick={() => {
+                                        setIsHidden(false);
+                                        setIsChoosen("address");
+                                    }}
+                                >
+                                    Change
+                                </div>
+                            </div>
+                            <SelectedAddress />
+                        </div>
+                        <div className="bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                            <div className="text-primary pb-4">Payment</div>
+                            <div className="flex space-x-5 lg:hidden">
+                                <button
+                                    onClick={() =>
+                                        changeCheckoutMethod(
+                                            CheckoutMethod.Cash
+                                        )
+                                    }
+                                    className={`w-[100px] h-[64px] ${
+                                        checkoutMethod === "Cash"
+                                            ? "bg-primary"
+                                            : "bg-light"
+                                    } rounded-lg font-medium flex flex-col justify-center items-center space-y-1`}
+                                >
+                                    <Icons.Cash
+                                        stroke={
+                                            checkoutMethod === "Cash"
+                                                ? "black"
+                                                : "white"
+                                        }
+                                    />
+                                    <div
+                                        className={
+                                            checkoutMethod === "Cash"
+                                                ? "text-black"
+                                                : "text-white"
+                                        }
+                                    >
+                                        Cash
+                                    </div>
+                                </button>
+                                <button
+                                    onClick={() =>
+                                        changeCheckoutMethod(
+                                            CheckoutMethod.Card
+                                        )
+                                    }
+                                    className={`w-[100px] h-[64px] ${
+                                        checkoutMethod === "Card"
+                                            ? "bg-primary"
+                                            : "bg-light"
+                                    } rounded-lg flex flex-col justify-center items-center space-y-2`}
+                                >
+                                    <Icons.Card
+                                        stroke={
+                                            checkoutMethod === "Card"
+                                                ? "black"
+                                                : "white"
+                                        }
+                                    />
+                                    <div
+                                        className={
+                                            checkoutMethod === "Card"
+                                                ? "text-black"
+                                                : "text-white"
+                                        }
+                                    >
+                                        Card
+                                    </div>
+                                </button>
+                                <button
+                                    onClick={() =>
+                                        changeCheckoutMethod(
+                                            CheckoutMethod.Momo
+                                        )
+                                    }
+                                    className={`w-[100px] h-[64px] ${
+                                        checkoutMethod === "Momo"
+                                            ? "bg-primary"
+                                            : "bg-light"
+                                    } rounded-lg flex flex-col justify-center items-center space-y-2`}
+                                >
+                                    <Icons.Card
+                                        stroke={
+                                            checkoutMethod === "Momo"
+                                                ? "black"
+                                                : "white"
+                                        }
+                                    />
+                                    <div
+                                        className={
+                                            checkoutMethod === "Momo"
+                                                ? "text-black"
+                                                : "text-white"
+                                        }
+                                    >
+                                        Momo
+                                    </div>
+                                </button>
+                            </div>
+                            <div className="hidden lg:flex justify-between">
+                                <label
+                                    className="custom-radio-container"
+                                    style={{
+                                        paddingLeft: "27px",
+                                        paddingTop: "3px",
+                                    }}
+                                >
+                                    Cash
+                                    <input type="radio" name="radio" checked />
+                                    <span
+                                        className="radio-checkmark"
+                                        style={{ left: "1px" }}
+                                    ></span>
+                                </label>
+                                <label
+                                    className="custom-radio-container"
+                                    style={{
+                                        paddingLeft: "27px",
+                                        paddingTop: "3px",
+                                    }}
+                                >
+                                    Card
+                                    <input type="radio" name="radio" />
+                                    <span
+                                        className="radio-checkmark"
+                                        style={{ left: "1px" }}
+                                    ></span>
+                                </label>
+                                <label
+                                    className="custom-radio-container"
+                                    style={{
+                                        paddingLeft: "27px",
+                                        paddingTop: "3px",
+                                    }}
+                                >
+                                    Momo
+                                    <input type="radio" name="radio" />
+                                    <span
+                                        className="radio-checkmark"
+                                        style={{ left: "1px" }}
+                                    ></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                            <div className="text-primary pb-4">Giftcard</div>
+                            <div className="flex space-x-3">
+                                <img src={voucher} alt="voucher" />
+                                <div
+                                    className="cursor-pointer underline underline-offset-[3px] decoration-[0.5px] decoration-[#CBCBCB] text-[#CBCBCB]"
+                                    onClick={() => {
+                                        setIsHidden(false);
+                                        setIsChoosen("voucher");
+                                    }}
+                                >
+                                    Choose or add a voucher
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="basis-5/12">
+                            <Link to="/dashboard/cart/order">
+                                <button className="bg-primary font-bold rounded-lg px-12 py-3 w-full">
+                                    ORDER
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="hidden sm:block space-y-5">
+                    <div className="flex flex-col space-y-5">
+                        <div className="basis-7/12 bg-dark-bg rounded-lg p-6">
                             <div className="flex justify-between items-center">
                                 <div>240.000 VND (5 products)</div>
                                 <div
@@ -142,7 +366,7 @@ export default function Checkout() {
                             {showingProducts && <ProductInCheckout />}
                         </div>
                         <div className="basis-5/12 space-y-5">
-                            <div className="bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                            <div className="bg-dark-bg rounded-lg p-6">
                                 <div className="flex justify-between text-primary pb-4">
                                     <div>Shipping address</div>
                                     <div
@@ -157,98 +381,9 @@ export default function Checkout() {
                                 </div>
                                 <SelectedAddress />
                             </div>
-                            <div className="bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                            <div className="bg-dark-bg rounded-lg p-6">
                                 <div className="text-primary pb-4">Payment</div>
-                                <div className="flex space-x-5 lg:hidden">
-                                    <button
-                                        onClick={() =>
-                                            changeCheckoutMethod(
-                                                CheckoutMethod.Cash
-                                            )
-                                        }
-                                        className={`w-[100px] h-[64px] ${
-                                            checkoutMethod === "Cash"
-                                                ? "bg-primary"
-                                                : "bg-light"
-                                        } rounded-lg font-medium flex flex-col justify-center items-center space-y-1`}
-                                    >
-                                        <Icons.Cash
-                                            stroke={
-                                                checkoutMethod === "Cash"
-                                                    ? "black"
-                                                    : "white"
-                                            }
-                                        />
-                                        <div
-                                            className={
-                                                checkoutMethod === "Cash"
-                                                    ? "text-black"
-                                                    : "text-white"
-                                            }
-                                        >
-                                            Cash
-                                        </div>
-                                    </button>
-                                    <button
-                                        onClick={() =>
-                                            changeCheckoutMethod(
-                                                CheckoutMethod.Card
-                                            )
-                                        }
-                                        className={`w-[100px] h-[64px] ${
-                                            checkoutMethod === "Card"
-                                                ? "bg-primary"
-                                                : "bg-light"
-                                        } rounded-lg flex flex-col justify-center items-center space-y-2`}
-                                    >
-                                        <Icons.Card
-                                            stroke={
-                                                checkoutMethod === "Card"
-                                                    ? "black"
-                                                    : "white"
-                                            }
-                                        />
-                                        <div
-                                            className={
-                                                checkoutMethod === "Card"
-                                                    ? "text-black"
-                                                    : "text-white"
-                                            }
-                                        >
-                                            Card
-                                        </div>
-                                    </button>
-                                    <button
-                                        onClick={() =>
-                                            changeCheckoutMethod(
-                                                CheckoutMethod.Momo
-                                            )
-                                        }
-                                        className={`w-[100px] h-[64px] ${
-                                            checkoutMethod === "Momo"
-                                                ? "bg-primary"
-                                                : "bg-light"
-                                        } rounded-lg flex flex-col justify-center items-center space-y-2`}
-                                    >
-                                        <Icons.Card
-                                            stroke={
-                                                checkoutMethod === "Momo"
-                                                    ? "black"
-                                                    : "white"
-                                            }
-                                        />
-                                        <div
-                                            className={
-                                                checkoutMethod === "Momo"
-                                                    ? "text-black"
-                                                    : "text-white"
-                                            }
-                                        >
-                                            Momo
-                                        </div>
-                                    </button>
-                                </div>
-                                <div className="hidden lg:flex justify-between">
+                                <div className="flex justify-between">
                                     <label
                                         className="custom-radio-container"
                                         style={{
@@ -297,7 +432,7 @@ export default function Checkout() {
                                     </label>
                                 </div>
                             </div>
-                            <div className="bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                            <div className="bg-dark-bg rounded-lg p-6">
                                 <div className="text-primary pb-4">
                                     Giftcard
                                 </div>
@@ -316,13 +451,13 @@ export default function Checkout() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex sm:flex-col space-x-16 lg:space-x-5 sm:space-x-0 sm:space-y-5">
-                        <div className="basis-7/12 bg-dark-bg rounded-lg px-12 py-6 lg:p-6">
+                    <div className="flex flex-col space-y-5">
+                        <div className="basis-7/12 bg-dark-bg rounded-lg p-6">
                             <div className="text-primary font-medium">
                                 Order summary
                             </div>
                             <div
-                                className="text-sm md:text-xs py-4 mb-4 space-y-2"
+                                className="text-xs py-4 mb-4 space-y-2"
                                 style={{ borderBottom: "1px solid #656870" }}
                             >
                                 <div className="flex justify-between">
