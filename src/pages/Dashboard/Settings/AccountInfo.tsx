@@ -22,11 +22,11 @@ export default function AccountInfo() {
 
     return userData ? (
         <>
-            <div className="font-bold text-lg lg:text-base ">
+            <div className="font-bold text-lg lg:text-base">
                 Account information
             </div>
-            <form className="settings-form py-10 sm:py-6">
-                <label className="flex items-center mb-4" htmlFor="uname">
+            <form className="settings-form py-10 sm:py-6 space-y-4">
+                <label className="flex items-center" htmlFor="uname">
                     <span className="w-[176px] sm:w-[100px]">Name</span>
                     <input
                         className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
@@ -40,7 +40,7 @@ export default function AccountInfo() {
                         }
                     />
                 </label>
-                <label className="flex items-center mb-4" htmlFor="phone">
+                <label className="flex items-center" htmlFor="phone">
                     <span className="w-[176px] sm:w-[100px]">Phone number</span>
                     <input
                         className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
@@ -54,7 +54,7 @@ export default function AccountInfo() {
                         }
                     />
                 </label>
-                <label className="flex items-center mb-4" htmlFor="email">
+                <label className="flex items-center" htmlFor="email">
                     <span className="w-[176px] sm:w-[100px]">Email</span>
                     <input
                         className="w-full bg-dark-bg py-3.5 px-3 border border-primary rounded-lg focus:outline-none"
