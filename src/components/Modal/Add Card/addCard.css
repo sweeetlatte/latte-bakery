@@ -9,5 +9,5 @@
 }
 
 .__bg-add-product-modal {
-    @apply fixed bg-light z-[20] h-max w-[827px] p-10 rounded-xl opacity-100;
+    @apply fixed bg-light h-max w-max p-10 rounded-xl opacity-100;
 }
