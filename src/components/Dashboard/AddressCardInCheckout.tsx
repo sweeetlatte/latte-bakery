@@ -32,16 +32,18 @@ export default function AddressCardInCheckout() {
                     <div className="absolute right-4 top-4 w-5 h-5 bg-light rounded-full">
                         {index === selectedAddress ? <Icons.Tick /> : <></>}
                     </div>
-                    <div className="space-y-1">
+                    <div className="space-y-2">
                         {addressItem.isDefault === true ? (
-                            <p>DEFAULT SHIPPING ADDRESS</p>
+                            <p className="lg:text-xs">
+                                DEFAULT SHIPPING ADDRESS
+                            </p>
                         ) : (
                             <></>
                         )}
                         <p className="text-white">
                             {AddressToString(addressItem!)}
                         </p>
-                        <p>
+                        <p className="lg:text-xs">
                             {addressItem?.name} - {addressItem?.phone}
                         </p>
                     </div>

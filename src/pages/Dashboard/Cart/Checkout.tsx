@@ -32,9 +32,9 @@ export default function Checkout() {
             <div
                 className={
                     isHidden === false
-                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 in-right text-white p-6 flex flex-col justify-between xl:text-sm"
+                        ? "fixed top-0 right-0 h-screen w-1/3 sm:w-full bg-light z-50 in-right text-white p-6 flex flex-col justify-between xl:text-sm"
                         : isHidden === true
-                        ? "fixed top-0 right-0 h-screen w-1/3 bg-light z-50 out-right text-white p-6 flex flex-col justify-between xl:text-sm"
+                        ? "fixed top-0 right-0 h-screen w-1/3 sm:w-full bg-light z-50 out-right text-white p-6 flex flex-col justify-between xl:text-sm"
                         : "hidden"
                 }
                 style={
@@ -73,7 +73,7 @@ export default function Checkout() {
                     </div>
                 ) : (
                     <div className="basis-11/12 overflow-hidden">
-                        <div className="text-xl pb-5 flex items-center space-x-3">
+                        <div className="text-xl lg:text-lg md:text-base pb-5 flex items-center space-x-3">
                             <div
                                 className="cursor-pointer"
                                 onClick={() => setIsHidden(true)}
@@ -82,14 +82,14 @@ export default function Checkout() {
                             </div>
                             <p>Select address</p>
                         </div>
-                        <div className="h-[90%] space-y-3 overflow-scroll address-list">
+                        <div className="h-full pb-12 space-y-3 overflow-scroll address-list">
                             <AddressCardInCheckout />
                         </div>
                     </div>
                 )}
                 <div className="basis-1/12 flex items-end">
                     <button
-                        className="filled-button w-full"
+                        className="filled-button w-full mt-6"
                         onClick={() => setIsHidden(true)}
                     >
                         APPLY

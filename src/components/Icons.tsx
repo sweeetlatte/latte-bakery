@@ -234,7 +234,7 @@ const ArrowUp = ({ stroke }: Props) => (
 
 const ArrowLeft = ({ stroke }: Props) => (
     <svg
-        className="md:w-[12px]"
+        className="lg:w-4 md:w-3"
         width="21"
         height="13"
         viewBox="0 0 21 13"
