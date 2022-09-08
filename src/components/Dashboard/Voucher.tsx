@@ -62,7 +62,7 @@ export default function Voucher({ type }: Props) {
                                     <p className="text-sm text-primary">
                                         {item.title}
                                     </p>
-                                    <p className="text-[9px] text-white border border-primary px-1 w-max">
+                                    <p className="text-[9px] text-white border border-primary px-1">
                                         {item.content}
                                     </p>
                                 </div>
