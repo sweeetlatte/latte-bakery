@@ -1,5 +1,3 @@
-import React from "react";
-
 import getintouch1 from "../../assets/images/getintouch-1.png";
 import facebook from "../../assets/icons/Facebook.svg";
 import instagram from "../../assets/icons/Instagram.svg";

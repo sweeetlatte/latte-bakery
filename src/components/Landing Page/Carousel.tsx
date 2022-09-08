@@ -1,5 +1,3 @@
-import React from "react";
-
 import banner1 from "../assets/images/banner-1.png";
 
 export default function Carousel() {
