@@ -1,6 +1,6 @@
 import { IProduct } from ".";
 
-export interface IProductDestail {
+export interface IProductDetail {
     detail: IProduct;
     from?: {
         pathname: string;
