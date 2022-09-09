@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import "./../dashboard.css";
 import "./products.css";
-import { IProduct, IProductDestail } from "../../../types";
+import { IProduct, IProductDetail } from "../../../types";
 import { fetchProductData } from "../../../app/api";
 
 import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
@@ -14,30 +14,25 @@ import AddCard from "../../../components/Modal/Add Card/AddCard";
 import Icons from "../../../components/Icons";
 
 import creme from "../../../assets/images/creme.png";
+import Loader from "../../../components/Loader";
 
 export default function Detail() {
     const [open, setOpenModal] = useState<boolean>(false);
-
     const openModalAddProduct = () => {
         setOpenModal(true);
     };
-
     const closeModalAddProduct = () => {
         setOpenModal(false);
     };
 
     const location = useLocation();
-
-    const state = (location.state as IProductDestail) || {
+    const state = (location.state as IProductDetail) || {
         from: { pathname: "/" },
     };
-
+    const productDetail = state?.detail ?? null;
     // console.log(state.detail);
 
-    const productDetail = state?.detail ?? null;
-
     const [productData, setProductData] = useState<IProduct[]>();
-
     useEffect(() => {
         (async () => {
             const responseData = await fetchProductData();
@@ -51,8 +46,8 @@ export default function Detail() {
     return productData ? (
         <>
             <Header header="Dashboard" />
-            <div className="dashboard-container flex md:flex-col space-x-[42px] lg:space-x-[32px] md:space-x-0 md:space-y-9">
-                <div className="basis-9/12 xl:basis-10/12 pr-12 lg:pr-8 md:pr-0 border-right">
+            <div className="dashboard-container flex lg:flex-col space-x-[42px] lg:space-x-0 lg:space-y-9">
+                <div className="basis-9/12 xl:basis-10/12 pr-12 lg:pr-0 border-right lg:border-r-0">
                     <div className="flex space-x-[27.5px] text-lg lg:text-base items-center">
                         <Link to="/dashboard/product">
                             <Icons.ArrowLeft />
@@ -69,7 +64,7 @@ export default function Detail() {
                         </div>
                     </div>
                     <div className="flex flex-col bg-dark-bg rounded-xl p-8 mt-5">
-                        <div className="flex lg:flex-col w-full space-x-9 lg:space-x-0 lg:space-y-6">
+                        <div className="flex xl:flex-col w-full space-x-9 xl:space-x-0 xl:space-y-6">
                             <div className="basis-6/12">
                                 <img
                                     className="w-full h-[355px] lg:h-[180px] object-cover rounded-lg"
@@ -153,7 +148,7 @@ export default function Detail() {
                                 <p className="text-7xl pb-3">🤎</p>
                                 <p>5.0 of 5.0</p>
                             </div>
-                            <div className="flex flex-wrap space-x-4 sm:space-x-0 sm:grid sm:grid-cols-3 sm:gap-3">
+                            <div className="flex flex-wrap space-x-4 xl:space-x-0 xl:grid xl:grid-cols-3 xl:gap-3 sm:place-items-center">
                                 <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     All
                                 </button>
@@ -166,10 +161,10 @@ export default function Detail() {
                                 <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     3 🤎
                                 </button>
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max lg:mt-3 md:mt-0">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     2 🤎
                                 </button>
-                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max lg:mt-3 sm:mt-0">
+                                <button className="__yellow-outline-option py-2 px-4 w-[86px] sm:w-[66px] h-max">
                                     1 🤎
                                 </button>
                             </div>
@@ -205,6 +200,6 @@ export default function Detail() {
             </div>
         </>
     ) : (
-        <></>
+        <Loader />
     );
 }
