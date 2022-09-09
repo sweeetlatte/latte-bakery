@@ -21,7 +21,7 @@ export default function RegisterSuccessfully({ open }: Props) {
                     <div
                         className={
                             open
-                                ? "flex flex-col __bg-add-product-modal w-[480px] mx-auto mb-auto"
+                                ? "flex flex-col __bg-add-product-modal w-[480px] sm:w-max mx-auto mb-auto"
                                 : "hidden"
                         }
                     >
@@ -32,7 +32,7 @@ export default function RegisterSuccessfully({ open }: Props) {
                             src={close}
                             alt="delete product"
                         />
-                        <div className="text-xl font-bold pt-4 text-primary text-center mx-auto relative">
+                        <div className="text-xl lg:text-lg md:text-base font-bold pt-4 text-primary text-center mx-auto relative">
                             Register Successfully!
                         </div>
                         <Link to="/login">
