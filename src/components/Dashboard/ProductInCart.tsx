@@ -188,7 +188,7 @@ export default function ProductInCart({
                                 }).format(productItem.price * quantity)}
                             </div>
                         </div>
-                        <div className="basis-1/12 justify-end flex sm:absolute sm:right-[10px] sm:top-[15px]">
+                        <div className="basis-1/12 justify-end flex sm:absolute sm:right-[10px] sm:top-[18px]">
                             <div
                                 className="cursor-pointer"
                                 onClick={openModalWarningDelete}
