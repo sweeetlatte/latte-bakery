@@ -46,7 +46,7 @@ export default function ProductInCart({
     return productData ? (
         <>
             {productData.map((productItem, index) => (
-                <div key={index} className={`bg-dark-bg ${rounded}`}>
+                <div key={index} className={`bg-dark-bg ${rounded} relative`}>
                     <label htmlFor="item1" className="cart-custom-checkbox">
                         <input
                             type="checkbox"
@@ -188,7 +188,7 @@ export default function ProductInCart({
                                 }).format(productItem.price * quantity)}
                             </div>
                         </div>
-                        <div className="basis-1/12 justify-end flex sm:hidden">
+                        <div className="basis-1/12 justify-end flex sm:absolute sm:right-[10px] sm:top-[15px]">
                             <div
                                 className="cursor-pointer"
                                 onClick={openModalWarningDelete}
