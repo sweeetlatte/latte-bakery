@@ -62,7 +62,7 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
                         </section>
                         <section className="xl:basis-1/2 lg:flex lg:justify-end sm:w-full">
                             <button
-                                className="border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center lg:text-[0px] sm:text-xs sm:w-full"
+                                className="sm:hidden border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center lg:text-[0px] sm:text-xs sm:w-full"
                                 onClick={openModalAddProduct}
                             >
                                 <img
@@ -72,6 +72,20 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
                                 />
                                 Add
                             </button>
+                            <Link
+                                to="/dashboard/detail"
+                                state={{ detail: productItem }}
+                                className="hidden sm:block w-full h-max mt-5 lg:text-[0px] sm:text-xs"
+                            >
+                                <button className="w-full sm:flex items-center border border-primary bg-primary pl-2 pr-2.5 py-1 rounded-md">
+                                    <img
+                                        className="lg:mr-0 xl:mr-1 sm:mr-3"
+                                        src={cartIcon}
+                                        alt="cart icon"
+                                    />
+                                    Add
+                                </button>
+                            </Link>
                         </section>
                     </div>
                 </div>

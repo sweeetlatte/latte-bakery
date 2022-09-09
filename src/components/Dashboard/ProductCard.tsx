@@ -83,16 +83,30 @@ export default function ProductCard({
                                           {productItem.name}
                                       </Link>
                                       <button
+                                          className="sm:hidden border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
                                           onClick={openModalAddProduct}
-                                          className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
                                       >
                                           <img
-                                              className="lg:mr-0 xl:mr-1 "
+                                              className="lg:mr-0 xl:mr-1 sm:mr-3"
                                               src={cartIcon}
                                               alt="cart icon"
                                           />
                                           Add
                                       </button>
+                                      <Link
+                                          to="/dashboard/detail"
+                                          state={{ detail: productItem }}
+                                          className="hidden sm:block w-full h-max mt-5 lg:text-[0px] sm:text-xs"
+                                      >
+                                          <button className="w-full sm:flex items-center border border-primary bg-primary pl-2 pr-2.5 py-1 rounded-md">
+                                              <img
+                                                  className="lg:mr-0 xl:mr-1 sm:mr-3"
+                                                  src={cartIcon}
+                                                  alt="cart icon"
+                                              />
+                                              Add
+                                          </button>
+                                      </Link>
                                   </div>
                               </div>
                           </div>
@@ -132,16 +146,30 @@ export default function ProductCard({
                                           {productItem.name}
                                       </Link>
                                       <button
+                                          className="sm:hidden border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
                                           onClick={openModalAddProduct}
-                                          className="border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
                                       >
                                           <img
-                                              className="lg:mr-0 xl:mr-1"
+                                              className="lg:mr-0 xl:mr-1 sm:mr-3"
                                               src={cartIcon}
                                               alt="cart icon"
                                           />
                                           Add
                                       </button>
+                                      <Link
+                                          to="/dashboard/detail"
+                                          state={{ detail: productItem }}
+                                          className="hidden sm:block w-full h-max mt-5 lg:text-[0px] sm:text-xs"
+                                      >
+                                          <button className="w-full sm:flex items-center border border-primary bg-primary pl-2 pr-2.5 py-1 rounded-md">
+                                              <img
+                                                  className="lg:mr-0 xl:mr-1 sm:mr-3"
+                                                  src={cartIcon}
+                                                  alt="cart icon"
+                                              />
+                                              Add
+                                          </button>
+                                      </Link>
                                   </div>
                               </div>
                           </div>
