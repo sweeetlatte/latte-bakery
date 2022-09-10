@@ -54,15 +54,6 @@ export default function ProductList() {
             </header>
             <div className="flex flex-col space-y-1 pt-5">
                 <ProductInCart
-                    rounded="rounded-t-lg"
-                    openModalWarningDelete={() => openModalWarningDelete()}
-                />
-                <ProductInCart
-                    rounded="none"
-                    openModalWarningDelete={() => openModalWarningDelete()}
-                />
-                <ProductInCart
-                    rounded="rounded-b-lg"
                     openModalWarningDelete={() => openModalWarningDelete()}
                 />
             </div>

@@ -11,14 +11,10 @@ import Icons from "../Icons";
 import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
 
 interface Props {
-    rounded?: string;
     openModalWarningDelete: () => void;
 }
 
-export default function ProductInCart({
-    rounded,
-    openModalWarningDelete,
-}: Props) {
+export default function ProductInCart({ openModalWarningDelete }: Props) {
     const [quantity, setQuantity] = useState<number>(
         Math.floor(Math.random() * 10) + 1
     );
@@ -38,7 +34,12 @@ export default function ProductInCart({
             const responseData = await fetchProductData();
 
             if (responseData) {
-                setProductData(randomNumber(responseData, 1));
+                setProductData(
+                    randomNumber(
+                        responseData,
+                        Math.floor(Math.random() * 10) + 1
+                    )
+                );
             }
         })();
     }, []);
@@ -46,13 +47,25 @@ export default function ProductInCart({
     return productData ? (
         <>
             {productData.map((productItem, index) => (
-                <div key={index} className={`bg-dark-bg ${rounded} relative`}>
-                    <label htmlFor="item1" className="cart-custom-checkbox">
+                <div
+                    key={index}
+                    className={
+                        index === 0
+                            ? "bg-dark-bg relative rounded-t-lg"
+                            : index === productData.length - 1
+                            ? "bg-dark-bg relative rounded-b-lg"
+                            : "bg-dark-bg relative"
+                    }
+                >
+                    <label
+                        htmlFor={productItem.name}
+                        className="cart-custom-checkbox"
+                    >
                         <input
                             type="checkbox"
-                            id="item1"
-                            name="item1"
-                            value="item1"
+                            id={productItem.name}
+                            name={productItem.name}
+                            value={productItem.id}
                         />
                         <span className="checkmark"></span>
                     </label>
