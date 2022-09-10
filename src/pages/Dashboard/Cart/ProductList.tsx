@@ -9,6 +9,7 @@ import { useState } from "react";
 
 export default function ProductList() {
     const [open, setOpenModal] = useState<boolean>(false);
+    const [checkAll, setcheckAll] = useState<boolean>(false);
 
     const openModalWarningDelete = () => {
         setOpenModal(true);
@@ -28,6 +29,11 @@ export default function ProductList() {
                         id="checkall"
                         name="checkall"
                         value="checkall"
+                        onChange={() => {
+                            if (checkAll === true) {
+                                setcheckAll(false);
+                            } else setcheckAll(true);
+                        }}
                     />
                     <span
                         className="checkmark"
@@ -55,6 +61,7 @@ export default function ProductList() {
             <div className="flex flex-col space-y-1 pt-5">
                 <ProductInCart
                     openModalWarningDelete={() => openModalWarningDelete()}
+                    checkAll={checkAll}
                 />
             </div>
             <DeleteProducts

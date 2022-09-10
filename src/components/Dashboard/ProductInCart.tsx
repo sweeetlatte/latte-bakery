@@ -12,9 +12,13 @@ import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
 
 interface Props {
     openModalWarningDelete: () => void;
+    checkAll: boolean;
 }
 
-export default function ProductInCart({ openModalWarningDelete }: Props) {
+export default function ProductInCart({
+    openModalWarningDelete,
+    checkAll,
+}: Props) {
     const [quantity, setQuantity] = useState<number>(
         Math.floor(Math.random() * 10) + 1
     );
@@ -66,6 +70,7 @@ export default function ProductInCart({ openModalWarningDelete }: Props) {
                             id={productItem.name}
                             name={productItem.name}
                             value={productItem.id}
+                            checked={checkAll === true ? true : false}
                         />
                         <span className="checkmark"></span>
                     </label>
