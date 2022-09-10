@@ -44,7 +44,7 @@ export default function Voucher({ type }: Props) {
             {voucher
                 .filter((item) => item.type === type)
                 .map((item, index) => (
-                    <div>
+                    <div key={index}>
                         <div
                             className="bg-dark-bg rounded-lg py-4 pl-4 pr-10 text-sm text-caption relative"
                             onClick={() => setSelectedVoucher(index)}
