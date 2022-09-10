@@ -199,6 +199,24 @@
     animation-fill-mode: both;
 }
 
+/* ============= Increase Width ============= */
+@keyframes widthToRight {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 9rem;
+    }
+}
+
+.width-to-right {
+    animation-name: widthToRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* ========================== */
+
 .filled-button {
     @apply border border-primary bg-primary px-[25px] py-2.5 rounded-md;
 }

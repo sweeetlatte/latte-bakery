@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import AppContextProvider from "./contexts/AppContext";
 
@@ -16,7 +16,8 @@ import Product from "./pages/Dashboard/Products/Products";
 import Search from "./pages/Dashboard/Products/Search";
 import Detail from "./pages/Dashboard/Products/Detail";
 import Cart from "./pages/Dashboard/Cart/Cart";
-import Checkout from "./pages/Dashboard/Cart/Checkout";
+import ProductList from "./pages/Dashboard/Cart/ProductList";
+import ShippingInformation from "./pages/Dashboard/Cart/ShippingInformation";
 import Order from "./pages/Dashboard/Cart/Order";
 import Settings from "./pages/Dashboard/Settings/Settings";
 import AccountInfo from "./pages/Dashboard/Settings/AccountInfo";
@@ -45,9 +46,12 @@ function App() {
             <Route path="product" element={<Product />} />
             <Route path="product/search" element={<Search />} />
             <Route path="detail" element={<Detail />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="cart/checkout" element={<Checkout />} />
-            <Route path="cart/order" element={<Order />} />
+            <Route path="cart" element={<Cart />} >
+              <Route path="product-list" element={<ProductList />} />
+              <Route path="shipping-information" element={<ShippingInformation />} />
+              <Route path="order" element={<Order />} />
+              <Route index element={<Navigate to="product-list" />}/>
+            </Route>
             <Route path="setting" element={<Settings />}>
               <Route path="account-info" element={<AccountInfo />} />
               <Route path="address-book">
@@ -56,7 +60,9 @@ function App() {
                 <Route index element={<AddressBook />} />
               </Route>
               <Route path="change-password" element={<ChangePassword />} />
+              <Route index element={<Navigate to="account-info" />}/>
             </Route>
+            <Route index element={<Navigate to="product" />}/>
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

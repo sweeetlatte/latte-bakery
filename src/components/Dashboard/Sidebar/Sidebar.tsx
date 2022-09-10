@@ -57,7 +57,7 @@ export default function Sidebar() {
                     }
                 >
                     <Link
-                        to="cart"
+                        to="cart/product-list"
                         className={
                             indexSidebar === 1
                                 ? "bg-primary w-[56px] h-[56px] flex items-center justify-center rounded-lg shadow-2xl shadow-yellowRgba"
