@@ -18,11 +18,23 @@ import Loader from "../../../components/Loader";
 
 export default function Detail() {
     const [open, setOpenModal] = useState<boolean>(false);
+    const [selectedProduct, setSelectedProduct] = useState<
+        IProduct | undefined
+    >();
+
     const openModalAddProduct = () => {
         setOpenModal(true);
     };
     const closeModalAddProduct = () => {
         setOpenModal(false);
+    };
+
+    const selectProduct = (product: IProduct) => {
+        setSelectedProduct(product);
+    };
+
+    const removeProduct = (product: IProduct) => {
+        setSelectedProduct(product);
     };
 
     const location = useLocation();
@@ -187,14 +199,17 @@ export default function Detail() {
                     <div className="flex flex-col space-y-4 md:space-y-0 md:grid md:grid-cols-4 sm:grid-cols-2 md:gap-5">
                         <ProductCardHorizontal
                             openModalAddProduct={openModalAddProduct}
+                            selectProduct={selectProduct}
                         />
                         <ProductCardHorizontal
                             openModalAddProduct={openModalAddProduct}
+                            selectProduct={selectProduct}
                         />
                     </div>
                     <AddCard
                         open={open}
                         closeModalAddProduct={() => closeModalAddProduct()}
+                        selectedProduct={selectedProduct}
                     />
                 </div>
             </div>

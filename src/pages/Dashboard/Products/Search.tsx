@@ -1,10 +1,13 @@
+import { useState } from "react";
+
 import "./products.css";
+import { IProduct } from "../../../types";
 
 import CustomSelectBox from "../../../components/CustomSelectBox";
 import Header from "../../../components/Dashboard/Header";
 import SearchBar from "../../../components/SearchBar";
 import ProductCard from "../../../components/Dashboard/ProductCard";
-import { useState } from "react";
+import AddCard from "../../../components/Modal/Add Card/AddCard";
 
 export default function Search() {
     const sorting = [
@@ -13,6 +16,10 @@ export default function Search() {
     ];
 
     const [open, setOpenModal] = useState<boolean>(false);
+    const [selectedProduct, setSelectedProduct] = useState<
+        IProduct | undefined
+    >();
+    console.log(selectedProduct);
 
     const openModalAddProduct = () => {
         setOpenModal(true);
@@ -20,6 +27,14 @@ export default function Search() {
 
     const closeModalAddProduct = () => {
         setOpenModal(false);
+    };
+
+    const selectProduct = (product: IProduct) => {
+        setSelectedProduct(product);
+    };
+
+    const removeProduct = (product: IProduct) => {
+        setSelectedProduct(product);
     };
 
     return (
@@ -128,10 +143,18 @@ export default function Search() {
                     </div>
                     <div className="w-full lg:px-2 md:px-0">
                         <ProductCard
-                            openModalAddProduct={() => openModalAddProduct()}
+                            openModalAddProduct={openModalAddProduct}
                             quantityOnRow={3}
+                            selectProduct={selectProduct}
                         />
                     </div>
+                    {selectedProduct && (
+                        <AddCard
+                            open={open}
+                            closeModalAddProduct={() => closeModalAddProduct()}
+                            selectedProduct={selectedProduct}
+                        />
+                    )}
                 </div>
             </div>
         </>

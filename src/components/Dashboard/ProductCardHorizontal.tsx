@@ -9,9 +9,13 @@ import { randomNumber } from "../../utils/functions";
 
 interface Props {
     openModalAddProduct: () => void;
+    selectProduct: (product: IProduct) => void;
 }
 
-export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
+export default function ProductCardHorizontal({
+    openModalAddProduct,
+    selectProduct,
+}: Props) {
     const [productData, setProductData] = useState<IProduct[]>();
 
     useEffect(() => {
@@ -63,7 +67,10 @@ export default function ProductCardHorizontal({ openModalAddProduct }: Props) {
                         <section className="xl:basis-1/2 lg:flex lg:justify-end sm:w-full">
                             <button
                                 className="sm:hidden border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center lg:text-[0px] sm:text-xs sm:w-full"
-                                onClick={openModalAddProduct}
+                                onClick={() => {
+                                    openModalAddProduct();
+                                    selectProduct(productItem);
+                                }}
                             >
                                 <img
                                     className="lg:mr-0 xl:mr-1 sm:mr-3"

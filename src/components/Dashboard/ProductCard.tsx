@@ -13,6 +13,7 @@ type quantityOnRow = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 interface Props {
     openModalAddProduct: () => void;
+    selectProduct: (product: IProduct) => void;
     type?: string;
     quantity?: number;
     variant?: Variant;
@@ -21,12 +22,14 @@ interface Props {
 
 export default function ProductCard({
     openModalAddProduct,
+    selectProduct,
     type,
     quantity = 16,
     variant = "grid",
     quantityOnRow = 4,
 }: Props) {
     const [productData, setProductData] = useState<IProduct[]>();
+    console.log(productData);
 
     useEffect(() => {
         (async () => {
@@ -84,7 +87,15 @@ export default function ProductCard({
                                       </Link>
                                       <button
                                           className="sm:hidden border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
-                                          onClick={openModalAddProduct}
+                                          onClick={() => {
+                                              console.log(
+                                                  "data se: ",
+                                                  productItem
+                                              );
+
+                                              selectProduct(productItem);
+                                              openModalAddProduct();
+                                          }}
                                       >
                                           <img
                                               className="lg:mr-0 xl:mr-1 sm:mr-3"
@@ -147,7 +158,20 @@ export default function ProductCard({
                                       </Link>
                                       <button
                                           className="sm:hidden border border-primary bg-primary pl-2 pr-2.5 py-1 h-max rounded-md flex justify-center items-center lg:text-[0px] sm:text-xs sm:w-full"
-                                          onClick={openModalAddProduct}
+                                          onClick={() => {
+                                              console.log(
+                                                  "data se: ",
+                                                  productItem
+                                              );
+
+                                              selectProduct(productItem);
+                                              openModalAddProduct();
+                                          }}
+                                          // onClick={() =>
+                                          //     navigate("edit-address", {
+                                          //         state: { address: addressItem },
+                                          //     })
+                                          // }
                                       >
                                           <img
                                               className="lg:mr-0 xl:mr-1 sm:mr-3"

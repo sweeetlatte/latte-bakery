@@ -13,11 +13,16 @@ import CustomSelectBox from "../../../components/CustomSelectBox";
 
 // import slider1 from "../../../assets/images/dashboard/slider-1.png";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
+import { IProduct } from "../../../types";
 // import slider3 from "../../../assets/images/dashboard/slider-3.png";
 
 export default function Products() {
     const [open, setOpenModal] = useState<boolean>(false);
     // const [slider, setSlider] = useState<string>("hidden");
+    const [selectedProduct, setSelectedProduct] = useState<
+        IProduct | undefined
+    >();
+    console.log(selectedProduct);
 
     const openModalAddProduct = () => {
         setOpenModal(true);
@@ -25,6 +30,14 @@ export default function Products() {
 
     const closeModalAddProduct = () => {
         setOpenModal(false);
+    };
+
+    const selectProduct = (product: IProduct) => {
+        setSelectedProduct(product);
+    };
+
+    const removeProduct = (product: IProduct) => {
+        setSelectedProduct(product);
     };
 
     // var slideIndex = 1;
@@ -253,13 +266,17 @@ export default function Products() {
                     <div className="pt-8 w-full">
                         <ProductCard
                             type={type}
-                            openModalAddProduct={() => openModalAddProduct()}
+                            openModalAddProduct={openModalAddProduct}
+                            selectProduct={selectProduct}
                         />
                     </div>
-                    <AddCard
-                        open={open}
-                        closeModalAddProduct={() => closeModalAddProduct()}
-                    />
+                    {selectedProduct && (
+                        <AddCard
+                            open={open}
+                            closeModalAddProduct={() => closeModalAddProduct()}
+                            selectedProduct={selectedProduct}
+                        />
+                    )}
                 </div>
                 <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full xl:pt-12 sm:pt-7">
                     <div>
@@ -267,6 +284,7 @@ export default function Products() {
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
+                                selectProduct={selectProduct}
                             />
                         </div>
                     </div>
@@ -275,6 +293,7 @@ export default function Products() {
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
                                 openModalAddProduct={openModalAddProduct}
+                                selectProduct={selectProduct}
                             />
                         </div>
                     </div>
