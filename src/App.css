@@ -239,6 +239,15 @@
     .border-left {
         border-left: none;
     }
+
+    @keyframes widthToRight {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 3rem;
+        }
+    }
 }
 
 /* ============= Sidebar full width ============= */

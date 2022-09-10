@@ -26,12 +26,12 @@ export default function Cart() {
         <>
             <Header header={"My Cart"} />
             <div className="dashboard-container">
-                <div className="bg-dark-bg py-6 rounded-lg mb-8 md:mb-6 space-y-3">
-                    <div className="w-max mx-auto flex items-center text-lg font-bold">
+                <div className="bg-dark-bg py-6 rounded-lg mb-8 md:mb-6 space-y-3 text-lg lg:text-base sm:text-sm">
+                    <div className="w-max mx-auto flex items-center font-bold">
                         <div className="bg-primary rounded-full w-9 h-9 flex justify-center items-center">
                             1
                         </div>
-                        <div className="w-36 h-1 border-y border-primary">
+                        <div className="w-36 lg:w-[7.6rem] sm:w-12 h-1 border-y border-primary">
                             <div
                                 className={
                                     active === "Shipping Information" ||
@@ -51,7 +51,7 @@ export default function Cart() {
                         >
                             2
                         </div>
-                        <div className="w-36 h-1 border-y border-primary">
+                        <div className="w-36 lg:w-[7.6rem] sm:w-12 h-1 border-y border-primary">
                             <div
                                 className={
                                     active === "Order Status"
@@ -70,24 +70,30 @@ export default function Cart() {
                             3
                         </div>
                     </div>
-                    <div className="w-max mx-auto grid grid-cols-3 place-items-center place-self-center text-lg font-semibold">
+                    <div className="w-max mx-auto grid sm:flex grid-cols-3 place-items-center place-self-center font-semibold">
                         <div
-                            className={active === "Cart" ? "text-primary" : ""}
+                            className={
+                                active === "Cart"
+                                    ? "text-primary sm:basis-1/3 sm:text-center"
+                                    : "sm:basis-1/3 sm:text-center"
+                            }
                         >
                             Cart
                         </div>
                         <div
                             className={
                                 active === "Shipping Information"
-                                    ? "text-primary"
-                                    : ""
+                                    ? "text-primary sm:basis-1/3 sm:text-center"
+                                    : "sm:basis-1/3 sm:text-center"
                             }
                         >
                             Shipping Information
                         </div>
                         <div
                             className={
-                                active === "Order Status" ? "text-primary" : ""
+                                active === "Order Status"
+                                    ? "text-primary sm:basis-1/3 sm:text-center"
+                                    : "sm:basis-1/3 sm:text-center"
                             }
                         >
                             Order Status
