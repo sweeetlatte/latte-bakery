@@ -17,7 +17,7 @@ export default function Blog() {
             const responseData = await fetchBlogData();
 
             if (responseData) {
-                setBlogData(responseData);
+                setBlogData(randomNumber(responseData, 2));
             }
         })();
     }, []);
@@ -26,7 +26,7 @@ export default function Blog() {
         <>
             <SectionTitle title={"Blog"} variant="one-button" linkTo="/blog" />
             <div className="w-full mx-auto space-y-12 lg:space-y-9 md:space-y-6">
-                {randomNumber(blogData, 2).map((blogItem, index) => (
+                {blogData.map((blogItem, index) => (
                     <div key={index} className="flex space-x-12 md:space-x-6">
                         <div className="basis-2/5">
                             <img

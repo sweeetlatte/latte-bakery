@@ -14,10 +14,7 @@ export default function ProductInCheckout() {
 
             if (responseData) {
                 setProductData(
-                    randomNumber(
-                        responseData,
-                        Math.floor(Math.random() * 10) + 1
-                    )
+                    randomNumber(responseData, Math.floor(Math.random() * 6))
                 );
             }
         })();

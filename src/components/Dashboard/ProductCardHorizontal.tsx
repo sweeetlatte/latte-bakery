@@ -25,14 +25,14 @@ export default function ProductCardHorizontal({ selectProduct }: Props) {
             const responseData = await fetchProductData();
 
             if (responseData) {
-                setProductData(responseData);
+                setProductData(randomNumber(responseData, 3));
             }
         })();
     }, []);
 
     return productData ? (
         <>
-            {randomNumber(productData, 3).map((productItem, index) => (
+            {productData.map((productItem, index) => (
                 <div
                     key={index}
                     className="bg-dark-bg p-4 sm:p-5 rounded-lg flex xl:flex-col space-x-4 xl:space-x-0 justify-start w-full xl:w-[180px] lg:w-[150px] sm:w-[126px] xl:h-[245px] sm:h-[251px]"
