@@ -1,17 +1,15 @@
 import "./addCard.css";
-import { IProduct } from "../../../types";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import { closeProductModal } from "../../../redux/actions";
 
 import creme from "../../../assets/images/creme.png";
 import x from "../../../assets/icons/x.svg";
 
-interface Props {
-    selectedProduct: IProduct | undefined;
-}
-
-export default function AddCard({ selectedProduct }: Props) {
+export default function AddCard() {
     const open = useAppSelector((state) => state.modal.open);
+    const selectedProduct = useAppSelector(
+        (state) => state.modal.selectedProduct
+    );
 
     const dispatch = useAppDispatch();
 

@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 import "./products.css";
-import { IProduct } from "../../../types";
 
 import CustomSelectBox from "../../../components/CustomSelectBox";
 import Header from "../../../components/Dashboard/Header";
@@ -14,18 +11,6 @@ export default function Search() {
         { value: "price low to high", label: "Price: low to high" },
         { value: "price high to low", label: "Price: high to low" },
     ];
-
-    const [selectedProduct, setSelectedProduct] = useState<
-        IProduct | undefined
-    >();
-
-    const selectProduct = (product: IProduct) => {
-        setSelectedProduct(product);
-    };
-
-    const removeProduct = (product: IProduct) => {
-        setSelectedProduct(product);
-    };
 
     return (
         <>
@@ -132,14 +117,9 @@ export default function Search() {
                         </div>
                     </div>
                     <div className="w-full lg:px-2 md:px-0">
-                        <ProductCard
-                            quantityOnRow={3}
-                            selectProduct={selectProduct}
-                        />
+                        <ProductCard quantityOnRow={3} />
                     </div>
-                    {selectedProduct && (
-                        <AddCard selectedProduct={selectedProduct} />
-                    )}
+                    <AddCard />
                 </div>
             </div>
         </>

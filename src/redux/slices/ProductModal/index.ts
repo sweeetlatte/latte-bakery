@@ -2,6 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     open: false,
+    selectedProduct: {
+        id: 0,
+        name: "default",
+        price: 0,
+        type: "default",
+        description: "default",
+        filling: "default",
+        size: "default",
+        image: "default",
+    },
 };
 
 const modal = createSlice({
@@ -10,6 +20,7 @@ const modal = createSlice({
     reducers: {
         openProductModal(state, action) {
             state.open = true;
+            state.selectedProduct = action.payload;
         },
         closeProductModal(state, action) {
             state.open = false;

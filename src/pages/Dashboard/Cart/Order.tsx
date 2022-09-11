@@ -4,24 +4,9 @@ import ProductCard from "../../../components/Dashboard/ProductCard";
 
 import bike from "../../../assets/icons/bike.svg";
 import map from "../../../assets/icons/Map.png";
-import { useState } from "react";
 import AddCard from "../../../components/Modal/Add Card/AddCard";
-import { IProduct } from "../../../types";
 
 export default function Order() {
-    // const [slider, setSlider] = useState<string>("hidden");
-    const [selectedProduct, setSelectedProduct] = useState<
-        IProduct | undefined
-    >();
-
-    const selectProduct = (product: IProduct) => {
-        setSelectedProduct(product);
-    };
-
-    const removeProduct = (product: IProduct) => {
-        setSelectedProduct(product);
-    };
-
     return (
         <>
             <div className="flex sm:flex-col items-center bg-dark-bg w-max sm:w-full mx-auto mb-8">
@@ -45,16 +30,12 @@ export default function Order() {
             </div>
             <div className="pb-4">Suggested Products</div>
             <div className="md:hidden">
-                <ProductCard
-                    quantity={5}
-                    variant={"row"}
-                    selectProduct={selectProduct}
-                />
+                <ProductCard quantity={5} variant={"row"} />
             </div>
             <div className="hidden md:block">
-                <ProductCard quantity={4} selectProduct={selectProduct} />
+                <ProductCard quantity={4} />
             </div>
-            <AddCard selectedProduct={selectedProduct} />
+            <AddCard />
         </>
     );
 }

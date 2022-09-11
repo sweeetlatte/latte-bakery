@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./products.css";
-import { IProduct } from "../../../types";
 
 import Header from "../../../components/Dashboard/Header";
 import SearchBar from "../../../components/SearchBar";
@@ -18,18 +17,6 @@ import slider2 from "../../../assets/images/dashboard/slider-2.png";
 
 export default function Products() {
     // const [slider, setSlider] = useState<string>("hidden");
-    const [selectedProduct, setSelectedProduct] = useState<
-        IProduct | undefined
-    >();
-
-    const selectProduct = (product: IProduct) => {
-        setSelectedProduct(product);
-    };
-
-    const removeProduct = (product: IProduct) => {
-        setSelectedProduct(product);
-    };
-
     // var slideIndex = 1;
     // showDivs(slideIndex);
 
@@ -254,30 +241,21 @@ export default function Products() {
                     </div>
 
                     <div className="pt-8 w-full">
-                        <ProductCard
-                            type={type}
-                            selectProduct={selectProduct}
-                        />
+                        <ProductCard type={type} />
                     </div>
-                    {selectedProduct && (
-                        <AddCard selectedProduct={selectedProduct} />
-                    )}
+                    <AddCard />
                 </div>
                 <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full xl:pt-12 sm:pt-7">
                     <div>
                         <div className="text-lg pb-6">New products</div>
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
-                            <ProductCardHorizontal
-                                selectProduct={selectProduct}
-                            />
+                            <ProductCardHorizontal />
                         </div>
                     </div>
                     <div className="pt-12">
                         <div className="text-lg pb-6">Best sellers</div>
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
-                            <ProductCardHorizontal
-                                selectProduct={selectProduct}
-                            />
+                            <ProductCardHorizontal />
                         </div>
                     </div>
                 </div>
