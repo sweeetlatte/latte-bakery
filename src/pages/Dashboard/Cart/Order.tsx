@@ -9,19 +9,10 @@ import AddCard from "../../../components/Modal/Add Card/AddCard";
 import { IProduct } from "../../../types";
 
 export default function Order() {
-    const [open, setOpenModal] = useState<boolean>(false);
     // const [slider, setSlider] = useState<string>("hidden");
     const [selectedProduct, setSelectedProduct] = useState<
         IProduct | undefined
     >();
-
-    const openModalAddProduct = () => {
-        setOpenModal(true);
-    };
-
-    const closeModalAddProduct = () => {
-        setOpenModal(false);
-    };
 
     const selectProduct = (product: IProduct) => {
         setSelectedProduct(product);
@@ -55,24 +46,15 @@ export default function Order() {
             <div className="pb-4">Suggested Products</div>
             <div className="md:hidden">
                 <ProductCard
-                    openModalAddProduct={openModalAddProduct}
                     quantity={5}
                     variant={"row"}
                     selectProduct={selectProduct}
                 />
             </div>
             <div className="hidden md:block">
-                <ProductCard
-                    openModalAddProduct={openModalAddProduct}
-                    quantity={4}
-                    selectProduct={selectProduct}
-                />
+                <ProductCard quantity={4} selectProduct={selectProduct} />
             </div>
-            <AddCard
-                open={open}
-                closeModalAddProduct={closeModalAddProduct}
-                selectedProduct={selectedProduct}
-            />
+            <AddCard selectedProduct={selectedProduct} />
         </>
     );
 }

@@ -15,19 +15,9 @@ export default function Search() {
         { value: "price high to low", label: "Price: high to low" },
     ];
 
-    const [open, setOpenModal] = useState<boolean>(false);
     const [selectedProduct, setSelectedProduct] = useState<
         IProduct | undefined
     >();
-    console.log(selectedProduct);
-
-    const openModalAddProduct = () => {
-        setOpenModal(true);
-    };
-
-    const closeModalAddProduct = () => {
-        setOpenModal(false);
-    };
 
     const selectProduct = (product: IProduct) => {
         setSelectedProduct(product);
@@ -143,17 +133,12 @@ export default function Search() {
                     </div>
                     <div className="w-full lg:px-2 md:px-0">
                         <ProductCard
-                            openModalAddProduct={openModalAddProduct}
                             quantityOnRow={3}
                             selectProduct={selectProduct}
                         />
                     </div>
                     {selectedProduct && (
-                        <AddCard
-                            open={open}
-                            closeModalAddProduct={() => closeModalAddProduct()}
-                            selectedProduct={selectedProduct}
-                        />
+                        <AddCard selectedProduct={selectedProduct} />
                     )}
                 </div>
             </div>

@@ -1,20 +1,20 @@
 import "./addCard.css";
 import { IProduct } from "../../../types";
+import { useAppDispatch, useAppSelector } from "../../../redux/store";
+import { closeProductModal } from "../../../redux/actions";
 
 import creme from "../../../assets/images/creme.png";
 import x from "../../../assets/icons/x.svg";
 
 interface Props {
-    open: boolean;
     selectedProduct: IProduct | undefined;
-    closeModalAddProduct: () => void;
 }
 
-export default function AddCard({
-    open,
-    selectedProduct,
-    closeModalAddProduct,
-}: Props) {
+export default function AddCard({ selectedProduct }: Props) {
+    const open = useAppSelector((state) => state.modal.open);
+
+    const dispatch = useAppDispatch();
+
     return selectedProduct ? (
         <>
             <div
@@ -32,7 +32,7 @@ export default function AddCard({
                     style={
                         { "--opacity": 0.6, "--z": 25 } as React.CSSProperties
                     }
-                    onClick={closeModalAddProduct}
+                    onClick={() => dispatch(closeProductModal(open))}
                 />
                 <div className="z-30 flex flex-col __bg-add-product-modal">
                     <div className="flex space-x-5">
@@ -60,7 +60,9 @@ export default function AddCard({
                                     {selectedProduct.name}
                                 </div>
                                 <img
-                                    onClick={closeModalAddProduct}
+                                    onClick={() =>
+                                        dispatch(closeProductModal(open))
+                                    }
                                     className="absolute right-[-14px] top-[-14px] cursor-pointer"
                                     src={x}
                                     alt="x"
@@ -115,7 +117,7 @@ export default function AddCard({
                     </div>
                     <div className="flex flex-row justify-end pt-9 lg:pt-3">
                         <button
-                            onClick={closeModalAddProduct}
+                            onClick={() => dispatch(closeProductModal(open))}
                             className="outlined-button ml-6 w-fit"
                         >
                             Cancel

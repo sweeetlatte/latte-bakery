@@ -1,8 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import AppContextProvider from "./contexts/AppContext";
+import store from "./redux/store";
 
 import "./App.css";
+// config tailwindcss
+import "./main.css";
 
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
@@ -28,46 +32,45 @@ import ChangePassword from "./pages/Dashboard/Settings/ChangePassword";
 
 import NotFound from "./pages/NotFound";
 
-// config tailwindcss
-import "./main.css";
-
 function App() {
   return (
-    <AppContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/detail" element={<BlogDetail />} />
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="product" element={<Product />} />
-            <Route path="product/search" element={<Search />} />
-            <Route path="detail" element={<Detail />} />
-            <Route path="cart" element={<Cart />} >
-              <Route path="product-list" element={<ProductList />} />
-              <Route path="shipping-information" element={<ShippingInformation />} />
-              <Route path="order" element={<Order />} />
-              <Route index element={<Navigate to="product-list" />}/>
-            </Route>
-            <Route path="setting" element={<Settings />}>
-              <Route path="account-info" element={<AccountInfo />} />
-              <Route path="address-book">
-                <Route path="add-address" element={<AddAddress />} />
-                <Route path="edit-address" element={<EditAddress />} />
-                <Route index element={<AddressBook />} />
+    <Provider store={store}>
+      <AppContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/detail" element={<BlogDetail />} />
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="product" element={<Product />} />
+              <Route path="product/search" element={<Search />} />
+              <Route path="detail" element={<Detail />} />
+              <Route path="cart" element={<Cart />} >
+                <Route path="product-list" element={<ProductList />} />
+                <Route path="shipping-information" element={<ShippingInformation />} />
+                <Route path="order" element={<Order />} />
+                <Route index element={<Navigate to="product-list" />}/>
               </Route>
-              <Route path="change-password" element={<ChangePassword />} />
-              <Route index element={<Navigate to="account-info" />}/>
+              <Route path="setting" element={<Settings />}>
+                <Route path="account-info" element={<AccountInfo />} />
+                <Route path="address-book">
+                  <Route path="add-address" element={<AddAddress />} />
+                  <Route path="edit-address" element={<EditAddress />} />
+                  <Route index element={<AddressBook />} />
+                </Route>
+                <Route path="change-password" element={<ChangePassword />} />
+                <Route index element={<Navigate to="account-info" />}/>
+              </Route>
+              <Route index element={<Navigate to="product" />}/>
             </Route>
-            <Route index element={<Navigate to="product" />}/>
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </AppContextProvider>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AppContextProvider>
+    </Provider>
   );
 }
 

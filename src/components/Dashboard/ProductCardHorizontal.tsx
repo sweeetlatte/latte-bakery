@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { IProduct } from "../../types";
 import { fetchProductData } from "../../app/api";
+import { randomNumber } from "../../utils/functions";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
+import { openProductModal } from "../../redux/actions";
 
 import cartIcon from "../../assets/icons/cart.svg";
-import { randomNumber } from "../../utils/functions";
 
 interface Props {
-    openModalAddProduct: () => void;
     selectProduct: (product: IProduct) => void;
 }
 
-export default function ProductCardHorizontal({
-    openModalAddProduct,
-    selectProduct,
-}: Props) {
+export default function ProductCardHorizontal({ selectProduct }: Props) {
+    const open = useAppSelector((state) => state.modal.open);
+
+    const dispatch = useAppDispatch();
+
     const [productData, setProductData] = useState<IProduct[]>();
 
     useEffect(() => {
@@ -68,7 +70,7 @@ export default function ProductCardHorizontal({
                             <button
                                 className="sm:hidden border border-primary bg-primary pl-2 pr-2.5 py-1 mt-5 h-max rounded-md flex items-center lg:text-[0px] sm:text-xs sm:w-full"
                                 onClick={() => {
-                                    openModalAddProduct();
+                                    dispatch(openProductModal(open));
                                     selectProduct(productItem);
                                 }}
                             >

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./products.css";
+import { IProduct } from "../../../types";
 
 import Header from "../../../components/Dashboard/Header";
 import SearchBar from "../../../components/SearchBar";
@@ -13,24 +14,13 @@ import CustomSelectBox from "../../../components/CustomSelectBox";
 
 // import slider1 from "../../../assets/images/dashboard/slider-1.png";
 import slider2 from "../../../assets/images/dashboard/slider-2.png";
-import { IProduct } from "../../../types";
 // import slider3 from "../../../assets/images/dashboard/slider-3.png";
 
 export default function Products() {
-    const [open, setOpenModal] = useState<boolean>(false);
     // const [slider, setSlider] = useState<string>("hidden");
     const [selectedProduct, setSelectedProduct] = useState<
         IProduct | undefined
     >();
-    console.log(selectedProduct);
-
-    const openModalAddProduct = () => {
-        setOpenModal(true);
-    };
-
-    const closeModalAddProduct = () => {
-        setOpenModal(false);
-    };
 
     const selectProduct = (product: IProduct) => {
         setSelectedProduct(product);
@@ -57,7 +47,7 @@ export default function Products() {
                 // sliders[i].classList += " block";
             }, 3000);
         }
-        console.log(sliders[0]);
+        // console.log(sliders[0]);
         //
         //     for (i = 0; i < sliders.length; i++) {
         //         sliders[i].style.display = "none";
@@ -266,16 +256,11 @@ export default function Products() {
                     <div className="pt-8 w-full">
                         <ProductCard
                             type={type}
-                            openModalAddProduct={openModalAddProduct}
                             selectProduct={selectProduct}
                         />
                     </div>
                     {selectedProduct && (
-                        <AddCard
-                            open={open}
-                            closeModalAddProduct={() => closeModalAddProduct()}
-                            selectedProduct={selectedProduct}
-                        />
+                        <AddCard selectedProduct={selectedProduct} />
                     )}
                 </div>
                 <div className="text-white basis-3/12 lg:basis-5/12 xl:w-full xl:pt-12 sm:pt-7">
@@ -283,7 +268,6 @@ export default function Products() {
                         <div className="text-lg pb-6">New products</div>
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
-                                openModalAddProduct={openModalAddProduct}
                                 selectProduct={selectProduct}
                             />
                         </div>
@@ -292,7 +276,6 @@ export default function Products() {
                         <div className="text-lg pb-6">Best sellers</div>
                         <div className="flex flex-col space-y-4 xl:space-y-0 xl:grid xl:w-full xl:grid-cols-4 sm:grid-cols-2 xl:auto-cols-max xl:mx-auto xl:place-items-center xl:place-self-center xl:gap-5">
                             <ProductCardHorizontal
-                                openModalAddProduct={openModalAddProduct}
                                 selectProduct={selectProduct}
                             />
                         </div>
