@@ -1,17 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    items: [
-        {
-            id: 0,
-            name: "default",
-            price: 0,
-            filling: "default",
-            size: "default",
-            image: "default",
-            quantity: 0,
-        },
-    ],
+import { CartData } from "./types";
+
+const initialState: CartData = {
+    items: [],
 };
 
 const cart = createSlice({
@@ -27,8 +19,8 @@ const cart = createSlice({
                 state.items[itemIndex].quantity += 1;
             } else
                 state.items = [
-                    ...state.items,
                     { ...action.payload, quantity: 1 },
+                    ...state.items,
                 ];
 
             localStorage.setItem("cartItem", JSON.stringify(state.items));
