@@ -7,6 +7,7 @@ import { useAppSelector } from "../../../redux/store";
 import Icons from "../../../components/Icons";
 import ProductInCart from "../../../components/Dashboard/ProductInCart";
 import DeleteProducts from "../../../components/Modal/Warnings/DeleteProducts";
+import RemoveAll from "../../../components/Modal/Warnings/RemoveAll";
 
 export default function ProductList() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -15,6 +16,7 @@ export default function ProductList() {
         number | undefined
     >();
     const cartItems = useAppSelector((state) => state.cart.items);
+    const [openAll, setOpenAll] = useState<boolean>(false);
 
     const openModalWarningDelete = () => {
         setOpenModal(true);
@@ -22,6 +24,14 @@ export default function ProductList() {
 
     const closeModalWarningDelete = () => {
         setOpenModal(false);
+    };
+
+    const openModalDeleteAll = () => {
+        setOpenAll(true);
+    };
+
+    const closeModalDeleteAll = () => {
+        setOpenAll(false);
     };
 
     const selectProduct = (product: number) => {
@@ -59,7 +69,10 @@ export default function ProductList() {
                         <div className="basis-3/12">Price</div>
                         <div className="basis-3/12">Subtotal</div>
                     </div>
-                    <div className="basis-1/12 justify-end flex">
+                    <div
+                        className="basis-1/12 justify-end flex"
+                        onClick={openModalDeleteAll}
+                    >
                         <Icons.Trash stroke="#323232" />
                     </div>
                 </div>
@@ -78,6 +91,10 @@ export default function ProductList() {
                 open={open}
                 closeModalWarningDelete={() => closeModalWarningDelete()}
                 selectedProduct={selectedProduct}
+            />
+            <RemoveAll
+                open={openAll}
+                closeModalWarningDelete={closeModalDeleteAll}
             />
             <div className="flex flex-row justify-end sm:justify-between items-center pt-9">
                 <div className="text-lg xl:text-base">Total: 0 VND</div>
