@@ -1,11 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./../dashboard.css";
+import { useAppSelector } from "../../../redux/store";
 
 import Icons from "../../../components/Icons";
 import ProductInCart from "../../../components/Dashboard/ProductInCart";
 import DeleteProducts from "../../../components/Modal/Warnings/DeleteProducts";
-import { useState } from "react";
 
 export default function ProductList() {
     const [open, setOpenModal] = useState<boolean>(false);
@@ -13,6 +14,7 @@ export default function ProductList() {
     const [selectedProduct, setSelectedProduct] = useState<
         number | undefined
     >();
+    const cartItems = useAppSelector((state) => state.cart.items);
 
     const openModalWarningDelete = () => {
         setOpenModal(true);
@@ -80,8 +82,16 @@ export default function ProductList() {
             <div className="flex flex-row justify-end sm:justify-between items-center pt-9">
                 <div className="text-lg xl:text-base">Total: 0 VND</div>
                 <Link
-                    to="/dashboard/cart/shipping-information"
-                    className="filled-button ml-9"
+                    to={
+                        cartItems.length > 0
+                            ? "/dashboard/cart/shipping-information"
+                            : "#"
+                    }
+                    className={
+                        cartItems.length > 0
+                            ? "filled-button ml-9"
+                            : "filled-button bg-light cursor-default ml-9"
+                    }
                 >
                     Check out
                 </Link>
