@@ -80,10 +80,10 @@ export default function DeleteProducts({
                                     <button
                                         className="border border-error bg-error px-8 py-1.5 rounded-md w-fit"
                                         onClick={() => {
-                                            closeModalWarningDelete();
                                             dispatch(
                                                 removeProduct(selectedProduct)
                                             );
+                                            closeModalWarningDelete();
                                         }}
                                     >
                                         Delete

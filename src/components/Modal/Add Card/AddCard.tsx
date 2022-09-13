@@ -122,9 +122,10 @@ export default function AddCard() {
                         </button>
                         <button
                             className="filled-button ml-6 w-fit"
-                            onClick={() =>
-                                dispatch(addProduct(selectedProduct))
-                            }
+                            onClick={() => {
+                                dispatch(addProduct(selectedProduct));
+                                dispatch(closeProductModal(open));
+                            }}
                         >
                             Add to cart
                         </button>
