@@ -10,6 +10,9 @@ import { useState } from "react";
 export default function ProductList() {
     const [open, setOpenModal] = useState<boolean>(false);
     const [checkAll, setcheckAll] = useState<boolean>(false);
+    const [selectedProduct, setSelectedProduct] = useState<
+        number | undefined
+    >();
 
     const openModalWarningDelete = () => {
         setOpenModal(true);
@@ -17,6 +20,10 @@ export default function ProductList() {
 
     const closeModalWarningDelete = () => {
         setOpenModal(false);
+    };
+
+    const selectProduct = (product: number) => {
+        setSelectedProduct(product);
     };
 
     return (
@@ -62,11 +69,13 @@ export default function ProductList() {
                 <ProductInCart
                     openModalWarningDelete={() => openModalWarningDelete()}
                     checkAll={checkAll}
+                    selectProduct={selectProduct}
                 />
             </div>
             <DeleteProducts
                 open={open}
                 closeModalWarningDelete={() => closeModalWarningDelete()}
+                selectedProduct={selectedProduct}
             />
             <div className="flex flex-row justify-end sm:justify-between items-center pt-9">
                 <div className="text-lg xl:text-base">Total: 0 VND</div>

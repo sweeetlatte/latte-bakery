@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useAppSelector } from "../../redux/store";
 
 import "../../pages/Dashboard/Cart/cart.css";
-
 import Icons from "../Icons";
 
 import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
@@ -11,11 +10,13 @@ import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
 interface Props {
     openModalWarningDelete: () => void;
     checkAll: boolean;
+    selectProduct: (product: number) => void;
 }
 
 export default function ProductInCart({
     openModalWarningDelete,
     checkAll,
+    selectProduct,
 }: Props) {
     const cartData = useAppSelector((state) => state.cart.items);
     const [quantity, setQuantity] = useState<number>(
@@ -196,7 +197,10 @@ export default function ProductInCart({
                         <div className="basis-1/12 justify-end flex sm:absolute sm:right-[10px] sm:top-[18px]">
                             <div
                                 className="cursor-pointer"
-                                onClick={openModalWarningDelete}
+                                onClick={() => {
+                                    openModalWarningDelete();
+                                    selectProduct(cartItem.id);
+                                }}
                             >
                                 <Icons.Trash stroke="#f83b3b" />
                             </div>
