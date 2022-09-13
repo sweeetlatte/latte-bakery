@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../redux/store";
 
 import "../../pages/Dashboard/Cart/cart.css";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
+import { decreaseQuantity, increaseQuantity } from "../../redux/actions";
+
 import Icons from "../Icons";
 
 import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
@@ -19,16 +20,7 @@ export default function ProductInCart({
     selectProduct,
 }: Props) {
     const cartData = useAppSelector((state) => state.cart.items);
-    const [quantity, setQuantity] = useState<number>(
-        Math.floor(Math.random() * 10) + 1
-    );
-
-    function minusQuantity() {
-        quantity > 1 && setQuantity(quantity - 1);
-    }
-    function plusQuantity() {
-        quantity < 10 && setQuantity(quantity + 1);
-    }
+    const dispatch = useAppDispatch();
 
     return cartData ? (
         <>
@@ -53,6 +45,7 @@ export default function ProductInCart({
                             name={cartItem.name}
                             value={cartItem.id}
                             checked={checkAll === true ? true : false}
+                            onChange={(e) => {}}
                         />
                         <span className="checkmark"></span>
                     </label>
@@ -95,7 +88,11 @@ export default function ProductInCart({
                                     </div>
                                     <div className="flex justify-start items-center space-x-3">
                                         <button
-                                            onClick={minusQuantity}
+                                            onClick={() =>
+                                                dispatch(
+                                                    decreaseQuantity(cartItem)
+                                                )
+                                            }
                                             className={
                                                 cartItem.quantity > 1
                                                     ? ""
@@ -112,7 +109,11 @@ export default function ProductInCart({
                                         </button>
                                         <p>{cartItem.quantity}</p>
                                         <button
-                                            onClick={plusQuantity}
+                                            onClick={() =>
+                                                dispatch(
+                                                    increaseQuantity(cartItem)
+                                                )
+                                            }
                                             className={
                                                 cartItem.quantity < 10
                                                     ? ""
@@ -148,7 +149,9 @@ export default function ProductInCart({
                             </div>
                             <div className="basis-3/12 flex justify-center items-center space-x-3">
                                 <button
-                                    onClick={minusQuantity}
+                                    onClick={() =>
+                                        dispatch(decreaseQuantity(cartItem))
+                                    }
                                     className={
                                         cartItem.quantity > 1
                                             ? ""
@@ -165,7 +168,9 @@ export default function ProductInCart({
                                 </button>
                                 <p>{cartItem.quantity}</p>
                                 <button
-                                    onClick={plusQuantity}
+                                    onClick={() =>
+                                        dispatch(increaseQuantity(cartItem))
+                                    }
                                     className={
                                         cartItem.quantity < 10
                                             ? ""
