@@ -1,6 +1,6 @@
 import "./addCard.css";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
-import { closeProductModal } from "../../../redux/actions";
+import { closeProductModal, addProduct } from "../../../redux/actions";
 
 import creme from "../../../assets/images/creme.png";
 import x from "../../../assets/icons/x.svg";
@@ -120,7 +120,12 @@ export default function AddCard() {
                         >
                             Cancel
                         </button>
-                        <button className="filled-button ml-6 w-fit">
+                        <button
+                            className="filled-button ml-6 w-fit"
+                            onClick={() =>
+                                dispatch(addProduct(selectedProduct))
+                            }
+                        >
                             Add to cart
                         </button>
                     </div>

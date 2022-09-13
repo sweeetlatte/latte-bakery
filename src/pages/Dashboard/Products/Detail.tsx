@@ -5,6 +5,8 @@ import "./../dashboard.css";
 import "./products.css";
 import { IProduct, IProductDetail } from "../../../types";
 import { fetchProductData } from "../../../app/api";
+import { useAppDispatch } from "../../../redux/store";
+import { addProduct } from "../../../redux/actions";
 
 import ProductCardHorizontal from "../../../components/Dashboard/ProductCardHorizontal";
 import Review from "../../../components/Dashboard/Review";
@@ -21,10 +23,10 @@ export default function Detail() {
     const state = (location.state as IProductDetail) || {
         from: { pathname: "/" },
     };
-    const productDetail = state?.detail ?? null;
-    // console.log(state.detail);
-
     const [productData, setProductData] = useState<IProduct[]>();
+    const productDetail = state?.detail ?? null;
+    const dispatch = useAppDispatch();
+
     useEffect(() => {
         (async () => {
             const responseData = await fetchProductData();
@@ -115,7 +117,12 @@ export default function Detail() {
                                     </button>
                                 </div>
                                 <div className="flex pt-6">
-                                    <button className="lg:basis-1/2 outlined-button w-fit">
+                                    <button
+                                        className="lg:basis-1/2 outlined-button w-fit"
+                                        onClick={() =>
+                                            dispatch(addProduct(productDetail))
+                                        }
+                                    >
                                         Add to cart
                                     </button>
                                     <button className="lg:basis-1/2 font-medium filled-button ml-[0.85rem] w-fit">

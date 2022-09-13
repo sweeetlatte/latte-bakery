@@ -1,10 +1,25 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./reducers";
+import { useDispatch, useSelector } from "react-redux";
+import storage from "redux-persist/lib/storage";
+import { persistReducer, persistStore } from "redux-persist";
 // import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import type { TypedUseSelectorHook } from "react-redux";
-import { useDispatch, useSelector } from "react-redux";
 
-const store = configureStore({ reducer: reducer });
+import reducer from "./reducers";
+
+const persistConfig = {
+    key: "root",
+    storage,
+    blacklist: ["product", "modal"],
+};
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
+const store = configureStore({
+    reducer: persistedReducer,
+});
+
+export const persistor = persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 export type AppRootState = ReturnType<typeof store.getState>;

@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../redux/store";
 
 import "../../pages/Dashboard/Cart/cart.css";
 
-import { IProduct } from "../../types";
-import { fetchProductData } from "../../app/api";
-import { randomNumber } from "../../utils/functions";
 import Icons from "../Icons";
 
 import circleChevronDown from "../../assets/icons/circle_chevron_down.svg";
@@ -19,6 +17,7 @@ export default function ProductInCart({
     openModalWarningDelete,
     checkAll,
 }: Props) {
+    const cartData = useAppSelector((state) => state.cart.items);
     const [quantity, setQuantity] = useState<number>(
         Math.floor(Math.random() * 10) + 1
     );
@@ -26,50 +25,32 @@ export default function ProductInCart({
     function minusQuantity() {
         quantity > 1 && setQuantity(quantity - 1);
     }
-
     function plusQuantity() {
         quantity < 10 && setQuantity(quantity + 1);
     }
 
-    const [productData, setProductData] = useState<IProduct[]>();
-
-    useEffect(() => {
-        (async () => {
-            const responseData = await fetchProductData();
-
-            if (responseData) {
-                setProductData(
-                    randomNumber(
-                        responseData,
-                        Math.floor(Math.random() * 10) + 1
-                    )
-                );
-            }
-        })();
-    }, []);
-
-    return productData ? (
+    return cartData ? (
         <>
-            {productData.map((productItem, index) => (
+            {cartData.map((cartItem, index) => (
                 <div
                     key={index}
                     className={
                         index === 0
                             ? "bg-dark-bg relative rounded-t-lg"
-                            : index === productData.length - 1
+                            : index === cartData.length - 1
                             ? "bg-dark-bg relative rounded-b-lg"
                             : "bg-dark-bg relative"
                     }
                 >
                     <label
-                        htmlFor={productItem.name}
+                        htmlFor={cartItem.name}
                         className="cart-custom-checkbox"
                     >
                         <input
                             type="checkbox"
-                            id={productItem.name}
-                            name={productItem.name}
-                            value={productItem.id}
+                            id={cartItem.name}
+                            name={cartItem.name}
+                            value={cartItem.id}
                             checked={checkAll === true ? true : false}
                         />
                         <span className="checkmark"></span>
@@ -78,13 +59,13 @@ export default function ProductInCart({
                         <div className="basis-5/12 flex space-x-[27px] md:space-x-5 items-center sm:items-start md:text-xs">
                             <Link
                                 to="/dashboard/detail"
-                                state={{ detail: productItem }}
+                                state={{ detail: cartItem }}
                             >
                                 <div className="w-[132px] sm:w-[50px] h-[86px] sm:h-[50px]">
                                     <img
                                         className="w-full h-full object-cover rounded-lg"
-                                        src={productItem.image}
-                                        alt={productItem.name}
+                                        src={cartItem.image}
+                                        alt={cartItem.name}
                                     />
                                 </div>
                             </Link>
@@ -94,10 +75,10 @@ export default function ProductInCart({
                                         to="/dashboard/detail"
                                         className="text-overflow"
                                         style={{ WebkitLineClamp: 2 }}
-                                        title={productItem.name}
-                                        state={{ detail: productItem }}
+                                        title={cartItem.name}
+                                        state={{ detail: cartItem }}
                                     >
-                                        {productItem.name}
+                                        {cartItem.name}
                                     </Link>
                                 </div>
                                 <div className="text-sm xl:text-xs">
@@ -115,31 +96,31 @@ export default function ProductInCart({
                                         <button
                                             onClick={minusQuantity}
                                             className={
-                                                quantity > 1
+                                                cartItem.quantity > 1
                                                     ? ""
                                                     : "cursor-default"
                                             }
                                         >
                                             <Icons.Minus
                                                 stroke={
-                                                    quantity > 1
+                                                    cartItem.quantity > 1
                                                         ? "#F3A446"
                                                         : "#BEBEBE"
                                                 }
                                             />
                                         </button>
-                                        <p>{quantity}</p>
+                                        <p>{cartItem.quantity}</p>
                                         <button
                                             onClick={plusQuantity}
                                             className={
-                                                quantity < 10
+                                                cartItem.quantity < 10
                                                     ? ""
                                                     : "cursor-default"
                                             }
                                         >
                                             <Icons.Plus
                                                 stroke={
-                                                    quantity < 10
+                                                    cartItem.quantity < 10
                                                         ? "#F3A446"
                                                         : "#BEBEBE"
                                                 }
@@ -150,7 +131,7 @@ export default function ProductInCart({
                                         {new Intl.NumberFormat("de-DE", {
                                             style: "currency",
                                             currency: "VND",
-                                        }).format(productItem.price)}
+                                        }).format(cartItem.price)}
                                     </div>
                                 </div>
                             </div>
@@ -168,25 +149,31 @@ export default function ProductInCart({
                                 <button
                                     onClick={minusQuantity}
                                     className={
-                                        quantity > 1 ? "" : "cursor-default"
+                                        cartItem.quantity > 1
+                                            ? ""
+                                            : "cursor-default"
                                     }
                                 >
                                     <Icons.Minus
                                         stroke={
-                                            quantity > 1 ? "#F3A446" : "#BEBEBE"
+                                            cartItem.quantity > 1
+                                                ? "#F3A446"
+                                                : "#BEBEBE"
                                         }
                                     />
                                 </button>
-                                <p>{quantity}</p>
+                                <p>{cartItem.quantity}</p>
                                 <button
                                     onClick={plusQuantity}
                                     className={
-                                        quantity < 10 ? "" : "cursor-default"
+                                        cartItem.quantity < 10
+                                            ? ""
+                                            : "cursor-default"
                                     }
                                 >
                                     <Icons.Plus
                                         stroke={
-                                            quantity < 10
+                                            cartItem.quantity < 10
                                                 ? "#F3A446"
                                                 : "#BEBEBE"
                                         }
@@ -197,13 +184,13 @@ export default function ProductInCart({
                                 {new Intl.NumberFormat("de-DE", {
                                     style: "currency",
                                     currency: "VND",
-                                }).format(productItem.price)}
+                                }).format(cartItem.price)}
                             </div>
                             <div className="basis-3/12 pt-1">
                                 {new Intl.NumberFormat("de-DE", {
                                     style: "currency",
                                     currency: "VND",
-                                }).format(productItem.price * quantity)}
+                                }).format(cartItem.price * cartItem.quantity)}
                             </div>
                         </div>
                         <div className="basis-1/12 justify-end flex sm:absolute sm:right-[10px] sm:top-[18px]">
